@@ -1,0 +1,14 @@
+site_name: Docs 
+theme:
+  name: material
+  palette:
+    primary: deep orange
+  logo: ./assets/logo-white.png
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - apicall
