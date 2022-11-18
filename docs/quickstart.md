@@ -10,12 +10,7 @@ Before we get started, it’s important to note that NFT pricing data is only on
 
 ## Authentication
 
-```py
-print("Hello Markdown!")
-```
+{{ transpose_sql_endpoint(endpoint='https://api.transpose.io', default_sql='SELECT REEE', method='GET') }}
 
-Run an API call:
+[Run this query](){ .md-button .run-query-button #run-query-1 }
 
-@@@ GET https://google.com []
-    [X-API-KEY: 'random_key']
-    [<HEADER-KEY>: <HEADER-VALUE>]
