@@ -8,6 +8,9 @@ theme:
 extra_javascript:
   - js/requests.js
 
+extra_css:
+  - stylesheets/buttons.css
+
 markdown_extensions:
   - admonition
   - pymdownx.details

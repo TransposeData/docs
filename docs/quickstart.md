@@ -10,7 +10,7 @@ Before we get started, it’s important to note that NFT pricing data is only on
 
 ## Authentication
 
-{{ transpose_sql_endpoint(endpoint='https://api.transpose.io', default_sql='SELECT REEE', method='GET') }}
+{{ transpose_sql_endpoint(endpoint='https://api.transpose.io/sql', default_sql='SELECT * FROM nft.sales', method='GET') }}
 
-[Run this query](){ .md-button .run-query-button #run-query-1 }
+{{ transpose_sql_endpoint(endpoint='https://api.transpose.io/sql', default_sql='SELECT 2 FROM nft.sales', method='GET') }}
 
