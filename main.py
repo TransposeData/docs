@@ -4,7 +4,7 @@ PYTHON_REQUEST_TEMPLATE = """
 import requests
 
 url = "{}"
-sql_query = "{}"
+sql_query = \"\"\"{}\"\"\"
 
 headers = {{
     'Content-Type': 'application/json',
@@ -48,7 +48,6 @@ class TransposeDocsSQL:
         self.method = method
         self.unique_identifier = secrets.token_hex(8)
 
-
     def _get_sql_entry(self):
         return '```sql title="SQL Query"\n{}\n```'.format(self.sql)
 
@@ -71,7 +70,7 @@ class TransposeDocsSQL:
         ])
 
     def _get_run_query_button(self):
-        return '<a class="md_button run_query_button" onclick="issueRequest(event)">Run Query</a>'
+        return "<a class=\"md_button run_query_button\" onclick=\"issueRequest(event, \'{}\' ) \" >Run Query</a>".format(self.sql.replace('\n', ''))
 
     def _get_response_box(self):
         return '```json title="Response"\n{\n    "data": [],\n    "error": null,\n    "status": 200\n}\n```'
@@ -83,7 +82,6 @@ class TransposeDocsSQL:
         return '!!! example "Give it a go!"\n{}'.format(self._indent(string))
 
     def __call__(self):
-
         return self._admonish('\n'.join([
             self._get_sql_entry(),
             self._get_api_multilang(),
@@ -92,7 +90,6 @@ class TransposeDocsSQL:
         ]))
 
 def define_env(env):
-    "Hook function"
 
     @env.macro
     def transpose_sql_endpoint(endpoint: str, default_sql: str, method: str):
@@ -101,7 +98,3 @@ def define_env(env):
         print('reeeeee')
         return output_string
 
-    @env.filter
-    def my_filter(value):
-        "Filter function"
-        return value.upper()

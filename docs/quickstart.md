@@ -10,7 +10,7 @@ Before we get started, it’s important to note that NFT pricing data is only on
 
 ## Authentication
 
-{{ transpose_sql_endpoint(endpoint='https://api.transpose.io/sql', default_sql='SELECT * FROM nft.sales', method='GET') }}
-
 {{ transpose_sql_endpoint(endpoint='https://api.transpose.io/sql', default_sql='SELECT 2 FROM nft.sales', method='GET') }}
+
+{{ transpose_sql_endpoint(endpoint='https://api.transpose.io/sql', default_sql="SELECT ens_name AS name, resolver_address\n  AS address FROM ethereum.ens_names\n WHERE ens_name >= LOWER('harry')\n ORDER BY ens_name ASC LIMIT 1;", method='POST') }}
 

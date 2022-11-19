@@ -4,15 +4,13 @@ document.querySelectorAll('.run-query-button').forEach(item => {
   })
 })
 
-function issueRequest(event) {
-  	console.log('yee');
-
+function issueRequest(event, sql) {
 	var myHeaders = new Headers();
 	myHeaders.append("x-api-key", "FxKTp6MHpWQDaos8SRnSetdIZiUYLliS");
 	myHeaders.append("Content-Type", "application/json");
 
 	var raw = JSON.stringify({
-		"sql": "SELECT timestamp::date AS date, COUNT(*) AS num_sales FROM ethereum.nft_sales AS sales WHERE sales.contract_address = '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB' GROUP BY date HAVING COUNT(*) > 0;"
+		"sql": sql
 	});
 
 	var requestOptions = {
