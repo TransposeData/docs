@@ -5,10 +5,21 @@ theme:
     primary: deep orange
   logo: ./assets/logo-white.png
 
+extra_javascript:
+  - js/requests.js
+
+extra_css:
+  - stylesheets/buttons.css
+
 markdown_extensions:
+  - admonition
+  - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
+  - attr_list
 
 plugins:
+  - macros
   - apicall
+  - search
