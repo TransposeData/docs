@@ -95,7 +95,7 @@ class TransposeDocsSQL:
     def _get_run_query_button(self):
         sql_to_inject = self.sql.replace('"', "'").replace("'", "&quot;").replace('\n', ' ')
         print(sql_to_inject)
-        request_to_issue = f'issueRequest(event, \'{sql_to_inject}\')'
+        request_to_issue = f'issueRequest(event)'
         print(request_to_issue)
         return f'<a class="md_button run_query_button" onclick="{request_to_issue}">Run Query</a>'
 

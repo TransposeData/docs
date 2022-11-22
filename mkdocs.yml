@@ -7,6 +7,7 @@ theme:
 
 extra_javascript:
   - js/requests.js
+  - js/edit_codeblock.js
 
 extra_css:
   - stylesheets/buttons.css
