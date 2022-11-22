@@ -49,20 +49,43 @@ class TransposeDocsSQL:
         self.unique_identifier = secrets.token_hex(8)
 
     def _get_sql_entry(self):
-        return '```sql title="SQL Query"\n{}\n```'.format(self.sql)
+        """
+        Returns a Fenced Code Block with SQL syntax highlighting, where the body of the block is the SQL query.
+        """
+        return ('```sql title="SQL Query"\n' +
+                '{}\n' +
+                '```').format(self.sql)
 
     def _get_python_code(self):
+        """
+        Returns a Fenced Code Block with Python syntax highlighting, where the body of the block is the Python code.
+        """
         code_snippet = PYTHON_REQUEST_TEMPLATE.format(self.endpoint, self.sql)
-        return '=== "Python"\n\t```py\n{}\n\t```'.format(self._indent(code_snippet))
+        return ('=== "Python"\n' +
+                '    ```py\n'    +
+                '{}\n'           +
+                '    ```').format(self._indent(code_snippet))
 
     def _get_node_code(self):
+        """
+        TODO: Implement this properly
+        """
         return '=== "Node"\n\t```js\n\tconsole.log("Hello World")\n\t```'
 
     def _get_curl_code(self):
+        """
+        Returns a Fenced Code Block with Bash syntax highlighting, where the body of the block is the curl command.
+        """
         code_snippet = CURL_REQUEST_TEMPLATE.format(self.sql, self.endpoint)
-        return '=== "Curl"\n\t```bash\n{}\n\t```'.format(self._indent(code_snippet))
+        return ('=== "Curl"\n'  +
+                '    ```bash\n' + 
+                '{}\n'          + 
+                '    ```').format(self._indent(code_snippet))
 
     def _get_api_multilang(self):
+        """
+        Created tabbed view of various ways to call this API.
+        """
         return '\n'.join([
             self._get_python_code(),
             self._get_node_code(),
@@ -70,6 +93,13 @@ class TransposeDocsSQL:
         ])
 
     def _get_run_query_button(self):
+        sql_to_inject = self.sql.replace('"', "'").replace("'", "&quot;").replace('\n', ' ')
+        print(sql_to_inject)
+        request_to_issue = f'issueRequest(event, \'{sql_to_inject}\')'
+        print(request_to_issue)
+        return f'<a class="md_button run_query_button" onclick="{request_to_issue}">Run Query</a>'
+
+
         return "<a class=\"md_button run_query_button\" onclick=\"issueRequest(event, \'{}\' ) \" >Run Query</a>".format(self.sql.replace('\n', ''))
 
     def _get_response_box(self):
