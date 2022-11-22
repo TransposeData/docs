@@ -8,9 +8,11 @@ theme:
 extra_javascript:
   - js/requests.js
   - js/edit_codeblock.js
+  - js/codefence/codefence.js
 
 extra_css:
   - stylesheets/buttons.css
+  - stylesheets/codefence.css
 
 markdown_extensions:
   - admonition
