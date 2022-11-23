@@ -1,4 +1,5 @@
 import secrets
+import re
 
 PYTHON_REQUEST_TEMPLATE_SQL = """import requests
 url = "{}"
@@ -78,6 +79,14 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         self.endpoint = "https://api.transpose.io/sql"
         self.sql = default_sql
         self.unique_identifier = secrets.token_hex(8)
+
+    def _preprocess_sql_for_string(self, sql):
+        """
+        Preprocesses the SQL query to make it more readable in the docs.
+        """
+        sql = sql.strip()
+        sql = re.sub(r" *\/[*].*[*]\/ *\n", "", sql)
+        return sql
 
     def _get_sql_entry(self):
         """
