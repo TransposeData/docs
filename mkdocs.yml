@@ -6,9 +6,8 @@ theme:
   logo: ./assets/logo-white.png
 
 extra_javascript:
-  - js/requests.js
-  - js/edit_codeblock.js
   - js/codefence/codefence.js
+  - js/update_key.js
 
 extra_css:
   - stylesheets/buttons.css
