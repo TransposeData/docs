@@ -46,7 +46,7 @@ class TransposeDocsInteractive:
         return f'=== "{switch_name}"\n' + self._indent(code)
 
     def _generate_code_fence(self, language, code):
-        return '<code-fence switcher="false" lang="{}" cache="false"><textarea vue-slot="code">{}</textarea></code-fence>'.format(
+        return '<code-fence class="transpose_demo" switcher="false" lang="{}" cache="false"><textarea vue-slot="code">{}</textarea></code-fence>'.format(
             language, code
         )
 

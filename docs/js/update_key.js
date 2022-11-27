@@ -4,9 +4,23 @@ function updateAPIKey(newKey) {
 	for (var i = 0; i < codeStrings.length; i++) {
 		var codeString = codeStrings[i];
 		console.log(codeString.innerHTML);
-		if (codeString.innerHTML === "'&lt;YOUR API KEY&gt;'" ) {
+		if (codeString.innerHTML === "'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'") {
 			console.log('found it');
 			codeString.innerHTML = "'" + newKey + "'";
 		}
 	}
+}
+
+function sub_api_key() {
+	const textAreas = document.getElementsByClassName('transpose_demo');
+	for (var i = 0; i < textAreas.length; i++) {
+		var textArea = textAreas[i];
+		var editor = CodeMirror.fromTextArea(textArea);
+		editor.getDoc().setValue('reee');
+	}
+	console.log(textAreas);
+	// var textArea = document.getElementById('myScript');
+	// var editor = CodeMirror.fromTextArea(textArea);
+	// editor.getDoc().setValue('var msg = "Hi";');
+	// updateAPIKey('reee');
 }
