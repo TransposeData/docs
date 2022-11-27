@@ -6,7 +6,7 @@ url = "{}"
 sql_query = \"\"\"{}\"\"\"
 headers = {{
     'Content-Type': 'application/json',
-    'X-API-KEY': '<YOUR API KEY>',
+    'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS',
 }}
 response = requests.post(url,
     headers=headers,
@@ -45,16 +45,8 @@ class TransposeDocsInteractive:
     def _embed_into_switcher(self, switch_name, code):
         return f'=== "{switch_name}"\n' + self._indent(code)
 
-    def _get_api_multilang(self):
-        return "\n".join(
-            [
-                self._get_python(),
-                #self._get_js(),
-            ]
-        )
-
     def _generate_code_fence(self, language, code):
-        return '<code-fence switcher="false" lang="{}"><textarea vue-slot="code">{}</textarea></code-fence>'.format(
+        return '<code-fence switcher="false" lang="{}" cache="false"><textarea vue-slot="code">{}</textarea></code-fence>'.format(
             language, code
         )
 
@@ -64,13 +56,11 @@ class APIKeyManager(TransposeDocsInteractive):
         pass
 
     def __call__(self):
-        return self._admonish('This page contains many interactive examples.  To run them, you\'ll need a Transpose API key.  To get this, [log in or sign up with Transpose](https://app.transpose.io).  Once you\'re logged in, navigate to your team dashboard.  Here, you can view and copy your keys.  Once you have your key, copy it into each example code snippet below.', title='API Key', type='warning')
-
-
-        return self._admonish('\n'.join([
-            'This page contains many interactive examples. To run them, you\'ll need a Transpose API key.  To get this, [log in or sign up with Transpose](https://app.transpose.io).  Once you\'re logged in, navigate to your team dashboard.  Here, you can view and copy your keys.  Once you have your key, copy it into the box below.',
-            '<input type="text" id="api-key" placeholder="Your API Key" onChange="updateAPIKey(this.value)" style="width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;">',
-            ]), title="API Key", type="warning")
+        return self._admonish(
+            "This page contains many interactive examples.  To run them, you'll need a Transpose API key.  To get this, [log in or sign up with Transpose](https://app.transpose.io).  Once you're logged in, navigate to your team dashboard.  Here, you can view and copy your keys.  Once you have your key, copy it into each example code snippet below.",
+            title="API Key",
+            type="warning",
+        )
 
 
 class TransposeDocsSQL(TransposeDocsInteractive):
@@ -84,8 +74,11 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         """
         Preprocesses the SQL query to make it more readable in the docs.
         """
+        print('sql', sql)
         sql = sql.strip()
         sql = re.sub(r" *\/[*].*[*]\/ *\n", "", sql)
+        sql = re.sub(r"\*", "\*", sql)
+        print('sql', sql)
         return sql
 
     def _get_sql_entry(self):
@@ -103,14 +96,22 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_sql_entry_id(self):
         return f"{self.unique_identifier}_sql_entry"
 
+    def _get_api_multilang(self):
+        return "\n".join(
+            [
+                self._get_python(),
+                self._get_js(),
+            ]
+        )
+
     def _get_python(self):
-        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self.sql)
+        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql))
         return self._embed_into_switcher(
             "Python", self._generate_code_fence("py", code_snippet)
         )
 
     def _get_js(self):
-        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self.endpoint, self.sql)
+        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql))
         return self._embed_into_switcher(
             "Node", self._generate_code_fence("js", code_snippet)
         )
@@ -120,19 +121,20 @@ class TransposeDocsSQL(TransposeDocsInteractive):
             "\n".join([self._get_sql_entry(), self._get_api_multilang()])
         )
 
+
 PYTHON_REQUEST_TEMPLATE_REST = """import requests
 url = "{}"
 headers = {{
     'Content-Type': 'application/json',
-    'X-API-KEY': '<YOUR-API-KEY>',
+    'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS',
 }}
 params = {}
 response = requests.get(url, headers=headers, params=params)
 print(response.text)
 """
 
+
 class TransposeDocsRest(TransposeDocsInteractive):
-    
     def __init__(self, endpoint, params):
         self.endpoint = endpoint
         self.params = params
@@ -143,15 +145,20 @@ class TransposeDocsRest(TransposeDocsInteractive):
             "Python", self._generate_code_fence("py", code_snippet)
         )
 
-
-    def __call__(self):
-        return self._admonish(
-            "\n".join([self._get_api_multilang()])
+    def _get_api_multilang(self):
+        return "\n".join(
+            [
+                self._get_python(),
+                # self._get_js(),
+            ]
         )
 
 
-def define_env(env):
+    def __call__(self):
+        return self._admonish("\n".join([self._get_api_multilang()]))
 
+
+def define_env(env):
     @env.macro
     def get_transpose_api_key():
         output = APIKeyManager()()
@@ -169,4 +176,3 @@ def define_env(env):
         output = TransposeDocsRest(endpoint, params)()
         print(output)
         return output
-
