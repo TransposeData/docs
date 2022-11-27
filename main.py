@@ -57,7 +57,9 @@ class APIKeyManager(TransposeDocsInteractive):
 
     def __call__(self):
         return self._admonish(
-            "This page contains many interactive examples.  To run them, you'll need a Transpose API key.  To get this, [log in or sign up with Transpose](https://app.transpose.io).  Once you're logged in, navigate to your team dashboard.  Here, you can view and copy your keys.  Once you have your key, copy it into each example code snippet below.",
+            """Before proceeding, we need to authenticate ourselves with Transpose.  To access any Transpose API, you'll need an API key.  All API requests should include your API key in an `X-API-KEY` header.  If you haven't already, you'll need to [sign up and create a team (for free!)](https://app.transpose.io).  Once you have a team, you can find a list of your API keys in your team dashboard.  When you have your API key, replace `<YOUR-API-KEY>` in the interactive examples below with your key.
+
+Remember not to share your API key!  Your API key is a secret, and should not be stored or exposed in a public manner.""",
             title="API Key",
             type="warning",
         )

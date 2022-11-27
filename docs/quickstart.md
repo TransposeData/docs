@@ -8,15 +8,7 @@ In this example, we’ll be focusing on pulling daily [floor prices](https://blo
 
 Before we get started, it’s important to note that NFT pricing data is only one of the limitless applications of Transpose data.  Transpose indexes over 99.9% of trading volume on the Ethereum blockchain, and all of this data is accessible through our REST and SQL APIs.  We’ll work with our SQL API, and with one of our REST APIs, in this quickstart guide.
 
-## Authentication
-
-Before we can learn about any CryptoPunks, we need to authenticate ourselves with Transpose.  To access any Transpose API, we need an API key.  In Transpose, each user belongs to a team, and teams can share API keys between them.
-
-As such, if you haven’t already, you’ll need to [sign up and create a team (for free!)](https://app.transpose.io).
-
-Remember not to share your API key! Your API key is a secret and should not be stored or exposed in a public manner.
-
-All API requests should include your API key in an `X-API-KEY` HTTP header.
+{{ get_transpose_api_key() }}
 
 ## 1) Get all CryptoPunks NFT sales
 
@@ -48,3 +40,13 @@ Given that floor prices can be subject to a lot of dataset noise, here we use a 
 Take a moment to examine this revised query, and note the (small) differences between this query and our last query.  Then let it rip!
 
 {{ transpose_fenced_sql("SELECT\n/* extract date */\ntimestamp::date AS date,\n/* calculate smart floor price as bottom 5 percentile of USD sale prices */\npercentile_disc(0.2) WITHIN GROUP (ORDER BY usd_price) AS floor_price\nFROM ethereum.nft_sales AS sales \n/* specify CryptoPunks contract address */\nWHERE sales.contract_address = '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D'\n/* group sales by date */\nGROUP BY date\n/* skip days with no sales */\nHAVING COUNT(*) > 0; ") }}
+
+## Now, it's your turn!
+
+Try experimenting with the requests above yourself.  For example, you could change the contract addresses to target different NFT collections (i.e. why not give Bored Ape Yacht Club a go?  The contract address for Bored Ape Yacht Club is `0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D` ).
+
+When you’re ready to experiment further, check out the [ Transpose Atlas ](https://atlas.transpose.io) - a repository of Transpose SQL queries from our staff and from our community.
+
+You can also check out the [ Transpose Playground ](https://playground.transpose.io) - a dedicated environment for discovering and experimenting with our data.
+
+Happy building!  If you ever need help, don’t hesitate to reach out on our [ discord ], or drop us an email at [hello@transpose.io](mailto:hello@transpose.io).
