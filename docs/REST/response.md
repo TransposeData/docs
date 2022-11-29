@@ -15,8 +15,7 @@ The success response will always obey the following top-level JSON structure:
 
 
 Here is an example of an actual success response following this structure:
-```
-JSON
+```JSON
 {
   "status": "success",
   "count": 1,
