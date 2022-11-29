@@ -1,0 +1,13 @@
+# Get Blocks by Date
+
+This endpoint returns all [Blocks](../models/Block Model.md) that were mined within a given date range (supports pagination).
+
+## Parameters
+| Parameter | Description | Type |
+| :-------- | :---------- | :--- |
+| chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
+| added_after | The earlier block number, inclusive. | `date-time` |
+| added_before | The later block number, inclusive. | `date-time` |
+| order | The order in which to retrieve the results (either `asc` or `desc`). | `string` |
+| limit | The maximum number of results to retrieve | `string` |
+
