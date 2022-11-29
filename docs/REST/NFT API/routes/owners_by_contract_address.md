@@ -8,4 +8,4 @@ This endpoint returns all [accounts](../models/nft_owner_model.md) that own a gi
 | chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
 | contract_address | **required** The contract address of the collection to retrieve owners for (supports ENS names).    | `string` | 
 
-{{ transpose_fenced_rest('https://api.transpose.io/nft/owners-by-contract-address', {'chain_id': 'ethereum'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/nft/owners-by-contract-address', {'chain_id': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'}) }}

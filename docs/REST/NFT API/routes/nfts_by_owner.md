@@ -9,4 +9,4 @@ This endpoint returns all [NFTs](../models/nft_model.md) that are owned by a giv
 | owner_address | **required** The address of the owner to retrieve NFTs for (supports ENS names).    | `string` | 
 | contract_address | The contract address of the collection to filter results by (supports ENS names).    | `string` | 
 
-{{ transpose_fenced_rest('https://api.transpose.io/nft/nfts-by-owner', {'chain_id': 'ethereum'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/nft/nfts-by-owner', {'chain_id': 'ethereum', 'owner_address': '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d'}) }}

@@ -13,4 +13,4 @@ This endpoint returns all [NFT transfers](../models/nft_transfer_model.md) that 
 | transfer_category | The transfer category to filter results by (one of `mint`, `send`, `burn`, or `all``).    | `string` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
-{{ transpose_fenced_rest('https://api.transpose.io/nft/transfers-by-account', {'chain_id': 'ethereum'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/nft/transfers-by-account', {'chain_id': 'ethereum', 'account_address': 'tmux.eth'}) }}

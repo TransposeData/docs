@@ -12,4 +12,4 @@ This endpoint returns all [NFT sales](../models/nft_sale_model.md) for an NFT co
 | role | The role of the account in the sale (one of `buyer`, `seller`, or `all`).    | `string` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
-{{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-account', {'chain_id': 'ethereum'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-account', {'chain_id': 'ethereum', 'account_address': 'tmux.eth'}) }}
