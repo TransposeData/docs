@@ -1,5 +1,5 @@
 # Get Transactions by Hash
-This endpoint returns all Ethereum transactions for a given list of transaction hashes.
+This endpoint returns all [Transactions](..models/Transaction Model.md) for a given list of transaction hashes.
 
 ## Parameters
 | Parameter | Description | Type |
