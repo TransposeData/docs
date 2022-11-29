@@ -9,4 +9,4 @@ This endpoint returns all [tokens](../models/token_model.md) that match a given 
 | substring | **required** The substring to use in the token name search (case-insensitive, max length 100 characters).    | `string` | 
 | fuzzy | Whether to match text exactly or use fuzzy text matching.    | `boolean` | 
 
-{{ transpose_fenced_rest('https://api.transpose.io/token/tokens-by-name', {'chain_id': 'ethereum', 'substring': 'punks'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/token/tokens-by-name', {'chain_id': 'ethereum', 'substring': 'weth'}) }}

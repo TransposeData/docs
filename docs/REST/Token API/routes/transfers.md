@@ -1,6 +1,6 @@
 # Get Transfers
 
-This endpoint returns all [token](../models/token_transfer_model.md) transfers that occurred within the given date range (supports pagination).
+This endpoint returns all [token transfers](../models/token_transfer_model.md) that occurred within the given date range (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
