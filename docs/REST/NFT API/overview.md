@@ -1,21 +1,16 @@
-# Collection Model
-The **Collection Model** represents a single NFT collection. The **Collection Model** follows the following structure:
+## Welcome to the NFT API
 
-| Name              | Description                                                                                             | Type        |
-| ----------------- | ------------------------------------------------------------------------------------------------------- | ----------- |
-| contract_address  | Contract address of the collection.                                                                     | `string`    |
-| name              | The collection's name.                                                                                  | `string`    |
-| symbol            | The collection's symbol                                                                                 | `string`    |
-| description       | The collection's description                                                                            | `string`    |
-| created_timestamp | The collection's timestamp of creation (in ISO-8601 format).                                            | `date-time` |
-| standard          | The collection's NFT standard (ERC-721 or ERC-1155)                                                     | `string`    |
-| count             | The number of NFTs in the collection (NFTs minted minus NFTs burned).                                   | `integer`   |
-| external_url      | The collection's website URL.                                                                           | `string`    |
-| image_url         | The collection's icon image URL.                                                                        | `string`    |
-| twitter_username  | The collection's Twitter username.                                                                      | `string`    |
-| telegram_url      | The collection's Telegram URL.                                                                          | `string`    |
-| discord_url       | The collection's Discord URL.                                                                           | `string`    |
-| is_nsfw           | The collection's NSFW status.                                                                           | `boolean`   |
-| opensea_slug      | The collection's OpenSea slug.                                                                          | `string`    |
-| opensea_url       | The collection's OpenSea URL.                                                                           | `string`    |
-| last_refreshed    | The timestamp at which the collection was last refreshed by the Transpose backend (in ISO-8601 format). | `date-time` |
+The NFT API provides endpoints for retrieving any collection and NFT in existence, as well as transfers, owners, sales, and much more (fully supports both ERC-721 and ERC-1155 NFTs).
+
+## Endpoints
+The **NFT API** supports the following groups of endpoints:
+
+1. Collection Endpoints: Retrieve any NFT collection using flexible queries, along with collection metadata and images.
+
+2. NFT Endpoints: Retrieve any NFT in existence and rich NFT metadata and media, by date minted, collection, owner, and more.
+
+3. Owner Endpoints: Retrieve all owners for a particular collection or NFT (supports fungible balances for ERC-1155s)
+
+4. Sale Endpoints: Retrieve any NFT sale given an account, collection, or date range across many decentralized exchanges.
+
+5. Transfer Endpoints: Retrieve all transfers, including mints, sends, and burns, for any collection, NFT, or individual account.
