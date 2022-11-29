@@ -1,6 +1,6 @@
 # Get Accounts by Creator
 
-This endpoint returns all [Contract Accounts](../models/Account Model.md) that were created within a given date range by a given account (supports pagination).
+This endpoint returns all [Contract Accounts](../models/account_model.md) that were created within a given date range by a given account (supports pagination).
 
 ## Parameters
 | Parameter | Description | Type |

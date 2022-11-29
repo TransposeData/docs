@@ -1,6 +1,6 @@
 # Get Blocks by Number
 
-This endpoint returns all [Blocks](../models/Block Model.md) that were mined within a given block number range (supports pagination).
+This endpoint returns all [Blocks](../models/block_model.md) that were mined within a given block number range (supports pagination).
 
 ## Parameters
 | Parameter | Description | Type |

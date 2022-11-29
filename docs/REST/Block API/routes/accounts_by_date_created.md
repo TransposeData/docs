@@ -1,6 +1,6 @@
 # Get Accounts by Date Created
 
-This endpoint returns [Account Models](../models/Account Model.md) for a given date range.
+This endpoint returns [Account Models](../models/account_model.md) for a given date range.
 
 ## Parameters
 | Parameter | Description | Type |

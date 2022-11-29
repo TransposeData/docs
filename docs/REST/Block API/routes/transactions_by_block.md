@@ -1,6 +1,6 @@
 # Get Transactions by Block
 
-This endpoint returns all [Transactions](../models/Transaction Model.md) that occurred within a given block number range (supports pagination).
+This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given block number range (supports pagination).
 
 ## Parameters
 | Parameter | Description | Type |
