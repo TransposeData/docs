@@ -3,7 +3,7 @@
 The **Transaction Model** represents a single transaction. The **Transaction Model** follows the following structure:
 
 | Name                       | Description                                                                       | Type      |
-| :------------------------- | :-------------------------------------------------------------------------------- | :-------- |
+| -------------------------- | --------------------------------------------------------------------------------- | --------- |
 | transaction_hash           | The transaction's hash.                                                           | `string`  |
 | timestamp                  | The transaction's timestamp (in ISO-8601 format).                                 | `string`  |
 | block_number               | The block number the transaction was included in.                                 | `integer` |

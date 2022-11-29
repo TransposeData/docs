@@ -4,7 +4,7 @@ This endpoint returns all [Transactions](../models/transaction_model.md) that oc
 
 ## Parameters
 | Parameter | Description | Type |
-| :-------- | :---------- | :--- |
+| --------- | ----------- | ---- |
 | chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
 | block_number_above | The earlier block number, inclusive. | `integer` |
 | block_number_below | The later block number, inclusive. | `integer` |

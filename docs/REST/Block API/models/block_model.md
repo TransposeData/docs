@@ -3,7 +3,7 @@ The **Block Model** represents a single block. The **Block Model** follows the f
 
 
 | Name                | Description                                                                 | Type        |
-| :------------------ | :-------------------------------------------------------------------------- | :---------- |
+| ------------------- | --------------------------------------------------------------------------- | ----------- |
 | block_number        | The block's number.                                                         | `integer`   |
 | block_hash          | The hash of all the block's contents.                                       | `string`    |
 | timestamp           | The block's timestamp (in ISO-8601 format).                                 | `date-time` |

@@ -3,7 +3,7 @@
 The **Log Model** represents a single transaction log. The **Log Model** follows the following structure:
 
 | Name                 | Description                                              | Type      |
-| :------------------- | :------------------------------------------------------- | :-------- |
+| -------------------- | -------------------------------------------------------- | --------- |
 | block_number         | The block number the parent transaction was included in. | `integer` |
 | log_index            | The index of the log in the block.                       | `integer` |
 | transaction_position | The position of the parent transaction in the block.     | `integer` |

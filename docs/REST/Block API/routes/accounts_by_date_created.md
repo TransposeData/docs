@@ -4,7 +4,7 @@ This endpoint returns [Account Models](../models/account_model.md) for a given d
 
 ## Parameters
 | Parameter | Description | Type |
-| :-------- | :---------- | :--- |
+| --------- | ----------- | ---- |
 | chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
 | created_after | The earlier account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
 | created_before | The later account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |

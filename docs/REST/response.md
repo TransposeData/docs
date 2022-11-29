@@ -7,7 +7,7 @@ The Transpose API has two types of response types: one for successes and one for
 The success response will always obey the following top-level JSON structure:
 
 | Name      | Type      | Description                                                                 |
-| :-------- | :-------- | :-------------------------------------------------------------------------- |
+| --------- | --------- | --------------------------------------------------------------------------- |
 | `status`  | `string`  | The status of the response. Will be `success` for a success response.       |
 | `count`   | `integer` | The number of results returned (matches the length of the `results` field). |
 | `next`    | `string`  | A valid URL with a cursor key pointing to the next page of results.         |
@@ -35,7 +35,7 @@ The error response will always obey the following top-level JSON structure:
 
 
 | Name |	Type |	Description | 
-|:--- | :------ | :------------------------- | 
+|---- | ------- | -------------------------- | 
 | status	| string	| The status of the response. Will be error for an error response. | 
 | message	| string	| A more descriptive error message explaining where the request failed. |
 
