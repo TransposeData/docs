@@ -1,5 +1,4 @@
-## ENS Record Model
-
+# ENS Record Model
 The **ENS Record Model** contains the full set of information for a single ENS name, including its owner, resolved address, resolver, node, and much more. The **ENS Record Model** follows the following structure:
 
 | Name                    | Description                                                                                               | Type           |

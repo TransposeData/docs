@@ -1,0 +1,11 @@
+# Get ENS Records by ENS Token ID
+
+This endpoint returns [ENS records](../models/ens_record_model.md) for a given list of ENS token IDs.
+
+## Parameters
+| Parameter     | Description                                                                          | Type     | 
+|---------------|--------------------------------------------------------------------------------------|----------|
+| chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
+| token_ids | **required** The list of ENS token IDs to query ENS records for.   | `array of integers` | 
+
+{{ transpose_fenced_rest('https://api.transpose.io/ens/ens-records-by-token-id', {'chain_id': 'ethereum'}) }}
