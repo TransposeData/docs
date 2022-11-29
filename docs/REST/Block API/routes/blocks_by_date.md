@@ -4,7 +4,7 @@ This endpoint returns all [Blocks](../models/Block Model.md) that were mined wit
 
 ## Parameters
 | Parameter | Description | Type |
-| :-------- | :---------- | :--- |
+| -------- | ---------- | --- |
 | chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
 | added_after | The earlier block number, inclusive. | `date-time` |
 | added_before | The later block number, inclusive. | `date-time` |
