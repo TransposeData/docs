@@ -1,0 +1,11 @@
+# Get NFTs by Contract Address
+
+This endpoint returns all [NFTs](../models/nft_model.md) within a given collection, identified by a contract address (supports pagination).
+
+## Parameters
+| Parameter     | Description                                                                          | Type     | 
+|---------------|--------------------------------------------------------------------------------------|----------|
+| chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
+| contract_address | **required** The contract address of the collection to retrieve NFTs for (supports ENS names).    | `string` | 
+
+{{ transpose_fenced_rest('https://api.transpose.io/nft/nfts-by-contract-address', {'chain_id': 'ethereum'}) }}
