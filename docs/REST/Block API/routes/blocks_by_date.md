@@ -11,3 +11,5 @@ This endpoint returns all [Blocks](../models/Block Model.md) that were mined wit
 | order | The order in which to retrieve the results (either `asc` or `desc`). | `string` |
 | limit | The maximum number of results to retrieve | `string` |
 
+{{ transpose_fenced_rest('https://api.transpose.io/block/blocks-by-date', {'chain_id': 'ethereum', 'limit': 1}) }}
+
