@@ -1,6 +1,6 @@
 # Get NFT Sales
 
-This endpoint returns all [NFT sales](../models/nft_sale_model.md) that occurred within the given date range (supports pagination).
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that occurred within the given date range (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

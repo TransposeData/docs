@@ -1,6 +1,6 @@
 # Get NFT Sales by Account
 
-This endpoint returns all [NFT sales](../models/nft_sale_model.md) that involve a specific account (supports pagination).
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that involve a specific account (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

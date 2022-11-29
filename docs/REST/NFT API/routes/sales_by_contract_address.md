@@ -1,6 +1,6 @@
 # Get NFT Sales by Contract Address
 
-This endpoint returns all [NFT sales](../models/nft_sale_model.md) for an NFT collection, identified by a contract address (supports pagination).
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT collection, identified by a contract address (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

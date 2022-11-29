@@ -1,6 +1,6 @@
 # Get Owners by Contract Address
 
-This endpoint returns all [accounts](../models/nft_owner_model.md) that own a given collection, identified by contract address and ordered by descending balance (supports pagination).
+This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a given collection, identified by contract address and ordered by descending balance (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

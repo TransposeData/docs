@@ -1,6 +1,6 @@
 # Get ENS Transfers by ENS Name
 
-This endpoint returns [ENS transfers](../models/ens_transfer_model.md) for a given ENS name (supports pagination).
+This endpoint returns [ENS Transfers](../models/ens_transfer_model.md) for a given ENS name (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

@@ -1,6 +1,6 @@
 # Get Token Swaps
 
-This endpoint returns all [token swaps](../models/token_swap_model.md) that occurred within the given date range (supports pagination).
+This endpoint returns all [Token Swaps](../models/token_swap_model.md) that occurred within the given date range (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

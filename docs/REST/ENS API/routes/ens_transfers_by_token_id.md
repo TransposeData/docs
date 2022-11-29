@@ -1,6 +1,6 @@
 # Get ENS Transfers by ENS Token ID
 
-This endpoint returns [ENS transfers](../models/ens_transfer_model.md) for a given ENS token ID (supports pagination).
+This endpoint returns [ENS Transfers](../models/ens_transfer_model.md) for a given ENS token ID (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

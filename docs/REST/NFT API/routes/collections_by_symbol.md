@@ -1,6 +1,6 @@
 # Get Collections by Symbol
 
-This endpoint returns all [NFT collections](../models/collection_model.md) that match a given symbol substring (supports pagination up to 1000 results).
+This endpoint returns all [NFT Collections](../models/collection_model.md) that match a given symbol substring (supports pagination up to 1000 results).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

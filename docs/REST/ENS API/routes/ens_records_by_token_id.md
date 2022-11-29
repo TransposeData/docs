@@ -1,6 +1,6 @@
 # Get ENS Records by ENS Token ID
 
-This endpoint returns [ENS records](../models/ens_record_model.md) for a given list of ENS token IDs.
+This endpoint returns [ENS Records](../models/ens_record_model.md) for a given list of ENS token IDs.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

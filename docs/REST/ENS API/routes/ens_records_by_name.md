@@ -1,6 +1,6 @@
 # Get ENS Records by ENS Name
 
-This endpoint returns [ENS records](../models/ens_record_model.md) that correspond to a given list of ENS names.
+This endpoint returns [ENS Records](../models/ens_record_model.md) that correspond to a given list of ENS names.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

@@ -1,6 +1,6 @@
 # Get Collections by Contract Address
 
-This endpoint returns all [NFT collections](../models/collection_model.md) for a given list of contract addresses.
+This endpoint returns all [NFT Collections](../models/collection_model.md) for a given list of contract addresses.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

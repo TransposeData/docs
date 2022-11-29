@@ -1,6 +1,6 @@
 # Get ENS Records by Owner
 
-This endpoint returns [ENS records](../models/ens_record_model.md) for names that are owned by a given account (supports pagination).
+This endpoint returns [ENS Records](../models/ens_record_model.md) for names that are owned by a given account (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

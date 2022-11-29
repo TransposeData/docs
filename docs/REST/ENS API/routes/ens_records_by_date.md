@@ -1,6 +1,6 @@
 # Get ENS Records by Date
 
-This endpoint returns [ENS records](../models/ens_record_model.md) with an expiration or registration timestamp within a given date range (supports pagination).
+This endpoint returns [ENS Records](../models/ens_record_model.md) with an expiration or registration timestamp within a given date range (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
