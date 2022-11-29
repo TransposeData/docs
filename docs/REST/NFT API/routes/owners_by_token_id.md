@@ -1,0 +1,12 @@
+# Get Owners by Token ID
+
+This endpoint returns all [accounts](../models/nft_owner_model.md) that own a given NFT, identified by a collection contract address and token ID pair (supports pagination).
+
+## Parameters
+| Parameter     | Description                                                                          | Type     | 
+|---------------|--------------------------------------------------------------------------------------|----------|
+| chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
+| contract_address | **required** The contract address of the collection to retrieve owners for (supports ENS names).    | `string` | 
+| token_id | **required** The token ID of the NFT to retrieve owners for.    | `integer` | 
+
+{{ transpose_fenced_rest('https://api.transpose.io/nft/owners-by-token-id', {'chain_id': 'ethereum'}) }}

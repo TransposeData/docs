@@ -1,0 +1,11 @@
+# Get Owners by Contract Address
+
+This endpoint returns all [accounts](../models/nft_owner_model.md) that own a given collection, identified by contract address and ordered by descending balance (supports pagination).
+
+## Parameters
+| Parameter     | Description                                                                          | Type     | 
+|---------------|--------------------------------------------------------------------------------------|----------|
+| chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
+| contract_address | **required** The contract address of the collection to retrieve owners for (supports ENS names).    | `string` | 
+
+{{ transpose_fenced_rest('https://api.transpose.io/nft/owners-by-contract-address', {'chain_id': 'ethereum'}) }}
