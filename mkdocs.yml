@@ -5,6 +5,98 @@ theme:
     primary: deep orange
   logo: ./assets/logo-white.png
 
+nav:
+  - Introduction: 'introduction.md'
+  - 'Quick Start': 'quickstart.md'
+  - 'REST API':
+    - Authentication: 'REST/authentication.md'
+    - Pagination: 'REST/pagination.md'
+    - Response: 'REST/response.md'
+    - 'Block API':
+      - Overview: 'REST/Block API/overview.md'
+      - 'Models':
+        - Account: 'REST/Block API/models/account_model.md'
+        - Block: 'REST/Block API/models/block_model.md'
+        - Log: 'REST/Block API/models/log_model.md'
+        - Transaction: 'REST/Block API/models/transaction_model.md' 
+      - 'Routes':
+        - 'REST/Block API/routes/accounts_by_address.md'
+        - 'REST/Block API/routes/accounts_by_creator.md'
+        - 'REST/Block API/routes/accounts_by_date_created.md'
+        - 'REST/Block API/routes/blocks_by_date.md'
+        - 'REST/Block API/routes/blocks_by_number.md'
+        - 'REST/Block API/routes/transactions_by_account.md'
+        - 'REST/Block API/routes/transactions_by_block.md'
+        - 'REST/Block API/routes/transactions_by_date.md'
+        - 'REST/Block API/routes/transactions_by_hash.md'
+    - 'Token API':
+      - Overview: 'REST/Token API/overview.md'
+      - 'Models':
+        - 'REST/Token API/models/native_token_balance_model.md'
+        - 'REST/Token API/models/native_token_transfer_model.md'
+        - 'REST/Token API/models/token_model.md'
+        - 'REST/Token API/models/token_owner_model.md'
+        - 'REST/Token API/models/token_swap_model.md'
+        - 'REST/Token API/models/token_transfer_model.md'
+        - 'REST/Token API/models/token_with_owner_model.md'
+      - 'Routes':
+        - 'REST/Token API/routes/native_token_balances_by_accound.md'
+        - 'REST/Token API/routes/native_token_transfers_by_contract_address.md'
+        - 'REST/Token API/routes/native_token_transfers.md'
+        - 'REST/Token API/routes/tokens_by_contract_address.md'
+        - 'REST/Token API/routes/tokens_by_date_created.md'
+        - 'REST/Token API/routes/tokens_by_name.md'
+        - 'REST/Token API/routes/tokens_by_owner.md'
+        - 'REST/Token API/routes/tokens_by_symbol.md'
+        - 'REST/Token API/routes/owners_by_contract_address.md'
+        - 'REST/Token API/routes/transfers.md'
+        - 'REST/Token API/routes/transfers_by_contract_address.md'
+        - 'REST/Token API/routes/transfers_by_account.md'
+    - 'NFT API':
+      - Overview: 'REST/NFT API/overview.md'
+      - Models:
+        - 'REST/NFT API/models/collection_model.md'
+        - 'REST/NFT API/models/nft_model.md'
+        - 'REST/NFT API/models/nft_owner_model.md'
+        - 'REST/NFT API/models/nft_with_owner_model.md'
+        - 'REST/NFT API/models/nft_transfer_model.md'
+        - 'REST/NFT API/models/nft_sale_model.md'
+      - Routes:
+        - 'REST/NFT API/routes/collections_by_contract_address.md'
+        - 'REST/NFT API/routes/collections_by_date_created.md'
+        - 'REST/NFT API/routes/collections_by_name.md'
+        - 'REST/NFT API/routes/collections_by_symbol.md'
+        - 'REST/NFT API/routes/nfts_by_contract_address.md'
+        - 'REST/NFT API/routes/nfts_by_token_id.md'
+        - 'REST/NFT API/routes/nfts_by_date_minted.md'
+        - 'REST/NFT API/routes/nfts_by_name.md'
+        - 'REST/NFT API/routes/nfts_by_owner.md'
+        - 'REST/NFT API/routes/owners_by_contract_address.md'
+        - 'REST/NFT API/routes/owners_by_token_id.md'
+        - 'REST/NFT API/routes/transfers.md'
+        - 'REST/NFT API/routes/transfers_by_contract_address.md'
+        - 'REST/NFT API/routes/transfers_by_token_id.md'
+        - 'REST/NFT API/routes/transfers_by_account.md'
+        - 'REST/NFT API/routes/sales.md'
+        - 'REST/NFT API/routes/sales_by_contract_address.md'
+        - 'REST/NFT API/routes/sales_by_token_id.md'
+        - 'REST/NFT API/routes/sales_by_account.md'
+    - 'ENS API':
+      - Overview: 'REST/ENS API/overview.md'
+      - Models:
+        - 'REST/ENS API/models/ens_record_model.md'
+        - 'REST/ENS API/models/ens_transfer_model.md'
+      - Routes:
+        - 'REST/ENS API/routes/ens_records_by_account.md'
+        - 'REST/ENS API/routes/ens_records_by_date.md'
+        - 'REST/ENS API/routes/ens_records_by_name.md'
+        - 'REST/ENS API/routes/ens_records_by_owner.md'
+        - 'REST/ENS API/routes/ens_records_by_token_id.md'
+        - 'REST/ENS API/routes/ens_transfers_by_name.md'
+        - 'REST/ENS API/routes/ens_transfers_by_token_id.md'
+
+
+
 extra_javascript:
   - js/codefence/codefence.js
   - js/update_key.js
