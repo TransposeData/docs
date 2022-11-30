@@ -6,7 +6,7 @@ theme:
   logo: ./assets/logo-white.png
 
 nav:
-  - Introduction: 'introduction.md'
+  - Introduction: 'index.md'
   - 'Quick Start': 'quickstart.md'
   - 'REST API':
     - Authentication: 'REST/authentication.md'
@@ -95,6 +95,7 @@ nav:
         - 'REST/ENS API/routes/ens_transfers_by_name.md'
         - 'REST/ENS API/routes/ens_transfers_by_token_id.md'
   - SQL API:
+    - 'SQL/playground.md'
     - 'SQL/authentication.md'
     - 'SQL/multichain.md'
     - 'SQL/timeout.md'
