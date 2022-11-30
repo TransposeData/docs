@@ -95,8 +95,8 @@ nav:
         - 'REST/ENS API/routes/ens_transfers_by_name.md'
         - 'REST/ENS API/routes/ens_transfers_by_token_id.md'
   - SQL API:
-    - 'SQL/playground.md'
     - 'SQL/authentication.md'
+    - 'SQL/playground.md'
     - 'SQL/multichain.md'
     - 'SQL/timeout.md'
     - Models:
