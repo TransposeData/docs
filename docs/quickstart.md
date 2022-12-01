@@ -10,7 +10,7 @@ Before we get started, it’s important to note that NFT pricing data is only on
 
 {{ get_transpose_api_key() }}
 
-## 1) Get all CryptoPunks NFT sales
+## 1. Get all CryptoPunks NFT sales
 
 Given that our final goal is to understand daily floor prices (the lowest price that a CryptoPunk was sold for on a given day), to get started it makes sense to pull the complete set of sales data from CryptoPunks throughout their entire history.
 
@@ -21,7 +21,7 @@ This is a very standard use-case, and we can leverage Transpose’s REST API to 
 
 Voila!  How easy was that?
 
-## 2) Group CryptoPunks sales by date
+## 2. Group CryptoPunks sales by date
 
 So, we’ve got every CryptoPunk sales event in all of history.  Now, the next step is to group this data by the date that it occurred on.  
 
@@ -31,7 +31,7 @@ The following SQL query selects all NFT sales, filters them to only include Cryp
 
 {{ transpose_fenced_sql("SELECT\n/* extract date */\ntimestamp::date AS date\nFROM ethereum.nft_sales AS sales \n/* specify CryptoPunks contract address */\nWHERE sales.contract_address = '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D'\n/* group sales by date */\nGROUP BY date\n/* skip days with no sales */\nHAVING COUNT(*) > 0; ") }}
 
-## 3) Add logic to get the daily floor price
+## 3. Add logic to get the daily floor price
 
 Now that we have a working query that can group CryptoPunks sales by the date on which they occurred, we can take all of the sales that occurred each day, and calculate the floor price.
 
