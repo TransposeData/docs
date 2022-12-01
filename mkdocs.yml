@@ -95,26 +95,38 @@ nav:
         - 'REST/ENS API/routes/ens_transfers_by_name.md'
         - 'REST/ENS API/routes/ens_transfers_by_token_id.md'
   - SQL API:
-    - 'SQL/playground.md'
     - 'SQL/authentication.md'
+    - 'SQL/playground.md'
     - 'SQL/multichain.md'
     - 'SQL/timeout.md'
-    - Models:
+    - Tables:
       - Settlement:
-        - 'SQL/models/settlement/account.md'
-        - 'SQL/models/settlement/blocks.md'
-        - 'SQL/models/settlement/logs.md'
-        - 'SQL/models/settlement/transactions.md'
+        - 'SQL/tables/Settlement Layer/accounts.md'
+        - 'SQL/tables/Settlement Layer/blocks.md'
+        - 'SQL/tables/Settlement Layer/transactions.md'
+        - 'SQL/tables/Settlement Layer/logs.md'
+        - 'SQL/tables/Settlement Layer/contract_labels.md'
       - Asset:
-        - 'SQL/models/asset/collections.md'
-        - 'SQL/models/asset/nfts.md'
-        - 'SQL/models/asset/nft_owners.md'
-        - 'SQL/models/asset/nft_transfers.md'
-        - 'SQL/models/asset/tokens.md'
-        - 'SQL/models/asset/token_owners.md'
-        - 'SQL/models/asset/token_transfers.md'
-        - 'SQL/models/asset/native_token_owners.md'
-        - 'SQL/models/asset/native_token_transfers.md'
+        - 'SQL/tables/Asset Layer/Collections/collections.md'
+        - 'SQL/tables/Asset Layer/NFTs/nfts.md'
+        - 'SQL/tables/Asset Layer/NFT Owners/nft_owners.md'
+        - 'SQL/tables/Asset Layer/NFT Transfers/nft_transfers.md'
+        - 'SQL/tables/Asset Layer/Tokens/tokens.md'
+        - 'SQL/tables/Asset Layer/Token Owners/token_owners.md'
+        - 'SQL/tables/Asset Layer/Token Transfers/token_transfers.md'
+        - 'SQL/tables/Asset Layer/Native Token Owners/native_token_owners.md'
+        - 'SQL/tables/Asset Layer/Native Token Transfers/native_token_transfers.md'
+      - Protocol:
+        - 'SQL/tables/Protocol Layer/Aggregate NFT Sales/nft_sales.md'
+        - 'SQL/tables/Protocol Layer/Aggregate DEX Swaps/dex_swaps.md'
+        - 'SQL/tables/Protocol Layer/Aggregate DEX Pools/dex_pools.md'
+        - 'SQL/tables/Protocol Layer/Aggregate DEX Liquidity/dex_liquidity.md'
+        - 'SQL/tables/Protocol Layer/ENS Names/ens_names.md'
+        - 'SQL/tables/Protocol Layer/ENS Registries/ens_registries.md'
+        - 'SQL/tables/Protocol Layer/Tornado Cash Pools/tornado_cash_pools.md'
+        - 'SQL/tables/Protocol Layer/Tornado Cash Withdrawals/tornado_cash_withdrawals.md'
+        - 'SQL/tables/Protocol Layer/Tornado Cash Deposits/tornado_cash_deposits.md'
+        - 'SQL/tables/Protocol Layer/token_prices.md'
 
 
 extra_javascript:
