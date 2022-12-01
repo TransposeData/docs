@@ -20,5 +20,3 @@ The `Analyze` button returns the results of the query planner for the query in y
 ## Downloading data in the browser
 You can download the results of a query directly from the playground using the download button.
 
-
-
