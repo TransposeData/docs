@@ -2,8 +2,8 @@ site_name: Transpose Documentation
 theme:
   name: material
   palette:
-    primary: deep orange
-  logo: ./assets/logo-white.png
+    primary: white
+  logo: ./assets/logo-black.png
 
 nav:
   - Introduction: 'index.md'
