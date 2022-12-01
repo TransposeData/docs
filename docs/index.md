@@ -3,10 +3,12 @@
 ## Welcome to Transpose
 Transpose is the world’s most complete, powerful, and performant Web3 data suite. Our cutting edge indexing engine processes and enriches raw blockchain data in realtime.  This data is served to you through a set of intuitive APIs optimized for a wide array of production-ready use cases. Transpose data is decoded from the blockchain using artificial intelligence, and structured by our team of protocol experts in a way that makes it effortless to build on top of.
 
-## Our products
+## Our Products
 
 ### REST API
 If you are looking for hyper-optimized, parameterized access to key blockchain primitives (such as NFT sales, token balances, wallet histories etc.) in bulk, our [ REST API ] is built with you in mind.
+
+{{ transpose_colored_link("/quickstart", '#ffffff', 'Visit our REST Documentation', 'Explore highly optimized queries for key blockchain primitives') }}
 
 [ Explore our REST API ]
 ### SQL API

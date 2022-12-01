@@ -1,4 +1,4 @@
-site_name: Docs 
+site_name: Transpose Documentation
 theme:
   name: material
   palette:
@@ -124,6 +124,7 @@ extra_javascript:
 extra_css:
   - stylesheets/buttons.css
   - stylesheets/codefence.css
+  - stylesheets/core-changes.css
 
 markdown_extensions:
   - admonition
@@ -132,6 +133,10 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.extra
 
 plugins:
   - macros

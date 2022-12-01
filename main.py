@@ -76,11 +76,9 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         """
         Preprocesses the SQL query to make it more readable in the docs.
         """
-        print('sql', sql)
         sql = sql.strip()
         sql = re.sub(r" *\/[*].*[*]\/ *\n", "", sql)
         sql = re.sub(r"\*", "\*", sql)
-        print('sql', sql)
         return sql
 
     def _get_sql_entry(self):
@@ -159,22 +157,51 @@ class TransposeDocsRest(TransposeDocsInteractive):
     def __call__(self):
         return self._admonish("\n".join([self._get_api_multilang()]))
 
+class TransposeDocsColoredLink:
+    def __init__(self, url, color, text, description):
+        self.url = url
+        self.color = color
+        self.text = text
+        self.description = description
+
+    def __call__(self):
+        return """
+<a markdown="1" class="colored-link" href="https://www.google.com">
+<div markdown="1" class="colored-square">
+<div markdown="1">
+
+:material-fast-forward:
+
+</div>
+</div>
+
+
+<div class="text-container">
+<p class="text">{}</p>
+<p class="description">{}</p>
+</div>
+</a>
+""".format(self.text, self.description)
+
 
 def define_env(env):
     @env.macro
     def get_transpose_api_key():
         output = APIKeyManager()()
-        print(output)
         return output
 
     @env.macro
     def transpose_fenced_sql(default_sql: str) -> str:
         output = TransposeDocsSQL(default_sql)()
-        print(output)
         return output
 
     @env.macro
     def transpose_fenced_rest(endpoint: str, params: dict) -> str:
         output = TransposeDocsRest(endpoint, params)()
+        return output
+
+    @env.macro
+    def transpose_colored_link(url: str, color: str, text: str, description: str) -> str:
+        output = TransposeDocsColoredLink(url, color, text, description)()
         print(output)
         return output
