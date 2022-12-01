@@ -158,11 +158,12 @@ class TransposeDocsRest(TransposeDocsInteractive):
         return self._admonish("\n".join([self._get_api_multilang()]))
 
 class TransposeDocsColoredLink:
-    def __init__(self, url, color, text, description):
+    def __init__(self, url, color, icon, text, description):
         self.url = url
         self.color = color
         self.text = text
         self.description = description
+        self.icon = icon
 
     def get_color_gradient(self) -> str:
         color_map = {
@@ -177,11 +178,11 @@ class TransposeDocsColoredLink:
 
     def __call__(self):
         return """
-<a markdown="1" class="colored-link" href="https://www.google.com">
+<a markdown="1" class="colored-link" href="{}">
 <div markdown="1" class="colored-square" style="background-image: {};">
 <div markdown="1">
 
-:material-fast-forward:
+:{}:
 
 </div>
 </div>
@@ -192,7 +193,7 @@ class TransposeDocsColoredLink:
 <p class="description">{}</p>
 </div>
 </a>
-""".format(self.get_color_gradient(), self.text, self.description)
+""".format(self.url, self.get_color_gradient(), self.icon, self.text, self.description)
 
 
 def define_env(env):
@@ -212,7 +213,7 @@ def define_env(env):
         return output
 
     @env.macro
-    def transpose_colored_link(url: str, color: str, text: str, description: str) -> str:
-        output = TransposeDocsColoredLink(url, color, text, description)()
+    def transpose_colored_link(url: str, color: str, icon: str, text: str, description: str) -> str:
+        output = TransposeDocsColoredLink(url, color, icon, text, description)()
         print(output)
         return output
