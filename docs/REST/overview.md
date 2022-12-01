@@ -3,7 +3,7 @@
 ## Welcome to the Transpose REST API Suite
 Our REST API suite grants you the industry’s most comprehensive view of key cross-chain blockchain data primitives: complete account, block, transaction, token, NFT, and ENS data. Retrieve billions of rows of data at low cost using over 50 different endpoints and over 100 flexible query parameters.
 
-{{ transpose_colored_link(url=block-api/overview.md, color='red', icon='material-square-outline', text='Block API', description='Retrieve accounts, blocks, transactions, and logs in bulk') }}
+{{ transpose_colored_link(url='block-api/overview.md', color='red', icon='material-square-outline', text='Block API', description='Retrieve accounts, blocks, transactions, and logs in bulk') }}
 
 {{ transpose_colored_link(url='https://discord.gg/transpose', color='red', icon='material-star-outline', text='NFT API', description='Query any collection, NFT, owner, mint, transfer, burn, and sale') }}
 

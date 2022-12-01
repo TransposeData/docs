@@ -173,6 +173,10 @@ class TransposeDocsColoredLink:
             'rest': '/rest/overview',
             'sql': '/sql/overview',
             'quickstart': '/quickstart',
+            'block': '/rest/block-api/overview',
+            'nft': '/rest/nft-api/overview',
+            'token': '/rest/token-api/overview',
+            'ens': '/rest/ens-api/overview',
         }
 
     def get_description_from_link_type(self):
@@ -181,6 +185,10 @@ class TransposeDocsColoredLink:
             'rest': 'Explore highly optimized queries for key blockchain primitives.',
             'sql': 'Start writing instantaneous, powerful and hyper-flexible queries against arbitrary real-time blockchain data.',
             'quickstart': 'Get started with both our REST and SQL APIs in less than 5 minutes.',
+            'block': 'Retrieve accounts, blocks, transactions, and logs in bulk.',
+            'nft': 'Query any collection, NFT, owner, mint, transfer, burn, or sale.',
+            'token': 'Lookup any token, transfer, balance, DEX swap, liquidity event, and more.',
+            'ens': 'Search for and resolve any ENS record using name, account, expiration, and more',
         }
         return desc_map[self.link_type]
 
@@ -190,6 +198,10 @@ class TransposeDocsColoredLink:
             'rest': 'Explore our REST Documentation',
             'sql': 'Explore our SQL Documentation',
             'quickstart': 'Visit our Quickstart Guide',
+            'block': 'Block API',
+            'nft': 'NFT API',
+            'token': 'Token API',
+            'ens': 'ENS API',
         }
         return text_map[self.link_type]
 
