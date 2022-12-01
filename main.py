@@ -158,21 +158,73 @@ class TransposeDocsRest(TransposeDocsInteractive):
         return self._admonish("\n".join([self._get_api_multilang()]))
 
 class TransposeDocsColoredLink:
-    def __init__(self, url, color, icon, text, description):
-        self.url = url
-        self.color = color
-        self.text = text
-        self.description = description
-        self.icon = icon
+    def __init__(self, link_type, url, text, description, custom_color=None, custom_icon=None):
+        self.link_type = link_type
+        self.url = self.get_url_from_link_type() if url is None else url
+        self.text = self.get_text_from_link_type() if text is None else text
+        self.description = self.get_description_from_link_type() if description is None else description
+
+        self.icon = self.get_icon_from_link_type() if custom_icon is None else custom_icon
+        self.color = self.get_color_from_link_type() if custom_color is None else custom_color
+
+    def get_url_from_link_type(self):
+        url_map = {
+            'discord': 'https://discord.gg/transpose',
+            'rest': '/rest/overview',
+            'sql': '/sql/overview',
+            'quickstart': '/quickstart',
+        }
+
+    def get_description_from_link_type(self):
+        desc_map = {
+            'discord': 'Discord is the primary home of the Transpose developer community.  Join us to ask questions, share your work, and get help.',
+            'rest': 'Explore highly optimized queries for key blockchain primitives.',
+            'sql': 'Start writing instantaneous, powerful and hyper-flexible queries against arbitrary real-time blockchain data.',
+            'quickstart': 'Get started with both our REST and SQL APIs in less than 5 minutes.',
+        }
+        return desc_map[self.link_type]
+
+    def get_text_from_link_type(self):
+        text_map = {
+            'discord': 'Join our Discord',
+            'rest': 'Explore our REST Documentation',
+            'sql': 'Explore our SQL Documentation',
+            'quickstart': 'Visit our Quickstart Guide',
+        }
+        return text_map[self.link_type]
+
+    def get_color_from_link_type(self):
+        color_map = {
+            "discord": 'purple',
+        }
+        if self.link_type in color_map:
+            return color_map[self.link_type]
+        else:
+            return 'red'
 
     def get_color_gradient(self) -> str:
         color_map = {
-                "purple": "linear-gradient(to bottom right, blue, purple)",
-                "red": "linear-gradient(to bottom right, #FF4B2B, #FF416C)",
+            "purple": "linear-gradient(to bottom right, blue, purple)",
+            "red": "linear-gradient(to bottom right, #FF4B2B, #FF416C)",
         }
 
         return color_map[self.color]
 
+    def get_icon_from_link_type(self) -> str:
+        icon_map = {
+            "ens": 'material-triangle-outline',
+            "block": 'material-square-outline',
+            "token": 'material-hexagon-outline',
+            "nft": 'material-star-outline',
+            "discord": "simple-discord",
+            "quickstart": 'material-fast-forward', # rocket?
+            "sql": 'material-database',
+            "rest": 'material-cloud-braces',
+            "atlas": 'material-map-outline',
+            "playground": 'material-laptop',
+        }
+
+        return icon_map[self.link_type]
 
     def __call__(self):
         return """
@@ -211,7 +263,7 @@ def define_env(env):
         return output
 
     @env.macro
-    def transpose_colored_link(url: str, color: str, icon: str, text: str, description: str) -> str:
-        output = TransposeDocsColoredLink(url, color, icon, text, description)()
+    def transpose_colored_link(link_type, url=None, text=None, description=None, custom_color=None, custom_icon=None) -> str:
+        output = TransposeDocsColoredLink(link_type, url, text, description, custom_color, custom_icon)()
         print(output)
         return output
