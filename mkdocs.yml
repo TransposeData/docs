@@ -41,8 +41,8 @@ nav:
         - 'rest/token-api/models/token_transfer_model.md'
         - 'rest/token-api/models/token_with_owner_model.md'
       - 'Routes':
-        - 'rest/token-api/routes/native_token_balances_by_accound.md'
-        - 'rest/token-api/routes/native_token_transfers_by_contract_address.md'
+        - 'rest/token-api/routes/native_token_balances_by_account.md'
+        - 'rest/token-api/routes/native_token_transfers_by_account.md'
         - 'rest/token-api/routes/native_token_transfers.md'
         - 'rest/token-api/routes/tokens_by_contract_address.md'
         - 'rest/token-api/routes/tokens_by_date_created.md'
