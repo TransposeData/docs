@@ -3,7 +3,7 @@
 ## Welcome to the Transpose SQL API
 Transpose offers direct SQL access to our entire ecosystem of indexed blockchain data. Paired with our robust indexing pipeline, SQL access gives unlimited flexibility in how you mix, aggregate, and query activity across the blockchain. 
 
-Writing your own complex SQL queries with joins and subqueries can be tricky — that’s why we’re also releasing *The Transpose Atlas*, a way for you to share and explore SQL queries that optimally achieve your goals. Read on to see how direct access to Transpose SQL can redefine the way you search, build, and analyze in web3. 
+Writing your own complex SQL queries with joins and subqueries can be tricky — that’s why we’re also releasing *The Atlas*, a way for you to share and explore SQL queries that optimally achieve your goals. Read on to see how direct access to Transpose SQL can redefine the way you search, build, and analyze in web3. 
 
 ## The Playground
 Greater query flexibility often means more complexity for end-users, especially when SQL is in the mix. That’s why we’re creating a unified experience for writing, testing, sharing and exploring Transpose SQL queries. We’re calling this place *The Playground* — an environment built from the ground up to optimize the discovery of new views of blockchain data.
