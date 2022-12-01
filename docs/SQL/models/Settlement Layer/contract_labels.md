@@ -1,9 +1,0 @@
-# Contract Labels
-
-The `ethereum.contract_labels` table provides indexed views for ethereum contract labels and names as provided by Etherscan.
-
-| Name                | Description                                                                 | Type        |
-| --------- | --------- | --------------------------------------------------------------------------- |
-| contract_address | The address of the smart contract. | `text` |
-| name | The name of the smart contract, as provided by Etherscan. | `text` |
-| labels | The labels of the smart contract, as provided by Etherscan. | `text[]` |

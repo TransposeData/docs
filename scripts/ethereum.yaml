@@ -1,0 +1,3876 @@
+Settlement Layer:
+  - Accounts:
+      meta:
+        table: accounts
+        description: The `ethereum.accounts` table provides indexed views of all accounts created on Ethereum, including both externally-owned accounts (colloquially referred to as wallets) and contracts.
+      schema:
+        - column: address 
+          type: text
+          description: The address of the account.
+        - column: type
+          type: text
+          description: The type of the account (`wallet` or `contract`).
+        - column: last_active_timestamp
+          type: timestamp
+          description: The date at which the account was last active (in ISO-8601 format).
+        - column: created_timestamp
+          type: timestamp
+          description: The date at which the account was first created (in ISO-8601 format).
+        - column: creator_address
+          type: text
+          description: The account creator (`null` if the account is not a contract).
+        - column: address 
+          type: text
+          description: The address of the account.
+        - column: type
+          type: text
+          description: The type of the account (`wallet` or `contract`).
+        - column: last_active_timestamp
+          type: timestamp
+          description: The date at which the account was last active (in ISO-8601 format).
+        - column: created_timestamp
+          type: timestamp
+          description: The date at which the account was first created (in ISO-8601 format).
+        - column: creator_address
+          type: text
+          description: The account creator (`null` if the account is not a contract).
+
+  - Blocks: 
+      meta:
+        table: blocks
+        description: The `ethereum.blocks` table provides indexed views of all blocks mined and validated on Ethereum.
+      schema:
+        - column: block_number
+          type: integer
+          description: The block's number
+        - column: block_hash
+          type: text
+          description: The hash of all the block's contents.
+        - column: timestamp
+          type: timestamp
+          description: The block's timestamp (in ISO-8601 format).
+        - column: parent_hash
+          type: text
+          description: The hash of the block's parent block.
+        - column: mix_hash
+          type: text
+          description:  The block's mix hash, used in the proof-of-work algorithm.
+        - column: nonce
+          type: text
+          description: The block's nonce, used in the proof-of-work algorithm.
+        - column: sha3_uncles
+          type: text
+          description: The hash of the block's uncle blocks.
+        - column: difficulty
+          type: numeric
+          description: The block's mining difficulty.
+        - column: total_difficulty
+          type: numeric
+          description: Total difficulty of all blocks up until the block.
+        - column: size_bytes
+          type: numeric
+          description: The block's size (in bytes).
+        - column: base_fee_per_gas
+          type: numeric
+          description:  The base fee to include a transaction in the block (in Wei per gas unit).
+        - column: gas_limit
+          type: numeric
+          description: The maximum amount of gas that can be used in the block (in gas units).
+        - column: gas_used
+          type: numeric
+          description: The amount of gas used in the block (in gas units).
+        - column: total_fees_burned
+          type: numeric
+          description: The amount of transaction fees burned in the block (see EIP-1559) (in Wei).
+        - column: total_fees_rewarded
+          type: numeric
+          description: The amount of transaction fees rewarded to the miner of the block (in Wei).
+        - column: total_fees_saved
+          type: numeric
+          description: The amount of transaction fees saved by transactions in the block (in Wei).
+        - column: transactions_count
+          type: integer
+          description: The number of transactions in the block.
+        - column: miner_address
+          type: text
+          description: The address of the miner who mined the block.
+        - column: block_reward
+          type: numeric
+          description: The amount rewarded to the miner (or validator in PoS Ethereum) of the block (in Wei).
+        - column: uncle_count
+          type: integer
+          description: The number of uncle blocks included in the block.
+        - column: uncle_1_address
+          type: text
+          description: The address of the miner who mined the first uncle block.
+        - column: uncle_2_address
+          type: text
+          description: The address of the miner who mined the second uncle block.
+        - column: uncle_1_reward
+          type: numeric
+          description: The amount rewarded to the miner of the first uncle block (in Wei).
+        - column: uncle_2_reward
+          type: numeric
+          description: The amount rewarded to the miner of the second uncle block (in Wei).
+        - column: __confirmed
+          type: boolean
+          description: Flag indicating whether the block has been confirmed (2 Beacon Chain epochs have passed).
+
+  - Transactions:
+      meta:
+        table: transactions
+        description: The `ethereum.transactions` table provides indexed views of all transactions submitted on Ethereum.
+      schema:
+        - column: transaction_hash
+          type: text
+          description: The transaction's hash.
+        - column: timestamp
+          type: timestamp
+          description: The transaction's timestamp (in ISO-8601 format).
+        - column: block_number
+          type: integer
+          description: The block number the transaction was included in.
+        - column: base_fee_per_gas
+          type: numeric
+          description: The base fee to include a transaction in the block (in Wei per gas unit).
+        - column: max_priority_fee_per_gas
+          type: numeric
+          description: The maximum priority fee used by the transaction (in Wei per gas unit).
+        - column: max_fee_per_gas
+          type: numeric
+          description: The maximum fee used by the transaction (in Wei per gas unit).
+        - column: gas_limit
+          type: numeric
+          description: The maximum amount of gas that can be used in the transaction (in gas units).
+        - column: gas_used
+          type: numeric
+          description: The amount of gas used in the transaction (in gas units).
+        - column: gas_price
+          type: numeric
+          description: The actual price of gas used in the transaction (in Wei per gas unit).
+        - column: transaction_fee
+          type: numeric
+          description: The gas fee paid by the transaction (in Wei).
+        - column: fees_burned
+          type: numeric
+          description: The amount of transaction fees burned by the transaction (see EIP-1559) (in Wei).
+        - column: fees_rewarded
+          type: numeric
+          description: The amount of transaction fees rewarded to the miner of the transaction (in Wei).
+        - column: fees_saved
+          type: numeric
+          description: The amount of transaction fees saved by the transaction (in Wei).
+        - column: nonce
+          type: integer
+          description: The transaction sender's nonce.
+        - column: position
+          type: integer
+          description: The position of the transaction in the block.
+        - column: type
+          type: integer
+          description: The type of the transaction (see EIP-1559, EIP-2718).
+        - column: from_address
+          type: text
+          description: The address of the transaction's sender.
+        - column: to_address
+          type: text
+          description: The address of the transaction's recipient, if any.
+        - column: value
+          type: numeric
+          description: The amount sent by the transaction (in Wei).
+        - column: contract_address
+          type: text
+          description: The address of the contract created by the transaction, if any.
+        - column: internal_transaction_count
+          type: integer
+          description: The number of internal transactions produced in the transaction.
+        - column: log_count
+          type: integer
+          description: The number of logs produced in the transaction.
+        - column: __confirmed
+          type: boolean
+          description: Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed).
+
+  - Logs:
+      meta:
+        table: logs
+        description: The `ethereum.logs` table provides indexed views of all logs emitted on Ethereum.
+      schema:
+        - column: transaction_hash
+          type: text
+          description: The parent transaction's hash.
+        - column: log_index
+          type: integer
+          description: The index of the log in the block.
+        - column: address
+          type: text
+          description: The address of the smart contract that emitted the log.
+        - column: topic_0
+          type: text
+          description: The first log topic.
+        - column: topic_1
+          type: text
+          description: The second log topic.
+        - column: topic_2
+          type: text
+          description: The third log topic.
+        - column: topic_3
+          type: text
+          description: The fourth log topic.
+        - column: data
+          type: text
+          description: The data of the log (bytes data as a hex string).
+        - column: timestamp
+          type: timestamp
+          description: The log's timestamp (in ISO-8601 format).
+        - column: block_number
+          type: integer
+          description: The block number the parent transaction was included in.
+        - column: transaction_position
+          type: integer
+          description: The position of the parent transaction in the block.
+        - column: __confirmed
+          type: boolean
+          description: Flag indicating whether the log has been confirmed (2 Beacon Chain epochs have passed).
+
+  - Contract Labels:
+      meta:
+        table: contract_labels
+        description: The `ethereum.contract_labels` table provides indexed views for ethereum contract labels and names as provided by Etherscan.
+      schema:
+        - column: contract_address
+          type: text
+          description: The address of the smart contract.
+        - column: name
+          type: text
+          description: The name of the smart contract, as provided by Etherscan.
+        - column: labels
+          type: text[]
+          description: The labels of the smart contract, as provided by Etherscan.
+
+Asset Layer:
+  - Collections & NFTs:
+    - Collections:
+        meta:
+          table: collections
+          description: The `ethereum.collections` table provides indexed views of all NFT collections on Ethereum.
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the collection.
+          - column: created_timestamp
+            type: timestamp
+            description: The collection's timestamp of creation (in ISO-8601 format).
+          - column: standard
+            type: text
+            description: The collection's NFT standard (`ERC-721` or `ERC-1155`)
+          - column: count
+            type: integer
+            description: The number of NFTs in the collection (NFTs minted minus NFTs burned).
+          - column: last_refreshed
+            type: timestamp
+            description: The timestamp at which the collection was last refreshed by the Transpose backend (in ISO-8601 format).
+          - column: name
+            type: text
+            description: The collection's name.
+          - column: symbol
+            type: text
+            description: The collection's symbol.
+          - column: description
+            type: text
+            description: The collection's description.
+          - column: external_url
+            type: text
+            description: The collection's website URL.
+          - column: image_url
+            type: text
+            description: The collection's image URL in the Transpose CDN.
+          - column: is_nsfw
+            type: boolean
+            description: The collection's NSFW status.
+          - column: opensea_slug
+            type: text
+            description: The collection's OpenSea slug.
+          - column: opensea_url
+            type: text
+            description: The collection's OpenSea URL.
+
+    - NFTs:
+        meta:
+          table: nfts
+          description: The `ethereum.nfts` table provides indexed views of all NFTs on Ethereum.
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the NFT's collection.
+          - column: token_id
+            type: numeric
+            description: The token ID of the NFT.
+          - column: minted_timestamp
+            type: timestamp
+            description: The NFT's mint timestamp (in ISO-8601 format).
+          - column: supply
+            type: numeric
+            description: The NFT's supply (0 if NFT has been burned).
+          - column: last_refreshed
+            type: timestamp
+            description: The timestamp at which the collection was last refreshed by the Transpose backend (in ISO-8601 format).
+          - column: name
+            type: text
+            description: The NFT's name.
+          - column: description
+            type: text
+            description: The NFT's description.
+          - column: image_url
+            type: text
+            description: The NFT's image URL.
+          - column: external_url
+            type: text
+            description: The NFT's website URL.
+          - column: media_url
+            type: text
+            description: The NFT's additional media URL.
+          - column: properties
+            type: json
+            description: The NFT's properties (also referred to as attributes or traits).
+          - column: metadata_url
+            type: text
+            description: The NFT's metadata URL.
+
+    - NFT Owners:
+        meta:
+          table: nft_owners
+          description: The `ethereum.nft_owners` table provides indexed views of all owners and owner balances for Ethereum NFTs;
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the NFT's collection.
+          - column: token_id
+            type: numeric
+            description: The token ID of the NFT.
+          - column: owner_address
+            type: text
+            description: The address of the owner.
+          - column: balance
+            type: numeric
+            description: The owner's balance of the NFT.
+
+    - NFT Transfers:
+        meta:
+          table: nft_transfers
+          description: The `ethereum.nft_transfers` table provides indexed views of all transfers (mints, sends, and burns) for Ethereum NFTs.
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the NFT's collection.
+          - column: token_id
+            type: numeric
+            description: The token ID of the NFT.
+          - column: timestamp
+            type: timestamp
+            description: The timestamp of the transfer (in ISO-8601 format).
+          - column: block_number
+            type: integer
+            description: The block number at which the transfer occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the transfer occurred.
+          - column: log_index
+            type: integer
+            description: The log index at which the transfer occurred.
+          - column: category
+            type: text
+            description: The category of the NFT transfer (one of `mint`, `send`, `burn`).
+          - column: operator_address
+            type: text
+            description: The address of the operator that performed the transfer (only for ERC-1155 NFTs).
+          - column: from_address
+            type: text
+            description: The address of the sender.
+          - column: to_address
+            type: text
+            description: The address of the receiver.
+          - column: quantity
+            type: numeric
+            description: The quantity of the NFT transferred.
+          - column: activity_id
+            type: numeric
+            description: A unique, sequential identifier for the transfer event.
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+  
+  - Tokens:
+    - Tokens:
+        meta:
+          table: tokens
+          description: The `ethereum.tokens` table provides indexed views of all tokens on Ethereum.
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the token.
+          - column: created_timestamp
+            type: timestamp
+            description: The token's timestamp of creation (in ISO-8601 format).
+          - column: standard
+            type: text
+            description: The token's standard (`ERC-20` or `ERC-777`).
+          - column: supply
+            type: numeric
+            description: The token's total supply (tokens minted minus tokens burned).
+          - column: last_refreshed
+            type: timestamp
+            description: The timestamp at which the token was last refreshed by the Transpose backend (in ISO-8601 format).
+          - column: name
+            type: text
+            description: The token's name.
+          - column: symbol
+            type: text
+            description: The token's symbol.
+          - column: decimals
+            type: integer
+            description: The number of decimals used by the token in user representations.
+          - column: description
+            type: text
+            description: The token's description.
+          - column: external_url
+            type: text
+            description: The token's website URL.
+          - column: image_url
+            type: text
+            description: The token's image URL.
+
+    - Token Owners:
+        meta:
+          table: token_owners
+          description: The `ethereum.token_owners` table provides indexed views of all owners and owner balances for Ethereum tokens.
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the token.
+          - column: owner_address
+            type: text
+            description: The address of the owner.
+          - column: balance
+            type: numeric
+            description: The owner's balance for the token.
+
+    - Token Transfers:
+        meta:
+          table: token_transfers
+          description: The `ethereum.token_transfers` tables provides indexed views of all transfers (mints, sends, and burns) for Ethereum tokens.
+        schema:
+          - column: contract_address
+            type: text
+            description: Contract address of the token.
+          - column: timestamp
+            type: timestamp
+            description: The timestamp of the transfer (in ISO-8601 format).
+          - column: block_number
+            type: integer
+            description: The block number at which the transfer occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the transfer occurred.
+          - column: log_index
+            type: integer
+            description: The log index at which the transfer occurred.
+          - column: category
+            type: text
+            description: The category of the token transfer (one of `mint`, `send`, or `burn`).
+          - column: operator_address
+            type: text
+            description: The address of the operator that performed the transfer (only for ERC-777 tokens).
+          - column: from_address
+            type: text
+            description: The address of the sender.
+          - column: to_address
+            type: text
+            description: The address of the receiver.
+          - column: quantity
+            type: numeric
+            description: The quantity of tokens transferred.
+          - column: activity_id
+            type: numeric
+            description: A unique, sequential identifier for the transfer event.
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+  - Native Token:
+    - Native Token Owners:
+        meta:
+          table: native_token_owners
+          description: The `ethereum.native_token_owners` table provides indexed views of all owners and owner balances for the Ethereum native token (ETH).
+        schema:
+          - column: owner_address
+            type: text
+            description: The address of the owner.
+          - column: balance
+            type: numeric
+            description: The owner's balance of the native token.
+
+    - Native Token Transfers:
+        meta:
+          table: native_token_transfers
+          description: The `ethereum.native_token_transfers` table provides indexed views of all transfers (mints, sends, and burns) for the Ethereum native token (ETH).
+        schema:
+          - column: timestamp
+            type: timestamp
+            description: The block number at which the transfer occurred.
+          - column: block_number
+            type: integer
+            description: The block number at which the transfer occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the transfer occurred.
+          - column: category
+            type: text
+            description: The category of the token transfer (one of `wallet` or `contract`).
+          - column: from_address
+            type: text
+            description: The address of the sender.
+          - column: to_address
+            type: text
+            description: The address of the receiver
+          - column: quantity
+            type: numeric
+            description: The quantity of native token transferred.
+          - column: activity_id
+            type: numeric
+            description: A sequential ID to identify the correct ordering of native token transfers.
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+    
+
+
+Protocol Layer:
+  - NFT Sales:
+    - Aggregate NFT Sales:
+        meta:
+          table: nft_sales
+          description: The `ethereum.nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+        schema:
+          - column: block_number
+            type: integer
+            description: The block number at which the NFT sale occurred.
+          - column: log_index
+            type: integer
+            description: The log index at which the NFT sale occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the NFT sale occurred.
+          - column: timestamp
+            type: timestamp
+            description: The timestamp of the NFT sale (in ISO-8601 format).
+          - column: exchange_name
+            type: text
+            description: The name of the exchange that hosted the NFT sale.
+          - column: contract_version
+            type: text
+            description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+          - column: aggregator_name
+            type: text
+            description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+          - column: contract_address
+            type: text
+            description: The contract address of the NFT that was sold.
+          - column: token_id
+            type: numeric
+            description: The token ID of the NFT that was sold.
+          - column: is_multi_token_sale
+            type: boolean
+            description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+          - column: multi_token_sale_index
+            type: integer
+            description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+          - column: price
+            type: numeric
+            description: The total value of this sale in the payment token (in Wei).
+          - column: usd_price
+            type: numeric
+            description: The total value of this sale in USD.
+          - column: eth_price
+            type: numeric
+            description: The total value of this sale in ETH.
+          - column: payment_token_address
+            type: text
+            description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+          - column: quantity
+            type: numeric
+            description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+          - column: seller_address
+            type: text
+            description: The address of the account that sold the NFT.
+          - column: buyer_address
+            type: text
+            description: The address of the account that bought the NFT.
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+    
+    - Individual Protocol Sales:
+      - Blur NFT Sales:
+          meta:
+            table: blur_nft_sales
+            description: The `ethereum.blur_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - CryptoPunk NFT Sales:
+          meta:
+            table: cryptopunks_nft_sales
+            description: The `ethereum.cryptopunks_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+      
+      - CryptoKitties NFT Sales:
+          meta:
+            table: cryptokitties_nft_sales
+            description: The `ethereum.cryptokitties_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Foundation NFT Sales:
+          meta:
+            table: foundation_nft_sales
+            description: The `ethereum.foundation_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - LooksRare NFT Sales:
+          meta:
+            table: looksrare_nft_sales
+            description: The `ethereum.looksrare_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - OpenSea NFT Sales:
+          meta:
+            table: ethereum.opensea_nft_sales
+            description: The `ethereum.ethereum.opensea_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Rarible NFT Sales:
+          meta:
+            table: rarible_nft_sales
+            description: The `ethereum.rarible_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - SudoSwap NFT Sales:
+          meta:
+            table: sudoswap_nft_sales
+            description: The `ethereum.sudoswap_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - SuperRare NFT Sales:
+          meta:
+            table: superrare_nft_sales
+            description: The `ethereum.superrare_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - X2Y2 NFT Sales:
+          meta:
+            table: x2y2_nft_sales
+            description: The `ethereum.x2y2_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - "0x NFT Sales":
+          meta:
+            table: zero_x_nft_sales
+            description: The `ethereum.zero_x_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - KnownOrigin NFT Sales:
+          meta:
+            table: known-origin
+            description: The `ethereum.known-origin` provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - X NFT Sales:
+          meta:
+            table: x_nft_sales
+            description: The `ethereum.e_nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the NFT sale occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the NFT sale occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the NFT sale occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the NFT sale (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the NFT sale.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the NFT sale (e.g. `wyvern` or `seaport` for OpenSea).
+            - column: aggregator_name
+              type: text
+              description: The name of the aggregator used in the NFT sale (null if no aggregator was used).
+            - column: contract_address
+              type: text
+              description: The contract address of the NFT that was sold.
+            - column: token_id
+              type: numeric
+              description: The token ID of the NFT that was sold.
+            - column: is_multi_token_sale
+              type: boolean
+              description: Whether the sale is a multi-token sale, including more than one unique NFT for the given payment.
+            - column: multi_token_sale_index
+              type: integer
+              description: The index of the sale within the multi-token sale (will be 0 if not a multi-token sale).
+            - column: price
+              type: numeric
+              description: The total value of this sale in the payment token (in Wei).
+            - column: usd_price
+              type: numeric
+              description: The total value of this sale in USD.
+            - column: eth_price
+              type: numeric
+              description: The total value of this sale in ETH.
+            - column: payment_token_address
+              type: text
+              description: The address of the token used to pay for this sale (`null` if the native token, ETH).
+            - column: quantity
+              type: numeric
+              description: The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs).
+            - column: seller_address
+              type: text
+              description: The address of the account that sold the NFT.
+            - column: buyer_address
+              type: text
+              description: The address of the account that bought the NFT.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+  - DEX Swaps:
+    - Aggregate DEX Swaps:
+        meta:
+          table: dex_swaps
+          description: The `ethereum.dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+        schema:
+          - column: block_number
+            type: integer
+            description: The block number at which the DEX swap occurred.
+          - column: log_index
+            type: integer
+            description: The log index at which the DEX swap occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the DEX swap occurred.
+          - column: timestamp
+            type: timestamp
+            description: The timestamp of the DEX swap (in ISO-8601 format).
+          - column: exchange_name
+            type: text
+            description: The name of the exchange that hosted the DEX swap.
+          - column: contract_version
+            type: text
+            description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+          - column: contract_address
+            type: text
+            description: The contract address of the pool that performed the DEX swap.
+          - column: from_token_address
+            type: text
+            description: The address of the token that was swapped in.
+          - column: quantity_in
+            type: numeric
+            description: The amount of the token that was swapped in.
+          - column: to_token_address
+            type: text
+            description: The address of the token that was swapped out.
+          - column: quantity_out
+            type: numeric
+            description: The amount of the token that was swapped out.
+          - column: effective_price
+            type: numeric
+            description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+          - column: sender_address
+            type: text
+            description: The address that performed the swap.
+          - column: origin_address
+            type: text
+            description: The address that submitted the transaction that contained the swap.
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+    - Individual Protocol Swaps:
+      - AirSwap DEX Swaps:
+          meta:
+            table: airswap_dex_swaps
+            description: The `ethereum.airswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Balancer DEX Swaps:
+          meta:
+            table: balancer_dex_swaps
+            description: The `ethereum.balancer_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Bancor DEX Swaps:
+          meta:
+            table: bancor_dex_swaps
+            description: The `ethereum.bancor_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - CowSwap DEX Swaps:
+          meta:
+            table: cowswap_dex_swaps
+            description: The `ethereum.cowswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Curve DEX Swaps:
+          meta:
+            table: curve_dex_swaps
+            description: The `ethereum.curve_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - DDEX Swaps:
+          meta:
+            table: ddex_dex_swaps
+            description: The `ethereum.ddex_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - DexBlue Swaps:
+          meta:
+            table: dexblue_dex_swaps
+            description: The `ethereum.dexblue_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - DodoSwap DEX Swaps:
+          meta:
+            table: dodoswap_dex_swaps
+            description: The `ethereum.dodoswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - ElasticSwap DEX Swaps:
+          meta:
+            table: elasticswap_dex_swaps
+            description: The `ethereum.elasticswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Enclaves DEX Swaps:
+          meta:
+            table: enclaves_dex_swaps
+            description: The `ethereum.enclaves_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - EtherDelta DEX Swaps:
+          meta:
+            table: etherdelta_dex_swaps
+            description: The `ethereum.etherdelta_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - FraxSwap DEX Swaps:
+          meta:
+            table: fraxswap_dex_swaps
+            description: The `ethereum.fraxswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Kyber DEX Swaps:
+          meta:
+            table: kyber_dex_swaps
+            description: The `ethereum.kyber_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Oasis DEX Swaps:
+          meta:
+            table: oasis_dex_swaps
+            description: The `ethereum.oasis_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - "1Inch DEX Swaps":
+          meta:
+            table: one_inch_dex_swaps
+            description: The `ethereum.one_inch_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Saddle Finance DEX Swaps:
+          meta:
+            table: saddle_finance_dex_swaps
+            description: The `ethereum.saddle_finance_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Shibaswap DEX Swaps:
+          meta:
+            table: shibaswap_dex_swaps
+            description: The `ethereum.shibaswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Smoothyswap DEX Swaps:
+          meta:
+            table: smoothyswap_dex_swaps
+            description: The `ethereum.smoothyswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - Sushiswap Swaps:
+          meta:
+            table: sushiswap_dex_swaps
+            description: The `ethereum.sushiswap_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - TokenStore DEX Swaps:
+          meta:
+            table: tokenstore_dex_swaps
+            description: The `ethereum.tokenstore_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+      - "0x DEX Swaps":
+          meta:
+            table: zero_x_dex_swaps
+            description: The `ethereum.zero_x_dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the DEX swap occurred.
+            - column: log_index
+              type: integer
+              description: The log index at which the DEX swap occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash at which the DEX swap occurred.
+            - column: timestamp
+              type: timestamp
+              description: The timestamp of the DEX swap (in ISO-8601 format).
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that hosted the DEX swap.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that hosted the DEX swap (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the pool that performed the DEX swap.
+            - column: from_token_address
+              type: text
+              description: The address of the token that was swapped in.
+            - column: quantity_in
+              type: numeric
+              description: The amount of the token that was swapped in.
+            - column: to_token_address
+              type: text
+              description: The address of the token that was swapped out.
+            - column: quantity_out
+              type: numeric
+              description: The amount of the token that was swapped out.
+            - column: effective_price
+              type: numeric
+              description: The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`).
+            - column: sender_address
+              type: text
+              description: The address that performed the swap.
+            - column: origin_address
+              type: text
+              description: The address that submitted the transaction that contained the swap.
+            - column: __confirmed
+              type: boolean
+              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+  - DEX Pools:
+    - Aggregate DEX Pools:
+        meta:
+          table: dex_pools
+          description: The `ethereum.dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+        schema:
+          - column: created_block_number
+            type: integer
+            description: The block number at which the DEX pool was created.
+          - column: created_timestamp
+            type: integer
+            description: The timestamp at which the DEX pool was created.
+          - column: exchange_name
+            type: text
+            description: The name of the exchange that the DEX pool belongs to.
+          - column: contract_version
+            type: text
+            description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+          - column: contract_address
+            type: text
+            description: The contract address of the DEX pool.
+          - column: token_addresses
+            type: text[]
+            description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+          - column: creator_address
+            type: text
+            description: The address that initiated the pool creation transaction.
+          - column: factory_address
+            type: text
+            description: The address of the factory that created the pool.
+          - column: metadata
+            type: json
+            description: Additional protocol-specific metadata for the pool.
+
+    - Individual Protocol Pools:
+      - Balancer DEX Pools:
+          meta:
+            table: balancer_dex_pools
+            description: The `ethereum.balancer_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Bancor DEX Pools:
+          meta:
+            table: bancor_dex_pools
+            description: The `ethereum.bancor_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Curve DEX Pools:
+          meta:
+            table: curve_dex_pools
+            description: The `ethereum.curve_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - DodoSwap DEX Pools:
+          meta:
+            table: dodo_dex_pools
+            description: The `ethereum.dodo_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - ElasticSwap DEX Pools:
+          meta:
+            table: elasticswap_dex_pools
+            description: The `ethereum.elasticswap_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - FraxSwap DEX Pools:
+          meta:
+            table: fraxswap_dex_pools
+            description: The `ethereum.fraxswap_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Kyber DEX Pools:
+          meta:
+            table: kyber_dex_pools
+            description: The `ethereum.kyber_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - "1Inch DEX Pools":
+          meta:
+            table: one_inch_dex_pools
+            description: The `ethereum.one_inch_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Saddle Finance DEX Pools:
+          meta:
+            table: saddle_finance_dex_pools
+            description: The `ethereum.saddle_finance_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Shibaswap DEX Pools:
+          meta:
+            table: shibaswap_dex_pools
+            description: The `ethereum.shibaswap_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Sudoswap DEX Pools:
+          meta:
+            table: sudoswap_dex_pools
+            description: The `ethereum.sudoswap_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Sushiswap DEX Pools:
+          meta:
+            table: sushiswap_dex_pools
+            description: The `ethereum.sushiswap_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+      - Uniswap DEX Pools:
+          meta:
+            table: uniswap_dex_pools
+            description: The `ethereum.uniswap_dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
+          schema:
+            - column: created_block_number
+              type: integer
+              description: The block number at which the DEX pool was created.
+            - column: created_timestamp
+              type: integer
+              description: The timestamp at which the DEX pool was created.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the DEX pool belongs to.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools).
+            - column: creator_address
+              type: text
+              description: The address that initiated the pool creation transaction.
+            - column: factory_address
+              type: text
+              description: The address of the factory that created the pool.
+            - column: metadata
+              type: json
+              description: Additional protocol-specific metadata for the pool.
+
+  - DEX Liquidity:
+    - Aggregate DEX Liquidity:
+        meta:
+          table: dex_liquidity
+          description: The `ethereum.dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+        schema:
+          - column: block_number
+            type: integer
+            description: The block number at which the event occurred.
+          - column: log_index
+            type: integer
+            description: The timestamp at which the event occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash of the event.
+          - column: timestamp
+            type: integer
+            description: The timestamp at which the event occurred.
+          - column: exchange_name
+            type: text
+            description: The name of the exchange that the event occurred on.
+          - column: contract_version
+            type: text
+            description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+          - column: contract_address
+            type: text
+            description: The contract address of the DEX pool.
+          - column: token_addresses
+            type: text[]
+            description: A list of token addresses that the pool contains.
+          - column: pool_balance
+            type: integer
+            description: The balance of the DEX pool.
+          - column: category
+            type: text
+            description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+          - column: lp_address
+            type: text
+            description: The contract address of the liquidity pool.
+          - column: quantity
+            type: integer
+            description: The quantity of tokens.
+          - column: tick_lower
+            type: integer
+            description: The lower tick of the event.
+          - column: tick_upper
+            type: integer
+            description: The upper tick of the event.
+          - column: sender_address
+            type: text
+            description: The address that initiated the event.
+
+    - Individual Protocol Pools:
+      - Balancer DEX Liquidity:
+          meta:
+            table: balancer_dex_liquidity
+            description: The `ethereum.balancer_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Bancor DEX Liquidity:
+          meta:
+            table: bancor_dex_liquidity
+            description: The `ethereum.bancor_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Curve DEX Liquidity:
+          meta:
+            table: curve_dex_liquidity
+            description: The `ethereum.curve_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Dodoswap DEX Liquidity:
+          meta:
+            table: dodoswap_dex_liquidity
+            description: The `ethereum.dodoswap_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Fraxswap DEX Liquidity:
+          meta:
+            table: fraxswap_dex_liquidity
+            description: The `ethereum.fraxswap_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Kyber DEX Liquidity:
+          meta:
+            table: kyber_dex_liquidity
+            description: The `ethereum.kyber_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - "1Inch DEX Liquidity":
+          meta:
+            table: one_inch_dex_liquidity
+            description: The `ethereum.one_inch_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Saddle Finance DEX Liquidity:
+          meta:
+            table: saddle_finance_dex_liquidity
+            description: The `ethereum.saddle_finance_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Shibaswap DEX Liquidity:
+          meta:
+            table: shibaswap_dex_liquidity
+            description: The `ethereum.shibaswap_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Sudoswap DEX Liquidity:
+          meta:
+            table: sudoswap_dex_liquidity
+            description: The `ethereum.sudoswap_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Sushiswap DEX Liquidity:
+          meta:
+            table: sushiswap_dex_liquidity
+            description: The `ethereum.sushiswap_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+      - Uniswap DEX Liquidity:
+          meta:
+            table: uniswap_dex_liquidity
+            description: The `ethereum.uniswap_dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.
+          schema:
+            - column: block_number
+              type: integer
+              description: The block number at which the event occurred.
+            - column: log_index
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: transaction_hash
+              type: text
+              description: The transaction hash of the event.
+            - column: timestamp
+              type: integer
+              description: The timestamp at which the event occurred.
+            - column: exchange_name
+              type: text
+              description: The name of the exchange that the event occurred on.
+            - column: contract_version
+              type: text
+              description: The version of the exchange contract interacted with (e.g. `v1` or `v2`).
+            - column: contract_address
+              type: text
+              description: The contract address of the DEX pool.
+            - column: token_addresses
+              type: text[]
+              description: A list of token addresses that the pool contains.
+            - column: pool_balance
+              type: integer
+              description: The balance of the DEX pool.
+            - column: category
+              type: text
+              description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
+            - column: lp_address
+              type: text
+              description: The contract address of the liquidity pool.
+            - column: quantity
+              type: integer
+              description: The quantity of tokens.
+            - column: tick_lower
+              type: integer
+              description: The lower tick of the event.
+            - column: tick_upper
+              type: integer
+              description: The upper tick of the event.
+            - column: sender_address
+              type: text
+              description: The address that initiated the event.
+
+
+  - ENS Names & Registries:
+    - ENS Names:
+        meta:
+          table: ens_names
+          description: The `ethereum.ens_names` table provides indexed views of all ENS names on Ethereum, with continuous background refreshing of ENS data and ownership.
+        schema:
+          - column: ens_name
+            type: text
+            description: The ENS name.
+          - column: ens_node
+            type: text
+            description: The unique ENS nodehash which points to the ENS name.
+          - column: contract_address
+            type: text
+            description: The contract address of the ENS collection.
+          - column: token_id
+            type: numeric
+            description: The token ID of the ENS name.
+          - column: owner_address
+            type: text
+            description: The address of the ENS name owner.
+          - column: resolver_address
+            type: text
+            description: The address of the resolver contract  for the ENS name.
+          - column: resolved_address
+            type: text
+            description: The address that the ENS name resolves to.
+          - column: expiration_timestamp
+            type: timestamp
+            description: The timestamp at which this ENS registration will expire (in ISO-8601 format).
+          - column: registration_timestamp
+            type: timestamp
+            description: The timestamp at which this ENS name was registered (in ISO-8601 format).
+          - column: last_refreshed
+            type: timestamp
+            description: The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format).  
+  
+    - ENS Registries:
+        meta:
+          table: ens_registries
+          description: The `ethereum.ens_registries` table provides indexed views of all ENS registries on Ethereum.
+        schema:
+          - column: created_block_number
+            type: integer
+            description: The block number at which the ENS registry was created.
+          - column: created_timestamp
+            type: timestamp
+            description: The timestamp at which the ENS registry was created.
+          - column: contract_address
+            type: text
+            description: The contract address of the ENS registry.
+
+  - Tornado Cash Pools & Events:
+    - Tornado Cash Pools:
+        meta:
+          table: tornado_cash_pools
+          description: The `ethereum.tornado_cash_pools` table provides indexed views of all Tornado Cash mixer pools on Ethereum, including any forks of Tornado Cash.
+        schema:
+          - column: created_block_number
+            type: integer
+            description: The block number that the contract was created at.
+          - column: created_timestamp
+            type: timestamp
+            description: The timestamp that the contract was created at.
+          - column: mixer_name
+            type: text
+            description: The name of the pool, the symbol of the deposit token, and the allowed size of the deposit token. Includes whether the pool is an actual Tornado Cash pool, or a Tornado Cash fork.
+          - column: fork_number
+            type: integer
+            description: If the pool was not deployed by Tornado Cash or other labelled fork deployers, this indicates a Tornado Cash fork deployed by a independent group, incrementing upwards when a new deployer address is seen.
+          - column: contract_address
+            type: text
+            description: The contract address of the Tornado Cash pool.
+          - column: token_address
+            type: text
+            description: The token address for deposits/withdrawals to/from the Tornado Pool. If none, the token is native ETH.
+          - column: creator_address
+            type: text
+            description: The address that deployed the Tornado Pool.
+          - column: metadata
+            type: json
+            description: Miscellaneous metadata related to the tornado pool, includes the ‘denomination’ returned by the pool contract, referencing the static allowed deposit size the pool takes for its specified token, shifted by the decimals unit of the token.
+
+    - Tornado Cash Withdrawals:
+        meta:
+          table: tornado_cash_withdrawals
+          description: The `ethereum.tornado_cash_withdrawals` table provides indexed views of all withdraws from Tornado Cash mixer pools on Ethereum, including any forks of Tornado Cash.
+        schema:
+          - column: block_number
+            type: integer
+            description: The block number at which the withdrawal transaction occurred.
+          - column: log_index
+            type: integer
+            description: The log index at which the withdrawal event occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the withdrawal event occurred.
+          - column: timestamp
+            type: timestamp
+            description: The timestamp of the withdrawal event (in ISO-8601 format).
+          - column: mixer_name
+            type: text
+            description: The name of the pool, the symbol of the pool token, and the allowed size of the deposit token. Includes whether the pool is an actual Tornado Cash pool, or a Tornado Cash fork.
+          - column: fork_number
+            type: integer
+            description: If the pool was not deployed by Tornado Cash Devs or other labelled fork deployers, then this indicates a Tornado Cash fork deployed by a unique dev, incrementing upwards when a new deployer address is seen.
+          - column: contract_address
+            type: text
+            description: The contract address of the Tornado Pool.
+          - column: token_address
+            type: text
+            description: The token address withdrawn from the Tornado Pool. If none, the token is native ETH.
+          - column: quantity
+            type: numeric
+            description: The raw amount of the token withdrawn.
+          - column: to_address
+            type: text
+            description: The address that withdrew the token amount.
+          - column: origin_address
+            type: text
+            description: The address that initiated the withdrawal transaction (the from address in the transaction).
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            
+    - Tornado Cash Deposits:
+        meta:
+          table: tornado_cash_deposits
+          description: The `ethereum.tornado_cash_deposits` table provides indexed views of all deposits from any Tornado Cash mixer pools on Ethereum, including any forks of Tornado Cash.
+        schema:
+          - column: block_number
+            type: integer
+            description: The block number at which the deposit transaction occurred.
+          - column: log_index
+            type: integer
+            description: The log index at which the deposit event occurred.
+          - column: transaction_hash
+            type: text
+            description: The transaction hash at which the deposit event occurred.
+          - column: timestamp
+            type: timestamp
+            description: The timestamp of the deposit event (in ISO-8601 format).
+          - column: mixer_name
+            type: text
+            description: The name of the pool, the symbol of the pool token, and the allowed size of the deposit token. Includes whether the pool is an actual Tornado Cash pool, or a Tornado Cash fork.
+          - column: fork_number
+            type: integer
+            description: If the pool was not deployed by Tornado Cash Devs or other labelled fork deployers, then this indicates a Tornado Cash fork deployed by a unique dev, incrementing upwards when a new deployer address is seen.
+          - column: contract_address
+            type: text
+            description: The contract address of the Tornado Pool.
+          - column: token_address
+            type: text
+            description: The token address deposited to the Tornado Pool. If none, the token is native ETH.
+          - column: quanity
+            type: numeric
+            description: The raw amount of the token deposited.
+          - column: from_address
+            type: text
+            description: The address that deposited the token amount.
+          - column: origin_address
+            type: text
+            description: The address that initiated the deposit transaction (the from address in the transaction).
+          - column: __confirmed
+            type: boolean
+            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+
+  - Token Prices:
+      meta:
+        table: token_prices
+        description: The `ethereum.token_prices` table provides indexed views for cleaned token prices in USD at every point in time when a token was seen in a DEX swap. Prices are VWAP’d per block (for tokens that were swapped multiple times in a single block).
+      schema:
+        - column: block_number
+          type: integer
+          description: The block number at which the DEX swap occurred for pricing the token.
+        - column: timestamp
+          type: timestamp
+          description: The timestamp of the DEX swap (in ISO-8601 format).
+        - column: token_address
+          type: text
+          description: The address of the token that is priced in USD.
+        - column: token_symbol
+          type: text
+          description: The symbol of the token that is priced in USD.
+        - column: price
+          type: decimal
+          description: The price of the token at the time of the swap in USD.
+        - column: __confirmed
+          type: boolean
+          description: Flag indicating whether the block number the token was priced in has been confirmed (2 Beacon Chain epochs have passed).
