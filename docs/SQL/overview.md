@@ -3,9 +3,9 @@
 ## Welcome to the Transpose SQL API
 Transpose offers direct SQL access to our entire ecosystem of indexed blockchain data. Paired with our robust indexing pipeline, SQL access gives unlimited flexibility in how you mix, aggregate, and query activity across the blockchain. 
 
-{{ transpose_colored_link(url="/sql/overview", color='green', icon='material-slide', text='Explore The Playground', description='Start writing powerful and hyper-flexible queries against arbitrary real-time blockchain data') }}
+{{ transpose_colored_link(url="/sql/overview", color='red', icon='material-laptop', text='Explore The Playground', description='Start writing powerful and hyper-flexible queries against arbitrary real-time blockchain data') }}
 
-{{ transpose_colored_link(url="/sql/overview", color='blue', icon='fontawesome-solid-earth-americas', text='Explore The Atlas', description='Explore and contribute to queries created by the Transpose community') }}
+{{ transpose_colored_link(url="/sql/overview", color='red', icon='material-map-outline', text='Explore The Atlas', description='Explore and contribute to queries created by the Transpose community') }}
 
 {{ transpose_colored_link(url="/sql/overview", color='red', icon='material-database', text='Integrate the SQL API', description='Integrate the SQL API into your app today') }}
 

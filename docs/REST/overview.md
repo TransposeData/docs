@@ -5,11 +5,11 @@ Our REST API suite grants you the industry’s most comprehensive view of key cr
 
 {{ transpose_colored_link(url='https://discord.gg/transpose', color='red', icon='material-square-outline', text='Block API', description='Retrieve accounts, blocks, transactions, and logs in bulk') }}
 
-{{ transpose_colored_link(url='https://discord.gg/transpose', color='green', icon='material-star-outline', text='NFT API', description='Query any collection, NFT, owner, mint, transfer, burn, and sale') }}
+{{ transpose_colored_link(url='https://discord.gg/transpose', color='red', icon='material-star-outline', text='NFT API', description='Query any collection, NFT, owner, mint, transfer, burn, and sale') }}
 
-{{ transpose_colored_link(url='https://discord.gg/transpose', color='pink', icon='material-hexagon-outline', text='Token API', description='Lookup any token, transfer, balance, DEX swap, liquidity event, and more') }}
+{{ transpose_colored_link(url='https://discord.gg/transpose', color='red', icon='material-hexagon-outline', text='Token API', description='Lookup any token, transfer, balance, DEX swap, liquidity event, and more') }}
 
-{{ transpose_colored_link(url='https://discord.gg/transpose', color='blue', icon='material-triangle-outline', text='ENS API', description='Search for and resolve any ENS record using name, account, expiration, and more') }}
+{{ transpose_colored_link(url='https://discord.gg/transpose', color='red', icon='material-triangle-outline', text='ENS API', description='Search for and resolve any ENS record using name, account, expiration, and more') }}
 
 
 ## 24/7 Community Support

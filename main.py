@@ -168,10 +168,7 @@ class TransposeDocsColoredLink:
     def get_color_gradient(self) -> str:
         color_map = {
                 "purple": "linear-gradient(to bottom right, blue, purple)",
-                "red": "linear-gradient(to bottom right, #FF512F, #DD2476)",
-                "blue": "linear-gradient(to bottom right, #2E3192, #1BFFFF)",
-                "green": "linear-gradient(to bottom right, #11998E, #38EF7D)",
-                "pink": "linear-gradient(to bottom right, #662D8C, #ED1E79)",
+                "red": "linear-gradient(to bottom right, #FF4B2B, #FF416C)",
         }
 
         return color_map[self.color]
