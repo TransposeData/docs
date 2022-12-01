@@ -1,0 +1,91 @@
+/*
+ * Changes to default Mkdocs theme
+ */
+
+.md-footer-meta {
+	display: none;
+}
+
+.md-typeset h2 {
+	font-size: 20px;
+	line-height: 28px;
+	color: #202123;
+	font-weight: 700;
+	margin: 0 0 10px;
+}
+
+.md-typeset h3 {
+	font-size: 16px;
+    	line-height: 23px;
+    	font-weight: 700;
+}
+
+.md-typeset h1 {
+	font-size: 32px;
+	line-height: 40px;
+	color: #202123;
+	font-weight: 700;
+	font-family: ColfaxAI,helvetica,sans-serif;
+}
+
+/* 
+ * Custom Transpose buttons
+ */
+
+.colored-link {
+	display: inline;
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.colored-link:hover .colored-square div {
+	transform: scale(1.5);
+}
+
+.colored-square {
+	background-image: linear-gradient(to bottom right, purple, blue);
+	width: 60px;
+	height: 60px;
+	border-radius: 4px;
+	color: white;
+	fill: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+}
+
+.text-container {
+	flex: 1;
+	margin-left: 25px;
+}
+
+.text-container p {
+	line-height: 30px;
+	margin: 0;
+	padding: 0;
+	color: black;
+	transition: all 0.2s ease-in-out;
+}
+
+.colored-link:hover .text-container p {
+	color: #f4511f;
+}
+
+.text-container p:first-child {
+	padding-top: 5px;
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.text-container p:last-child {
+	line-height: 20px;
+	font-size: 14px;
+	color: #505050;
+}
+
+.colored-square div {
+	transition: all 0.2s ease-in-out;
+}
+
