@@ -6,7 +6,7 @@ Our REST API suite grants you the industry’s most comprehensive view of key cr
 Among many additional possibilities, use the API suite to retrieve every NFT purchase by a specific ENS name, track token transfers into a protocol, record mints for a collection between two dates, and aggregate mining rewards or gas fees.
 
 ## Supported Chains
-For endpoints that support multiple chains, pass either the https://chainlist.org/ ChainID or chain name as a parameter.
+For endpoints that support multiple chains, pass either the [CAIP-2](https://chainlist.org/) identifier or chain name as a parameter.
 
 * Ethereum mainnet - `ethereum`
 * Polygon - `polygon`
