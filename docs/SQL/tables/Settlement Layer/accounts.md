@@ -1,6 +1,6 @@
 # Accounts
 
-The `accounts` table provides indexed views of all accounts created on Ethereum, including both externally-owned accounts (colloquially referred to as wallets) and contracts.
+The `accounts` table provides indexed views of all accounts created on a specific chain, including both externally-owned accounts (colloquially referred to as wallets) and contracts.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

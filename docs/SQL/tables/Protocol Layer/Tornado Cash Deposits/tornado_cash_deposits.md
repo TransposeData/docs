@@ -1,6 +1,6 @@
 # Tornado Cash Deposits
 
-The `tornado_cash_deposits` table provides indexed views of all deposits from any Tornado Cash mixer pools on Ethereum, including any forks of Tornado Cash.
+The `tornado_cash_deposits` table provides indexed views of all deposits from any Tornado Cash mixer pools on a specific chain, including any forks of Tornado Cash.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

@@ -1,6 +1,6 @@
 # ENS Names
 
-The `ens_names` table provides indexed views of all ENS names on Ethereum, with continuous background refreshing of ENS data and ownership.
+The `ens_names` table provides indexed views of all ENS names on a specific chain, with continuous background refreshing of ENS data and ownership.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
