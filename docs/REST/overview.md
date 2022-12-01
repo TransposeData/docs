@@ -23,3 +23,6 @@ The suite currently includes the following APIs:
 
 ## 24/7 Community Support
 Join our Discord to ask technical questions, share what you're building, chat with others in the community, suggest new features, request higher rate limits, and much more. Here's the link!
+
+{{ transpose_colored_link(url='https://discord.gg/transpose', color='purple', icon='simple-discord', text='Join our Discord', description='Discord is the primary home of the Transpose developer community') }}
+
