@@ -8,12 +8,12 @@ Transpose is the world’s most complete, powerful, and performant Web3 data sui
 ### REST API
 If you are looking for hyper-optimized, parameterized access to key blockchain primitives (such as NFT sales, token balances, wallet histories etc.) in bulk, our REST API is built with you in mind.
 
-{{ transpose_colored_link(url="/rest/overview", color='purple', icon='material-cloud-braces', text='Explore our REST Documentation', description='Explore highly optimized queries for key blockchain primitives') }}
+{{ transpose_colored_link(url="/rest/overview", color='red', icon='material-cloud-braces', text='Explore our REST Documentation', description='Explore highly optimized queries for key blockchain primitives') }}
 
 ### SQL API
 If your use case requires more flexibility, our SQL API provides you with the ability to write sophisticated custom queries against our full suite of indexed and decoded data that return in just milliseconds.
 
-{{ transpose_colored_link(url="/sql/overview", color='blue', icon='material-database', text='Explore our SQL Documentation', description='Start writing instantaneous, powerful and hyper-flexible queries against arbitrary real-time blockchain data') }}
+{{ transpose_colored_link(url="/sql/overview", color='red', icon='material-database', text='Explore our SQL Documentation', description='Start writing instantaneous, powerful and hyper-flexible queries against arbitrary real-time blockchain data') }}
 
 ## Key concepts
 The fastest way to get acquainted with key concepts is to complete our quickstart tutorial, which will give you a hands-on, interactive experience using live data from Transpose APIs.
