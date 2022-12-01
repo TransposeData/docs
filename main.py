@@ -164,10 +164,18 @@ class TransposeDocsColoredLink:
         self.text = text
         self.description = description
 
+    def get_color_gradient(self) -> str:
+        color_map = {
+                "purple": "linear-gradient(to bottom right, purple, blue)",
+        }
+
+        return color_map[self.color]
+
+
     def __call__(self):
         return """
 <a markdown="1" class="colored-link" href="https://www.google.com">
-<div markdown="1" class="colored-square">
+<div markdown="1" class="colored-square" style="background-image: {};">
 <div markdown="1">
 
 :material-fast-forward:
@@ -181,7 +189,7 @@ class TransposeDocsColoredLink:
 <p class="description">{}</p>
 </div>
 </a>
-""".format(self.text, self.description)
+""".format(self.get_color_gradient(), self.text, self.description)
 
 
 def define_env(env):
