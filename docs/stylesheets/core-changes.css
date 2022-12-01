@@ -42,6 +42,10 @@
 	transform: scale(1.5);
 }
 
+.colored-link:hover .colored-square {
+	box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.15);
+}
+
 .colored-square {
 	background-image: linear-gradient(to bottom right, purple, blue);
 	width: 60px;
