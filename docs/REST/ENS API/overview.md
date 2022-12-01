@@ -5,6 +5,6 @@ The ENS API provides endpoints for looking up ENS names (both historical and pri
 ## Endpoints
 The **ENS API** supports the following groups of endpoints:
 
-1. Record Endpoints: Retrieve any ENS record ever created by account, owner, name, node, registration date, expiration date and more.
+1. **Record Endpoints**: Retrieve any ENS record ever created by account, owner, name, node, registration date, expiration date and more.
 
-2. Transfer Endpoints: Retrieve all historical and live ENS name transfers and registrations.
+2. **Transfer Endpoints**: Retrieve all historical and live ENS name transfers and registrations.
