@@ -37,6 +37,8 @@ const headers = {{
 
 class TransposeDocsInteractive:
     def _admonish(self, body: str, title="Give it a go!", type="example") -> str:
+        if type == 'warning':
+            return f'!!! {type} "{title}"\n' + self._indent(body)
         return body
 
     def _indent(self, string):
@@ -66,7 +68,7 @@ Remember not to share your API key!  Your API key is a secret, and should not be
 
 
 class TransposeDocsSQL(TransposeDocsInteractive):
-    def __init__(self, default_sql):
+    def __init__(self, default_sql, options: dict=None):
         super().__init__()
         self.endpoint = "https://api.transpose.io/sql"
         self.sql = default_sql
@@ -292,8 +294,8 @@ def define_env(env):
         return output
 
     @env.macro
-    def transpose_fenced_sql(default_sql: str) -> str:
-        output = TransposeDocsSQL(default_sql)()
+    def transpose_fenced_sql(default_sql: str, options: dict=None) -> str:
+        output = TransposeDocsSQL(default_sql, options)()
         return output
 
     @env.macro

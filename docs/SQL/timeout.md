@@ -1,6 +1,9 @@
-# Timeout
+# Query Timeouts
 
-To avoid accidentally sending queries that result in large credit charges, the default timeout for SQL requests is 30 seconds. On all paid plans you can increase this by passing the `option` parameter to the SQL body as follows:
+To avoid accidentally sending queries that result in large credit charges, the default timeout for SQL requests is 25 seconds. Paid plans allow for longer query timeouts, depending on the tier.  
+
+You can set a maximum timeout for your queries by passing an optional `options` parameter to the request body.  Inside this parameter, specify `timeout` with a positive integer.  Your query timeout will be set to the lesser of this specified timeout (if you pass it, otherwise the default is 25 seconds), and the maximum timeout allowed for your account tier.
+
 
 {{ get_transpose_api_key() }}
 
