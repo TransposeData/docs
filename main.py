@@ -11,8 +11,8 @@ headers = {{
 response = requests.post(url,
     headers=headers,
     json={{
-        'sql': sql_query
-    }}
+        'sql': sql_query,{}
+    }},
 )
 print(response.text)
 """
@@ -73,6 +73,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         self.endpoint = "https://api.transpose.io/sql"
         self.sql = default_sql
         self.unique_identifier = secrets.token_hex(8)
+        self.options = options
 
     def _preprocess_sql_for_string(self, sql):
         """
@@ -107,10 +108,15 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         )
 
     def _get_python(self):
-        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql))
+        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql), self._get_python_options())
         return self._embed_into_switcher(
             "Python", self._generate_code_fence("py", code_snippet)
         )
+
+    def _get_python_options(self):
+        if self.options is None:
+            return ""
+        return '\n\t\t\'options\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': {value}" for key, value in self.options.items()]) + "\n\t\t}"
 
     def _get_js(self):
         code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql))
