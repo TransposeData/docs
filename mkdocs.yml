@@ -8,6 +8,7 @@ theme:
 nav:
   - Introduction: 'index.md'
   - 'Quick Start': 'quickstart.md'
+  - 'billing.md'
   - 'REST API':
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
