@@ -20,3 +20,5 @@ The **NFT Sale Model** represents a single NFT Sale on an exchange. The **NFT Sa
 | usd_price              | The total value of this sale in USD.                                                          | `integer`   |
 | buyer                  | The address of the buyer.                                                                     | `string`    |
 | seller                 | The address of the seller.                                                                    | `string`    |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

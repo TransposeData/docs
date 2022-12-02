@@ -9,3 +9,4 @@ The Account Model represents a single account. This includes both externally-own
 | created_timestamp     | The date at which the account was first created (in ISO-8601 format). | `date-time` |
 | creator               | The account creator (`null` if the account is not a contract).        | `string`    |
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

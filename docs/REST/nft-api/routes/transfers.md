@@ -12,3 +12,5 @@ This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that 
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/transfers', {'chain_id': 'ethereum'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

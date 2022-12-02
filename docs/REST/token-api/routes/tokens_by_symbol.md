@@ -10,3 +10,5 @@ This endpoint returns all [Tokens](../models/token_model.md) that match a given 
 | fuzzy | Whether to match text exactly or use fuzzy text matching.    | `boolean` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/tokens-by-symbol', {'chain_id': 'ethereum', 'substring': 'weth'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

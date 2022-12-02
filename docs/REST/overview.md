@@ -12,7 +12,7 @@ Our REST API suite grants you the industry’s most comprehensive view of key cr
 {{ transpose_colored_link(link_type='ens') }}
 
 ## Join the Transpose Community
-Join our Discord to ask technical questions, share what you're building, chat with others in the community, suggest new features, request higher rate limits, and much more. Here's the link!
+Join our Discord to ask technical questions, share what you're building, chat with others in the community, suggest new features, request higher rate limits, and much more.
 
 {{ transpose_colored_link(link_type='discord') }}
 

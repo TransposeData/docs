@@ -13,3 +13,5 @@ This endpoint returns all [Token Transfers](../models/token_transfer_model.md) t
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/transfers-by-contract-address', {'chain_id': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

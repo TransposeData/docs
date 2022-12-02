@@ -14,3 +14,5 @@ The **NFT Transfer Model** represents a single transfer of an nft. **The NFT Tra
 | from             | The address of the sender.                                                        | `string`    |
 | to               | The address of the receiver.                                                      | `string`    |
 | quantity         | The quantity of NFTs transferred.                                                 | `integer`   |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

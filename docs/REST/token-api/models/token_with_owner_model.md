@@ -19,3 +19,5 @@ The **Token With Owner Model** represents a single token with included ownership
 | last_refreshed    | The timestamp at which the token was last refreshed by the Transpose backend (in ISO-8601 format). | `date-time` |
 | owner             | The owner's account address.                                                                       | `string`    |
 | balance           | The owner's balance of the token.                                                                  | `integer`   |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -14,3 +14,4 @@ This endpoint returns [Account Models](../models/account_model.md) for a given d
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/accounts-by-date-created', {'chain_id': 'ethereum'}) }}
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

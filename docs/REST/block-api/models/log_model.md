@@ -13,3 +13,4 @@ The **Log Model** represents a single transaction log. The **Log Model** follows
 | topics               | The topics of the log (maximum 4 topics per log).        | `array`   |
 | data                 | The data of the log (bytes data as a hex string).        | `string`  |
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

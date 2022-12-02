@@ -13,3 +13,4 @@ This endpoint returns all [Blocks](../models/block_model.md) that were mined wit
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/blocks-by-date', {'chain_id': 'ethereum', 'limit': 1}) }}
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -14,3 +14,5 @@ The **NFT Model** represents a single NFT with included ownership data (i.e. the
 | external_url     | The NFT's website URL.                                           | `string`    |
 | properties       | The NFT's properties (also referred to as attributes or traits). | `object`    |
 | metadata_url     | The NFT's cleaned metadata URL.                                  | `string`    |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

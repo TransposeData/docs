@@ -34,3 +34,5 @@ The **Block Model** represents a single block. The **Block Model** follows the f
 - `(miner_address, block_number)`
 - `(miner_address, timestamp)`
 - `(__confirmed = false)`
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

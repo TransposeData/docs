@@ -13,3 +13,5 @@ This endpoint returns [ENS Transfers](../models/ens_transfer_model.md) for a giv
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/ens/ens-transfers-by-name', {'chain_id': 'ethereum', 'ens_name': 'tmux.eth'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -17,3 +17,5 @@ The **Token Swap Model** represents a single token swap. The **Token Swap Model*
 | effective_price       | The effective price of `to_token` denominated in `from_token` (`quantity_out` / `quantity_in`). | `number`    |
 | sender                | The address of the sender (may be a router contract address).                                   | `string`    |
 | origin                | The address of the originator of the swap transaction.                                          | `string`    |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

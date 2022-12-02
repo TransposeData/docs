@@ -12,3 +12,5 @@ The **Block API** supports the following groups of endpoints:
 3. **Transaction Endpoints**: Retrieve every transaction ever created with powerful query parameters that let you filter by block number, transaction hash, involved addresses, transfer value, target contract, target contract method, and more.
 
 4. **Log Endpoints**: Retrieve and filter all historical logs by account, topic, contract, and much more.
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

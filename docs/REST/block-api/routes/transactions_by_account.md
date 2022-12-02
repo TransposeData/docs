@@ -17,3 +17,4 @@ This endpoint returns all [Transactions](../models/transaction_model.md) that oc
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/transactions-by-account', {'chain_id': 'ethereum', 'account_address': 'telemachus.eth'}) }}
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -12,3 +12,5 @@ The **Native Token Transfer Model** represents a single native token transfer. T
 | from             | The address of the sender.                                                  | `string`    |
 | to               | The address of the receiver.                                                | `string`    |
 | quantity         | The quantity of tokens transferred.                                         | `integer`   |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -12,3 +12,5 @@ This endpoint returns all [NFTs](../models/nft_model.md) that were minted within
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/nfts-by-date-minted', {'chain_id': 'ethereum'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

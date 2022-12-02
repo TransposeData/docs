@@ -19,3 +19,5 @@ The **Collection Model** represents a single NFT collection. The **Collection Mo
 | opensea_slug      | The collection's OpenSea slug.                                                                          | `string`    |
 | opensea_url       | The collection's OpenSea URL.                                                                           | `string`    |
 | last_refreshed    | The timestamp at which the collection was last refreshed by the Transpose backend (in ISO-8601 format). | `date-time` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

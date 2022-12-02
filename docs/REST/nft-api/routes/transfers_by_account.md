@@ -14,3 +14,5 @@ This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that 
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/transfers-by-account', {'chain_id': 'ethereum', 'account_address': 'tmux.eth'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -13,3 +13,5 @@ The **Token Transfer Model** represents a single token transfer. The **Token Tra
 | from             | The address of the sender.                                             | `string`    |
 | to               | The address of the receiver.                                           | `string`    |
 | quantity         | The quantity of tokens transferred.                                    | `integer`   |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

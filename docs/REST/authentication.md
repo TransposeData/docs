@@ -6,3 +6,5 @@ The Transpose REST API suite can be accessed with any valid Transpose API key. T
 
 ## Basic Example
 {{ transpose_fenced_rest('https://api.transpose.io/block/blocks-by-number', { 'chain_id': 'ethereum', 'order': 'desc', 'limit': 1}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

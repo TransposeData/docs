@@ -13,3 +13,5 @@ This endpoint returns all [Token Swaps](../models/token_swap_model.md) that occu
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/swaps-by-contract-address', {'chain_id': 'ethereum', 'contract_address': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
