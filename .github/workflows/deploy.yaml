@@ -3,47 +3,10 @@ name: docs-deploy
 on:
   push:
     branches:
-      - '*'
+      - 'main'
 
 jobs:
   deploy-prod:
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
     steps:
-    - name: connect to tailnet
-      uses: tailscale/github-action@v1
-      with:
-        authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: 172.31.19.113 
-        username: ubuntu
-        key: ${{ secrets.DATA_PIPELINE_KEY }}
-        port: 22
-        script: |
-          cd ~/winston
-          git config --global credential.helper store
-          git pull origin staging
-          sudo docker compose -f docker-compose.staging.yml up --build --detach --remove-orphans
-
-  deploy-staging:
-    if: github.ref == 'refs/heads/staging'
-    runs-on: ubuntu-latest
-    steps:
-    - name: connect to tailnet
-      uses: tailscale/github-action@v1
-      with:
-        authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
-      with:
-        host: 172.31.19.113 
-        username: ubuntu
-        key: ${{ secrets.DATA_PIPELINE_KEY }}
-        port: 22
-        script: |
-          cd ~/winston
-          git config --global credential.helper store
-          git pull origin staging
-          sudo docker compose -f docker-compose.staging.yml up --build --detach --remove-orphans
+    - name: deploy to gh pages
+      run: mkdocs gh-pages
