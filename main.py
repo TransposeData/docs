@@ -27,12 +27,24 @@ curl --request POST \\
 """
 
 JS_REQUEST_TEMPLATE_SQL = """
+const options = {
+  method: 'POST',
+  headers: {accept: 'application/json', 'x-api-key': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'},
+  body: JSON.stringify({sql: '{}'})
+};
+fetch('{}', options)
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
+"""
+
+JS_REQUEST_TEMPLATE_SQL1 = """
 const fetch = require('node-fetch');
 const url = '{}';
 const sql_query = '{}';
 const headers = {{
     'Content-Type': 'application
-    }}
+}}
 """
 
 
@@ -104,7 +116,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return "\n".join(
             [
                 self._get_python(),
-                self._get_js(),
+                #self._get_js(),
             ]
         )
 
@@ -120,7 +132,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return '\n\t\t\'options\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': {value}" for key, value in self.options.items()]) + "\n\t\t}"
 
     def _get_js(self):
-        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql))
+        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self.endpoint)
         return self._embed_into_switcher(
             "Node", self._generate_code_fence("js", code_snippet)
         )
