@@ -269,11 +269,13 @@ class TransposeDocsColoredLink:
     def __call__(self):
         return """
 <a markdown="1" class="colored-link" href="{}">
+<div markdown="1" class="colored-link-container">
 <div markdown="1" class="colored-square" style="background-image: {};">
 <div markdown="1">
 
 :{}:
 
+</div>
 </div>
 </div>
 
