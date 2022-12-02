@@ -8,3 +8,8 @@ services:
         build:
             context: .
             dockerfile: ./Dockerfile.staging
+        logging:
+            driver: awslogs
+            options:
+                awslogs-region: us-east-1
+                awslogs-group: docs-staging
