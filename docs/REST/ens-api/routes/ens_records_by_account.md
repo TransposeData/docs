@@ -1,6 +1,6 @@
 # Get ENS Records by Account
 
-This endpoint returns [ENS Records](../models/ens_record_model.md.md) for names that resolve to a given account (supports pagination).
+This endpoint returns [ENS Records](../models/ens_record_model.md) for names that resolve to a given account (supports pagination).
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

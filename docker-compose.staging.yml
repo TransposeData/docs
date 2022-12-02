@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+    mkdocs:
+        container_name: docs
+        image: docs
+        restart: always
+        build:
+            context: .
+            dockerfile: ./Dockerfile.staging
