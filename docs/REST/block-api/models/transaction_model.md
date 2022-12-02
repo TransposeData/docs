@@ -27,3 +27,4 @@ The **Transaction Model** represents a single transaction. The **Transaction Mod
 | internal_transaction_count | The number of internal transactions produced in the transaction.                  | `integer` |
 | log_count                  | The number of logs produced in the transaction.                                   | `integer` |
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -17,3 +17,5 @@ The **Token Model** represents a single NFT token. The **Token Model** follows t
 | discord_url       | The token's Discord URL.                                                                           | `string`    |
 | whitepaper_url    | The token's whitepaper URL.                                                                        | `string`    |
 | last_refreshed    | The timestamp at which the token was last refreshed by the Transpose backend (in ISO-8601 format). | `date-time` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

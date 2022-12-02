@@ -14,3 +14,4 @@ This endpoint returns all [Contract Accounts](../models/account_model.md) that w
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/contracts-by-creator', {'chain_id': 'ethereum', 'creator_address': '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'}) }}
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

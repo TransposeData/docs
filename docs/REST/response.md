@@ -47,3 +47,5 @@ Here is an example of an actual error response following this structure:
   "message": "Invalid value for contract_addresses: 0x12345"
 }
 ```
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

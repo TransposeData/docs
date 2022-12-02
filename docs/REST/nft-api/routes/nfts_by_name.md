@@ -10,3 +10,5 @@ This endpoint returns all [NFTs](../models/nft_model.md) that match a given name
 | fuzzy | Whether to match text exactly or use fuzzy text matching.    | `boolean` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/nfts-by-name', {'chain_id': 'ethereum', 'substring': 'punks'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

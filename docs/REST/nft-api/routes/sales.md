@@ -11,3 +11,5 @@ This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that occurred
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/sales', {'chain_id': 'ethereum'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

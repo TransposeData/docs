@@ -9,3 +9,5 @@ This endpoint returns [ENS Records](../models/ens_record_model.md) for names tha
 | owner_address | **required** The account address of the owner to retrieve ENS records for (supports ENS names).   | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/ens/ens-records-by-owner', {'chain_id': 'ethereum', 'owner_address': '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

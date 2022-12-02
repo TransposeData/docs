@@ -19,3 +19,5 @@ The **ENS Record Model** contains the full set of information for a single ENS n
 | in_premium_period       | Whether the ENS name is currently in 21 day premium period.	                                              | `boolean`      |
 | is_expired              | Whether the ENS name is currently expired.	                                                              | `boolean`      |
 | last_refreshed          | The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format).	  | `date-time`    |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

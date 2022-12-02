@@ -16,3 +16,5 @@ The **NFT Model** represents a single NFT with included ownership data (i.e. the
 | metadata_url     | The NFT's cleaned metadata URL.                                  | `string`    |
 | owner            | The address of the owner.                                        | `string`    |
 | balance          | The owner's balance for the nft.                                 | `integer`   |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

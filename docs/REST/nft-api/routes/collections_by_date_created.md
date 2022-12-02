@@ -12,3 +12,5 @@ This endpoint returns all [NFT Collections](../models/collection_model.md) that 
 | order | The order in which to retrieve the results (either `asc` or `desc`).    | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/collections-by-date-created', {'chain_id': 'ethereum'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

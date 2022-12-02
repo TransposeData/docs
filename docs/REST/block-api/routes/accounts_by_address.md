@@ -11,3 +11,5 @@ This endpoint returns [Account Models](../models/account_model.md) for a given l
 
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/accounts-by-address', {'chain_id': 'ethereum', 'account_addresses': '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

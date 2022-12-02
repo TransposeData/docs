@@ -13,3 +13,5 @@ This endpoint returns all [Transactions](../models/transaction_model.md) that oc
 | limit | The maximum number of results to retrieve | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/transactions-by-date', {'chain_id': 'ethereum', 'limit': 1}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

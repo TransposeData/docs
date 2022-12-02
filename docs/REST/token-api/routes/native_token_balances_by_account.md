@@ -9,3 +9,5 @@ This endpoint returns all [Native Token Balances](../models/native_token_balance
 | account_addresses | **required** The list of account addresses to retrieve balances for, separated by commas (max 100 addresses per request, supports ENS names).    | `array of strings` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/native-token-balances-by-account', {'chain_id': 'ethereum', 'account_addresses': 'tmux.eth'}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

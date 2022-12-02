@@ -10,3 +10,5 @@ This endpoint returns all [NFTs](../models/nft_model.md) for a given list of col
 | token_ids | **required** The list of token IDs to retrieve NFTs for, separated by commas (max 100 token IDs per request). Must match the length of the contract_addresses parameter.    | `array of integers` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/nfts-by-token-id', {'chain_id': 'ethereum', 'contract_addresses': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB', 'token_ids': 5582}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

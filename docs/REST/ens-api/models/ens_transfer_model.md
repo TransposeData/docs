@@ -14,3 +14,5 @@ The **ENS Transfer Model** represents a single transfer of an ENS name. The **EN
 | category         | The category of the ENS name transfer (one of `mint`, `send`, `burn`). | `string`    |
 | from             | The address of the sender.                                             | `string`    |
 | to               | The address of the receiver.                                           | `string`    |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -14,3 +14,5 @@ The **Token API** supports the following groups of endpoints:
 4. **Swap Endpoints**: Retrieve all swaps for any token, account, or date range across all decentralized exchanges.
 
 5. **Native Token Endpoints**: Retrieve historical native token transfers and balances for any account or time range.
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

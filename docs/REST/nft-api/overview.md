@@ -14,3 +14,5 @@ The **NFT API** supports the following groups of endpoints:
 4. **Sale Endpoints**: Retrieve any NFT sale given an account, collection, or date range across many decentralized exchanges.
 
 5. **Transfer Endpoints**: Retrieve all transfers, including mints, sends, and burns, for any collection, NFT, or individual account.
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

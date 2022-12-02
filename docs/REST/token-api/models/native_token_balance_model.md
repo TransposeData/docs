@@ -6,3 +6,4 @@ The **Native Token Balance Model** represents an account's native token (Ether) 
 | account_address | The account address.                | `string`  |
 | balance         | The account's native token balance. | `integer` |
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
