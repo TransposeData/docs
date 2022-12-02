@@ -97,6 +97,7 @@ nav:
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
   - SQL API:
     - 'sql/overview.md'
+    - Getting Started: 'sql/getting-started.md'
     - 'sql/authentication.md'
     - 'sql/playground.md'
     - 'sql/multichain.md'

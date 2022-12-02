@@ -177,7 +177,10 @@ class TransposeDocsColoredLink:
             'nft': '/rest/nft-api/overview',
             'token': '/rest/token-api/overview',
             'ens': '/rest/ens-api/overview',
+            'playground': 'https://playground.transpose.io',
+            'atlas': 'https://atlas.transpose.io',
         }
+        return url_map[self.link_type]
 
     def get_description_from_link_type(self):
         desc_map = {
@@ -189,6 +192,8 @@ class TransposeDocsColoredLink:
             'nft': 'Query any collection, NFT, owner, mint, transfer, burn, or sale.',
             'token': 'Lookup any token, transfer, balance, DEX swap, liquidity event, and more.',
             'ens': 'Search for and resolve any ENS record using name, account, expiration, and more',
+            'playground': 'Start writing powerful and hyper-flexible queries against arbitrary real-time blockchain data.',
+            'atlas': 'Explore and contribute to queries created by the Transpose community.',
         }
         return desc_map[self.link_type]
 
@@ -202,6 +207,8 @@ class TransposeDocsColoredLink:
             'nft': 'NFT API',
             'token': 'Token API',
             'ens': 'ENS API',
+            'playground': 'Explore the Playground',
+            'atlas': 'Explore the Atlas',
         }
         return text_map[self.link_type]
 
@@ -258,6 +265,14 @@ class TransposeDocsColoredLink:
 """.format(self.url, self.get_color_gradient(), self.icon, self.text, self.description)
 
 
+class TransposeDocsCodeInteractive(TransposeDocsInteractive):
+    def __init__(self, code, language):
+        self.code = code
+        self.language = language
+
+    def __call__(self):
+        return self._generate_code_fence(self.language, self.code)
+
 def define_env(env):
     @env.macro
     def get_transpose_api_key():
@@ -277,5 +292,10 @@ def define_env(env):
     @env.macro
     def transpose_colored_link(link_type, url=None, text=None, description=None, custom_color=None, custom_icon=None) -> str:
         output = TransposeDocsColoredLink(link_type, url, text, description, custom_color, custom_icon)()
+        return output
+
+    @env.macro
+    def transpose_fenced_code_interactive(code: str, language: str) -> str:
+        output = TransposeDocsCodeInteractive(code, language)()
         print(output)
         return output

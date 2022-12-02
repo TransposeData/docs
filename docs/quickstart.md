@@ -45,8 +45,11 @@ Take a moment to examine this revised query, and note the (small) differences be
 
 Try experimenting with the requests above yourself.  For example, you could change the contract addresses to target different NFT Collections (i.e. why not give Bored Ape Yacht Club a go?  The contract address for Bored Ape Yacht Club is `0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D` ).
 
-When you’re ready to experiment further, check out the [ Transpose Atlas ](https://atlas.transpose.io) - a repository of Transpose SQL queries from our staff and from our community.
+When you’re ready to experiment further, we recommend:
 
-You can also check out the [ Transpose Playground ](https://playground.transpose.io) - a dedicated environment for discovering and experimenting with our data.
+{{ transpose_colored_link(link_type='atlas', text='Exploring the Atlas') }}
 
-Happy building!  If you ever need help, don’t hesitate to reach out on our [ discord ], or drop us an email at [hello@transpose.io](mailto:hello@transpose.io).
+{{ transpose_colored_link(link_type='playground', text='Exploring the Playground') }}
+
+{{ transpose_colored_link(link_type='discord', text='Joining our Discord') }}
+
