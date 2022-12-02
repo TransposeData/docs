@@ -209,8 +209,8 @@ class TransposeDocsColoredLink:
     def get_text_from_link_type(self):
         text_map = {
             'discord': 'Join our Discord',
-            'rest': 'Explore our REST Documentation',
-            'sql': 'Explore our SQL Documentation',
+            'rest': 'Explore our REST API Documentation',
+            'sql': 'Explore our SQL API Documentation',
             'quickstart': 'Visit our Quickstart Guide',
             'block': 'Block API',
             'nft': 'NFT API',
