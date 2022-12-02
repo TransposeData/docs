@@ -13,3 +13,5 @@ The `native_token_transfers` table provides indexed views of all transfers (mint
 | quantity | The quantity of native token transferred. | `numeric` |
 | activity_id | A sequential ID to identify the correct ordering of native token transfers. | `numeric` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

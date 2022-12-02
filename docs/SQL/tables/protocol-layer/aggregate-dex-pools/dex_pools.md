@@ -13,3 +13,5 @@ The `dex_pools` table provides indexed views of all DEX pools created for a spec
 | creator_address | The address that initiated the pool creation transaction. | `text` |
 | factory_address | The address of the factory that created the pool. | `text` |
 | metadata | Additional protocol-specific metadata for the pool. | `json` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

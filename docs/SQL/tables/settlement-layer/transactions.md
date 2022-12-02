@@ -27,3 +27,5 @@ The `transactions` table provides indexed views of all transactions submitted fo
 | internal_transaction_count | The number of internal transactions produced in the transaction. | `integer` |
 | log_count | The number of logs produced in the transaction. | `integer` |
 | __confirmed | Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

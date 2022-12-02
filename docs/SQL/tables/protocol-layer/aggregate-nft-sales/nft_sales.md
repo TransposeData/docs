@@ -23,3 +23,5 @@ The `nft_sales` table provides indexed views of all NFT sales transacted on a sp
 | seller_address | The address of the account that sold the NFT. | `text` |
 | buyer_address | The address of the account that bought the NFT. | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

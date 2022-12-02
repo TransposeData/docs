@@ -14,3 +14,5 @@ The `ens_names` table provides indexed views of all ENS names on a specific chai
 | expiration_timestamp | The timestamp at which this ENS registration will expire (in ISO-8601 format). | `timestamp` |
 | registration_timestamp | The timestamp at which this ENS name was registered (in ISO-8601 format). | `timestamp` |
 | last_refreshed | The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format). | `timestamp` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

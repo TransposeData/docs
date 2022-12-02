@@ -16,3 +16,5 @@ The `nfts` table provides indexed views of all NFTs for a specified chain.
 | media_url | The NFT's additional media URL. | `text` |
 | properties | The NFT's properties (also referred to as attributes or traits). | `json` |
 | metadata_url | The NFT's metadata URL. | `text` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

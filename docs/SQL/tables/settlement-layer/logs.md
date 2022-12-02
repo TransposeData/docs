@@ -16,3 +16,5 @@ The `logs` table provides indexed views of all logs emitted for a specified chai
 | block_number | The block number the parent transaction was included in. | `integer` |
 | transaction_position | The position of the parent transaction in the block. | `integer` |
 | __confirmed | Flag indicating whether the log has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
