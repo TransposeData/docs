@@ -4,6 +4,7 @@ theme:
   palette:
     primary: white
   logo: ./assets/logo-black.png
+  favicon: ./assets/favicon.png
 
 nav:
   - Introduction: 'index.md'
