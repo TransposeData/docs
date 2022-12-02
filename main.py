@@ -37,7 +37,7 @@ const headers = {{
 
 class TransposeDocsInteractive:
     def _admonish(self, body: str, title="Give it a go!", type="example") -> str:
-        return f'!!! {type} "{title}"\n' + self._indent(body)
+        return body
 
     def _indent(self, string):
         return "\n".join(["    " + line for line in string.split("\n")])
