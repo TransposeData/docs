@@ -15,6 +15,7 @@ response = requests.post(url,
     }},
 )
 print(response.text)
+print('Credits charged:', response.headers.get('X-Credits-Charged', None))
 """
 
 CURL_REQUEST_TEMPLATE_SQL = """
