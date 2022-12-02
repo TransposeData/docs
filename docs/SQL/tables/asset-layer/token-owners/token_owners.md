@@ -7,3 +7,5 @@ The `token_owners` table provides indexed views of all owners and owner balances
 | contract_address | Contract address of the token. | `text` |
 | owner_address | The address of the owner. | `text` |
 | balance | The owner's balance for the token. | `numeric` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

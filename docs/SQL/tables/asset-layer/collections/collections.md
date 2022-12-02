@@ -17,3 +17,5 @@ The `collections` table provides indexed views of all NFT collections for a spec
 | is_nsfw | The collection's NSFW status. | `boolean` |
 | opensea_slug | The collection's OpenSea slug. | `text` |
 | opensea_url | The collection's OpenSea URL. | `text` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

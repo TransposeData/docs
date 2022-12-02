@@ -19,3 +19,5 @@ The `dex_liquidity` table provides indexed views of all DEX liquidity for a spec
 | tick_lower | The lower tick of the event. | `integer` |
 | tick_upper | The upper tick of the event. | `integer` |
 | sender_address | The address that initiated the event. | `text` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

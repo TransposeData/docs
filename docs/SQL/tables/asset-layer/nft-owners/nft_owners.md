@@ -8,3 +8,5 @@ The `nft_owners` table provides indexed views of all owners and owner balances f
 | token_id | The token ID of the NFT. | `numeric` |
 | owner_address | The address of the owner. | `text` |
 | balance | The owner's balance of the NFT. | `numeric` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

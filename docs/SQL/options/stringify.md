@@ -7,3 +7,5 @@ To work around this, you can pass the boolean `stringify_numbers` option as a pa
 {{ transpose_fenced_sql('SELECT token_id FROM ethereum.nfts LIMIT 1', options={'stringify_numbers' : True}) }}
 
 {{ transpose_fenced_sql('SELECT token_id FROM ethereum.nfts LIMIT 1', options={'stringify_numbers' : False}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

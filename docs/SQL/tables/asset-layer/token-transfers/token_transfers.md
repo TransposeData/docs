@@ -16,3 +16,5 @@ The `token_transfers` tables provides indexed views of all transfers (mints, sen
 | quantity | The quantity of tokens transferred. | `numeric` |
 | activity_id | A unique, sequential identifier for the transfer event. | `numeric` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

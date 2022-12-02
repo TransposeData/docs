@@ -29,3 +29,5 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 | uncle_1_reward | The amount rewarded to the miner of the first uncle block (in Wei). | `numeric` |
 | uncle_2_reward | The amount rewarded to the miner of the second uncle block (in Wei). | `numeric` |
 | __confirmed | Flag indicating whether the block has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

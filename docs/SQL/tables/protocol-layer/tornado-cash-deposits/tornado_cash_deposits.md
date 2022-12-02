@@ -16,3 +16,5 @@ The `tornado_cash_deposits` table provides indexed views of all deposits from an
 | from_address | The address that deposited the token amount. | `text` |
 | origin_address | The address that initiated the deposit transaction (the from address in the transaction). | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

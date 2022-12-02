@@ -12,3 +12,5 @@ The `tornado_cash_pools` table provides indexed views of all Tornado Cash mixer 
 | token_address | The token address for deposits/withdrawals to/from the Tornado Pool. If none, the token is native ETH. | `text` |
 | creator_address | The address that deployed the Tornado Pool. | `text` |
 | metadata | Miscellaneous metadata related to the tornado pool, includes the ‘denomination’ returned by the pool contract, referencing the static allowed deposit size the pool takes for its specified token, shifted by the decimals unit of the token. | `json` |
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
