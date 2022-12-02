@@ -1,0 +1,23 @@
+name: winston-main-automerge-into-staging
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  automerge-from-main:
+    if: github.ref == 'refs/heads/main'
+    name: Merge from main into staging whenever main recieves new content
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: merge
+        uses: mtanzi/action-automerge@v1
+        id: merge
+        with:
+          github_token: ${{ github.token }}
+          source: 'main'
+          target: 'staging'
+          webhook_url:
