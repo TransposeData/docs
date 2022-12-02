@@ -20,6 +20,4 @@ Every API request returns the number of credits used by the query in an `X-Credi
 
 {{ transpose_fenced_sql('SELECT contract_address from ethereum.nfts LIMIT 100') }}
 
-Questions?  Join our Discord, and chat with the team today.
-
-{{ transpose_colored_link(link_type='discord') }}
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

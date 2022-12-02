@@ -9,3 +9,5 @@ To create a cancellable query, you'll first need to create a query using the `ca
 You can then pass this `cancel_id` to our cancellation endpoint, as demonstrated below.  **Give this a go!  Run the request above, and while it's running, try cancelling it with the request below**!
 
 {{ transpose_fenced_rest('https://api.transpose.io/sql/cancel/<my_special_query_cancel_id>', params={}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

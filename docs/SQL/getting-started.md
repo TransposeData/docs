@@ -13,3 +13,5 @@ If you're brand new to Transpose, we recommend checking our our Quick Start Guid
 3. Submit a valid SQL query in the body of the POST request to our SQL endpoint.  Note that all of our table names are namespaced to a specific chain (i.e. `ethereum.nft_sames`).
 
 {{ transpose_fenced_sql('SELECT * FROM ethereum.nft_sales ORDER BY timestamp DESC LIMIT 10;') }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
