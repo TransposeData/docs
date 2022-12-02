@@ -1,4 +1,4 @@
-name: winston-main-automerge-into-staging
+name: docs-main-automerge-into-staging
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 jobs:
   automerge-from-main:
     if: github.ref == 'refs/heads/main'
-    name: Merge from main into staging whenever main recieves new content
+    name: merge from main into staging whenever main recieves new content
     runs-on: ubuntu-latest
     steps:
       - name: checkout
