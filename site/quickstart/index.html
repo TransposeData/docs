@@ -2518,7 +2518,7 @@ print(response.text)
 <p>So, we’ve got every CryptoPunk sales event in all of history.  Now, the next step is to group this data by the date that it occurred on.  </p>
 <p>Transforms and aggregations on huge datasets?  Sounds like a job for SQL!  With the Transpose SQL API, we do all the heavy lifting for you - you give us a query, we return you the results in milliseconds.  Let’s put that to the test, and group these results by date.</p>
 <p>The following SQL query selects all NFT sales, filters them to only include CryptoPunks, groups them by date, and returns the count of the number of sales events that occurred on that particular day - an important step towards our ultimate goal of calculating the daily floor price.</p>
-<div id="74ea6a8a41128964_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
+<div id="017a8519703aa94b_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
 <span class="cm">/* extract date */</span><span class="w"></span>
 <span class="k">timestamp</span><span class="p">::</span><span class="nb">date</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">date</span><span class="w"></span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">ethereum</span><span class="p">.</span><span class="n">nft_sales</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">sales</span><span class="w"> </span>
@@ -2575,7 +2575,7 @@ const headers = {
 <p>Now that we have a working query that can group CryptoPunks sales by the date on which they occurred, we can take all of the sales that occurred each day, and calculate the floor price.</p>
 <p>Given that floor prices can be subject to a lot of dataset noise, here we use a ‘smart floor price’ - computed by taking the value at the bottom 20th percentile of the daily data.</p>
 <p>Take a moment to examine this revised query, and note the (small) differences between this query and our last query.  Then let it rip!</p>
-<div id="26f5d74aad1b3d13_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
+<div id="bc76fa395119d726_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"></span>
 <span class="cm">/* extract date */</span><span class="w"></span>
 <span class="k">timestamp</span><span class="p">::</span><span class="nb">date</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nb">date</span><span class="p">,</span><span class="w"></span>
 <span class="cm">/* calculate smart floor price as bottom 5 percentile of USD sale prices */</span><span class="w"></span>
