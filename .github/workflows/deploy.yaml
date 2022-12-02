@@ -20,4 +20,4 @@ jobs:
         mkdir python
         pip3 install --target=python -r requirements.txt
     - name: deploy to gh pages
-      run: mkdocs gh-pages
+      run: python -m mkdocs gh-pages
