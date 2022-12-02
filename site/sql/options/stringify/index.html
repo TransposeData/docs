@@ -2389,7 +2389,7 @@
 <h1 id="stringify">Stringify</h1>
 <p>Some languages, such as Javascript, have no native support for 256-bit integers.</p>
 <p>To work around this, you can pass the boolean <code>stringify_numbers</code> option as a parameter to your SQL-endpoint request.  This returns all numeric objects (integers and floats) as their string representation.</p>
-<div id="12ceb4b8c94ffee3_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ethereum</span><span class="p">.</span><span class="n">nfts</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div id="6b1c73c6f760aaa7_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ethereum</span><span class="p">.</span><span class="n">nfts</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Python</label><label for="__tabbed_1_2">Node</label></div>
 <div class="tabbed-content">
@@ -2411,6 +2411,7 @@ response = requests.post(url,
     },
 )
 print(response.text)
+print('Credits charged:', response.headers.get('X-Credits-Charged', None))
 </textarea></code-fence></p>
 </div>
 <div class="tabbed-block">
@@ -2425,7 +2426,7 @@ const headers = {
 </div>
 </div>
 </div>
-<div id="3d03c0f3318d4c33_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ethereum</span><span class="p">.</span><span class="n">nfts</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<div id="e419d51f972d73f0_sql_entry" class="highlight"><span class="filename">SQL Query</span><pre><span></span><code><span class="k">SELECT</span><span class="w"> </span><span class="n">token_id</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ethereum</span><span class="p">.</span><span class="n">nfts</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </code></pre></div>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Python</label><label for="__tabbed_2_2">Node</label></div>
 <div class="tabbed-content">
@@ -2447,6 +2448,7 @@ response = requests.post(url,
     },
 )
 print(response.text)
+print('Credits charged:', response.headers.get('X-Credits-Charged', None))
 </textarea></code-fence></p>
 </div>
 <div class="tabbed-block">
