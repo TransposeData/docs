@@ -232,7 +232,7 @@ class TransposeDocsColoredLink:
             "sql": 'green',
             "quickstart": 'orange',
             "playground": 'blue',
-            "atlas": 'green',
+            "atlas": 'orange',
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
