@@ -257,7 +257,7 @@ class TransposeDocsColoredLink:
             "token": 'material-hexagon-outline',
             "nft": 'material-star-outline',
             "discord": "simple-discord",
-            "quickstart": 'material-fast-forward', # rocket?
+            "quickstart": 'material-rocket-launch',
             "sql": 'material-database',
             "rest": 'material-cloud-braces',
             "atlas": 'material-map-outline',
