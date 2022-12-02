@@ -18,4 +18,4 @@ jobs:
     - name: install requirements
       run: python3 -m pip install -r requirements.txt
     - name: deploy to gh pages
-      run: python -m mkdocs gh-deploy
+      run: python -m mkdocs gh-deploy --force
