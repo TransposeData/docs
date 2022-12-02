@@ -11,3 +11,5 @@ For example, in the below example we set the timeout to 2 seconds for a particul
 {{ get_transpose_api_key() }}
 
 {{ transpose_fenced_sql("SELECT COUNT(*) from ethereum.nfts; ", options={'timeout': 2}) }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -6,18 +6,18 @@ Transpose uses a credits system to manage API usage.  Each team has an associate
 
 ## Overages
 
+Overages allow you to use more credits than your monthly allowance at a fixed-price per credit.  To protect you against accidental usage and charges, Overages are turned off by default.  You can enable Overages through the [Transpose App](https://app.transpose.io).
+
 ## Tracking your usage
 
 ### Overall Usage
 
-Understanding how many credits you use is an important capability.  To track your monthly usage so far, visit the [Transpose App](https://app.transpose.io).
+To track your monthly usage so far, visit the [Transpose App](https://app.transpose.io).
 
 ### Per-Request Usage
 
-Every API request returns the number of credits used in a
+Every API request returns the number of credits used by the query in an `X-Credits-Charged` header.  For example:
 
-{{ transpose_fenced_sql('SELECT * from ethereum.nfts LIMIT 1') }}
+{{ transpose_fenced_sql('SELECT contract_address from ethereum.nfts LIMIT 100') }}
 
-Questions?  Join our Discord, and chat with the team today.
-
-{{ transpose_colored_link(link_type='discord') }}
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

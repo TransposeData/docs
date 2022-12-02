@@ -1,7 +1,8 @@
 # Playground
 
-The SQL Playground and Atlas are environments built for exploring, testing and organizing queries against the entirety of Transpose data. 
+The SQL Playground and Atlas are environments built for exploring, testing and organizing queries against the entirety of Transpose data.
 
+{{ transpose_colored_link(link_type='playground') }}
 
 ## Playground to production code
 Transferring queries from the Playground to your code couldn't be easier. Simply click the "view code" button, select the right environment and you can copy it right in! Note that your API key will also be copied.
@@ -20,3 +21,4 @@ The `Analyze` button returns the results of the query planner for the query in y
 ## Downloading data in the browser
 You can download the results of a query directly from the playground using the download button.
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -17,3 +17,4 @@ vs:
 SELECT * FROM polygon.blocks ORDER BY timestamp desc LIMIT 10;
 ```
 
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
