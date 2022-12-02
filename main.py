@@ -231,15 +231,15 @@ class TransposeDocsColoredLink:
             return 'orange'
 
     def get_color_gradient(self) -> str:
-        color_map = {
-            "purple": "linear-gradient(to bottom right, blue, purple)",
-            "orange": "linear-gradient(to bottom right, red, orange)",
-            "blue": "linear-gradient(to bottom right, blue, cyan)",
-            "green": "linear-gradient(to bottom right, green, lime)",
-            "yellow": "linear-gradient(to bottom right, orange, yellow)",
+        gradient_map_hex = {
+                'purple': 'linear-gradient(to bottom right, #0000ff, #A020F0)',
+                'orange': 'linear-gradient(to bottom right, #FF4500, #FFA500)',
+                'blue': 'linear-gradient(to bottom right, #0000ff, #00BFFF)',
+                'green': 'linear-gradient(to bottom right, #008000, #00FF00)',
+                'yellow': 'linear-gradient(to bottom right, #FFD700, #EEEE00)',
         }
 
-        return color_map[self.color]
+        return gradient_map_hex[self.color]
 
     def get_icon_from_link_type(self) -> str:
         icon_map = {

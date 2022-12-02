@@ -10,7 +10,6 @@ If you are looking for hyper-optimized, parameterized access to key blockchain p
 
 {{ transpose_colored_link(link_type='rest') }}
 
-
 ### SQL API
 If your use case requires more flexibility, our SQL API provides you with the ability to write sophisticated custom queries against our full suite of indexed and decoded data that return in just milliseconds.
 
@@ -20,7 +19,6 @@ If your use case requires more flexibility, our SQL API provides you with the ab
 The fastest way to get acquainted with key concepts is to complete our quickstart tutorial, which will give you a hands-on, interactive experience using live data from Transpose APIs.
 
 {{ transpose_colored_link(link_type='quickstart') }}
-
 
 ## Next steps
 - Make sure you’ve created a free tier team account.  You can do that [here](https://app.transpose.io).

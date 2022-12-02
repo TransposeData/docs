@@ -102,6 +102,9 @@ nav:
     - 'sql/playground.md'
     - 'sql/multichain.md'
     - 'sql/timeout.md'
+    - 'sql/cancel.md'
+    - More Options:
+        - 'sql/options/stringify.md'
     - Tables:
       - Settlement:
         - 'sql/tables/settlement-layer/accounts.md'
