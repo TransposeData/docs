@@ -215,16 +215,28 @@ class TransposeDocsColoredLink:
     def get_color_from_link_type(self):
         color_map = {
             "discord": 'purple',
+            "block": 'blue',
+            "nft": 'green',
+            "token": 'yellow',
+            "ens": 'orange',
+            "rest": 'blue',
+            "sql": 'green',
+            "quickstart": 'orange',
+            "playground": 'blue',
+            "atlas": 'green',
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
         else:
-            return 'red'
+            return 'orange'
 
     def get_color_gradient(self) -> str:
         color_map = {
             "purple": "linear-gradient(to bottom right, blue, purple)",
-            "red": "linear-gradient(to bottom right, #FF4B2B, #FF416C)",
+            "orange": "linear-gradient(to bottom right, red, orange)",
+            "blue": "linear-gradient(to bottom right, blue, cyan)",
+            "green": "linear-gradient(to bottom right, green, lime)",
+            "yellow": "linear-gradient(to bottom right, orange, yellow)",
         }
 
         return color_map[self.color]
