@@ -1,6 +1,6 @@
 # Authentication
 
-All you have to do to send an authenticated request to our SQL endpoint is send a POST request to `https://api.transpose.io/sql` with your key in the header and SQL request in the body. See the following example to get started:
+To authenticate yourself with Transpose SQL, simply issue a POST request to `https://api.transpose.io/sql` including your API key as the `X-API-KEY` header, and your query as the body.  See the following example to get started:
 
 {{ get_transpose_api_key() }}
 
