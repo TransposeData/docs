@@ -199,7 +199,7 @@ class TransposeDocsColoredLink:
             'token': '/rest/token-api/overview',
             'ens': '/rest/ens-api/overview',
             'playground': 'https://playground.transpose.io',
-            'atlas': 'https://atlas.transpose.io',
+            'atlas': 'https://playground.transpose.io',
         }
         return url_map[self.link_type]
 

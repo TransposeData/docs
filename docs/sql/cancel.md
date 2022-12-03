@@ -4,7 +4,7 @@ While most queries on Transpose run in just a few milliseconds, given the powerf
 
 To create a cancellable query, you'll first need to create a query using the `cancel_id` option.  This `cancel_id` is namespaced to your API key - so you can't cacancel someone else's query, or vice-versa!
 
-{{ transpose_fenced_sql('SELECT COUNT(*) from ethereum.nfts LIMIT 100000', options={'cancel_id': '\'<my_special_query_cancel_id>\''}) }}
+{{ transpose_fenced_sql('SELECT COUNT(*) from ethereum.nfts LIMIT 100000;', options={'cancel_id': '\'<my_special_query_cancel_id>\''}) }}
 
 You can then pass this `cancel_id` to our cancellation endpoint, as demonstrated below.  **Give this a go!  Run the request above, and while it's running, try cancelling it with the request below**!
 
