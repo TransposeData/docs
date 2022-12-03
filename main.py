@@ -212,8 +212,8 @@ class TransposeDocsColoredLink:
             'block': 'Retrieve accounts, blocks, transactions, and logs in bulk.',
             'nft': 'Query any collection, NFT, owner, mint, transfer, burn, or sale.',
             'token': 'Lookup any token, transfer, balance, DEX swap, liquidity event, and more.',
-            'ens': 'Search for and resolve any ENS record using name, account, expiration, and more',
-            'playground': 'Start writing powerful and hyper-flexible queries against arbitrary real-time blockchain data.',
+            'ens': 'Search for and resolve any ENS record using name, account, expiration, and more.',
+            'playground': 'Write and execute SQL queries in our browser-based development tool.',
             'atlas': 'Explore and contribute to queries created by the Transpose community.',
         }
         return desc_map[self.link_type]
