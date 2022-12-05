@@ -207,13 +207,13 @@ class TransposeDocsColoredLink:
         desc_map = {
             'discord': 'Discord is the primary home of the Transpose developer community.  Join us to ask questions, share your work, and get help.',
             'rest': 'Explore highly optimized queries for key blockchain primitives.',
-            'sql': 'Start writing instantaneous, powerful and hyper-flexible queries against arbitrary real-time blockchain data.',
+            'sql': 'Start writing instantaneous and hyper-flexible queries against real-time blockchain data.',
             'quickstart': 'Get started with both our REST and SQL APIs in less than 5 minutes.',
             'block': 'Retrieve accounts, blocks, transactions, and logs in bulk.',
             'nft': 'Query any collection, NFT, owner, mint, transfer, burn, or sale.',
             'token': 'Lookup any token, transfer, balance, DEX swap, liquidity event, and more.',
-            'ens': 'Search for and resolve any ENS record using name, account, expiration, and more',
-            'playground': 'Start writing powerful and hyper-flexible queries against arbitrary real-time blockchain data.',
+            'ens': 'Search for and resolve any ENS record using name, account, expiration, and more.',
+            'playground': 'Write and execute SQL queries in our browser-based development tool.',
             'atlas': 'Explore and contribute to queries created by the Transpose community.',
         }
         return desc_map[self.link_type]
