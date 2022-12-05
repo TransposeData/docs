@@ -157,6 +157,7 @@ extra:
 extra_javascript:
   - js/codefence/codefence.js
   - js/update_key.js
+  - js/tracking.js
 
 extra_css:
   - stylesheets/buttons.css
