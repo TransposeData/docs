@@ -27,11 +27,12 @@ curl --request POST \\
 """
 
 JS_REQUEST_TEMPLATE_SQL = """
-const options = {
+const fetch = require('fetch');
+const options = {{
   method: 'POST',
-  headers: {accept: 'application/json', 'x-api-key': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'},
-  body: JSON.stringify({sql: '{}'})
-};
+  headers: {{accept: 'application/json', 'x-api-key': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}},
+  body: JSON.stringify({{sql: '{}'}})
+}};
 fetch('{}', options)
   .then(response => response.json())
   .then(response => console.log(response))
@@ -45,6 +46,30 @@ const sql_query = '{}';
 const headers = {{
     'Content-Type': 'application
 }}
+"""
+
+JS_REQUEST_TEMPLATE_SQL = """
+const https = require('https')
+const options = {{
+  hostname: 'api.transpose.io',
+  path: '/sql',
+  method: 'POST',
+  headers: {{accept: 'application/json', 'x-api-key': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}},
+  body: JSON.stringify(
+    {{'sql': 'SELECT COUNT(*) from ethereum.nfts LIMIT 100000;'}}
+  )
+}};
+req = https.request(options, (res) => {{
+  console.log('statusCode:', res.statusCode);
+  console.log('headers:', res.headers);
+  res.on('data', (d) => {{
+    process.stdout.write(d);
+  }});
+}})
+req.on('error', (e) => {{
+  console.error(e);
+}});
+req.end();
 """
 
 
@@ -116,7 +141,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return "\n".join(
             [
                 self._get_python(),
-                #self._get_js(),
+                # self._get_js(),
             ]
         )
 
