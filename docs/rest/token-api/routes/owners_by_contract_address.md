@@ -1,6 +1,6 @@
 # Get Owners by Contract Address
 
-This endpoint returns all [Accounts](../models/token_owner_model.md) that own a given token, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [Accounts](../models/token_owner_model.md) that own a given token, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

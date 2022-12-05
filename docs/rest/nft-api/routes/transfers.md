@@ -1,6 +1,6 @@
 # Get Transfers
 
-This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
