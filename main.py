@@ -97,7 +97,7 @@ class APIKeyManager(TransposeDocsInteractive):
 
     def __call__(self):
         return self._admonish(
-            """Before proceeding, we need to authenticate ourselves with Transpose.  To access any Transpose API, you'll need an API key.  All API requests should include your API key in an `X-API-KEY` header.  If you haven't already, you'll need to [sign up and create a team (for free!)](https://app.transpose.io).  Once you have a team, you can find a list of your API keys in your team dashboard.  When you have your API key, replace `<YOUR-API-KEY>` in the interactive examples below with your key.
+            """Before proceeding, we need to authenticate ourselves with Transpose. To access any Transpose API, you'll need an API key. All API requests should include your API key in an `X-API-KEY` header. If you haven't already, you'll need to [sign up and create a team (for free!)](https://app.transpose.io). Once you have a team, you can find a list of your API keys in your team dashboard. When you have your API key, replace `<YOUR-API-KEY>` in the interactive examples below with your key.
 
 Remember not to share your API key!  Your API key is a secret, and should not be stored or exposed in a public manner.""",
             title="API Key",
@@ -230,7 +230,7 @@ class TransposeDocsColoredLink:
 
     def get_description_from_link_type(self):
         desc_map = {
-            'discord': 'Discord is the primary home of the Transpose developer community.  Join us to ask questions, share your work, and get help.',
+            'discord': 'Discord is the primary home of the Transpose developer community. Join us to ask questions, share your work, and get help.',
             'rest': 'Explore highly optimized queries for key blockchain primitives.',
             'sql': 'Start writing instantaneous and hyper-flexible queries against real-time blockchain data.',
             'quickstart': 'Get started with both our REST and SQL APIs in less than 5 minutes.',
