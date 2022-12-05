@@ -136,6 +136,10 @@ nav:
         - 'sql/tables/protocol-layer/tornado-cash-deposits/tornado_cash_deposits.md'
         - 'sql/tables/protocol-layer/token_prices.md'
 
+extra:
+  analytics:
+    provider: google
+    property: G-NQR64Q1ME1
 
 extra_javascript:
   - js/codefence/codefence.js
