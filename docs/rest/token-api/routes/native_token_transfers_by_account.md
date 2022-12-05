@@ -1,6 +1,6 @@
 # Get Narive Token Transfers by Account
 
-This endpoint returns all [Native Token Transfers](../models/native_token_transfer_model.md) that occurred within the given date range and involved a given account (supports pagination).
+This endpoint returns all [Native Token Transfers](../models/native_token_transfer_model.md) that occurred within the given date range and involved a given account (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

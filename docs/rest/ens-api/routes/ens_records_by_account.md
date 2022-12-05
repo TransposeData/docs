@@ -1,6 +1,6 @@
 # Get ENS Records by Account
 
-This endpoint returns [ENS Records](../models/ens_record_model.md) for names that resolve to a given account (supports pagination).
+This endpoint returns [ENS Records](../models/ens_record_model.md) for names that resolve to a given account (supports pagination). Supported chains: `ethereum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

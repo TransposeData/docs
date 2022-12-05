@@ -1,6 +1,6 @@
 # Get Token Swaps by Pair
 
-This endpoint returns all [Token Swaps](../models/token_swap_model.md) for a token pair, identified by the pair of contract addresses (supports pagination).
+This endpoint returns all [Token Swaps](../models/token_swap_model.md) for a token pair, identified by the pair of contract addresses (supports pagination). Supported chains: `ethereum`, `polygon`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

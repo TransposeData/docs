@@ -1,6 +1,6 @@
 # Get Collections by Name
 
-This endpoint returns all [NFT Collections](../models/collection_model.md) that match a given name substring (supports pagination up to 1000 results).
+This endpoint returns all [NFT Collections](../models/collection_model.md) that match a given name substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

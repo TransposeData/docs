@@ -1,6 +1,6 @@
 # Get Tokens by Contract Address
 
-This endpoint returns all [Tokens](../models/token_model.md) for a given list of contract addresses.
+This endpoint returns all [Tokens](../models/token_model.md) for a given list of contract addresses. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

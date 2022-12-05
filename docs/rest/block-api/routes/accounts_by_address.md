@@ -1,6 +1,6 @@
 # Get Accounts by Address
 
-This endpoint returns [Account Models](../models/account_model.md) for a given list of account addresses.
+This endpoint returns [Account Models](../models/account_model.md) for a given list of account addresses. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter | Description | Type |

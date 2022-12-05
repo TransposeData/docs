@@ -1,6 +1,6 @@
 # Get Tokens by Symbol
 
-This endpoint returns all [Tokens](../models/token_model.md) that match a given symbol substring (supports pagination up to 1000 results).
+This endpoint returns all [Tokens](../models/token_model.md) that match a given symbol substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

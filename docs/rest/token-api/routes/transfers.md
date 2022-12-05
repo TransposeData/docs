@@ -1,6 +1,6 @@
 # Get Transfers
 
-This endpoint returns all [Token Transfers](../models/token_transfer_model.md) that occurred within the given date range (supports pagination).
+This endpoint returns all [Token Transfers](../models/token_transfer_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

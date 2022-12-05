@@ -1,6 +1,6 @@
 # Get NFTs by Date Minted
 
-This endpoint returns all [NFTs](../models/nft_model.md) that were minted within a given date range (supports pagination).
+This endpoint returns all [NFTs](../models/nft_model.md) that were minted within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

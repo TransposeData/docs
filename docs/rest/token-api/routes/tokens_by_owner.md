@@ -1,6 +1,6 @@
 # Get Tokens by Owner
 
-This endpoint returns all [Tokens](../models/token_model.md) that are owned by a given account address, with the included owner balances (supports pagination).
+This endpoint returns all [Tokens](../models/token_model.md) that are owned by a given account address, with the included owner balances (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
