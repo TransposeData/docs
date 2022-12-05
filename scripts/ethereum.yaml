@@ -3719,7 +3719,7 @@ Protocol Layer:
             description: The timestamp at which this ENS name was registered (in ISO-8601 format).
           - column: last_refreshed
             type: timestamp
-            description: The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format).  
+            description: The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format). 
   
     - ENS Registries:
         meta:

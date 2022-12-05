@@ -1,6 +1,6 @@
 # Pagination
 
-Pagination on the Transpose API is straightforward.
+Pagination on the Transpose REST API is straightforward.
 
 Transpose API endpoints will return a maximum of 500 results in a single query. To return the next page, simply call the URL under the `next` key in the response object. This will **always** return the next page of results. If the `next` key is null, there is no next page!
 

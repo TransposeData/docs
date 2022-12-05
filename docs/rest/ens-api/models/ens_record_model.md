@@ -3,7 +3,7 @@ The **ENS Record Model** contains the full set of information for a single ENS n
 
 | Name                    | Description                                                                                               | Type           |
 | ------------------------| --------------------------------------------------------------------------------------------------------- | -------------- |
-| ens_name                | The ENS name.                                                                                             | `string`       |
+| ens_name                | The ENS name.                                                                                            | `string`       |
 | ens_node                | The unique ENS nodehash which points to the ENS name.	                                                  | `string`       |
 | contract_address        | The contract address of the ENS collection.	                                                              | `string`       |
 | token_id                | The token ID of the ENS name.	                                                                          | `integer`      |
@@ -12,7 +12,7 @@ The **ENS Record Model** contains the full set of information for a single ENS n
 | resolver                | The resolver contract address of the ENS name.	                                                          | `string`       |
 | resolved_address        | The address which has this ENS name set to be their primary name.	                                      | `string`       |
 | registration_timestamp  | The timestamp on which this ENS name was registerred (in ISO-8601 format).	                              | `date-time`    |
-| expiration_timestamp    | The timestamp on which this ENS registration will expire (in ISO-8601 format).                            | `date-time`    |
+| expiration_timestamp    | The timestamp on which this ENS registration will expire (in ISO-8601 format).                           | `date-time`    |
 | grace_period_ends       | The timestamp on which this ENS name was registerred (in ISO-8601 format).	                              | `date-time`    |
 | premium_period_ends     | The timestamp on which this grace period will end (in ISO-8601 format).	                                  | `date-time`    |
 | in_grace_period	      | Whether the ENS name is currently in the 90 day grace period.	                                          | `boolean`      |

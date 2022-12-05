@@ -6,7 +6,7 @@ This endpoint returns [ENS Records](../models/ens_record_model.md) for names tha
 | Parameter     | Description                                                                          | Type     | 
 |---------------|--------------------------------------------------------------------------------------|----------|
 | chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
-| owner_address | **required** The account address of the owner to retrieve ENS records for (supports ENS names).   | `string` | 
+| owner_address | **required** The account address of the owner to retrieve ENS records for (supports ENS names).  | `string` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/ens/ens-records-by-owner', {'chain_id': 'ethereum', 'owner_address': '0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d'}) }}
 

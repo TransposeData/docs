@@ -1,6 +1,6 @@
 # Response
 
-The Transpose API has two types of response types: one for successes and one for errors. A **success response** will be returned on any request that completes successfully (even if no results are returned) along with a HTTP `200` status code. An **error response** will be returned on any request that fails, whether due to the client (i.e. you) or the server (i.e. us), along with a HTTP `4xx` or `5xx` status code.
+The Transpose REST API has two types of response types: one for successes and one for errors. A **success response** will be returned on any request that completes successfully (even if no results are returned) along with a HTTP `200` status code. An **error response** will be returned on any request that fails, whether due to the client (i.e. you) or the server (i.e. us), along with a HTTP `4xx` or `5xx` status code.
 
 ## Success Response
 
@@ -8,10 +8,10 @@ The success response will always obey the following top-level JSON structure:
 
 | Name      | Type      | Description                                                                 |
 | --------- | --------- | --------------------------------------------------------------------------- |
-| `status`  | `string`  | The status of the response. Will be `success` for a success response.       |
+| `status`  | `string`  | The status of the response. Will be `success` for a success response.      |
 | `count`   | `integer` | The number of results returned (matches the length of the `results` field). |
-| `next`    | `string`  | A valid URL with a cursor key pointing to the next page of results.         |
-| `results` | `list`    | A list of objects containing the results of the request.                    |
+| `next`    | `string`  | A valid URL with a cursor key pointing to the next page of results.        |
+| `results` | `list`    | A list of objects containing the results of the request.                   |
 
 
 Here is an example of an actual success response following this structure:

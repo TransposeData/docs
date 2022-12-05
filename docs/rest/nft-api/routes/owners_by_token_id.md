@@ -6,8 +6,8 @@ This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a gi
 | Parameter     | Description                                                                          | Type     | 
 |---------------|--------------------------------------------------------------------------------------|----------|
 | chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
-| contract_address | **required** The contract address of the collection to retrieve owners for (supports ENS names).    | `string` | 
-| token_id | **required** The token ID of the NFT to retrieve owners for.    | `integer` | 
+| contract_address | **required** The contract address of the collection to retrieve owners for (supports ENS names).   | `string` | 
+| token_id | **required** The token ID of the NFT to retrieve owners for.   | `integer` | 
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/owners-by-token-id', {'chain_id': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB', 'token_id': 5582}) }}
 
