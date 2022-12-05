@@ -1,6 +1,6 @@
 # Get Tokens by Date Created
 
-This endpoint returns all [Tokens](../models/token_model.md) that were created within a given date range (supports pagination).
+This endpoint returns all [Tokens](../models/token_model.md) that were created within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

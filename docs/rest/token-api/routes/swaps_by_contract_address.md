@@ -1,6 +1,6 @@
 # Get Token Swaps by Contract Address
 
-This endpoint returns all [Token Swaps](../models/token_swap_model.md) that occurred within the given date range (supports pagination).
+This endpoint returns all [Token Swaps](../models/token_swap_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

@@ -1,6 +1,6 @@
 # Get Transfers by Account
 
-This endpoint returns all [Token Transfers](../models/token_transfer_model.md) that occurred within the given date range and involved a given account (supports pagination).
+This endpoint returns all [Token Transfers](../models/token_transfer_model.md) that occurred within the given date range and involved a given account (supports pagination). Supported chains: `ethereum`, `polygon`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
