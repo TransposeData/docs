@@ -1,4 +1,4 @@
-# Playground
+# The Playground and Atlas
 
 The SQL Playground and Atlas are environments built for exploring, testing and organizing queries against the entirety of Transpose data.
 
@@ -10,12 +10,14 @@ Transferring queries from the Playground to your code couldn't be easier. Simply
 
 ## Publishing to the Atlas
 There are two options for saving queries:
+
 1. Save privately: available just to you, visible in your query browser bar in the playground.
+
 2. Publish to Atlas: visible to everyone in the Atlas, also visible to you under published queries in the playground.
 
 
 ## Using the query planner
-The `Analyze` button returns the results of the query planner for the query in your editor. You can use this to check whether your queries are running against indexes. To see what indexes exist on each table, check out the SQL models to the left.
+The `Analyze` button returns the results of the query planner for the query in your editor. You can use this to check whether your queries are running against indexes, and to gain some insight into how you can optimize your SQL queries. To see what indexes exist on each table, check out the SQL models to the left.
 
 
 ## Downloading data in the browser
