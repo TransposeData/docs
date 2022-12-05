@@ -1,6 +1,6 @@
 # X2Y2 NFT Sales
 
-The `x2y2_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for X2Y2, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+The `x2y2_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for X2Y2, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. Supported chains: `ethereum`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

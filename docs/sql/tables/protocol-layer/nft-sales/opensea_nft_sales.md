@@ -1,6 +1,6 @@
 # OpenSea NFT Sales
 
-The `opensea_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for OpenSea, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+The `opensea_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for OpenSea, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. Supported chains: `ethereum`, `polygon`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

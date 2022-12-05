@@ -1,6 +1,6 @@
 # LooksRare NFT Sales
 
-The `looksrare_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for LooksRare, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+The `looksrare_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for LooksRare, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. Supported chains: `ethereum`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
