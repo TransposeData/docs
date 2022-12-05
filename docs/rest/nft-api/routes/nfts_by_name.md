@@ -1,6 +1,6 @@
 # Get NFTs by Name
 
-This endpoint returns all [NFTs](../models/nft_model.md) that match a given name substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [NFTs](../models/nft_model.md) that match a given name substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

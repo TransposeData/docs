@@ -1,6 +1,6 @@
 # Get Blocks by Number
 
-This endpoint returns all [Blocks](../models/block_model.md) that were mined within a given block number range (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [Blocks](../models/block_model.md) that were mined within a given block number range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter | Description | Type |

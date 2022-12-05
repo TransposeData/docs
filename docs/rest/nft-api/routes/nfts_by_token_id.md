@@ -1,6 +1,6 @@
 # Get NFTs by Token ID
 
-This endpoint returns all [NFTs](../models/nft_model.md) for a given list of collection contract address and token ID pairs, inputted as two arrays of matching length. Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [NFTs](../models/nft_model.md) for a given list of collection contract address and token ID pairs, inputted as two arrays of matching length. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

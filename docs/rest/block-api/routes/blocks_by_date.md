@@ -1,6 +1,6 @@
 # Get Blocks by Date
 
-This endpoint returns all [Blocks](../models/block_model.md) that were mined within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [Blocks](../models/block_model.md) that were mined within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter | Description | Type |

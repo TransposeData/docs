@@ -1,6 +1,6 @@
 # Get Accounts by Date Created
 
-This endpoint returns [Account Models](../models/account_model.md) for a given date range. Supported chains: `ethereum`, `polygon`.
+This endpoint returns [Account Models](../models/account_model.md) for a given date range. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter | Description | Type |

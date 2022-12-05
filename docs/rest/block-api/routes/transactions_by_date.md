@@ -1,6 +1,6 @@
 # Get Transactions by Date
 
-This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Parameters
 | Parameter | Description | Type |
