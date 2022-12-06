@@ -27,48 +27,30 @@ curl --request POST \\
 """
 
 JS_REQUEST_TEMPLATE_SQL = """
-const fetch = require('fetch');
-const options = {{
-  method: 'POST',
-  headers: {{accept: 'application/json', 'x-api-key': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}},
-  body: JSON.stringify({{sql: '{}'}})
-}};
-fetch('{}', options)
-  .then(response => response.json())
-  .then(response => console.log(response))
-  .catch(err => console.error(err));
-"""
-
-JS_REQUEST_TEMPLATE_SQL1 = """
-const fetch = require('node-fetch');
-const url = '{}';
-const sql_query = '{}';
-const headers = {{
-    'Content-Type': 'application
-}}
-"""
-
-JS_REQUEST_TEMPLATE_SQL = """
-const https = require('https')
-const options = {{
-  hostname: 'api.transpose.io',
-  path: '/sql',
-  method: 'POST',
-  headers: {{accept: 'application/json', 'x-api-key': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}},
-  body: JSON.stringify(
-    {{'sql': 'SELECT COUNT(*) from ethereum.nfts LIMIT 100000;'}}
-  )
-}};
-req = https.request(options, (res) => {{
-  console.log('statusCode:', res.statusCode);
-  console.log('headers:', res.headers);
-  res.on('data', (d) => {{
-    process.stdout.write(d);
-  }});
-}})
-req.on('error', (e) => {{
-  console.error(e);
+const https = require('https');
+var postData = JSON.stringify({{
+    sql: \"{}\"{}
 }});
+var options = {{
+    hostname: 'api.transpose.io',
+    path: '/sql',
+    method: 'POST',
+    headers: {{
+        'Content-Type': 'application/json',
+        'Content-Length': postData.length,
+        'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'
+    }}
+}};
+var req = https.request(options, (res) => {{
+    console.log('Credits charged:', res.headers['x-credits-charged']);
+    res.on('data', (d) => {{
+        process.stdout.write(d);
+    }});
+}});
+req.on('error', (e) => {{
+    console.error(e);
+}});
+req.write(postData);
 req.end();
 """
 
@@ -141,7 +123,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return "\n".join(
             [
                 self._get_python(),
-                # self._get_js(),
+                self._get_js(),
             ]
         )
 
@@ -157,10 +139,15 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return '\n\t\t\'options\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': {value}" for key, value in self.options.items()]) + "\n\t\t}"
 
     def _get_js(self):
-        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self.endpoint)
+        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql).replace('\n', ' '), self._get_js_options())
         return self._embed_into_switcher(
             "Node", self._generate_code_fence("js", code_snippet)
         )
+
+    def _get_js_options(self):
+        if self.options is None:
+            return ""
+        return ',\n\toptions: {\n\t\t' + ",\n\t\t".join([f"{key}: {str(value).lower()}" for key, value in self.options.items()]) + "\n\t}"
 
     def __call__(self):
         return self._admonish(
