@@ -20,10 +20,10 @@ print('Credits charged:', response.headers.get('X-Credits-Charged', None))
 
 CURL_REQUEST_TEMPLATE_SQL = """
 curl --request POST \\
-     --data {{'sql': '{}'}} \\
+     --data '{{\"sql\": \"{}\"{}}}' \\
      --url '{}' \\
-     --header 'accept: application/json' \\
-     --header 'x-api-key: <YOUR API KEY>'
+     --header 'Content-Type: application/json' \\
+     --header 'x-api-key: FxKTp6MHpWQDaos8SRnSetdIZiUYLliS' \\
 """
 
 JS_REQUEST_TEMPLATE_SQL = """
@@ -68,6 +68,8 @@ class TransposeDocsInteractive:
         return f'=== "{switch_name}"\n' + self._indent(code)
 
     def _generate_code_fence(self, language, code):
+        if language == "bash":
+            return f"```bash\n{code}\n```"
         return '<code-fence class="transpose_demo" switcher="false" lang="{}" cache="false"><textarea vue-slot="code">{}</textarea></code-fence>'.format(
             language, code
         )
@@ -124,6 +126,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
             [
                 self._get_python(),
                 self._get_js(),
+                self._get_curl(),
             ]
         )
 
@@ -149,6 +152,17 @@ class TransposeDocsSQL(TransposeDocsInteractive):
             return ""
         return ',\n\toptions: {\n\t\t' + ",\n\t\t".join([f"{key}: {str(value).lower()}" for key, value in self.options.items()]) + "\n\t}"
 
+    def _get_curl(self):
+        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self._get_curl_options(), self.endpoint).replace('\*', '*')
+        return self._embed_into_switcher(
+            "cURL", self._generate_code_fence("bash", code_snippet)
+        )
+
+    def _get_curl_options(self):
+        if self.options is None:
+            return ""
+        return  ", " + ", ".join([f"\"{key}\": {value}" for key, value in self.options.items()])
+
     def __call__(self):
         return self._admonish(
             "\n".join([self._get_sql_entry(), self._get_api_multilang()])
@@ -164,25 +178,74 @@ headers = {{
 params = {}
 response = requests.get(url, headers=headers, params=params)
 print(response.text)
+print('Credits charged:', response.headers.get('X-Credits-Charged', None))
+"""
+
+JS_REQUEST_TEMPLATE_REST = """
+const https = require('https');
+const querystring = require('querystring');
+const params = {}
+var options = {{
+    hostname: '{}',
+    path: '{}?' + querystring.stringify(params),
+    method: 'GET',
+    headers: {{
+        'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'
+    }}
+}};
+var req = https.request(options, (res) => {{
+    console.log('Credits charged:', res.headers['x-credits-charged']);
+    res.on('data', (d) => {{
+        process.stdout.write(d);
+    }});
+}});
+req.on('error', (e) => {{
+    console.error(e);
+}});
+req.end();
+"""
+
+CURL_REQUEST_TEMPLATE_REST = """curl -X GET \\
+    '{}?{}' \\
+    -H 'X-API-KEY: FxKTp6MHpWQDaos8SRnSetdIZiUYLliS' \\
 """
 
 
 class TransposeDocsRest(TransposeDocsInteractive):
     def __init__(self, endpoint, params):
         self.endpoint = endpoint
-        self.params = params
+        self.params = params 
 
     def _get_python(self):
-        code_snippet = PYTHON_REQUEST_TEMPLATE_REST.format(self.endpoint, self.params)
+        code_snippet = PYTHON_REQUEST_TEMPLATE_REST.format(self.endpoint, self._get_params_python())
         return self._embed_into_switcher(
             "Python", self._generate_code_fence("py", code_snippet)
+        )
+
+    def _get_params_python(self):
+        return '{\n' + ''.join([f'\t"{key}": "{value}",\n' for key, value in self.params.items()]) + '}'
+
+    def _get_js(self):
+        code_snippet = JS_REQUEST_TEMPLATE_REST.format(self._get_params_js(), self.endpoint.split('/')[2], '/' + '/'.join(self.endpoint.split('/')[3:]))
+        return self._embed_into_switcher(
+            "Node", self._generate_code_fence("js", code_snippet)
+        )
+
+    def _get_params_js(self):
+        return '{\n' + ''.join([f'\t{key}: "{value}",\n' for key, value in self.params.items()]) + '}'
+
+    def _get_curl(self):
+        code_snippet = CURL_REQUEST_TEMPLATE_REST.format(self.endpoint, '&'.join([f'{key}={value}' for key, value in self.params.items()]))
+        return self._embed_into_switcher(
+            "cURL", self._generate_code_fence("bash", code_snippet)
         )
 
     def _get_api_multilang(self):
         return "\n".join(
             [
                 self._get_python(),
-                # self._get_js(),
+                self._get_js(),
+                self._get_curl(),
             ]
         )
 
