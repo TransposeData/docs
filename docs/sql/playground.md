@@ -1,4 +1,4 @@
-# The Playground and Atlas
+# Playground and Atlas
 
 The Playground and Atlas are environments built for exploring, testing, and organizing queries against the entirety of Transpose data. The Playground is a browser-based development tool to help refine your SQL queries that will be integrated into your application. The Atlas is a crowd-sourced query repository that users can explore and contribute to.
 
