@@ -111,8 +111,9 @@ nav:
       - Settlement:
         - 'sql/tables/settlement-layer/accounts.md'
         - 'sql/tables/settlement-layer/blocks.md'
-        - 'sql/tables/settlement-layer/transactions.md'
         - 'sql/tables/settlement-layer/logs.md'
+        - 'sql/tables/settlement-layer/traces.md'
+        - 'sql/tables/settlement-layer/transactions.md'
       - Asset:
         - 'sql/tables/asset-layer/contract-labels/contract_labels.md'
         - 'sql/tables/asset-layer/collections/collections.md'
@@ -125,30 +126,38 @@ nav:
         - 'sql/tables/asset-layer/token-owners/token_owners.md'
         - 'sql/tables/asset-layer/token-transfers/token_transfers.md'
       - Protocol:
-        - 'sql/tables/protocol-layer/aggregate-bridge-events/bridge_events.md'
-        - 'sql/tables/protocol-layer/aggregate-nft-sales/nft_sales.md'
-        - 'sql/tables/protocol-layer/aggregate-dex-swaps/dex_swaps.md'
-        - 'sql/tables/protocol-layer/aggregate-dex-pools/dex_pools.md'
-        - 'sql/tables/protocol-layer/aggregate-dex-liquidity/dex_liquidity.md'
-        - 'sql/tables/protocol-layer/ens-names/ens_names.md'
-        - 'sql/tables/protocol-layer/ens-registries/ens_registries.md'
-        - Individual Protocol NFT Sales:
-          - 'sql/tables/protocol-layer/nft-sales/0x_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/blur_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/cryptokitties_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/cryptopunks_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/foundation_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/knownorigin_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/looksrare_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/opensea_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/rarible_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/sudoswap_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/x_nft_sales.md' 
-          - 'sql/tables/protocol-layer/nft-sales/x2y2_nft_sales.md'         
-        - 'sql/tables/protocol-layer/tornado-cash-pools/tornado_cash_pools.md'
-        - 'sql/tables/protocol-layer/tornado-cash-withdrawals/tornado_cash_withdrawals.md'
-        - 'sql/tables/protocol-layer/tornado-cash-deposits/tornado_cash_deposits.md'
-        - 'sql/tables/protocol-layer/token_prices.md'
+        - Bridges:
+          - 'sql/tables/protocol-layer/aggregate-bridge-events/bridge_events.md'
+        - DEX Swaps:
+          - 'sql/tables/protocol-layer/aggregate-dex-swaps/dex_swaps.md'
+        - DEX Pools: 
+          - 'sql/tables/protocol-layer/aggregate-dex-pools/dex_pools.md'
+        - DEX Liquidity:
+          - 'sql/tables/protocol-layer/aggregate-dex-liquidity/dex_liquidity.md'
+        - ENS Names and Registries:
+          - 'sql/tables/protocol-layer/ens-names/ens_names.md'
+          - 'sql/tables/protocol-layer/ens-registries/ens_registries.md'
+        - NFT Sales:
+          - 'sql/tables/protocol-layer/aggregate-nft-sales/nft_sales.md'
+          - Individual Protocol NFT Sales:
+            - 'sql/tables/protocol-layer/nft-sales/0x_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/blur_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/cryptokitties_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/cryptopunks_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/foundation_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/knownorigin_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/looksrare_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/opensea_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/rarible_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/sudoswap_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/x_nft_sales.md' 
+            - 'sql/tables/protocol-layer/nft-sales/x2y2_nft_sales.md'         
+        - Tornado Cash Pools and Events:
+          - 'sql/tables/protocol-layer/tornado-cash-withdrawals/tornado_cash_withdrawals.md'
+          - 'sql/tables/protocol-layer/tornado-cash-deposits/tornado_cash_deposits.md'
+          - 'sql/tables/protocol-layer/tornado-cash-pools/tornado_cash_pools.md'
+        - Token Prices:
+          - 'sql/tables/protocol-layer/token_prices.md'
 
 extra:
   analytics:
