@@ -126,7 +126,7 @@ nav:
         - 'sql/tables/asset-layer/token-owners/token_owners.md'
         - 'sql/tables/asset-layer/token-transfers/token_transfers.md'
       - Protocol:
-        - Bridges:
+        - Bridge Activity:
           - 'sql/tables/protocol-layer/aggregate-bridge-events/bridge_events.md'
         - DEX Swaps:
           - 'sql/tables/protocol-layer/aggregate-dex-swaps/dex_swaps.md'
