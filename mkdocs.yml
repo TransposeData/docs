@@ -128,18 +128,18 @@ nav:
       - Protocol:
         - Bridge Activity:
           - 'sql/tables/protocol-layer/aggregate-bridge-events/bridge_events.md'
-        - DEX Swaps:
-          - 'sql/tables/protocol-layer/aggregate-dex-swaps/dex_swaps.md'
-        - DEX Pools: 
-          - 'sql/tables/protocol-layer/aggregate-dex-pools/dex_pools.md'
         - DEX Liquidity:
           - 'sql/tables/protocol-layer/aggregate-dex-liquidity/dex_liquidity.md'
+        - DEX Pools: 
+          - 'sql/tables/protocol-layer/aggregate-dex-pools/dex_pools.md'
+        - DEX Swaps:
+          - 'sql/tables/protocol-layer/aggregate-dex-swaps/dex_swaps.md'
         - ENS Names and Registries:
           - 'sql/tables/protocol-layer/ens-names/ens_names.md'
           - 'sql/tables/protocol-layer/ens-registries/ens_registries.md'
         - NFT Sales:
           - 'sql/tables/protocol-layer/aggregate-nft-sales/nft_sales.md'
-          - Individual Protocol NFT Sales:
+          - Protocol-Specific NFT Sales:
             - 'sql/tables/protocol-layer/nft-sales/0x_nft_sales.md' 
             - 'sql/tables/protocol-layer/nft-sales/blur_nft_sales.md' 
             - 'sql/tables/protocol-layer/nft-sales/cryptokitties_nft_sales.md' 
