@@ -157,7 +157,7 @@ nav:
           - 'sql/tables/protocol-layer/tornado-cash-deposits/tornado_cash_deposits.md'
           - 'sql/tables/protocol-layer/tornado-cash-pools/tornado_cash_pools.md'
         - Token Prices:
-          - 'sql/tables/protocol-layer/token_prices.md'
+          - 'sql/tables/protocol-layer/token-prices/token_prices.md'
 
 extra:
   analytics:
