@@ -1,6 +1,7 @@
-# Aggregate Bridge Events
 
-The `bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved. All bridge events tables follow the same database schema presented below. Supported chains: `ethereum`.
+# Fantom Bridge Events
+
+The `fantom_bridge_events` table provides indexed views of all bridge transactions from or to a specified chain for Fantom, and includes the other chain involved. All bridge events tables follow the same database schema presented below. Supported chains: `ethereum`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
@@ -21,4 +22,5 @@ The `bridge_events` table provides indexed views of all bridge transactions from
 | to_address | The address that received tokens on the to_chain_id (null if not found). | `text` |
 | metadata | Protocol-specific metadata for the event (e.g. txn ID that links txns on each chain). | `jsonb` |
 
-{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
+{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }
+
