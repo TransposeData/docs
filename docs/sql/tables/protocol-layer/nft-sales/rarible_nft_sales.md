@@ -1,6 +1,8 @@
+
 # Rarible NFT Sales
 
-The `rarible_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Rarible, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. Supported chains: `ethereum`, `polygon`.
+The `rarible_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Rarible, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+Supported chains: `ethereum`, `polygon`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
@@ -24,4 +26,6 @@ The `rarible_nft_sales` table provides indexed views of all NFT sales transacted
 | buyer_address | The address of the account that bought the NFT. | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
-{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord')}}
+

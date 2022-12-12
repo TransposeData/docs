@@ -1,7 +1,7 @@
 
-# Blur NFT Sales
+# Known Origin NFT Sales
 
-The `blur_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Blur, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+The `known_origin_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Known Origin, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
 Supported chains: `ethereum`.
 
 | Name                | Description                                                                 | Type        |

@@ -1,8 +1,8 @@
 
-# Blur NFT Sales
+# Liteflow NFT Sales
 
-The `blur_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Blur, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
-Supported chains: `ethereum`.
+The `liteflow_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Liteflow, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+Supported chains: `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
