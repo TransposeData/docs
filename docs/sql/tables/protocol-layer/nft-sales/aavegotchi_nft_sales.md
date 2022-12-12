@@ -1,8 +1,8 @@
 
-# Blur NFT Sales
+# Aavegotchi NFT Sales
 
-The `blur_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Blur, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
-Supported chains: `ethereum`.
+The `aavegotchi_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Aavegotchi, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+Supported chains: `polygon`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

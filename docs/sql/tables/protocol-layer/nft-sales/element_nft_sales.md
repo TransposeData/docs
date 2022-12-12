@@ -1,8 +1,8 @@
 
-# Blur NFT Sales
+# Element NFT Sales
 
-The `blur_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Blur, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
-Supported chains: `ethereum`.
+The `element_nft_sales` table provides indexed views of all NFT sales transacted on a specific chain for Element, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
+Supported chains: `ethereum`, `polygon`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
