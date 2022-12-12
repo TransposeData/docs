@@ -103,6 +103,7 @@ nav:
     - 'sql/authentication.md'
     - 'sql/playground.md'
     - 'sql/multichain.md'
+    - 'sql/response.md'
     - Options:
         - 'sql/options/stringify.md'
         - 'sql/options/timeout.md'
