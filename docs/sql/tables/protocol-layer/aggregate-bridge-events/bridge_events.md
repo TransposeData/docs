@@ -1,6 +1,6 @@
 # Aggregate Bridge Events
 
-The `ethereum.bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved. All bridge events tables follow the same database schema presented below.
+The `bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved. All bridge events tables follow the same database schema presented below. Supported chains: `ethereum`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
