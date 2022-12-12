@@ -5,6 +5,10 @@ theme:
     primary: white
   logo: ./assets/logo-black.png
   favicon: ./assets/favicon.png
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+
 
 nav:
   - Introduction: 'index.md'
