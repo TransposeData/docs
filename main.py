@@ -361,9 +361,9 @@ class TransposeDocsColoredLink:
             "rest": 'material-cloud-braces',
             "atlas": 'material-map-outline',
             "playground": 'material-laptop',
-            "python_sdk": 'simple-python',
-            "decoding_sdk": 'simple-python',
-            "defi_sdk": 'simple-python'
+            "python_sdk": 'material-application-parentheses-outline',
+            "decoding_sdk": 'material-magnify',
+            "defi_sdk": 'octicons-graph-16'
         }
 
         return icon_map[self.link_type]
