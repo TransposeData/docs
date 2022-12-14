@@ -212,6 +212,8 @@ nav:
         - 'rest/block-api/routes/accounts_by_date_created.md'
         - 'rest/block-api/routes/blocks_by_date.md'
         - 'rest/block-api/routes/blocks_by_number.md'
+        - 'rest/block-api/routes/logs_by_block.md'
+        - 'rest/block-api/routes/logs_by_transaction.md'
         - 'rest/block-api/routes/transactions_by_account.md'
         - 'rest/block-api/routes/transactions_by_block.md'
         - 'rest/block-api/routes/transactions_by_date.md'
