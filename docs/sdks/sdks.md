@@ -7,7 +7,7 @@ hide:
 # Overview
 
 ## Welcome to the Transpose SDK suite
-Transpose's server-side software development kits (SDKs) are designed to make it easy to integrate Transpose's API suite into your application.  
+Transpose's SDKs are designed to make it easy to integrate Transpose's API suite into your application.  
 
 {{ transpose_colored_link(link_type="python_sdk") }}
 

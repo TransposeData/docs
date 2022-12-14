@@ -293,9 +293,9 @@ class TransposeDocsColoredLink:
             'ens': 'Search for and resolve any ENS record using name, account, expiration, and more.',
             'playground': 'Write and execute SQL queries in our browser-based development tool.',
             'atlas': 'Explore and contribute to queries created by the Transpose community.',
-            'python_sdk': 'A Python SDK for interacting with the Transpose API suite.',
-            'decoding_sdk': 'A Python SDK for decoding contract activity on EVM blockchains.',
-            'defi_sdk': 'A Python SDK for performing multi-chain DeFi analysis using the real-time Transpose SQL API.'
+            'python_sdk': 'A Python SDK for calling the Transpose REST API.',
+            'decoding_sdk': 'A Python SDK for easily decoding contract activity on EVM blockchains.',
+            'defi_sdk': 'A Python SDK for performing multi-chain DeFi analysis using the Transpose SQL API.'
         }
         return desc_map[self.link_type]
 
