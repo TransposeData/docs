@@ -275,6 +275,9 @@ class TransposeDocsColoredLink:
             'ens': '/rest/ens-api/overview',
             'playground': 'https://playground.transpose.io',
             'atlas': 'https://playground.transpose.io',
+            'python_sdk': 'https://github.com/TransposeData/transpose-python-sdk',
+            'decoding_sdk': 'https://github.com/TransposeData/transpose-decoding-sdk',
+            'defi_sdk': 'https://github.com/TransposeData/transpose-defi-sdk'
         }
         return url_map[self.link_type]
 
@@ -290,6 +293,9 @@ class TransposeDocsColoredLink:
             'ens': 'Search for and resolve any ENS record using name, account, expiration, and more.',
             'playground': 'Write and execute SQL queries in our browser-based development tool.',
             'atlas': 'Explore and contribute to queries created by the Transpose community.',
+            'python_sdk': 'A Python SDK for calling the Transpose REST API.',
+            'decoding_sdk': 'A Python SDK for easily decoding contract activity on EVM blockchains.',
+            'defi_sdk': 'A Python SDK for performing multi-chain DeFi analysis using the Transpose SQL API.'
         }
         return desc_map[self.link_type]
 
@@ -305,6 +311,9 @@ class TransposeDocsColoredLink:
             'ens': 'ENS API',
             'playground': 'Explore the Playground',
             'atlas': 'Explore the Atlas',
+            'python_sdk': 'Explore the Python SDK',
+            'decoding_sdk': 'Explore the Decoding SDK',
+            'defi_sdk': 'Explore the DeFi SDK'
         }
         return text_map[self.link_type]
 
@@ -320,6 +329,9 @@ class TransposeDocsColoredLink:
             "quickstart": 'orange',
             "playground": 'blue',
             "atlas": 'orange',
+            "python_sdk": 'blue',
+            "decoding_sdk": 'green',
+            "defi_sdk": 'orange'
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
@@ -349,6 +361,9 @@ class TransposeDocsColoredLink:
             "rest": 'material-cloud-braces',
             "atlas": 'material-map-outline',
             "playground": 'material-laptop',
+            "python_sdk": 'material-application-parentheses-outline',
+            "decoding_sdk": 'material-magnify',
+            "defi_sdk": 'octicons-graph-16'
         }
 
         return icon_map[self.link_type]

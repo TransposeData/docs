@@ -18,6 +18,11 @@ There are two options for saving queries:
 2. Publish to Atlas: visible to everyone in the Atlas, also visible to you under published queries in the playground.
 
 
+## Parameterized queries
+The Playground supports paramaterized SQL queries. For example:
+```SELECT * FROM ethereum.nfts WHERE contract_address = '{{contract_address}}' LIMIT 10;``` When using parameters, an input field will appear in the Playground below the query editor.
+
+
 ## Using the query planner
 The `Analyze` button returns the results of the query planner for the query in your editor. You can use this to check whether your queries are running against indexes, and to gain some insight into how you can optimize your SQL queries. To see what indexes exist on each table, check out the SQL models to the left.
 

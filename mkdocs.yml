@@ -194,7 +194,7 @@ nav:
           - 'sql/tables/protocol-layer/tornado-cash-pools/tornado_cash_pools.md'
         - Token Prices:
           - 'sql/tables/protocol-layer/token-prices/token_prices.md'
-  - 'REST API':
+  - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
     - Pagination: 'rest/pagination.md'
@@ -212,6 +212,8 @@ nav:
         - 'rest/block-api/routes/accounts_by_date_created.md'
         - 'rest/block-api/routes/blocks_by_date.md'
         - 'rest/block-api/routes/blocks_by_number.md'
+        - 'rest/block-api/routes/logs_by_block.md'
+        - 'rest/block-api/routes/logs_by_transaction.md'
         - 'rest/block-api/routes/transactions_by_account.md'
         - 'rest/block-api/routes/transactions_by_block.md'
         - 'rest/block-api/routes/transactions_by_date.md'
@@ -281,7 +283,8 @@ nav:
         - 'rest/ens-api/routes/ens_records_by_token_id.md'
         - 'rest/ens-api/routes/ens_transfers_by_name.md'
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
-
+  - SDK:
+    - Overview: 'sdks/sdks.md'
 extra:
   analytics:
     provider: google
