@@ -19,7 +19,7 @@ There are two options for saving queries:
 
 
 ## Parameterized queries
-The Playground supports paramaterized SQL queries like so:
+The Playground supports paramaterized SQL queries. For example:
 ```SELECT * FROM ethereum.nfts WHERE contract_address = '{{contract_address}}' LIMIT 10;``` When using parameters, an input field will appear in the Playground below the query editor.
 
 
