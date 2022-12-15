@@ -2,6 +2,19 @@
 
 The Transpose SQL API has two types of response types: one for successes and one for errors. A **success response** will be returned on any request that completes successfully (even if no results are returned) along with a HTTP `200` status code. An **error response** will be returned on any request that fails, whether due to the client (i.e. you) or the server (i.e. us), along with a HTTP `4xx` or `5xx` status code.
 
+
+## Limits
+
+The following table shows the response limits for each tier:
+
+| Tier      | Max Response Size (Bytes)      | Response Timeout (Seconds)                                                                 |
+| --------- | --------- | --------------------------------------------------------------------------- |
+| **Free**  | 10000  | 25      |
+| **Developer**   | 100000 | 360 |
+| **Startup** | 100000    | 360                   |
+| **Enterprise** | 500000    | 600                   |
+
+
 ## Success Response
 
 The success response will always obey the following top-level JSON structure:
@@ -9,7 +22,7 @@ The success response will always obey the following top-level JSON structure:
 | Name      | Type      | Description                                                                 |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | `status`  | `string`  | The status of the response. Will be `success` for a success response.      |
-| `stats`   | `object` | The stats of the executed query (specifically the `count`, `size` in millibytes, and `time` in milliseconds). |
+| `stats`   | `object` | The stats of the executed query (specifically the `count`, `size` in megabytes, and `time` in milliseconds). |
 | `results` | `list`    | A list of objects containing the results of the request.                   |
 
 
@@ -52,5 +65,6 @@ Here is an example of an actual error response following this structure:
     "message": "Execution error: Table 'error_test' does not exist"
 }
 ```
+
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
