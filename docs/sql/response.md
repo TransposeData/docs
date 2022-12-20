@@ -12,8 +12,9 @@ The following table shows the response limits for each tier:
 | **Free**  | 10000  | 25      |
 | **Developer**   | 100000 | 360 |
 | **Startup** | 100000    | 360                   |
-| **Enterprise** | 500000    | 600                   |
+| **Enterprise** | 500000*    | 600*                   |
 
+\* *Want more? [Let's chat.](team@transpose.io)*
 
 ## Success Response
 
