@@ -16,7 +16,7 @@ Supported chains: `polygon`.
 | token_addresses | A list of token addresses that the pool contains. | `text[]` |
 | pool_balance | The balance of the DEX pool. | `integer` |
 | category | The category of the event, one of (`deposit`, `withdraw`, or `swap`). | `text` |
-| lp_address | The contract address of the liquidity pool. | `text` |
+| lp_address | The address of the liquidity provider (null for swap events). | `text` |
 | quantity | The quantity of tokens. | `integer` |
 | tick_lower | The lower tick of the event. | `integer` |
 | tick_upper | The upper tick of the event. | `integer` |
