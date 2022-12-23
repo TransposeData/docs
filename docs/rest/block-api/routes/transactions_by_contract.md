@@ -1,6 +1,6 @@
-# Get Traces by Block
+# Get Transactions by Contract
 
-This endpoint returns all [Traces](../models/trace_model.md) that occurred within a given block range (supports pagination). Supported chains: `ethereum`, `goerli`.
+This endpoint returns all [Transactions](../models/transaction_model.md) that occurred for a given contract (supports pagination). Supported chains: `ethereum`, `goerli`.
 
 ## Parameters
 | Parameter | Description | Type |
@@ -13,6 +13,6 @@ This endpoint returns all [Traces](../models/trace_model.md) that occurred withi
 | order | The order in which to retrieve the results (either `asc` or `desc`). | `string` |
 | limit | The maximum number of results to retrieve | `string` |
 
-{{ transpose_fenced_rest('https://api.transpose.io/block/traces-by-block', {'chain_id': 'ethereum', 'limit': 1}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/block/transactions-by-contract', {'chain_id': 'ethereum', 'contract_address': '0x56cb1965a68e33f918a9ece0f3133488258b81b9', 'limit': 1}) }}
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
