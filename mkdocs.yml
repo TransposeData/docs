@@ -206,7 +206,7 @@ nav:
         - Block: 'rest/block-api/models/block_model.md'
         - Transaction: 'rest/block-api/models/transaction_model.md' 
         - Log: 'rest/block-api/models/log_model.md'
-        # - Trace: 'rest/block-api/models/trace_model.md'
+        - Trace: 'rest/block-api/models/trace_model.md'
 
       - 'Routes':
         - 'rest/block-api/routes/accounts_by_address.md'
@@ -216,12 +216,15 @@ nav:
         - 'rest/block-api/routes/blocks_by_number.md'
         - 'rest/block-api/routes/transactions_by_account.md'
         - 'rest/block-api/routes/transactions_by_block.md'
+        - 'rest/block-api/routes/transactions_by_contract.md'
         - 'rest/block-api/routes/transactions_by_date.md'
         - 'rest/block-api/routes/transactions_by_hash.md'
         - 'rest/block-api/routes/logs_by_block.md'
         - 'rest/block-api/routes/logs_by_transaction.md'
-        # - 'rest/block-api/routes/traces_by_block.md'
-        # - 'rest/block-api/routes/traces_by_transaction.md'
+        - 'rest/block-api/routes/traces_by_account.md'
+        - 'rest/block-api/routes/traces_by_block.md'
+        - 'rest/block-api/routes/traces_by_transaction.md'
+        - 'rest/block-api/routes/traces_by_contract.md'
     - 'Token API':
       - Overview: 'rest/token-api/overview.md'
       - 'Models':
