@@ -18,6 +18,7 @@ nav:
     - 'sql/overview.md'
     - Getting Started: 'sql/getting-started.md'
     - 'sql/authentication.md'
+    - 'sql/parameters.md'
     - 'sql/playground.md'
     - 'sql/multichain.md'
     - 'sql/response.md'
