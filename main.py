@@ -146,7 +146,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_python_params(self):
         if self.parameters is None:
             return ""
-        return '\n\t\t\'parameters\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': {value}" for key, value in self.parameters.items()]) + "\n\t\t}"
+        return '\n\t\t\'parameters\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': '{value}'" for key, value in self.parameters.items()]) + "\n\t\t}"
 
     def _get_js(self):
         code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql).replace('\n', ' '), self._get_js_options(), self._get_js_params())
@@ -165,7 +165,8 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return ',\n\tparameters: {\n\t\t' + ",\n\t\t".join([f"{key}: {str(value).lower()}" for key, value in self.parameters.items()]) + "\n\t}"
 
     def _get_curl(self):
-        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self._get_curl_options(), self.endpoint).replace('\*', '*')
+        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
+        print(code_snippet)
         return self._embed_into_switcher(
             "cURL", self._generate_code_fence("bash", code_snippet)
         )
@@ -174,6 +175,11 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         if self.options is None:
             return ""
         return  ", " + ", ".join([f"\"{key}\": {value}" for key, value in self.options.items()])
+    
+    def _get_curl_params(self):
+        if self.parameters is None:
+            return ""
+        return  ", " + ", ".join([f"\"{key}\": {value}" for key, value in self.parameters.items()])
 
     def __call__(self):
         return self._admonish(
