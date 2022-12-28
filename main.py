@@ -21,7 +21,7 @@ print('Credits charged:', response.headers.get('X-Credits-Charged', None))
 
 CURL_REQUEST_TEMPLATE_SQL = """
 curl --request POST \\
-     --data '{{\"sql\": \"{}\"{}}}' \\
+     --data '{{\"sql\": \"{}\"{}{}}}' \\
      --url '{}' \\
      --header 'Content-Type: application/json' \\
      --header 'x-api-key: FxKTp6MHpWQDaos8SRnSetdIZiUYLliS' \\
@@ -165,7 +165,8 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         return ',\n\tparameters: {\n\t\t' + ",\n\t\t".join([f"{key}: '{str(value).lower()}'" for key, value in self.parameters.items()]) + "\n\t}"
 
     def _get_curl(self):
-        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
+        sql = self.sql.replace("\'{{", "\'\\\'\'{{").replace("}}\'", "}}\'\\\'\'")
+        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
         print(code_snippet)
         return self._embed_into_switcher(
             "cURL", self._generate_code_fence("bash", code_snippet)
@@ -179,7 +180,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_curl_params(self):
         if self.parameters is None:
             return ""
-        return  ", " + ", ".join([f"\"{key}\": {value}" for key, value in self.parameters.items()])
+        return  ", \"parameters\": {" + ", ".join([f"\"{key}\": \"{value}\"" for key, value in self.parameters.items()]) + "}"
 
     def __call__(self):
         return self._admonish(
