@@ -30,7 +30,7 @@ curl --request POST \\
 JS_REQUEST_TEMPLATE_SQL = """
 const https = require('https');
 var postData = JSON.stringify({{
-    sql: \"{}\"{}\"{}
+    sql: \"{}\"{}{}
 }});
 var options = {{
     hostname: 'api.transpose.io',
@@ -162,7 +162,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_js_params(self):
         if self.parameters is None:
             return ""
-        return ',\n\tparameters: {\n\t\t' + ",\n\t\t".join([f"{key}: {str(value).lower()}" for key, value in self.parameters.items()]) + "\n\t}"
+        return ',\n\tparameters: {\n\t\t' + ",\n\t\t".join([f"{key}: '{str(value).lower()}'" for key, value in self.parameters.items()]) + "\n\t}"
 
     def _get_curl(self):
         code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
