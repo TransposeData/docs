@@ -36,7 +36,7 @@ The following indexes are available for this table:
 ```
 (__confirmed) WHERE __confirmed = false
 (timestamp)
-(miner_address, block_number
+(miner_address, block_number)
 (miner_address, timestamp)
 ```
 
