@@ -20,6 +20,7 @@ The `traces` table provides indexed views of all traces submitted for a specifie
 | __confirmed | Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
 ## Indexes
+The following indexes are available for this table:
 ```
 (__confirmed) WHERE __confirmed = false
 (block_number, transaction_position)
