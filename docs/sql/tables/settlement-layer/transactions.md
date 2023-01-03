@@ -30,4 +30,15 @@ The `transactions` table provides indexed views of all transactions submitted fo
 | log_count | The number of logs produced in the transaction. | `integer` |
 | __confirmed | Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
+## Indexes
+The following indexes are available for this table:
+```
+(__confirmed) WHERE __confirmed = false
+(block_number, position)
+(timestamp, position)
+(from_address, block_number, position)
+(to_address, block_number, position)
+(to_address, LEFT(input, 10), block_number, position)
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

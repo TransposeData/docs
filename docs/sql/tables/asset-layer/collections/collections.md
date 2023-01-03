@@ -18,4 +18,17 @@ The `collections` table provides indexed views of all NFT collections for a spec
 | opensea_slug | The collection's OpenSea slug. | `text` |
 | opensea_url | The collection's OpenSea URL. | `text` |
 
+## Indexes
+The following indexes are available for this table:
+```
+(verified) WHERE verified = true
+(last_refreshed ASC NULLS FIRST)
+(created_timestamp, contract_address)
+(standard, created_timestamp, contract_address)
+(symbol) WHERE symbol IS NOT NULL AND LENGTH(symbol) <= 15
+GIST (symbol gist_trgm_ops) WHERE symbol IS NOT NULL AND LENGTH(symbol) <= 15
+(name) WHERE name IS NOT NULL AND LENGTH(name) <= 15
+GIST (name gist_trgm_ops) WHERE name IS NOT NULL AND LENGTH(name) <= 15
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

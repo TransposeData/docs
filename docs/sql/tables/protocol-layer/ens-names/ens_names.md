@@ -15,4 +15,17 @@ The `ens_names` table provides indexed views of all ENS names on a specific chai
 | registration_timestamp | The timestamp at which this ENS name was registered (in ISO-8601 format). | `timestamp` |
 | last_refreshed | The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format). | `timestamp` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(ens_node, ens_name)
+(owner_address, ens_name)
+(resolved_address, ens_name)
+(token_id, ens_name)
+(expiration_timestamp, ens_name)
+(registration_timestamp, ens_name)
+(last_refreshed, ens_name)
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

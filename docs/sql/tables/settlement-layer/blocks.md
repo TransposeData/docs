@@ -30,4 +30,14 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 | uncle_2_reward | The amount rewarded to the miner of the second uncle block (in Wei). | `numeric` |
 | __confirmed | Flag indicating whether the block has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
+
+## Indexes
+The following indexes are available for this table:
+```
+(__confirmed) WHERE __confirmed = false
+(timestamp)
+(miner_address, block_number
+(miner_address, timestamp)
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

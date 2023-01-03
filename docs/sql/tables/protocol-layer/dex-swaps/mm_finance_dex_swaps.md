@@ -22,6 +22,19 @@ Supported chains: `polygon`.
 | origin_address | The address that submitted the transaction that contained the swap. | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(timestamp, log_index)
+(from_token_address, timestamp, log_index)
+(to_token_address, timestamp, log_index)
+(from_token_address, to_token_address, timestamp, log_index)
+(origin_address, timestamp, log_index)
+(sender_address, timestamp, log_index)
+(transaction_hash, log_index)
+(contract_address, timestamp, log_index)
+```
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord')}}
 

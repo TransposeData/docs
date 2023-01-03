@@ -17,4 +17,17 @@ The `tornado_cash_deposits` table provides indexed views of all deposits from an
 | origin_address | The address that initiated the deposit transaction (the from address in the transaction). | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(timestamp, log_index)
+(contract_address, block_number, log_index)
+(contract_address, timestamp, log_index)
+(from_address, block_number, log_index)
+(from_address, timestamp, log_index)
+(token_address, timestamp, log_index)
+(transaction_hash, log_index)
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

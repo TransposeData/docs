@@ -16,6 +16,18 @@ Supported chains: `polygon`.
 | factory_address | The address of the factory that created the pool. | `text` |
 | metadata | Additional protocol-specific metadata for the pool. | `json` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(created_timestamp, contract_address)
+(factory_address, created_timestamp, contract_address)
+(creator_address, created_timestamp, contract_address)
+(exchange_name, contract_version, created_timestamp, contract_address)
+(exchange_name, created_timestamp, contract_address)
+GIN (token_addresses)
+(exchange_name, contract_version, created_block_number)
+```
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord')}}
 

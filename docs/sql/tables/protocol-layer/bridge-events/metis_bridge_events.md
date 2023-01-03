@@ -22,5 +22,20 @@ The `metis_bridge_events` table provides indexed views of all bridge transaction
 | to_address | The address that received tokens on the to_chain_id (null if not found). | `text` |
 | metadata | Protocol-specific metadata for the event (e.g. txn ID that links txns on each chain). | `jsonb` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(timestamp, log_index)
+(transaction_hash, log_index)
+(from_token_address, timestamp, log_index)
+(to_token_address, timestamp, log_index)
+(from_address, timestamp, log_index)
+(to_address, timestamp, log_index)
+(from_chain_id, timestamp, log_index)
+(to_chain_id, timestamp, log_index)
+GIN (metadata) WHERE metadata IS NOT NULL
+```
+
 { transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }
 

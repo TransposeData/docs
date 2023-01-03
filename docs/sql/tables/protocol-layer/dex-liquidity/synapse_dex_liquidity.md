@@ -22,6 +22,19 @@ Supported chains: `ethereum`.
 | tick_upper | The upper tick of the event. | `integer` |
 | sender_address | The address that initiated the event. | `text` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(timestamp, log_index)
+(transaction_hash, log_index)
+(token_addresses, timestamp, log_index)
+(token_address, contract_address, timestamp, log_index)
+(contract_address, timestamp, log_index)
+(contract_address, token_address, timestamp, log_index)
+(lp_address, token_address, timestamp, log_index)
+(lp_address, contract_address, timestamp, log_index)
+```
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord')}}
 
