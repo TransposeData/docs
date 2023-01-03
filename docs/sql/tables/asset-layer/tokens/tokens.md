@@ -15,5 +15,7 @@ The `tokens` table provides indexed views of all tokens for a specified chain.
 | description | The token's description. | `text` |
 | external_url | The token's website URL. | `text` |
 | image_url | The token's image URL. | `text` |
+| verified | Met a minimum on-chain liquidity threshold of $1M. | `boolean` |
+
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
