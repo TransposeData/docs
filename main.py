@@ -167,7 +167,6 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_curl(self):
         sql = self.sql.replace("\'{{", "\'\\\'\'{{").replace("}}\'", "}}\'\\\'\'")
         code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
-        print(code_snippet)
         return self._embed_into_switcher(
             "cURL", self._generate_code_fence("bash", code_snippet)
         )
@@ -441,5 +440,4 @@ def define_env(env):
     @env.macro
     def transpose_fenced_code_interactive(code: str, language: str) -> str:
         output = TransposeDocsCodeInteractive(code, language)()
-        print(output)
         return output
