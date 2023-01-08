@@ -7,12 +7,12 @@ The Transpose SQL API has two types of response types: one for successes and one
 
 The following table shows the response limits for each tier:
 
-| Tier      | Max Response Size (Bytes)      | Response Timeout (Seconds)                                                                 |
+| Tier      | Max Response Size (Megabytes)      | Response Timeout (Seconds)                                                                 |
 | --------- | --------- | --------------------------------------------------------------------------- |
-| **Free**  | 10000  | 25      |
-| **Developer**   | 100000 | 360 |
-| **Startup** | 100000    | 360                   |
-| **Enterprise** | 500000*    | 600*                   |
+| **Free**  | 10  | 25      |
+| **Developer**   | 100 | 360 |
+| **Startup** | 100    | 360                   |
+| **Enterprise** | 500*    | 600*                   |
 
 \* *Want more? [Let's chat.](team@transpose.io)*
 
