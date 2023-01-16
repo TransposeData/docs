@@ -102,6 +102,12 @@ nav:
     - Getting Started: 'sql/getting-started.md'
     - 'sql/authentication.md'
     - 'sql/playground.md'
+    - AI Query Assistant: 
+      - Overview: 'sql/assistant/overview.md'
+      - 'sql/assistant/generate-queries.md'
+      - 'sql/assistant/optimize-queries.md'
+      - 'sql/assistant/debug-queries.md'
+      - 'sql/assistant/tips-and-tricks.md'
     - 'sql/multichain.md'
     - Options:
         - 'sql/options/stringify.md'

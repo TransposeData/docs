@@ -333,6 +333,8 @@ class TransposeDocsColoredLink:
                 'blue': 'linear-gradient(to bottom right, #0000ff, #00BFFF)',
                 'green': 'linear-gradient(to bottom right, #008000, #00FF00)',
                 'yellow': 'linear-gradient(to bottom right, #FFD700, #EEEE00)',
+                'red': 'linear-gradient(to bottom right, red, orange)',
+                'cyan': 'linear-gradient(to bottom right, purple, magenta)',
         }
 
         return gradient_map_hex[self.color]
