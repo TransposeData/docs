@@ -1,3 +1,9 @@
+---
+hide:
+ - toc
+ - navigation
+---
+
 # Quickstart
 
 ## Introduction
@@ -29,7 +35,7 @@ Transforms and aggregations on huge datasets?  Sounds like a job for SQL!  With 
 
 The following SQL query selects all NFT sales, filters them to only include CryptoPunks, groups them by date, and returns the count of the number of sales events that occurred on that particular day - an important step towards our ultimate goal of calculating the daily floor price.
 
-{{ transpose_fenced_sql("SELECT\n/* extract date */\ntimestamp::date AS date\nFROM ethereum.nft_sales AS sales \n/* specify CryptoPunks contract address */\nWHERE sales.contract_address = '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D'\n/* group sales by date */\nGROUP BY date\n/* skip days with no sales */\nHAVING COUNT(*) > 0; ") }}
+{{ transpose_fenced_sql("SELECT\n/* extract date */\ntimestamp::date AS date\nFROM ethereum.nft_sales AS sales \n/* specify CryptoPunks contract address */\nWHERE sales.contract_address = '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'\n/* group sales by date */\nGROUP BY date\n/* skip days with no sales */\nHAVING COUNT(*) > 0; ") }}
 
 ## 3. Add logic to get the daily floor price
 
@@ -39,7 +45,7 @@ Given that floor prices can be subject to a lot of dataset noise, here we use a 
 
 Take a moment to examine this revised query, and note the (small) differences between this query and our last query. Then let it rip!
 
-{{ transpose_fenced_sql("SELECT\n/* extract date */\ntimestamp::date AS date,\n/* calculate smart floor price as bottom 5 percentile of USD sale prices */\npercentile_disc(0.2) WITHIN GROUP (ORDER BY usd_price) AS floor_price\nFROM ethereum.nft_sales AS sales \n/* specify CryptoPunks contract address */\nWHERE sales.contract_address = '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D'\n/* group sales by date */\nGROUP BY date\n/* skip days with no sales */\nHAVING COUNT(*) > 0; ") }}
+{{ transpose_fenced_sql("SELECT\n/* extract date */\ntimestamp::date AS date,\n/* calculate smart floor price as bottom 5 percentile of USD sale prices */\npercentile_disc(0.2) WITHIN GROUP (ORDER BY usd_price) AS floor_price\nFROM ethereum.nft_sales AS sales \n/* specify CryptoPunks contract address */\nWHERE sales.contract_address = '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'\n/* group sales by date */\nGROUP BY date\n/* skip days with no sales */\nHAVING COUNT(*) > 0; ") }}
 
 ## Now, it's your turn!
 

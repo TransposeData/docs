@@ -15,5 +15,21 @@ The `tokens` table provides indexed views of all tokens for a specified chain.
 | description | The token's description. | `text` |
 | external_url | The token's website URL. | `text` |
 | image_url | The token's image URL. | `text` |
+| verified | Met a minimum on-chain liquidity threshold of $1M. | `boolean` |
+
+
+## Indexes
+The following indexes are available for this table:
+```
+(verified) WHERE verified = true
+(last_refreshed ASC NULLS FIRST)
+(created_timestamp, contract_address)
+(standard, created_timestamp, contract_address)
+(symbol) WHERE symbol IS NOT NULL AND LENGTH(symbol) <= 15
+GIST (symbol gist_trgm_ops) WHERE symbol IS NOT NULL AND LENGTH(symbol) <= 15
+(name) WHERE name IS NOT NULL AND LENGTH(name) <= 15
+GIST (name gist_trgm_ops) WHERE name IS NOT NULL AND LENGTH(name) <= 15
+```
+
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

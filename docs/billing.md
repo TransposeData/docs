@@ -1,3 +1,9 @@
+---
+hide:
+ - toc
+ - navigation
+---
+
 # Billing
 
 ## Credits and Limits

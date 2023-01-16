@@ -11,16 +11,17 @@ headers = {{
 response = requests.post(url,
     headers=headers,
     json={{
-        'sql': sql_query,{}
+        'sql': sql_query,{}{}
     }},
 )
 print(response.text)
 print('Credits charged:', response.headers.get('X-Credits-Charged', None))
 """
 
+
 CURL_REQUEST_TEMPLATE_SQL = """
 curl --request POST \\
-     --data '{{\"sql\": \"{}\"{}}}' \\
+     --data '{{\"sql\": \"{}\"{}{}}}' \\
      --url '{}' \\
      --header 'Content-Type: application/json' \\
      --header 'x-api-key: FxKTp6MHpWQDaos8SRnSetdIZiUYLliS' \\
@@ -29,7 +30,7 @@ curl --request POST \\
 JS_REQUEST_TEMPLATE_SQL = """
 const https = require('https');
 var postData = JSON.stringify({{
-    sql: \"{}\"{}
+    sql: \"{}\"{}{}
 }});
 var options = {{
     hostname: 'api.transpose.io',
@@ -90,12 +91,13 @@ Remember not to share your API key!  Your API key is a secret, and should not be
 
 
 class TransposeDocsSQL(TransposeDocsInteractive):
-    def __init__(self, default_sql, options: dict=None):
+    def __init__(self, default_sql, options: dict=None, p: dict=None):
         super().__init__()
         self.endpoint = "https://api.transpose.io/sql"
         self.sql = default_sql
         self.unique_identifier = secrets.token_hex(8)
         self.options = options
+        self.parameters = p
 
     def _preprocess_sql_for_string(self, sql):
         """
@@ -131,7 +133,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         )
 
     def _get_python(self):
-        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql), self._get_python_options())
+        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql), self._get_python_options(), self._get_python_params())
         return self._embed_into_switcher(
             "Python", self._generate_code_fence("py", code_snippet)
         )
@@ -140,9 +142,14 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         if self.options is None:
             return ""
         return '\n\t\t\'options\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': {value}" for key, value in self.options.items()]) + "\n\t\t}"
+    
+    def _get_python_params(self):
+        if self.parameters is None:
+            return ""
+        return '\n\t\t\'parameters\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': '{value}'" for key, value in self.parameters.items()]) + "\n\t\t}"
 
     def _get_js(self):
-        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql).replace('\n', ' '), self._get_js_options())
+        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql).replace('\n', ' '), self._get_js_options(), self._get_js_params())
         return self._embed_into_switcher(
             "Node", self._generate_code_fence("js", code_snippet)
         )
@@ -152,8 +159,14 @@ class TransposeDocsSQL(TransposeDocsInteractive):
             return ""
         return ',\n\toptions: {\n\t\t' + ",\n\t\t".join([f"{key}: {str(value).lower()}" for key, value in self.options.items()]) + "\n\t}"
 
+    def _get_js_params(self):
+        if self.parameters is None:
+            return ""
+        return ',\n\tparameters: {\n\t\t' + ",\n\t\t".join([f"{key}: '{str(value).lower()}'" for key, value in self.parameters.items()]) + "\n\t}"
+
     def _get_curl(self):
-        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql), self._get_curl_options(), self.endpoint).replace('\*', '*')
+        sql = self.sql.replace("\'{{", "\'\\\'\'{{").replace("}}\'", "}}\'\\\'\'")
+        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
         return self._embed_into_switcher(
             "cURL", self._generate_code_fence("bash", code_snippet)
         )
@@ -162,6 +175,11 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         if self.options is None:
             return ""
         return  ", " + ", ".join([f"\"{key}\": {value}" for key, value in self.options.items()])
+    
+    def _get_curl_params(self):
+        if self.parameters is None:
+            return ""
+        return  ", \"parameters\": {" + ", ".join([f"\"{key}\": \"{value}\"" for key, value in self.parameters.items()]) + "}"
 
     def __call__(self):
         return self._admonish(
@@ -275,6 +293,9 @@ class TransposeDocsColoredLink:
             'ens': '/rest/ens-api/overview',
             'playground': 'https://playground.transpose.io',
             'atlas': 'https://playground.transpose.io',
+            'python_sdk': 'https://github.com/TransposeData/transpose-python-sdk',
+            'decoding_sdk': 'https://github.com/TransposeData/transpose-decoding-sdk',
+            'defi_sdk': 'https://github.com/TransposeData/transpose-defi-sdk'
         }
         return url_map[self.link_type]
 
@@ -290,6 +311,9 @@ class TransposeDocsColoredLink:
             'ens': 'Search for and resolve any ENS record using name, account, expiration, and more.',
             'playground': 'Write and execute SQL queries in our browser-based development tool.',
             'atlas': 'Explore and contribute to queries created by the Transpose community.',
+            'python_sdk': 'A Python SDK for calling the Transpose REST API.',
+            'decoding_sdk': 'A Python SDK for easily decoding contract activity on EVM blockchains.',
+            'defi_sdk': 'A Python SDK for performing multi-chain DeFi analysis using the Transpose SQL API.'
         }
         return desc_map[self.link_type]
 
@@ -305,6 +329,9 @@ class TransposeDocsColoredLink:
             'ens': 'ENS API',
             'playground': 'Explore the Playground',
             'atlas': 'Explore the Atlas',
+            'python_sdk': 'Explore the Python SDK',
+            'decoding_sdk': 'Explore the Decoding SDK',
+            'defi_sdk': 'Explore the DeFi SDK'
         }
         return text_map[self.link_type]
 
@@ -320,6 +347,9 @@ class TransposeDocsColoredLink:
             "quickstart": 'orange',
             "playground": 'blue',
             "atlas": 'orange',
+            "python_sdk": 'blue',
+            "decoding_sdk": 'green',
+            "defi_sdk": 'orange'
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
@@ -351,6 +381,9 @@ class TransposeDocsColoredLink:
             "rest": 'material-cloud-braces',
             "atlas": 'material-map-outline',
             "playground": 'material-laptop',
+            "python_sdk": 'material-application-parentheses-outline',
+            "decoding_sdk": 'material-magnify',
+            "defi_sdk": 'octicons-graph-16'
         }
 
         return icon_map[self.link_type]
@@ -392,8 +425,8 @@ def define_env(env):
         return output
 
     @env.macro
-    def transpose_fenced_sql(default_sql: str, options: dict=None) -> str:
-        output = TransposeDocsSQL(default_sql, options)()
+    def transpose_fenced_sql(default_sql: str, options: dict=None, p: dict=None) -> str:
+        output = TransposeDocsSQL(default_sql, options, p)()
         return output
 
     @env.macro
@@ -409,5 +442,4 @@ def define_env(env):
     @env.macro
     def transpose_fenced_code_interactive(code: str, language: str) -> str:
         output = TransposeDocsCodeInteractive(code, language)()
-        print(output)
         return output

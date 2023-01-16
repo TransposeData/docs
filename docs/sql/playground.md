@@ -1,4 +1,4 @@
-# The Playground and Atlas
+# Playground and Atlas
 
 The Playground and Atlas are environments built for exploring, testing, and organizing queries against the entirety of Transpose data. The Playground is a browser-based development tool to help refine your SQL queries that will be integrated into your application. The Atlas is a crowd-sourced query repository that users can explore and contribute to.
 
@@ -16,6 +16,11 @@ There are two options for saving queries:
 1. Save privately: available just to you, visible in your query browser bar in the playground.
 
 2. Publish to Atlas: visible to everyone in the Atlas, also visible to you under published queries in the playground.
+
+
+## Parameterized queries
+The Playground supports paramaterized SQL queries. For example:
+```SELECT * FROM ethereum.nfts WHERE contract_address = '{{contract_address}}' LIMIT 10;``` When using parameters, an input field will appear in the Playground below the query editor.
 
 
 ## Using the query planner

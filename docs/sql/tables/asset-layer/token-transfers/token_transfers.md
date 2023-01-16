@@ -17,4 +17,15 @@ The `token_transfers` tables provides indexed views of all transfers (mints, sen
 | activity_id | A unique, sequential identifier for the transfer event. | `numeric` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
+## Indexes
+The following indexes are available for this table:
+```
+(__confirmed) WHERE __confirmed = false
+(transaction_hash)
+(timestamp, activity_id)
+(contract_address, timestamp, activity_id)
+(from_address, timestamp, activity_id)
+(to_address, timestamp, activity_id)
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

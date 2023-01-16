@@ -8,8 +8,8 @@ This endpoint returns all [Transactions](../models/transaction_model.md) that oc
 | --------- | ----------- | ---- |
 | chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
 | account_address | **required** The account address to retrieve contract executions for (supports ENS names). | `string` | 
-| occurred_after | The earlier transaction date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` | 
-| occurred_before | The later transaction date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` | 
+| block_number_above | The earlier block number, inclusive. | `integer` |
+| block_number_below | The later block number, inclusive. | `integer` |
 | transaction_direction | Whether to match transactions that were sent by the account (sent), received by the account (received), or all (all). | `string` |
 | order | The order in which to retrieve the results (either asc or desc). | `string` |
 | limit | The maximum number of results to retrieve | `string` |

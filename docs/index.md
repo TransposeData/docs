@@ -1,3 +1,9 @@
+---
+hide:
+ - toc
+ - navigation
+---
+
 # Introduction
 
 ## Welcome to Transpose

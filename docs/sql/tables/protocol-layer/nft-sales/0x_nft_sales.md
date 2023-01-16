@@ -24,4 +24,16 @@ The `zero_x_nft_sales` table provides indexed views of all NFT sales transacted 
 | buyer_address | The address of the account that bought the NFT. | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
+## Indexes
+The following indexes are available for this table:
+
+```
+(timestamp, log_index, multi_token_sale_index)
+(contract_address, timestamp, log_index, multi_token_sale_index)
+(contract_address, token_id, timestamp, log_index, multi_token_sale_index)
+(buyer_address, timestamp, log_index, multi_token_sale_index)
+(seller_address, timestamp, log_index, multi_token_sale_index)
+(transaction_hash, log_index, multi_token_sale_index)
+```
+
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

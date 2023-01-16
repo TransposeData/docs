@@ -3056,7 +3056,7 @@ Protocol Layer:
             description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
           - column: lp_address
             type: text
-            description: The contract address of the liquidity pool.
+            description: The address of the liquidity provider (null for swap events).
           - column: quantity
             type: integer
             description: The quantity of tokens.
@@ -3108,7 +3108,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3159,7 +3159,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3210,7 +3210,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3261,7 +3261,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3312,7 +3312,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3363,7 +3363,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3414,7 +3414,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3465,7 +3465,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3516,7 +3516,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3567,7 +3567,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3618,7 +3618,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
@@ -3669,7 +3669,7 @@ Protocol Layer:
               description: The category of the event, one of (`deposit`, `withdraw`, or `swap`).
             - column: lp_address
               type: text
-              description: The contract address of the liquidity pool.
+              description: The address of the liquidity provider (null for swap events).
             - column: quantity
               type: integer
               description: The quantity of tokens.
