@@ -69,3 +69,7 @@ LIMIT 1;
 ```
 
 Which does exactly what we want.
+
+{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/tips-and-tricks', text='Tips and Tricks', description='Learn some strategies to get the most out of the Query Assistant', custom_color='cyan', custom_icon='material-rabbit')}}
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

@@ -29,3 +29,5 @@ You can do this by asking in plain English - i.e. at the end of your query, you 
 ## Experiment with altering your prompts
 
 The Query Assistant is still learning, and it's not yet perfect.  If you don't get the results you expect, try changing the wording of your query subtly.
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
