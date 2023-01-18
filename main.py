@@ -291,8 +291,8 @@ class TransposeDocsColoredLink:
             'nft': '/rest/nft-api/overview',
             'token': '/rest/token-api/overview',
             'ens': '/rest/ens-api/overview',
-            'playground': 'https://playground.transpose.io',
-            'atlas': 'https://playground.transpose.io',
+            'playground': 'https://app.transpose.io/playground',
+            'atlas': 'https://app.transpose.io/atlas',
             'python_sdk': 'https://github.com/TransposeData/transpose-python-sdk',
             'decoding_sdk': 'https://github.com/TransposeData/transpose-decoding-sdk',
             'defi_sdk': 'https://github.com/TransposeData/transpose-defi-sdk'
