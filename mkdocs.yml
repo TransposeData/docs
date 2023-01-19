@@ -199,8 +199,7 @@ nav:
           - 'sql/tables/protocol-layer/tornado-cash-withdrawals/tornado_cash_withdrawals.md'
           - 'sql/tables/protocol-layer/tornado-cash-deposits/tornado_cash_deposits.md'
           - 'sql/tables/protocol-layer/tornado-cash-pools/tornado_cash_pools.md'
-        - Token Prices:
-          - 'sql/tables/protocol-layer/token-prices/token_prices.md'
+        - Token Prices: 'sql/tables/protocol-layer/token-prices/token_prices.md'
   - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
