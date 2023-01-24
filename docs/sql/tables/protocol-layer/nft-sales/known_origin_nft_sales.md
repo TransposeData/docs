@@ -24,6 +24,8 @@ Supported chains: `ethereum`.
 | quantity | The quantity of tokens sold (will only be greater than 1 for `ERC-1155` NFTs). | `numeric` |
 | seller_address | The address of the account that sold the NFT. | `text` |
 | buyer_address | The address of the account that bought the NFT. | `text` |
+| royalty_fee | The decimal-adjusted royalty fee paid to the creator of the NFT. | `numeric` |
+| platform_fee | The decimal-adjusted platform fee paid to the exchange that facilitated the NFT sale. | `numeric` |
 | __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
 
 ## Indexes
