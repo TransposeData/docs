@@ -123,6 +123,10 @@ nav:
         - 'rest/token-api/routes/transfers.md'
         - 'rest/token-api/routes/transfers_by_contract_address.md'
         - 'rest/token-api/routes/transfers_by_account.md'
+        - rest/token-api/routes/swaps.md
+        - rest/token-api/routes/swaps_by_account.md
+        - rest/token-api/routes/swaps_by_contract_address.md
+        - rest/token-api/routes/swaps_by_pair.md
     - 'NFT API':
       - Overview: 'rest/nft-api/overview.md'
       - Models:
