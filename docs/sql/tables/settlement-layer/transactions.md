@@ -1,6 +1,6 @@
 # Transactions
 
-The `transactions` table provides indexed views of all transactions submitted for a specified chain.
+The `transactions` table provides indexed views of all transactions submitted for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

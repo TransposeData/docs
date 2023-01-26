@@ -10,7 +10,7 @@ This endpoint returns all [Contract Accounts](../models/account_model.md) that w
 | created_after | The earlier account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
 | created_before | The later account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
 | order | The order in which to retrieve the results (either asc or desc). | `string` |
-| limit | The maximum number of results to retrieve | `string` |
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/contracts-by-creator', {'chain_id': 'ethereum', 'creator_address': '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'}) }}
 

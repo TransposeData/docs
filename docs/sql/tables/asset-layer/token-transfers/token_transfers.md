@@ -1,6 +1,6 @@
 # Token Transfers
 
-The `token_transfers` tables provides indexed views of all transfers (mints, sends, and burns) for Ethereum tokens.
+The `token_transfers` tables provides indexed views of all transfers (mints, sends, and burns) for tokens. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

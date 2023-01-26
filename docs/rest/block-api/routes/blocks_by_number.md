@@ -9,7 +9,7 @@ This endpoint returns all [Blocks](../models/block_model.md) that were mined wit
 | block_number_above | The earlier block number, inclusive. | `integer` |
 | block_number_below | The later block number, inclusive. | `integer` |
 | order | The order in which to retrieve the results (either `asc` or `desc`). | `string` |
-| limit | The maximum number of results to retrieve | `string` |
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/blocks-by-number', {'chain_id': 'ethereum', 'limit': 1}) }}
 

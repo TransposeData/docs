@@ -9,6 +9,7 @@ This endpoint returns all [Native Token Transfers](../models/native_token_transf
 | transferred_after | The earlier transfer date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | transferred_before | The later transfer date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/native-token-transfers', {'chain_id': 'ethereum'}) }}
 

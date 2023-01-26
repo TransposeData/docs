@@ -10,6 +10,7 @@ This endpoint returns [ENS Records](../models/ens_record_model.md) with an expir
 | timestamp_before | The earlier date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | type | Whether to match registration timestamps (`registration`) or expiration timestamps (`expiration`).   | `string` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/ens/ens-records-by-date', {'chain_id': 'ethereum'}) }}
 

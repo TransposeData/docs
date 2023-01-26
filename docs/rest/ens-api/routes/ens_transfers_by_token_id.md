@@ -10,6 +10,7 @@ This endpoint returns [ENS Transfers](../models/ens_transfer_model.md) for a giv
 | transferred_after | The earlier transfer date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | transferred_before | The later transfer date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/ens/ens-transfers-by-token-id', {'chain_id': 'ethereum', 'token_id': '67401271993192073154370163675253119809791142202133058217191388560609186285768'}) }}
 

@@ -9,7 +9,7 @@ This endpoint returns all [Blocks](../models/block_model.md) that were mined wit
 | added_after | The earlier block number, inclusive. | `date-time` |
 | added_before | The later block number, inclusive. | `date-time` |
 | order | The order in which to retrieve the results (either `asc` or `desc`). | `string` |
-| limit | The maximum number of results to retrieve | `string` |
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/blocks-by-date', {'chain_id': 'ethereum', 'limit': 1}) }}
 

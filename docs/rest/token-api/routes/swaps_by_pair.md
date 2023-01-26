@@ -11,6 +11,7 @@ This endpoint returns all [Token Swaps](../models/token_swap_model.md) for a tok
 | occurred_after | The earlier swap date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | occurred_before | The later swap date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/swaps-by-pair', {'chain_id': 'ethereum', 'token_one': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', 'token_two': '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48'}) }}
 

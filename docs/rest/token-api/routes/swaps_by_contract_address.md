@@ -11,6 +11,7 @@ This endpoint returns all [Token Swaps](../models/token_swap_model.md) that occu
 | occurred_after | The earlier swap date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | occurred_before | The later swap date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/swaps-by-contract-address', {'chain_id': 'ethereum', 'contract_address': '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2'}) }}
 

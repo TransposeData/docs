@@ -11,6 +11,7 @@ This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT, i
 | sold_after | The earlier sale date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | sold_before | The later sale date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-token-id', {'chain_id': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB', 'token_id': 5582}) }}
 

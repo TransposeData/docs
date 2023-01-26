@@ -12,7 +12,7 @@ This endpoint returns all [Transactions](../models/transaction_model.md) that oc
 | block_number_below | The later block number, inclusive. | `integer` |
 | transaction_direction | Whether to match transactions that were sent by the account (sent), received by the account (received), or all (all). | `string` |
 | order | The order in which to retrieve the results (either asc or desc). | `string` |
-| limit | The maximum number of results to retrieve | `string` |
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/transactions-by-account', {'chain_id': 'ethereum', 'account_address': 'telemachus.eth'}) }}

@@ -11,6 +11,7 @@ This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT co
 | sold_before | The later sale date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | role | The role of the account in the sale (one of `buyer`, `seller`, or `all`).   | `string` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-account', {'chain_id': 'ethereum', 'account_address': 'tmux.eth'}) }}
 

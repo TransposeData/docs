@@ -1,6 +1,6 @@
 # Contract Labels
 
-The `contract_labels` table provides indexed views for ethereum contract labels and names as provided by Etherscan.
+The `contract_labels` table provides indexed views for ethereum contract labels and names as provided by Etherscan. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

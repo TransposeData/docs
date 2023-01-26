@@ -1,6 +1,6 @@
 # NFTs
 
-The `nfts` table provides indexed views of all NFTs for a specified chain.
+The `nfts` table provides indexed views of all NFTs for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

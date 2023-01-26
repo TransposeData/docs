@@ -1,6 +1,6 @@
 # Token Owners
 
-The `token_owners` table provides indexed views of all owners and owner balances for Ethereum tokens.
+The `token_owners` table provides indexed views of all owners and owner balances for tokens. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

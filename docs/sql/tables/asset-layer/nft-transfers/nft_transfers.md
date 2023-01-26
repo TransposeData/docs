@@ -1,6 +1,6 @@
 # NFT Transfers
 
-The `nft_transfers` table provides indexed views of all transfers (mints, sends, and burns) for Ethereum NFTs.
+The `nft_transfers` table provides indexed views of all transfers (mints, sends, and burns) for NFTs. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

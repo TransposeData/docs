@@ -1,6 +1,6 @@
 # Native Token Transfers
 
-The `native_token_transfers` table provides indexed views of all transfers (mints, sends, and burns) for the Ethereum native token (ETH).
+The `native_token_transfers` table provides indexed views of all transfers (mints, sends, and burns) native token. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

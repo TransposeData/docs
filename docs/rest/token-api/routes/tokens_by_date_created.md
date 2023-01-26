@@ -10,6 +10,7 @@ This endpoint returns all [Tokens](../models/token_model.md) that were created w
 | created_before | The later contract creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | standard | The token standard to filter results by (`ERC-20` or `ERC-777`).   | `string` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/token/tokens-by-date-created', {'chain_id': 'ethereum'}) }}
 

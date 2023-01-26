@@ -1,6 +1,6 @@
 # ENS Registries
 
-The `ens_registries` table provides indexed views of all ENS registries for a specified chain.
+The `ens_registries` table provides indexed views of all ENS registries for a specified chain. Supported chains: `ethereum`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

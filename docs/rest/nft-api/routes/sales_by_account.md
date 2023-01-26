@@ -11,6 +11,7 @@ This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that involve 
 | sold_before | The later sale date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
 | role | The role of the account in the sale (one of `buyer`, `seller`, or `all`).   | `string` | 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-contract-address', {'chain_id': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'}) }}
 

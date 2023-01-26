@@ -1,6 +1,6 @@
 # Aggregate DEX Liquidity
 
-The `dex_liquidity` table provides indexed views of all DEX liquidity for a specified chain. All DEX liquidity tables follows the same database schema presented below.
+The `dex_liquidity` table provides indexed views of all DEX liquidity for a specified chain. All DEX liquidity tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

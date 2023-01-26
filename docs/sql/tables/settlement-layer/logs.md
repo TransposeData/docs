@@ -1,6 +1,6 @@
 # Logs
 
-The `logs` table provides indexed views of all logs emitted for a specified chain.
+The `logs` table provides indexed views of all logs emitted for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

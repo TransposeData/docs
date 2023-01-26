@@ -7,7 +7,7 @@ This endpoint returns all [Logs](../models/log_model.md) that occurred within a 
 | -------- | ---------- | --- |
 | chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
 | transaction_hash | The transaction hash of the transaction to retrieve logs from. | `string` |
-| limit | The maximum number of results to retrieve | `string` |
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/logs-by-transaction', {'chain_id': 'ethereum', 'transaction_hash': '0xeb3bd7f151c127a000bf9b8a8d6c61f65d0d02597e13a1a3ab7b72d5017153a5', 'limit': 1}) }}
 

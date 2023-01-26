@@ -10,7 +10,7 @@ This endpoint returns [Account Models](../models/account_model.md) for a given d
 | created_before | The later account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
 | account_type | The type of account to filter results by (one of all, wallet, or contract). | `string` |
 | order | The order in which to retrieve the results (either asc or desc). | `string` |
-| limit | The maximum number of results to retrieve | `string` |
+| limit | The maximum number of results to retrieve (default `100`). | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/block/accounts-by-date-created', {'chain_id': 'ethereum'}) }}
 
