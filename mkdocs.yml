@@ -39,14 +39,14 @@ nav:
         - 'sql/tables/settlement-layer/logs.md'
         - 'sql/tables/settlement-layer/traces.md'
         - 'sql/tables/settlement-layer/transactions.md'
-      - Asset:
         - 'sql/tables/asset-layer/contract-labels/contract_labels.md'
-        - 'sql/tables/asset-layer/collections/collections.md'
-        - 'sql/tables/asset-layer/native-token-owners/native_token_owners.md'
-        - 'sql/tables/asset-layer/native-token-transfers/native_token_transfers.md'
+      - Asset:
         - 'sql/tables/asset-layer/nfts/nfts.md'
+        - 'sql/tables/asset-layer/collections/collections.md'
         - 'sql/tables/asset-layer/nft-owners/nft_owners.md'
         - 'sql/tables/asset-layer/nft-transfers/nft_transfers.md'
+        - 'sql/tables/asset-layer/native-token-owners/native_token_owners.md'
+        - 'sql/tables/asset-layer/native-token-transfers/native_token_transfers.md'
         - 'sql/tables/asset-layer/tokens/tokens.md'
         - 'sql/tables/asset-layer/token-owners/token_owners.md'
         - 'sql/tables/asset-layer/token-transfers/token_transfers.md'
@@ -194,5 +194,4 @@ markdown_extensions:
 
 plugins:
   - macros
-  - apicall
   - search

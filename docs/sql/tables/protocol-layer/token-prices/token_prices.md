@@ -1,6 +1,6 @@
 # Token Prices
 
-The `token_prices` table provides indexed views for cleaned token prices in USD at every point in time when a token was seen in a DEX swap. Prices are VWAP’d per block (for tokens that were swapped multiple times in a single block). Supported chains: `ethereum`, `polygon`, `goerli`.
+The `token_prices` table provides indexed views for cleaned token prices in USD at every point in time when a token was seen in a DEX swap. Prices are VWAP’d per block (for tokens that were swapped multiple times in a single block). Supported chains: `ethereum`, `polygon`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
