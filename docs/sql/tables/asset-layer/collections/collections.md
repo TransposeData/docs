@@ -1,4 +1,4 @@
-# Collections
+# NFT Collections
 
 The `collections` table provides indexed views of all NFT collections for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`.
 
