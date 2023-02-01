@@ -1,3 +1,4 @@
+import requests
 import secrets
 import re
 
@@ -98,7 +99,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         self.unique_identifier = secrets.token_hex(8)
         self.options = options
         self.parameters = p
-
+    
     def _preprocess_sql_for_string(self, sql):
         """
         Preprocesses the SQL query to make it more readable in the docs.
@@ -409,6 +410,39 @@ class TransposeDocsColoredLink:
 </a>
 """.format(self.url, self.get_color_gradient(), self.icon, self.text, self.description)
 
+class SQLTables:
+    def _get_tables(self):
+        tables_output = {}
+        headers = {'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}
+        output = requests.get('https://api.transpose.io/get-schema', headers=headers)
+        for chain, layers in output.json()['schema'].items():
+            tables_output[chain] = {}
+            for layer, tables in layers.items():
+                tables_output[chain][layer] = []
+                for table in tables:
+                    for name, columns in table.items():
+                        formatted_table_name = f'{chain}.{layer}.{name}'.lower()
+                        tables_output[chain][layer] = tables_output[chain][layer] + [formatted_table_name]
+        return tables_output
+
+    def __call__(self):
+        output = ''
+        for chain, layers in self._get_tables().items():
+            layer_tables = ''
+            for layer, tables in layers.items():
+                chain_li = f'<li>{chain.capitalize()}</li>'
+                layer_li = layer.replace('_', ' ')
+                layer_li = f'<li>{layer_li.title()}</li>'
+                tables_li = ''
+                for table in sorted(tables):
+                    chain = table.split('.')[0]
+                    layer = table.split('.')[1].replace(' ', '-')
+                    title_table = table.split('.')[2]
+                    url_table = table.split('.')[2].replace('-', '_')
+                    tables_li += f'<ul><li><a href="/sql/tables/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
+                layer_tables += f'<div class="layer-tables"><ul><b>{layer_li}</b>{tables_li}</ul></div>'
+            output += f'<div class="chain-layers-tables"><div class="chain-li"><b>{chain_li}</b></div>{layer_tables}</div>'
+        return f'<div class="chains-layers-tables"><h2>SQL Tables</h2>{output}</div>'
 
 class TransposeDocsCodeInteractive(TransposeDocsInteractive):
     def __init__(self, code, language):
@@ -442,4 +476,9 @@ def define_env(env):
     @env.macro
     def transpose_fenced_code_interactive(code: str, language: str) -> str:
         output = TransposeDocsCodeInteractive(code, language)()
+        return output
+    
+    @env.macro
+    def transpose_sql_tables() -> str:
+        output = SQLTables()()
         return output
