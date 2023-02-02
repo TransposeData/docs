@@ -9,6 +9,8 @@ hide:
 ## Welcome to Transpose
 Transpose is the world’s most complete, powerful, and performant Web3 data suite. Our cutting edge indexing engine processes and enriches raw blockchain data in realtime. This data is served to you through a set of intuitive APIs optimized for a wide array of production-ready use cases. Transpose data is decoded from the blockchain using artificial intelligence, and structured by our team of protocol experts in a way that makes it effortless to build on top of.
 
+{{ transpose_colored_link(link_type='data', description='View all of the data we offer on a single page.') }}
+
 {{ transpose_colored_link(link_type='rest', description='If you are looking for hyper-optimized, parameterized access to key blockchain primitives (such as NFT sales, token balances, wallet histories etc.) in bulk, our REST API is built with you in mind.') }}
 
 {{ transpose_colored_link(link_type='sql', description='If your use case requires more flexibility, our SQL API provides you with the ability to write sophisticated custom queries against our full suite of indexed and decoded data that return in just milliseconds.') }}
@@ -21,4 +23,4 @@ Transpose is the world’s most complete, powerful, and performant Web3 data sui
 - Explore the [Transpose Atlas](https://atlas.transpose.io) to discover powerful queries from our community.
 - Want to chat with a member of our team?  [Get in touch](mailto:team@transpose.io).
 
-{{ transpose_colored_link(link_type='discord', text='Joining our Discord') }}
+{{ transpose_colored_link(link_type='discord', text='Join our Discord') }}

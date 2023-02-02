@@ -1,6 +1,6 @@
-# Aggregate DEX Liquidity
+# Aggregate DEX Pools
 
-The `dex_liquidity` table provides indexed views of all DEX liquidity for a specified chain.  Supported chains: `ethereum`, `polygon`.
+The `dex_pools` table provides indexed views of all DEX pools created for a specified chain. All DEX pools tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`.
 
 ## Supported DEX
 
@@ -18,7 +18,7 @@ At the time of writing, we support:
 | oasis | polaris-dex | saddle-finance | sakeswap | sashimiswap |
 | seed_dex | shibaswap | singular-x | smoothyswap | sushiswap |
 | synapse | tokenstore | tokenstore_fork | tradex-one | unicly |
-| uniswap | unitrade | Zeedex | | |
+| uniswap | unitrade | zeedex | | |
 
 | Polygon DEX | | | | |
 | --- | --- | --- | --- | --- |
@@ -34,35 +34,27 @@ At the time of writing, we support:
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
-| block_number | The block number at which the event occurred. | `integer` |
-| log_index | The timestamp at which the event occurred. | `integer` |
-| transaction_hash | The transaction hash of the event. | `text` |
-| timestamp | The timestamp at which the event occurred. | `timestamp` |
-| exchange_name | The name of the exchange that the event occurred on. | `text` |
-| contract_version | The version of the exchange contract interacted with (e.g. `v1` or `v2`). | `text` |
+| created_block_number | The block number at which the DEX pool was created. | `integer` |
+| created_timestamp | The timestamp at which the DEX pool was created. | `integer` |
+| exchange_name | The name of the exchange that the DEX pool belongs to. | `text` |
+| contract_version | The version of the exchange contract that the DEX pool belongs to (e.g. `v1` or `v2` for Balancer). | `text` |
 | contract_address | The contract address of the DEX pool. | `text` |
-| token_addresses | A list of token addresses that the pool contains. | `text[]` |
-| pool_balance | The balance of the DEX pool. | `integer` |
-| category | The category of the event, one of (`deposit`, `withdraw`, or `swap`). | `text` |
-| lp_address | The address of the liquidity provider (null for swap events). | `text` |
-| quantity | The quantity of tokens. | `integer` |
-| tick_lower | The lower tick of the event. | `integer` |
-| tick_upper | The upper tick of the event. | `integer` |
-| sender_address | The address that initiated the event. | `text` |
+| token_addresses | A list of token addresses that the pool contains (can include NFT contract addresses for SudoSwap pools). | `text[]` |
+| creator_address | The address that initiated the pool creation transaction. | `text` |
+| factory_address | The address of the factory that created the pool. | `text` |
+| metadata | Additional protocol-specific metadata for the pool. | `json` |
 
 ## Indexes
 The following indexes are available for this table:
 
 ```
-(timestamp, log_index)
-(transaction_hash, log_index)
-(token_addresses, timestamp, log_index)
-(token_address, contract_address, timestamp, log_index)
-(contract_address, timestamp, log_index)
-(contract_address, token_address, timestamp, log_index)
-(lp_address, token_address, timestamp, log_index)
-(lp_address, contract_address, timestamp, log_index)
+(created_timestamp, contract_address)
+(factory_address, created_timestamp, contract_address)
+(creator_address, created_timestamp, contract_address)
+(exchange_name, contract_version, created_timestamp, contract_address)
+(exchange_name, created_timestamp, contract_address)
+GIN (token_addresses)
+(exchange_name, contract_version, created_block_number)
 ```
-
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

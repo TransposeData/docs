@@ -56,5 +56,5 @@ When you’re ready to experiment further, we recommend:
 
 {{ transpose_colored_link(link_type='playground', text='Exploring the Playground') }}
 
-{{ transpose_colored_link(link_type='discord', text='Joining our Discord') }}
+{{ transpose_colored_link(link_type='discord', text='Join our Discord') }}
 

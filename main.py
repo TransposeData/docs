@@ -1,3 +1,4 @@
+import requests
 import secrets
 import re
 
@@ -98,7 +99,7 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         self.unique_identifier = secrets.token_hex(8)
         self.options = options
         self.parameters = p
-
+    
     def _preprocess_sql_for_string(self, sql):
         """
         Preprocesses the SQL query to make it more readable in the docs.
@@ -295,7 +296,8 @@ class TransposeDocsColoredLink:
             'atlas': 'https://app.transpose.io/atlas',
             'python_sdk': 'https://github.com/TransposeData/transpose-python-sdk',
             'decoding_sdk': 'https://github.com/TransposeData/transpose-decoding-sdk',
-            'defi_sdk': 'https://github.com/TransposeData/transpose-defi-sdk'
+            'defi_sdk': 'https://github.com/TransposeData/transpose-defi-sdk',
+            'data': 'data'
         }
         return url_map[self.link_type]
 
@@ -320,36 +322,38 @@ class TransposeDocsColoredLink:
     def get_text_from_link_type(self):
         text_map = {
             'discord': 'Join our Discord',
-            'rest': 'Explore our REST API Documentation',
-            'sql': 'Explore our SQL API Documentation',
-            'quickstart': 'Visit our Quickstart Guide',
+            'rest': 'REST API Documentation',
+            'sql': 'SQL API Documentation',
+            'quickstart': 'Quickstart Guide',
             'block': 'Block API',
             'nft': 'NFT API',
             'token': 'Token API',
             'ens': 'ENS API',
-            'playground': 'Explore the Playground',
-            'atlas': 'Explore the Atlas',
-            'python_sdk': 'Explore the Python SDK',
-            'decoding_sdk': 'Explore the Decoding SDK',
-            'defi_sdk': 'Explore the DeFi SDK'
+            'playground': 'The Playground',
+            'atlas': 'The Atlas',
+            'python_sdk': 'Python SDK',
+            'decoding_sdk': 'Decoding SDK',
+            'defi_sdk': 'DeFi SDK',
+            'data': 'Our Data'
         }
         return text_map[self.link_type]
 
     def get_color_from_link_type(self):
         color_map = {
             "discord": 'purple',
-            "block": 'blue',
-            "nft": 'green',
-            "token": 'yellow',
-            "ens": 'orange',
+            "block": 'red',
+            "nft": 'blue',
+            "token": 'green',
+            "ens": 'yellow',
             "rest": 'blue',
             "sql": 'green',
-            "quickstart": 'orange',
-            "playground": 'blue',
-            "atlas": 'orange',
-            "python_sdk": 'blue',
-            "decoding_sdk": 'green',
-            "defi_sdk": 'orange'
+            "quickstart": 'yellow',
+            "playground": 'red',
+            "atlas": 'blue',
+            "python_sdk": 'red',
+            "decoding_sdk": 'blue',
+            "defi_sdk": 'green',
+            "data": 'orange'
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
@@ -383,7 +387,8 @@ class TransposeDocsColoredLink:
             "playground": 'material-laptop',
             "python_sdk": 'material-application-parentheses-outline',
             "decoding_sdk": 'material-magnify',
-            "defi_sdk": 'octicons-graph-16'
+            "defi_sdk": 'octicons-graph-16',
+            "data": 'material-magnify'
         }
 
         return icon_map[self.link_type]
@@ -409,6 +414,39 @@ class TransposeDocsColoredLink:
 </a>
 """.format(self.url, self.get_color_gradient(), self.icon, self.text, self.description)
 
+class SQLTables:
+    def _get_tables(self):
+        tables_output = {}
+        headers = {'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}
+        output = requests.get('https://api.transpose.io/get-schema', headers=headers)
+        for chain, layers in output.json()['schema'].items():
+            tables_output[chain] = {}
+            for layer, tables in layers.items():
+                tables_output[chain][layer] = []
+                for table in tables:
+                    for name, columns in table.items():
+                        formatted_table_name = f'{chain}.{layer}.{name}'.lower()
+                        tables_output[chain][layer] = tables_output[chain][layer] + [formatted_table_name]
+        return tables_output
+
+    def __call__(self):
+        output = ''
+        for chain, layers in self._get_tables().items():
+            layer_tables = ''
+            for layer, tables in layers.items():
+                chain_li = f'<li>{chain.capitalize()}</li>'
+                layer_li = layer.replace('_', ' ')
+                layer_li = f'<li>{layer_li.title()}</li>'
+                tables_li = ''
+                for table in sorted(tables):
+                    chain = table.split('.')[0]
+                    layer = table.split('.')[1].replace(' ', '-')
+                    title_table = table.split('.')[2]
+                    url_table = table.split('.')[2].replace('-', '_')
+                    tables_li += f'<ul><li><a href="../sql/tables/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
+                layer_tables += f'<div class="layer-tables"><ul><b>{layer_li}</b>{tables_li}</ul></div>'
+            output += f'<div class="chain-layers-tables"><div class="chain-li"><b>{chain_li}</b></div>{layer_tables}</div>'
+        return f'<div class="chains-layers-tables"><h2>SQL Tables</h2>{output}</div>'
 
 class TransposeDocsCodeInteractive(TransposeDocsInteractive):
     def __init__(self, code, language):
@@ -442,4 +480,9 @@ def define_env(env):
     @env.macro
     def transpose_fenced_code_interactive(code: str, language: str) -> str:
         output = TransposeDocsCodeInteractive(code, language)()
+        return output
+    
+    @env.macro
+    def transpose_sql_tables() -> str:
+        output = SQLTables()()
         return output

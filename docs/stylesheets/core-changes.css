@@ -145,3 +145,35 @@ p {
 	margin-inline-start: 0px;
 	margin-inline-end: 0px;
 }
+
+.md-typeset ul li {
+	margin-left: 0;
+}
+
+.chain-li {
+	font-size: 18px;
+	margin-bottom: 1em;
+	margin-top: 1.25em;
+}
+
+.chains-layers-tables {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	line-height: 0.5;
+}
+
+.chains-layers-tables li {
+	list-style-type: none;
+}
+
+.chain-layers-tables {
+	font-size: 16px;
+}
+
+.chain-layers-tables li {
+	list-style-type: none;
+}
+
+.sql-tables-chain {
+	line-height: 1;
+}
