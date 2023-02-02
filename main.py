@@ -345,15 +345,15 @@ class TransposeDocsColoredLink:
             "nft": 'blue',
             "token": 'green',
             "ens": 'yellow',
-            "rest": 'yellow',
+            "rest": 'blue',
             "sql": 'green',
-            "quickstart": 'blue',
+            "quickstart": 'yellow',
             "playground": 'red',
-            "atlas": 'green',
+            "atlas": 'blue',
             "python_sdk": 'red',
             "decoding_sdk": 'blue',
             "defi_sdk": 'green',
-            "data": 'red'
+            "data": 'orange'
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
