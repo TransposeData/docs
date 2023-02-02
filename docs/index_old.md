@@ -21,4 +21,4 @@ Transpose is the world’s most complete, powerful, and performant Web3 data sui
 - Explore the [Transpose Atlas](https://atlas.transpose.io) to discover powerful queries from our community.
 - Want to chat with a member of our team?  [Get in touch](mailto:team@transpose.io).
 
-{{ transpose_colored_link(link_type='discord', text='Joining our Discord') }}
+{{ transpose_colored_link(link_type='discord', text='Join our Discord') }}

@@ -18,7 +18,7 @@ At the time of writing, we support:
 | oasis | polaris-dex | saddle-finance | sakeswap | sashimiswap |
 | seed_dex | shibaswap | singular-x | smoothyswap | sushiswap |
 | synapse | tokenstore | tokenstore_fork | tradex-one | unicly |
-| uniswap | unitrade | Zeedex | | |
+| uniswap | unitrade | zeedex | | |
 
 | Polygon DEX | | | | |
 | --- | --- | --- | --- | --- |

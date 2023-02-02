@@ -1,6 +1,6 @@
 # NFT Owners
 
-The `nft_owners` table provides indexed views of all owners and owner balances for NFTs. Supported chains: `ethereum`, `polygon`, `goerli`.
+The `nft_owners` table provides indexed views of all owners and owner balances for NFTs. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

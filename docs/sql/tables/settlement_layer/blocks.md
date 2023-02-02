@@ -1,6 +1,6 @@
 # Blocks
 
-The `blocks` table provides indexed views of all blocks mined and validated for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`.
+The `blocks` table provides indexed views of all blocks mined and validated for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

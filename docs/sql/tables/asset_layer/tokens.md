@@ -1,6 +1,6 @@
 # Tokens
 
-The `tokens` table provides indexed views of all tokens for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`.
+The `tokens` table provides indexed views of all tokens for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
