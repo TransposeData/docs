@@ -2,6 +2,7 @@
 
 The `nft_transfers` table provides indexed views of all transfers (mints, sends, and burns) for NFTs. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | contract_address | Contract address of the NFT's collection. | `text` |

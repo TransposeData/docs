@@ -2,6 +2,7 @@
 
 The `nft_owners` table provides indexed views of all owners and owner balances for NFTs. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | contract_address | Contract address of the NFT's collection. | `text` |

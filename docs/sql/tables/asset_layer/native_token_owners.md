@@ -2,6 +2,7 @@
 
 The `native_token_owners` table provides indexed views of all owners and owner balances for native tokens. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | owner_address | The address of the owner. | `text` |

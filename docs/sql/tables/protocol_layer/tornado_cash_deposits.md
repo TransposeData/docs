@@ -2,6 +2,7 @@
 
 The `tornado_cash_deposits` table provides indexed views of all deposits from any Tornado Cash mixer pools on a specific chain, including any forks of Tornado Cash. Supported chains: `ethereum`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number at which the deposit transaction occurred. | `integer` |

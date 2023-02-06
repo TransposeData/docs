@@ -2,6 +2,7 @@
 
 The `token_transfers` tables provides indexed views of all transfers (mints, sends, and burns) for tokens. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | contract_address | Contract address of the token. | `text` |

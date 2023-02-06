@@ -3,7 +3,6 @@
 The `bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved.  Supported chains: `ethereum`.
 
 ## Supported Bridges
-
 | Ethereum Bridges | | | | |
 | --------- | --------- | --------- | --------- | --------- |
 | across | allbridge | apex | arbitrum | avalanche |
@@ -16,7 +15,6 @@ The `bridge_events` table provides indexed views of all bridge transactions from
 | synapse | synthetix | wormhole | zkswap | zksync |
 
 ## Columns
-
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number at which the event occurred. | `integer` |

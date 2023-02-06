@@ -3,7 +3,6 @@
 The `dex_liquidity` table provides indexed views of all DEX liquidity for a specified chain.  Supported chains: `ethereum`, `polygon`.
 
 ## Supported DEXs
-
 | Ethereum | | | | |
 | --- | --- | --- | --- | --- |
 | 1inch | balancer | bancor | curve | dodoswap | kyber |
@@ -15,7 +14,6 @@ The `dex_liquidity` table provides indexed views of all DEX liquidity for a spec
 | uniswap |    |      |   |  |
 
 ## Columns
-
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number at which the event occurred. | `integer` |

@@ -2,6 +2,7 @@
 
 The `ens_names` table provides indexed views of all ENS names on a specific chain, with continuous background refreshing of ENS data and ownership. Supported chains: `ethereum`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | ens_name | The ENS name. | `text` |

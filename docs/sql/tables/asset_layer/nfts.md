@@ -2,6 +2,7 @@
 
 The `nfts` table provides indexed views of all NFTs for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | contract_address | Contract address of the NFT's collection. | `text` |

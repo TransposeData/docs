@@ -3,7 +3,6 @@
 The `dex_pools` table provides indexed views of all DEX pools created for a specified chain. All DEX pools tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`.
 
 ## Supported DEXs
-
 | Ethereum | | | | |
 | --- | --- | --- | --- | --- |
 | 1inch | balancer | bancor | curve | dodoswap | electricswap |
@@ -17,7 +16,6 @@ The `dex_pools` table provides indexed views of all DEX pools created for a spec
 | sushiswap | uniswap |     |  |  |
 
 ## Columns
-
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | created_block_number | The block number at which the DEX pool was created. | `integer` |

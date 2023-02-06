@@ -2,6 +2,7 @@
 
 The `native_token_transfers` table provides indexed views of all transfers (mints, sends, and burns) native token. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | timestamp | The block number at which the transfer occurred. | `timestamp` |

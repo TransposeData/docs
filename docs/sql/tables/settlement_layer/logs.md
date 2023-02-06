@@ -2,6 +2,7 @@
 
 The `logs` table provides indexed views of all logs emitted for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number the parent transaction was included in. | `integer` |

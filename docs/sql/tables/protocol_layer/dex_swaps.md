@@ -3,7 +3,6 @@
 The `dex_swaps` table provides indexed views of all DEX swaps transacted for a specified chain. All DEX swaps tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`.
 
 ## Supported DEXs
-
 | Ethereum | | | | |
 | --- | --- | --- | --- | --- |
 | 0x | 1inch | afro-dex | airswap | atomic-blue |
@@ -29,7 +28,6 @@ The `dex_swaps` table provides indexed views of all DEX swaps transacted for a s
 | tetuswap | unifi    | uniswap   | vulcanswap | wault-finance |
 
 ## Columns
-
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number at which the DEX swap occurred. | `integer` |

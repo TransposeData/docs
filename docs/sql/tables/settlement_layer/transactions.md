@@ -2,6 +2,7 @@
 
 The `transactions` table provides indexed views of all transactions submitted for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number the transaction was included in. | `integer` |

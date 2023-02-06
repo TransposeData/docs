@@ -2,6 +2,7 @@
 
 The `traces` table provides indexed views of all traces submitted for a specified chain. Supported chains: `ethereum`, `goerli`. 
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number the transaction was included in. | `integer` |

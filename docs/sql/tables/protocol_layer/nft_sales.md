@@ -3,7 +3,6 @@
 The `nft_sales` table provides indexed views of all NFT sales transacted on a specific chain, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`, `goerli`.
 
 ## Supported Exchanges
-
 | Ethereum | | | | |
 | --- | --- | --- | --- | --- |
 | 0x | blur | cryptokitties | cryptopunk | decentraland | element |
@@ -18,7 +17,6 @@ The `nft_sales` table provides indexed views of all NFT sales transacted on a sp
 | tofu | treasureland | 
 
 ## Columns
-
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number at which the NFT sale occurred. | `integer` |

@@ -2,6 +2,7 @@
 
 The `tornado_cash_pools` table provides indexed views of all Tornado Cash mixer pools on a specific chain, including any forks of Tornado Cash. Supported chains: `ethereum`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | created_block_number | The block number that the contract was created at. | `integer` |

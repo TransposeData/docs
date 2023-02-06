@@ -2,6 +2,7 @@
 
 The `tokens` table provides indexed views of all tokens for a specified chain. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | contract_address | Contract address of the token. | `text` |

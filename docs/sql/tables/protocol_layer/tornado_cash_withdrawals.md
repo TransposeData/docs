@@ -2,6 +2,7 @@
 
 The `tornado_cash_withdrawals` table provides indexed views of all withdraws from Tornado Cash mixer pools on a specific chain, including any forks of Tornado Cash. Supported chains: `ethereum`.
 
+## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | block_number | The block number at which the withdrawal transaction occurred. | `integer` |
