@@ -57,9 +57,7 @@ nav:
         - 'sql/tables/protocol_layer/dex_swaps.md'
         - 'sql/tables/protocol_layer/token_prices.md'
         - 'sql/tables/protocol_layer/contract_labels.md'
-        - ENS:
-          - 'sql/tables/protocol_layer/ens_names.md'
-          - 'sql/tables/protocol_layer/ens_registries.md'
+        - 'sql/tables/protocol_layer/ens_names.md'
         - Tornado Cash:
           - 'sql/tables/protocol_layer/tornado_cash_withdrawals.md'
           - 'sql/tables/protocol_layer/tornado_cash_deposits.md'
