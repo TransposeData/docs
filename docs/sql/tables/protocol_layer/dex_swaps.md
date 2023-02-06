@@ -1,12 +1,10 @@
-# Aggregate DEX Swaps
+# DEX Swaps
 
 The `dex_swaps` table provides indexed views of all DEX swaps transacted for a specified chain. All DEX swaps tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`.
 
-## Supported DEX
+## Supported DEXs
 
-At the time of writing, we support:
-
-| Ethereum DEX | | | | |
+| Ethereum | | | | |
 | --- | --- | --- | --- | --- |
 | 0x | 1inch | afro-dex | airswap | atomic-blue |
 | az-exchange | balancer | bancor | bean-dex | bebop |
@@ -16,11 +14,11 @@ At the time of writing, we support:
 | etherdelta | etherdelta-fork | ether-next | ethmall | ex-toke |
 | fraxswap | kyber | market-place | miniswap | n-dex-market |
 | oasis | polaris-dex | saddle-finance | sakeswap | sashimiswap |
-| seed_dex | shibaswap | singular-x | smoothyswap | sushiswap |
-| synapse | tokenstore | tokenstore_fork | tradex-one | unicly |
+| seed-dex | shibaswap | singular-x | smoothyswap | sushiswap |
+| synapse | tokenstore | tokenstore-fork | tradex-one | unicly |
 | uniswap | unitrade | zeedex | | |
 
-| Polygon DEX | | | | |
+| Polygon | | | | |
 | --- | --- | --- | --- | --- |
 | acy    | apeswap  | balancer  | bebop | boltr |
 | cafewap | cometh   | curve     | dfyn  | dodoswap |

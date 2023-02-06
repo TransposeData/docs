@@ -55,15 +55,15 @@ nav:
         - 'sql/tables/protocol_layer/dex_liquidity.md'
         - 'sql/tables/protocol_layer/dex_pools.md'
         - 'sql/tables/protocol_layer/dex_swaps.md'
+        - 'sql/tables/protocol_layer/token_prices.md'
         - 'sql/tables/protocol_layer/contract_labels.md'
-        - ENS Names and Registries:
+        - ENS:
           - 'sql/tables/protocol_layer/ens_names.md'
           - 'sql/tables/protocol_layer/ens_registries.md'
-        - Tornado Cash Pools and Events:
+        - Tornado Cash:
           - 'sql/tables/protocol_layer/tornado_cash_withdrawals.md'
           - 'sql/tables/protocol_layer/tornado_cash_deposits.md'
           - 'sql/tables/protocol_layer/tornado_cash_pools.md'
-        - Token Prices: 'sql/tables/protocol_layer/token_prices.md'
   - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'

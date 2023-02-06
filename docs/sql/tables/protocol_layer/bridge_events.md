@@ -1,12 +1,8 @@
-# Aggregate Bridge Events
+# Bridge Events
 
 The `bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved.  Supported chains: `ethereum`.
 
 ## Supported Bridges
-
-{{ transpose_colored_link(link_type='atlas', text='Supported Bridges', description='View the most up-to-date info on the bridges that we support', url='https://app.transpose.io/atlas/CCHdOiXEnKxH') }}
-
-Running the query above will ensure the most up-to-date list of bridges we support.  At the time of writing, we support the following bridges:
 
 | Ethereum Bridges | | | | |
 | --------- | --------- | --------- | --------- | --------- |

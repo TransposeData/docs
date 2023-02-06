@@ -1,34 +1,20 @@
-# Aggregate DEX Pools
+# DEX Pools
 
 The `dex_pools` table provides indexed views of all DEX pools created for a specified chain. All DEX pools tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`.
 
-## Supported DEX
+## Supported DEXs
 
-At the time of writing, we support:
-
-| Ethereum DEX | | | | |
+| Ethereum | | | | |
 | --- | --- | --- | --- | --- |
-| 0x | 1inch | afro-dex | airswap | atomic-blue |
-| az-exchange | balancer | bancor | bean-dex | bebop |
-| bitcratic | bitox-io | cityswap | coin-change-ex | cowswap |
-| cryptlo | curve | ddex | decentrex | defi-swap |
-| dex-blue | dodoswap | e-dex | elasticswap | enclaves |
-| etherdelta | etherdelta-fork | ether-next | ethmall | ex-toke |
-| fraxswap | kyber | market-place | miniswap | n-dex-market |
-| oasis | polaris-dex | saddle-finance | sakeswap | sashimiswap |
-| seed_dex | shibaswap | singular-x | smoothyswap | sushiswap |
-| synapse | tokenstore | tokenstore_fork | tradex-one | unicly |
-| uniswap | unitrade | zeedex | | |
+| 1inch | balancer | bancor | curve | dodoswap | electricswap |
+| fraxswap | kyber | saddle | shibaswap | sushiswap |
+| synapse | uniswap |  | |
 
-| Polygon DEX | | | | |
+| Polygon | | | | |
 | --- | --- | --- | --- | --- |
-| acy    | apeswap  | balancer  | bebop | boltr |
-| cafewap | cometh   | curve     | dfyn  | dodoswap |
-| elkswap | fraxswap | gravis    | gravity | honeyswap |
-| idex    | jetswap  | kakidex   | kryptodex | kyber |
-| magician | meshswap | mm-finance | oboswap | pearzap |
-| polycat | quickswap | radioshack | stableworld | sushiswap |
-| tetuswap | unifi    | uniswap   | vulcanswap | wault-finance |
+| apeswap    | balancer  | curve  | dfyn | dodoswap |
+| fraxswap | kyber   | meshswap     | mmfinance  | quickswap |
+| sushiswap | uniswap |     |  |  |
 
 ## Columns
 

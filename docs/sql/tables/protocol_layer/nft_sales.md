@@ -1,6 +1,23 @@
-# Aggregate NFT Sales
+# NFT Sales
 
 The `nft_sales` table provides indexed views of all NFT sales transacted on a specific chain, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below. Supported chains: `ethereum`, `polygon`, `goerli`.
+
+## Supported Exchanges
+
+| Ethereum | | | | |
+| --- | --- | --- | --- | --- |
+| 0x | blur | cryptokitties | cryptopunk | decentraland | element |
+| foundation | known-origin | looksrare | mirror | opensea |
+| rarible | sandbox | scatter | sudoswap | superrare |
+| x | x2y2 | zora |
+
+| Polygon | | | | |
+| --- | --- | --- | --- | --- |
+| aavegotchi    | bitkeep  | decentraland  | element | magiceden |
+| okex | oneplanet   | opensea     | playdapp  | rarible |
+| tofu | treasureland | 
+
+## Columns
 
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

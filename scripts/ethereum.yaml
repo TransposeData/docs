@@ -547,7 +547,7 @@ Asset Layer:
 
 Protocol Layer:
   - NFT Sales:
-    - Aggregate NFT Sales:
+    - NFT Sales:
         meta:
           table: nft_sales
           description: The `ethereum.nft_sales` table provides indexed views of all NFT sales transacted on Ethereum, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more. All NFT sales tables follows the same database schema presented below.
@@ -1431,7 +1431,7 @@ Protocol Layer:
               description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
 
   - DEX Swaps:
-    - Aggregate DEX Swaps:
+    - DEX Swaps:
         meta:
           table: dex_swaps
           description: The `ethereum.dex_swaps` table provides indexed views of all DEX swaps transacted on Ethereum. All DEX swaps tables follows the same database schema presented below.
@@ -2555,7 +2555,7 @@ Protocol Layer:
               description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
 
   - DEX Pools:
-    - Aggregate DEX Pools:
+    - DEX Pools:
         meta:
           table: dex_pools
           description: The `ethereum.dex_pools` table provides indexed views of all DEX pools created on Ethereum. All DEX pools tables follows the same database schema presented below.
@@ -3019,7 +3019,7 @@ Protocol Layer:
               description: Additional protocol-specific metadata for the pool.
 
   - DEX Liquidity:
-    - Aggregate DEX Liquidity:
+    - DEX Liquidity:
         meta:
           table: dex_liquidity
           description: The `ethereum.dex_liquidity` table provides indexed views of all DEX liquidity on ethereum. All DEX liquidity tables follows the same database schema presented below.

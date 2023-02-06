@@ -175,7 +175,10 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_curl_options(self):
         if self.options is None:
             return ""
-        return  ", " + ", ".join([f"\"{key}\": {value}" for key, value in self.options.items()])
+        for key, value in self.options.items():
+            if isinstance(value, bool):
+                self.options[key] = str(value).lower()
+        return  ", \"options\": {" + ", ".join([f"\"{key}\": {value}" for key, value in self.options.items()]) + "}"
     
     def _get_curl_params(self):
         if self.parameters is None:
@@ -434,7 +437,7 @@ class SQLTables:
         for chain, layers in self._get_tables().items():
             layer_tables = ''
             for layer, tables in layers.items():
-                chain_li = f'<li>{chain.capitalize()}</li>'
+                chain_li = f'<li>{chain.capitalize()} Tables</li>'
                 layer_li = layer.replace('_', ' ')
                 layer_li = f'<li>{layer_li.title()}</li>'
                 tables_li = ''
@@ -446,7 +449,7 @@ class SQLTables:
                     tables_li += f'<ul><li><a href="../sql/tables/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
                 layer_tables += f'<div class="layer-tables"><ul><b>{layer_li}</b>{tables_li}</ul></div>'
             output += f'<div class="chain-layers-tables"><div class="chain-li"><b>{chain_li}</b></div>{layer_tables}</div>'
-        return f'<div class="chains-layers-tables"><h2>SQL Tables</h2>{output}</div>'
+        return f'<div class="chains-layers-tables">{output}</div>'
 
 class TransposeDocsCodeInteractive(TransposeDocsInteractive):
     def __init__(self, code, language):
