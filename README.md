@@ -1,5 +1,7 @@
 # Transpose Docs
 
+To run locally:
+
 ```
 python -m venv venv
 source venv/bin/activate
