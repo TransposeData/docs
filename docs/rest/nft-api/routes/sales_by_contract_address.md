@@ -13,6 +13,6 @@ This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT co
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
 | limit | The maximum number of results to retrieve (default `100`). | `string` |
 
-{{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-account', {'chain_id': 'ethereum', 'account_address': 'tmux.eth'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/nft/sales-by-contract-address', {'chain_id': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'}) }}
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
