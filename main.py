@@ -446,7 +446,7 @@ class SQLTables:
                     layer = table.split('.')[1].replace(' ', '-')
                     title_table = table.split('.')[2]
                     url_table = table.split('.')[2].replace('-', '_')
-                    tables_li += f'<ul><li><a href="../sql/tables/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
+                    tables_li += f'<ul><li><a href="../sql/tables/{chain}/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
                 layer_tables += f'<div class="layer-tables"><ul><b>{layer_li}</b>{tables_li}</ul></div>'
             output += f'<div class="chain-layers-tables"><div class="chain-li"><b>{chain_li}</b></div>{layer_tables}</div>'
         return f'<div class="chains-layers-tables">{output}</div>'
