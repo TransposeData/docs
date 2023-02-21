@@ -25,8 +25,6 @@ The `transactions` table provides indexed views of all transactions submitted fo
 | to_address | The address of the transaction's recipient, if any. | `text` |
 | value | The amount sent by the transaction (in Wei). | `numeric` |
 | contract_address | The address of the contract created by the transaction, if any. | `text` |
-| input | The input data for the transaction. | `text` |
-| output | The output data for the transaction. | `text` |
 | internal_transaction_count | The number of internal transactions produced in the transaction. | `integer` |
 | log_count | The number of logs produced in the transaction. | `integer` |
 | __confirmed | Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
