@@ -24,11 +24,6 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 | transactions_count | The number of transactions in the block. | `integer` |
 | miner_address | The address of the miner who mined the block. | `text` |
 | block_reward | The amount rewarded to the miner (or validator in PoS Ethereum) of the block (in Wei). | `numeric` |
-| uncle_count | The number of uncle blocks included in the block. | `integer` |
-| uncle_1_address | The address of the miner who mined the first uncle block. | `text` |
-| uncle_2_address | The address of the miner who mined the second uncle block. | `text` |
-| uncle_1_reward | The amount rewarded to the miner of the first uncle block (in Wei). | `numeric` |
-| uncle_2_reward | The amount rewarded to the miner of the second uncle block (in Wei). | `numeric` |
 | __confirmed | Flag indicating whether the block has been confirmed. | `boolean` |
 
 
@@ -36,6 +31,7 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 The following indexes are available for this table:
 ```
 (__confirmed) WHERE __confirmed = false
+(block_number)
 (timestamp)
 (miner_address, block_number)
 (miner_address, timestamp)
