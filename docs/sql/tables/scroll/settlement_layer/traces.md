@@ -18,7 +18,7 @@ The `traces` table provides indexed views of all traces submitted for a specifie
 | contract_address | The address of the contract created by the transaction, if any. | `text` |
 | input | The input data for the trace. | `text` |
 | output | The output data for the trace. | `text` |
-| __confirmed | Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the transaction has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:

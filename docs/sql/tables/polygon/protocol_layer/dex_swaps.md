@@ -44,7 +44,7 @@ The `dex_swaps` table provides indexed views of all DEX swaps transacted for a s
 | effective_price | The price of the to-token denominated by the from-token (i.e. `quantity_out` / `quantity_in`). | `numeric` |
 | sender_address | The address that performed the swap. | `text` |
 | origin_address | The address that submitted the transaction that contained the swap. | `text` |
-| __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the transfer has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:

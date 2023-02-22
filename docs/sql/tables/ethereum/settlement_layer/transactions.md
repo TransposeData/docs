@@ -29,7 +29,7 @@ The `transactions` table provides indexed views of all transactions submitted fo
 | output | The output data for the transaction. | `text` |
 | internal_transaction_count | The number of internal transactions produced in the transaction. | `integer` |
 | log_count | The number of logs produced in the transaction. | `integer` |
-| __confirmed | Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the transaction has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:

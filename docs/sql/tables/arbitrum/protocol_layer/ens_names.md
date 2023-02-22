@@ -1,0 +1,32 @@
+# ENS Names
+
+The `ens_names` table provides indexed views of all ENS names on a specific chain, with continuous background refreshing of ENS data and ownership.
+
+## Columns
+| Name                | Description                                                                 | Type        |
+| --------- | --------- | --------------------------------------------------------------------------- |
+| ens_name | The ENS name. | `text` |
+| ens_node | The unique ENS nodehash which points to the ENS name. | `text` |
+| contract_address | The contract address of the ENS collection. | `text` |
+| token_id | The token ID of the ENS name. | `numeric` |
+| owner_address | The address of the ENS name owner. | `text` |
+| resolver_address | The address of the resolver contract  for the ENS name. | `text` |
+| resolved_address | The address that the ENS name resolves to. | `text` |
+| expiration_timestamp | The timestamp at which this ENS registration will expire (in ISO-8601 format). | `timestamp` |
+| registration_timestamp | The timestamp at which this ENS name was registered (in ISO-8601 format). | `timestamp` |
+| last_refreshed | The timestamp at which the ENS record was last refreshed by the Transpose backend (in ISO-8601 format). | `timestamp` |
+
+## Indexes
+The following indexes are available for this table:
+
+```
+(ens_node, ens_name)
+(owner_address, ens_name)
+(resolved_address, ens_name)
+(token_id, ens_name)
+(expiration_timestamp, ens_name)
+(registration_timestamp, ens_name)
+(last_refreshed, ens_name)
+```
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

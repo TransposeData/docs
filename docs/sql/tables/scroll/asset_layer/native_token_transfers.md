@@ -13,7 +13,7 @@ The `native_token_transfers` table provides indexed views of all transfers (mint
 | to_address | The address of the receiver | `text` |
 | quantity | The quantity of native token transferred. | `numeric` |
 | activity_id | A sequential ID to identify the correct ordering of native token transfers. | `numeric` |
-| __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the transfer has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:

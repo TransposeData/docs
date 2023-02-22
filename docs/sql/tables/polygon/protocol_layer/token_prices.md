@@ -10,7 +10,7 @@ The `token_prices` table provides indexed views for cleaned token prices in USD 
 | token_address | The address of the token that is priced in USD. | `text` |
 | token_symbol | The symbol of the token that is priced in USD. | `text` |
 | price | The price of the token at the time of the swap in USD. | `decimal` |
-| __confirmed | Flag indicating whether the block number the token was priced in has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the block number the token was priced in has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:

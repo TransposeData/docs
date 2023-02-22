@@ -114,7 +114,7 @@ Settlement Layer:
           description: The amount rewarded to the miner of the second uncle block (in Wei).
         - column: __confirmed
           type: boolean
-          description: Flag indicating whether the block has been confirmed (2 Beacon Chain epochs have passed).
+          description: Flag indicating whether the block has been confirmed.
 
   - Transactions:
       meta:
@@ -189,7 +189,7 @@ Settlement Layer:
           description: The number of logs produced in the transaction.
         - column: __confirmed
           type: boolean
-          description: Flag indicating whether the transaction has been confirmed (2 Beacon Chain epochs have passed).
+          description: Flag indicating whether the transaction has been confirmed.
 
   - Logs:
       meta:
@@ -231,7 +231,7 @@ Settlement Layer:
           description: The position of the parent transaction in the block.
         - column: __confirmed
           type: boolean
-          description: Flag indicating whether the log has been confirmed (2 Beacon Chain epochs have passed).
+          description: Flag indicating whether the log has been confirmed.
 
   - Contract Labels:
       meta:
@@ -398,7 +398,7 @@ Asset Layer:
             description: A unique, sequential identifier for the transfer event.
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
   
   - Tokens:
     - Tokens:
@@ -495,7 +495,7 @@ Asset Layer:
             description: A unique, sequential identifier for the transfer event.
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
 
   - Native Token:
     - Native Token Owners:
@@ -541,7 +541,7 @@ Asset Layer:
             description: A sequential ID to identify the correct ordering of native token transfers.
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
     
 
 
@@ -608,7 +608,7 @@ Protocol Layer:
             description: The address of the account that bought the NFT.
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
     
     - Individual Protocol Sales:
       - Blur NFT Sales:
@@ -672,7 +672,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - CryptoPunk NFT Sales:
           meta:
@@ -735,7 +735,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
       
       - CryptoKitties NFT Sales:
           meta:
@@ -798,7 +798,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Foundation NFT Sales:
           meta:
@@ -861,7 +861,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - LooksRare NFT Sales:
           meta:
@@ -924,7 +924,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - OpenSea NFT Sales:
           meta:
@@ -987,7 +987,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Rarible NFT Sales:
           meta:
@@ -1050,7 +1050,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - SudoSwap NFT Sales:
           meta:
@@ -1113,7 +1113,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - SuperRare NFT Sales:
           meta:
@@ -1176,7 +1176,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - X2Y2 NFT Sales:
           meta:
@@ -1239,7 +1239,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - "0x NFT Sales":
           meta:
@@ -1302,7 +1302,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - KnownOrigin NFT Sales:
           meta:
@@ -1365,7 +1365,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - X NFT Sales:
           meta:
@@ -1428,7 +1428,7 @@ Protocol Layer:
               description: The address of the account that bought the NFT.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
   - DEX Swaps:
     - DEX Swaps:
@@ -1480,7 +1480,7 @@ Protocol Layer:
             description: The address that submitted the transaction that contained the swap.
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
 
     - Individual Protocol Swaps:
       - AirSwap DEX Swaps:
@@ -1532,7 +1532,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Balancer DEX Swaps:
           meta:
@@ -1583,7 +1583,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Bancor DEX Swaps:
           meta:
@@ -1634,7 +1634,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - CowSwap DEX Swaps:
           meta:
@@ -1685,7 +1685,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Curve DEX Swaps:
           meta:
@@ -1736,7 +1736,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - DDEX Swaps:
           meta:
@@ -1787,7 +1787,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - DexBlue Swaps:
           meta:
@@ -1838,7 +1838,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - DodoSwap DEX Swaps:
           meta:
@@ -1889,7 +1889,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - ElasticSwap DEX Swaps:
           meta:
@@ -1940,7 +1940,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Enclaves DEX Swaps:
           meta:
@@ -1991,7 +1991,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - EtherDelta DEX Swaps:
           meta:
@@ -2042,7 +2042,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - FraxSwap DEX Swaps:
           meta:
@@ -2093,7 +2093,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Kyber DEX Swaps:
           meta:
@@ -2144,7 +2144,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Oasis DEX Swaps:
           meta:
@@ -2195,7 +2195,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - "1Inch DEX Swaps":
           meta:
@@ -2246,7 +2246,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Saddle Finance DEX Swaps:
           meta:
@@ -2297,7 +2297,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Shibaswap DEX Swaps:
           meta:
@@ -2348,7 +2348,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Smoothyswap DEX Swaps:
           meta:
@@ -2399,7 +2399,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - Sushiswap Swaps:
           meta:
@@ -2450,7 +2450,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - TokenStore DEX Swaps:
           meta:
@@ -2501,7 +2501,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
       - "0x DEX Swaps":
           meta:
@@ -2552,7 +2552,7 @@ Protocol Layer:
               description: The address that submitted the transaction that contained the swap.
             - column: __confirmed
               type: boolean
-              description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+              description: Flag indicating whether the transfer has been confirmed.
 
   - DEX Pools:
     - DEX Pools:
@@ -3807,7 +3807,7 @@ Protocol Layer:
             description: The address that initiated the withdrawal transaction (the from address in the transaction).
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
             
     - Tornado Cash Deposits:
         meta:
@@ -3849,7 +3849,7 @@ Protocol Layer:
             description: The address that initiated the deposit transaction (the from address in the transaction).
           - column: __confirmed
             type: boolean
-            description: Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed).
+            description: Flag indicating whether the transfer has been confirmed.
 
   - Token Prices:
       meta:
@@ -3873,4 +3873,4 @@ Protocol Layer:
           description: The price of the token at the time of the swap in USD.
         - column: __confirmed
           type: boolean
-          description: Flag indicating whether the block number the token was priced in has been confirmed (2 Beacon Chain epochs have passed).
+          description: Flag indicating whether the block number the token was priced in has been confirmed.

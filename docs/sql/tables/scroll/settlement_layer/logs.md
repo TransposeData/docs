@@ -16,7 +16,7 @@ The `logs` table provides indexed views of all logs emitted for a specified chai
 | topic_2 | The third log topic. | `text` |
 | topic_3 | The fourth log topic. | `text` |
 | data | The data of the log (bytes data as a hex string). | `text` |
-| __confirmed | Flag indicating whether the log has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the log has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:
