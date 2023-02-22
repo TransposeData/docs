@@ -147,6 +147,9 @@ nav:
         - 'sql/tables/scroll/asset_layer/tokens.md'
         - 'sql/tables/scroll/asset_layer/token_owners.md'
         - 'sql/tables/scroll/asset_layer/token_transfers.md'
+      - Protocol:
+        - 'sql/tables/scroll/protocol_layer/dex_pools.md'
+        - 'sql/tables/scroll/protocol_layer/dex_swaps.md'
 
   - REST API:
     - Overview: 'rest/overview.md'
