@@ -29,7 +29,7 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 | uncle_2_address | The address of the miner who mined the second uncle block. | `text` |
 | uncle_1_reward | The amount rewarded to the miner of the first uncle block (in Wei). | `numeric` |
 | uncle_2_reward | The amount rewarded to the miner of the second uncle block (in Wei). | `numeric` |
-| __confirmed | Flag indicating whether the block has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the block has been confirmed. | `boolean` |
 
 
 ## Indexes

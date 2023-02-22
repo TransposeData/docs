@@ -16,7 +16,7 @@ The `token_transfers` tables provides indexed views of all transfers (mints, sen
 | to_address | The address of the receiver. | `text` |
 | quantity | The quantity of tokens transferred. | `numeric` |
 | activity_id | A unique, sequential identifier for the transfer event. | `numeric` |
-| __confirmed | Flag indicating whether the transfer has been confirmed (2 Beacon Chain epochs have passed). | `boolean` |
+| __confirmed | Flag indicating whether the transfer has been confirmed. | `boolean` |
 
 ## Indexes
 The following indexes are available for this table:
