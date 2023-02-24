@@ -1,6 +1,6 @@
 # Get Transactions by Block
 
-This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given block number range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given block number range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter | Description | Type |

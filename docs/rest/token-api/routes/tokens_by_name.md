@@ -1,6 +1,6 @@
 # Get Tokens by Name
 
-This endpoint returns all [Tokens](../models/token_model.md) that match a given name substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Tokens](../models/token_model.md) that match a given name substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

@@ -1,6 +1,6 @@
 # Get Native Token Transfers
 
-This endpoint returns all [Native Token Transfers](../models/native_token_transfer_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Native Token Transfers](../models/native_token_transfer_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

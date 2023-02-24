@@ -1,6 +1,6 @@
 # Get Token Swaps by Account
 
-This endpoint returns all [Token Swaps](../models/token_swap_model.md) that involved a specific account (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [Token Swaps](../models/token_swap_model.md) that involved a specific account (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

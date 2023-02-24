@@ -104,7 +104,7 @@ nav:
         - 'sql/tables/arbitrum/asset_layer/token_transfers.md'
       - Protocol:
         - 'sql/tables/arbitrum/protocol_layer/nft_sales.md'
-        - 'sql/tables/arbitrum/protocol_layer/dex_liquidity.md'
+        - 'sql/tables/arbitrum/protocol_layer/token_prices.md'
         - 'sql/tables/arbitrum/protocol_layer/dex_pools.md'
         - 'sql/tables/arbitrum/protocol_layer/dex_swaps.md'
     - Goerli Tables:

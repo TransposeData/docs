@@ -1,6 +1,6 @@
 # Get Transfers by Account
 
-This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that occurred within the given date range and involved a given account (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that occurred within the given date range and involved a given account (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

@@ -1,6 +1,6 @@
 # Get Logs by Transaction
 
-This endpoint returns all [Logs](../models/log_model.md) that occurred within a given transaction (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Logs](../models/log_model.md) that occurred within a given transaction (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter | Description | Type |

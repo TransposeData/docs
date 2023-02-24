@@ -1,6 +1,6 @@
 # Get Tokens by Date Created
 
-This endpoint returns all [Tokens](../models/token_model.md) that were created within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Tokens](../models/token_model.md) that were created within a given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

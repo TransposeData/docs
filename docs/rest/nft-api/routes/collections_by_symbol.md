@@ -1,6 +1,6 @@
 # Get Collections by Symbol
 
-This endpoint returns all [NFT Collections](../models/collection_model.md) that match a given symbol substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [NFT Collections](../models/collection_model.md) that match a given symbol substring (supports pagination up to 1000 results). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

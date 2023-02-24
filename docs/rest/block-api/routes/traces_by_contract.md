@@ -1,6 +1,6 @@
 # Get Traces by Contract
 
-This endpoint returns all [Traces](../models/trace_model.md) that occurred for a given contract (supports pagination). Supported chains: `ethereum`, `goerli`.
+This endpoint returns all [Traces](../models/trace_model.md) that occurred for a given contract (supports pagination). Supported chains: `ethereum`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter | Description | Type |

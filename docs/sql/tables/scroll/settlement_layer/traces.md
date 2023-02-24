@@ -1,6 +1,6 @@
 # Traces
 
-The `traces` table provides indexed views of all traces submitted for a specified chain. Supported chains: `ethereum`, `goerli`. 
+The `traces` table provides indexed views of all traces submitted for a specified chain. Supported chains: `ethereum`, `goerli`, `scroll`, `arbitrum`. 
 
 ## Columns
 | Name                | Description                                                                 | Type        |

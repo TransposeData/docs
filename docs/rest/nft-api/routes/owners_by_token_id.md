@@ -1,6 +1,6 @@
 # Get Owners by Token ID
 
-This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a given NFT, identified by a collection contract address and token ID pair (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a given NFT, identified by a collection contract address and token ID pair (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

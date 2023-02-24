@@ -1,6 +1,6 @@
 # Get Traces by Transaction
 
-This endpoint returns all [Traces](../models/trace_model.md) that occurred within a given transaction (supports pagination). Supported chains: `ethereum`, `goerli`.
+This endpoint returns all [Traces](../models/trace_model.md) that occurred within a given transaction (supports pagination). Supported chains: `ethereum`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter | Description | Type |

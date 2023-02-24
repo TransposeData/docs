@@ -1,6 +1,6 @@
 # Multichain
 
-Transpose supports the following chains: `ethereum`, `polygon`, `goerli`.
+Transpose supports the following chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 More will be added soon! If we don't have a chain you're looking for, please reach out to the team.
 

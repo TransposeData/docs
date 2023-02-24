@@ -1,6 +1,6 @@
 # Get NFTs by Owner
 
-This endpoint returns all [NFTs](../models/nft_model.md) that are owned by a given account address, with the included owner balances (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [NFTs](../models/nft_model.md) that are owned by a given account address, with the included owner balances (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

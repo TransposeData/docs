@@ -1,6 +1,6 @@
 # Get Logs by Block
 
-This endpoint returns all [Logs](../models/log_model.md) that occurred within a given block range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [Logs](../models/log_model.md) that occurred within a given block range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter | Description | Type |

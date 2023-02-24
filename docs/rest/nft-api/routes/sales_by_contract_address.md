@@ -1,6 +1,6 @@
 # Get NFT Sales by Contract Address
 
-This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT collection, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`.
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT collection, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

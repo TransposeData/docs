@@ -1,6 +1,6 @@
 # Get NFTs by Contract Address
 
-This endpoint returns all [NFTs](../models/nft_model.md) within a given collection, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`.
+This endpoint returns all [NFTs](../models/nft_model.md) within a given collection, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

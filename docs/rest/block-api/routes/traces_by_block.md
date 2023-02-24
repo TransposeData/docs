@@ -1,6 +1,6 @@
 # Get Traces by Block
 
-This endpoint returns all [Traces](../models/trace_model.md) that occurred within a given block range (supports pagination). Supported chains: `ethereum`, `goerli`.
+This endpoint returns all [Traces](../models/trace_model.md) that occurred within a given block range (supports pagination). Supported chains: `ethereum`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter | Description | Type |
