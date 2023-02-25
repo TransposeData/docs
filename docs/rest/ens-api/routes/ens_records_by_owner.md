@@ -1,6 +1,6 @@
 # Get ENS Records by Owner
 
-This endpoint returns [ENS Records](../models/ens_record_model.md) for names that are owned by a given account (supports pagination). Supported chains: `ethereum`.
+This endpoint returns [ENS Records](../models/ens_record_model.md) for names that are owned by a given account (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

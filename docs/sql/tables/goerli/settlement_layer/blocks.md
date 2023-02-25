@@ -21,7 +21,7 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 | total_fees_burned | The amount of transaction fees burned in the block (see EIP-1559) (in Wei). | `numeric` |
 | total_fees_rewarded | The amount of transaction fees rewarded to the miner of the block (in Wei). | `numeric` |
 | total_fees_saved | The amount of transaction fees saved by transactions in the block (in Wei). | `numeric` |
-| transactions_count | The number of transactions in the block. | `integer` |
+| transaction_count | The number of transactions in the block. | `integer` |
 | miner_address | The address of the miner who mined the block. | `text` |
 | block_reward | The amount rewarded to the miner (or validator in PoS Ethereum) of the block (in Wei). | `numeric` |
 | __confirmed | Flag indicating whether the block has been confirmed. | `boolean` |
