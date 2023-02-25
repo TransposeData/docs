@@ -12,7 +12,7 @@ The `blocks` table provides indexed views of all blocks mined and validated for 
 | size_bytes | The block's size (in bytes). | `numeric` |
 | gas_limit | The maximum amount of gas that can be used in the block (in gas units). | `numeric` |
 | gas_used | The amount of gas used in the block (in gas units). | `numeric` |
-| transactions_count | The number of transactions in the block. | `integer` |
+| transaction_count | The number of transactions in the block. | `integer` |
 | validator_address | The address of the validator who validated the block. | `text` |
 | __confirmed | Flag indicating whether the block has been confirmed. | `boolean` |
 
