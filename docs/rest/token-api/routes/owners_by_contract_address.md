@@ -1,6 +1,6 @@
 # Get Owners by Contract Address
 
-This endpoint returns all [Accounts](../models/token_owner_model.md) that own a given token, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [Accounts](../models/token_owner_model.md) that own a given token, identified by a contract address (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
