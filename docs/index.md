@@ -20,7 +20,7 @@ Transpose is the world’s most complete, powerful, and performant Web3 data sui
 ## Next steps
 - Make sure you’ve created a free tier team account. You can do that [here](https://app.transpose.io).
 - Start off with our [quick start tutorial](quickstart.md).
-- Explore the [Transpose Atlas](https://atlas.transpose.io) to discover powerful queries from our community.
+- Explore the [Transpose Atlas](https://app.transpose.io/atlas) to discover powerful queries from our community.
 - Want to chat with a member of our team?  [Get in touch](mailto:team@transpose.io).
 
 {{ transpose_colored_link(link_type='discord', text='Join our Discord') }}
