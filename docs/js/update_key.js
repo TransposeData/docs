@@ -4,7 +4,7 @@ function updateAPIKey(newKey) {
 	for (var i = 0; i < codeStrings.length; i++) {
 		var codeString = codeStrings[i];
 		console.log(codeString.innerHTML);
-		if (codeString.innerHTML === "'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'") {
+		if (codeString.innerHTML === "'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG'") {
 			console.log('found it');
 			codeString.innerHTML = "'" + newKey + "'";
 		}
