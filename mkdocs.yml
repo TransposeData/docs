@@ -247,6 +247,7 @@ nav:
         - 'rest/ens-api/routes/ens_records_by_token_id.md'
         - 'rest/ens-api/routes/ens_transfers_by_name.md'
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
+  - Custom Endpoints: 'endpoint/endpoint.md'
   - SDK: 'sdk/overview.md'
   - 'billing.md'
 extra:
