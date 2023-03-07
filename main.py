@@ -7,7 +7,7 @@ url = "{}"
 sql_query = \"\"\"{}\"\"\"
 headers = {{
     'Content-Type': 'application/json',
-    'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS',
+    'X-API-KEY': 'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG',
 }}
 response = requests.post(url,
     headers=headers,
@@ -25,7 +25,7 @@ curl --request POST \\
      --data '{{\"sql\": \"{}\"{}{}}}' \\
      --url '{}' \\
      --header 'Content-Type: application/json' \\
-     --header 'x-api-key: FxKTp6MHpWQDaos8SRnSetdIZiUYLliS' \\
+     --header 'x-api-key: BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG' \\
 """
 
 JS_REQUEST_TEMPLATE_SQL = """
@@ -40,7 +40,7 @@ var options = {{
     headers: {{
         'Content-Type': 'application/json',
         'Content-Length': postData.length,
-        'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'
+        'X-API-KEY': 'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG'
     }}
 }};
 var req = https.request(options, (res) => {{
@@ -195,7 +195,7 @@ PYTHON_REQUEST_TEMPLATE_REST = """import requests
 url = "{}"
 headers = {{
     'Content-Type': 'application/json',
-    'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS',
+    'X-API-KEY': 'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG',
 }}
 params = {}
 response = requests.get(url, headers=headers, params=params)
@@ -212,7 +212,7 @@ var options = {{
     path: '{}?' + querystring.stringify(params),
     method: 'GET',
     headers: {{
-        'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'
+        'X-API-KEY': 'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG'
     }}
 }};
 var req = https.request(options, (res) => {{
@@ -229,7 +229,7 @@ req.end();
 
 CURL_REQUEST_TEMPLATE_REST = """curl -X GET \\
     '{}?{}' \\
-    -H 'X-API-KEY: FxKTp6MHpWQDaos8SRnSetdIZiUYLliS' \\
+    -H 'X-API-KEY: BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG' \\
 """
 
 
@@ -420,7 +420,7 @@ class TransposeDocsColoredLink:
 class SQLTables:
     def _get_tables(self):
         tables_output = {}
-        headers = {'X-API-KEY': 'FxKTp6MHpWQDaos8SRnSetdIZiUYLliS'}
+        headers = {'X-API-KEY': 'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG'}
         output = requests.get('https://api.transpose.io/get-schema', headers=headers)
         for chain, layers in output.json()['schema'].items():
             tables_output[chain] = {}
