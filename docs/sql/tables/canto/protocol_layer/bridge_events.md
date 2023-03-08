@@ -3,16 +3,9 @@
 The `bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved.
 
 ## Supported Bridges
-| Ethereum | | | | |
+| Canto | | | | |
 | --------- | --------- | --------- | --------- | --------- |
-| across | allbridge | apex | arbitrum | avalanche |
-| axie-infinity | celer | dydx | fantom | fuse |
-| gnosis | gravity | harmony | heco | hop |
-| immutable-x | layer0 | layer2-finance | loopring | metis |
-| multichain | omg | optics | optimism | orbit |
-| polygon | polygon-pos | rainbow | ren | rhino-finance |
-| secret | sollet | sorare | stargate | starknet |
-| synapse | synthetix | wormhole | zkswap | zksync |
+| synapse |||||
 
 ## Columns
 | Name                | Description                                                                 | Type        |
