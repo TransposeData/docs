@@ -250,6 +250,11 @@ nav:
     - Overview: 'custom-endpoints/overview.md'
     - Authentication: 'custom-endpoints/authentication.md'
     - Create a Custom Endpoint: 'custom-endpoints/create.md'
+    - Integrate your Custom Endpoints: 'custom-endpoints/integrate.md'
+    - Parameterizing Endpoints: 'custom-endpoints/parameters.md'
+    - Version Control for Custom Endpoints: 'custom-endpoints/version-control.md'
+    - Sharing Endpoints: 'custom-endpoints/atlas.md'
+
   - SDK: 'sdk/overview.md'
   - 'billing.md'
 extra:
