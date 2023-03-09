@@ -33,9 +33,16 @@ You can choose whether to make this endpoint version public or private.  Public 
 
 Once you've deployed your endpoint, you can call it in production using the endpoint's URL.  You can find the endpoint's URL by selecting the endpoint from the 'My Endpoints' tab in the Playground, and copying the URL from the 'Endpoint URL' field.  You can also directly copy a code snippet in the language of your choice, by clicking the 'Generate Code Snippet' button.
 
-![Alt Text](../assets/custom-endpoint/call-endpoint.gif)
+![Alt Text](../assets/custom-endpoint/integrate-query.gif)
 
 By default, the URL and the generated code snippets will include the default parameters for this endpoint (if any).  In this example, we haven't parameterized this endpoint, but you can learn more about parameterizing custom endpoints by clicking the link below.
 
 {{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Parameterize Endpoints', description='Learn how to add parameters to your endpoint, and call the endpoint with parameters in production.', custom_color='blue', custom_icon='material-function-variant')}}
 
+Read more about integrating Custom Endpoints into your application by clicking the link below.
+
+{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='blue', custom_icon='material-cloud-check')}}
+
+## 4. That's it, you're done.
+
+Enjoy massively accelerating your development workflows, with the fastest, simplest, and most powerful backend endpoints in the industry.
