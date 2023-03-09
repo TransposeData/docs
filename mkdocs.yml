@@ -249,11 +249,11 @@ nav:
   - Custom Endpoints:
     - Overview: 'custom-endpoints/overview.md'
     - Authentication: 'custom-endpoints/authentication.md'
-    - Create a Custom Endpoint: 'custom-endpoints/create.md'
-    - Integrate your Custom Endpoints: 'custom-endpoints/integrate.md'
-    - Parameterizing Endpoints: 'custom-endpoints/parameters.md'
-    - Version Control for Custom Endpoints: 'custom-endpoints/version-control.md'
-    - Sharing Endpoints: 'custom-endpoints/atlas.md'
+    - Create Custom Endpoints: 'custom-endpoints/create.md'
+    - Integrate Custom Endpoints: 'custom-endpoints/integrate.md'
+    - Parameterize Endpoints: 'custom-endpoints/parameters.md'
+    - Version Control: 'custom-endpoints/version-control.md'
+    - Share Endpoints: 'custom-endpoints/atlas.md'
 
   - SDK: 'sdk/overview.md'
   - 'billing.md'
