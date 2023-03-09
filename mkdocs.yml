@@ -248,7 +248,6 @@ nav:
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
   - Custom Endpoints:
     - Overview: 'custom-endpoints/overview.md'
-    - Authentication: 'custom-endpoints/authentication.md'
     - Create Custom Endpoints: 'custom-endpoints/create.md'
     - Integrate Custom Endpoints: 'custom-endpoints/integrate.md'
     - Parameterize Endpoints: 'custom-endpoints/parameters.md'
