@@ -146,7 +146,6 @@ nav:
       - Protocol:
         - 'sql/tables/scroll/protocol_layer/dex_pools.md'
         - 'sql/tables/scroll/protocol_layer/dex_swaps.md'
-
   - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
@@ -247,6 +246,10 @@ nav:
         - 'rest/ens-api/routes/ens_records_by_token_id.md'
         - 'rest/ens-api/routes/ens_transfers_by_name.md'
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
+  - Custom Endpoints:
+    - Overview: 'custom-endpoints/overview.md'
+    - Authentication: 'custom-endpoints/authentication.md'
+    - Create a Custom Endpoint: 'custom-endpoints/create.md'
   - SDK: 'sdk/overview.md'
   - 'billing.md'
 extra:
