@@ -1,4 +1,4 @@
-# Create a new Custom Endpoint
+# Create a Custom Endpoint
 
 ## 1. Create a SQL Query in the Playground
 
@@ -41,8 +41,10 @@ By default, the URL and the generated code snippets will include the default par
 
 Read more about integrating Custom Endpoints into your application by clicking the link below.
 
-{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='blue', custom_icon='material-cloud-check')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/parameters/', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='red', custom_icon='material-cloud-check')}}
 
 ## 4. That's it, you're done.
 
 Enjoy massively accelerating your development workflows, with the fastest, simplest, and most powerful backend endpoints in the industry.
+
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord')}}
