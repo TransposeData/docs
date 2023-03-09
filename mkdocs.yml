@@ -254,6 +254,7 @@ nav:
     - Parameterize Endpoints: 'custom-endpoints/parameters.md'
     - Version Control: 'custom-endpoints/version-control.md'
     - Share Endpoints: 'custom-endpoints/atlas.md'
+    - Response Behaviour: 'custom-endpoints/response.md'
 
   - SDK: 'sdk/overview.md'
   - 'billing.md'
