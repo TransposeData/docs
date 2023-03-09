@@ -8,7 +8,7 @@ Behind the scenes, Custom Endpoints use Transpose's hyper-performant data infras
 
 {{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/create/', text='Create a Custom Endpoint', description='Deploy your first Custom Endpoint in less than five minutes.', custom_color='red', custom_icon='material-cloud-plus')}}
 
-{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/integrate', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='blue', custom_icon='material-cloud-check')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/integrate', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='cyan', custom_icon='material-cloud-check')}}
 
 {{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Parameterize Endpoints', description='Learn how to add parameters to your endpoint, and call the endpoint with parameters in production.', custom_color='blue', custom_icon='material-function-variant')}}
 

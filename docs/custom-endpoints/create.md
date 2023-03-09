@@ -27,7 +27,7 @@ You can choose to add this query as a new version for an existing endpoint, or t
 
 You can choose whether to make this endpoint version public or private.  Public endpoints are shared with the community through the Atlas, while private endpoints are only accessible to you and your team.  For this example, we'll make the endpoint private.  You can read more about public endpoints, and sharing endpoints with the community by clicking the link below.
 
-{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Learn more about sharing Custom Endpoints', description='Learn how to share Custom Endpoints with the community, and use endpoints others have created.', custom_color='green', custom_icon='material-map-outline')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/atlas', text='Learn more about sharing Custom Endpoints', description='Learn how to share Custom Endpoints with the community, and use endpoints others have created.', custom_color='green', custom_icon='material-map-outline')}}
 
 ## 3. Call the Endpoint in Production
 
@@ -37,11 +37,11 @@ Once you've deployed your endpoint, you can call it in production using the endp
 
 By default, the URL and the generated code snippets will include the default parameters for this endpoint (if any).  In this example, we haven't parameterized this endpoint, but you can learn more about parameterizing custom endpoints by clicking the link below.
 
-{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Parameterize Endpoints', description='Learn how to add parameters to your endpoint, and call the endpoint with parameters in production.', custom_color='blue', custom_icon='material-function-variant')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/parameters', text='Parameterize Endpoints', description='Learn how to add parameters to your endpoint, and call the endpoint with parameters in production.', custom_color='blue', custom_icon='material-function-variant')}}
 
 Read more about integrating Custom Endpoints into your application by clicking the link below.
 
-{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/parameters/', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='red', custom_icon='material-cloud-check')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/integrate', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='red', custom_icon='material-cloud-check')}}
 
 ## 4. That's it, you're done.
 

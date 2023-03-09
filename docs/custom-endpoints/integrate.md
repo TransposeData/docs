@@ -35,6 +35,12 @@ However, if you want to call a specific version of the endpoint, you can do so b
 curl https://api.transpose.io/endpoint/my-special-endpoint/1 -H "X-API-Key: your-api-key"
 ```
 
+Or, version 2:
+
+``` bash
+curl https://api.transpose.io/endpoint/my-special-endpoint/2 -H "X-API-Key: your-api-key"
+```
+
 ## Response Behaviour
 
 {{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/response', text='Custom Endpoint Response Formats', description='Learn about Custom Endpoint response structures and status code.', custom_color='green', custom_icon='material-message-check')}}
