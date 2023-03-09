@@ -8,7 +8,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-
+    - content.code.copy
 
 nav:
   - Introduction: 'index.md'
