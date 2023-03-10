@@ -13,7 +13,7 @@ ORDER BY timestamp DESC
 LIMIT 100;
 ```
 
-![Alt Text](../assets/custom-endpoint/create-query.gif)
+![Animation showing creating a query in the Playground](../assets/custom-endpoint/create-query.gif)
 
 [Open the Playground](https://app.transpose.io/playground), create a new query, and enter your SQL query.  Test the Query to make sure that it works, and give the query a descriptive name.
 
@@ -23,7 +23,7 @@ Once you've created a query, you can deploy it as a Custom Endpoint by clicking 
 
 You can choose to add this query as a new version for an existing endpoint, or to create a new endpoint from scratch.  For this example, we'll create a new endpoint.  Click 'New Endpoint', and give your endpoint a descriptive name.
 
-![Alt Text](../assets/custom-endpoint/deploy-query.gif)
+![Animation showing deploying a query from the Playground to a custom endpoint](../assets/custom-endpoint/deploy-query.gif)
 
 You can choose whether to make this endpoint version public or private.  Public endpoints are shared with the community through the Atlas, while private endpoints are only accessible to you and your team.  For this example, we'll make the endpoint private.  You can read more about public endpoints, and sharing endpoints with the community by clicking the link below.
 
@@ -33,7 +33,7 @@ You can choose whether to make this endpoint version public or private.  Public 
 
 Once you've deployed your endpoint, you can call it in production using the endpoint's URL.  You can find the endpoint's URL by selecting the endpoint from the 'My Endpoints' tab in the Playground, and copying the URL from the 'Endpoint URL' field.  You can also directly copy a code snippet in the language of your choice, by clicking the 'Generate Code Snippet' button.
 
-![Alt Text](../assets/custom-endpoint/integrate-query.gif)
+![Animation showing generating code snippets to call the endpoint from production, and copying the deployed endpoint URL](../assets/custom-endpoint/integrate-query.gif)
 
 By default, the URL and the generated code snippets will include the default parameters for this endpoint (if any).  In this example, we haven't parameterized this endpoint, but you can learn more about parameterizing custom endpoints by clicking the link below.
 
