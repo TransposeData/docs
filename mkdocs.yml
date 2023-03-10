@@ -8,7 +8,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-
+    - content.code.copy
 
 nav:
   - Introduction: 'index.md'
@@ -169,7 +169,6 @@ nav:
       - Protocol:
         - 'sql/tables/scroll/protocol_layer/dex_pools.md'
         - 'sql/tables/scroll/protocol_layer/dex_swaps.md'
-
   - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
@@ -270,6 +269,15 @@ nav:
         - 'rest/ens-api/routes/ens_records_by_token_id.md'
         - 'rest/ens-api/routes/ens_transfers_by_name.md'
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
+  - Custom Endpoints:
+    - Overview: 'custom-endpoints/overview.md'
+    - Create Custom Endpoints: 'custom-endpoints/create.md'
+    - Integrate Custom Endpoints: 'custom-endpoints/integrate.md'
+    - Parameterize Endpoints: 'custom-endpoints/parameters.md'
+    - Version Control: 'custom-endpoints/version-control.md'
+    - Share Endpoints: 'custom-endpoints/atlas.md'
+    - Response Behaviour: 'custom-endpoints/response.md'
+
   - SDK: 'sdk/overview.md'
   - 'billing.md'
 extra:
