@@ -19,7 +19,7 @@ LIMIT 100;
 
 ## 2. Deploy the Query as a Custom Endpoint
 
-Once you've created a query, you can deploy it as a Custom Endpoint by clicking the "Deploy as Custom Endpoint" button in the top right corner of the Playground.
+Once you've created a query, you can deploy it as a Custom Endpoint by clicking the "Deploy to Endpoint" button in the top right corner of the Playground.
 
 You can choose to add this query as a new version for an existing endpoint, or to create a new endpoint from scratch.  For this example, we'll create a new endpoint.  Click 'New Endpoint', and give your endpoint a descriptive name.
 
