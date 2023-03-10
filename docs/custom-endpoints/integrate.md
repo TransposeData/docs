@@ -12,7 +12,7 @@ Custom Endpoints can be called using a GET request to the endpoint's URL.  You c
 
 From the Playground, you can also generate code snippets in the language of your choice, by clicking the 'Generate Code Snippet' button.
 
-![Alt Text](../assets/custom-endpoint/integrate-query.gif)
+![Animation showing generating code snippets to call the endpoint from production, and copying the deployed endpoint URL](../assets/custom-endpoint/integrate-query.gif)
 
 By default, the URL displayed and the generated code snippets will include the default parameters for the latest version of this endpoint.  You can learn more about parameterizing custom endpoints by clicking the link below.
 
