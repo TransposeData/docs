@@ -10,9 +10,9 @@ Behind the scenes, Custom Endpoints use Transpose's hyper-performant data infras
 
 {{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/integrate', text='Integrate Custom Endpoints', description='Learn how to easily integrate Custom Endpoints into your application.', custom_color='cyan', custom_icon='material-cloud-check')}}
 
-{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Parameterize Endpoints', description='Learn how to add parameters to your endpoint, and call the endpoint with parameters in production.', custom_color='blue', custom_icon='material-function-variant')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/parameters', text='Parameterize Endpoints', description='Learn how to add parameters to your endpoint, and call the endpoint with parameters in production.', custom_color='blue', custom_icon='material-function-variant')}}
 
-{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/generate-queries', text='Share Custom Endpoints', description='Learn how to share Custom Endpoints with the community, and use endpoints others have created.', custom_color='green', custom_icon='material-map-outline')}}
+{{ transpose_colored_link(link_type='assistant', url='/custom-endpoints/atlas', text='Share Custom Endpoints', description='Learn how to share Custom Endpoints with the community, and use endpoints others have created.', custom_color='green', custom_icon='material-map-outline')}}
 
 ## Join the Transpose Community 
 Join our Discord to ask technical questions, share what you're building, chat with others in the community, suggest new features, request higher rate limits, and much more. 
