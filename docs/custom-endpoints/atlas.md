@@ -12,7 +12,12 @@ For example, let's say that you're building a financial analysis tool, and looki
 
 Once you've opened this query in the Playground, you can follow the [instructions here](/custom-endpoints/create) to deploy this query as a custom endpoint, and immediately start using it in your project.
 
-## 
-- How to get a query from the Atlas into your own code
-- How to share an endpoint with the Atlas
-- Notes about immutability
+## Sharing an Endpoint with the Community
+
+If you've created a query that you think would be useful to others, you can share it with the community by deploying it as a public endpoint.  This is as simple as clicking the "Deploy to Endpoint" button in the Playground, and selecting "Public" when you're asked whether you want to make the endpoint public or private.
+
+Public endpoints are shared immediately to the Atlas.  You can see the endpoint in the Atlas by clicking the "Atlas" button in the Playground, and searching for the endpoint by name.
+
+It's important to note that sharing queries with the Atlas is on a _per version_ basis.  That is, you can have some versions of an endpoint be public, while some are private.  This allows you to share a query with the community, while still being able to iterate on it privately.
+
+![Animation showing sharing a query with the community](../assets/custom-endpoint/share-query.gif)
