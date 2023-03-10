@@ -34,21 +34,33 @@ LIMIT 100;
 
 When you deploy a query, you are required to pass default values for each parameter. These default values will be used when you call your endpoint without passing any parameters.
 
+![Animation showing attempting to deploy a query without adding default parameters](../assets/custom-endpoint/deploy-without-default-params.gif)
+
 ## Calling an Endpoint with Parameters
 
-When you call your endpoint, you can pass any number of parameters. These parameters will override the default values that you set when you deployed your query.
+When you call your endpoint, one option is to call it without passing any parameters. In this case, the default values that you set when you deployed your query will be used.
+
+Otherwise, you can pass any number of parameters that you included in the endpoint version that you're calling.  These parameters will override the default values that you set when you deployed your query, meaning that you can partially or completely use different parameters to the defaults.
+
+As discussed in the [integration docs](./integrate.md), endpoints should be called as GET requests.  When calling an endpoint with parameters, you can pass the parameters as GET request query parameters, as shown in the example below.
+
+``` bash
+curl \
+    -X GET "https://api.transpose.io/endpoint/my-custom-endpoint?chain=ethereum&contract_address=0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB" \
+    -H "X-API-Key: your-api-key"
+```
+
+This example passes `ethereum` as the value for the `chain` parameter, and    `0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB` as the value for the `contract_address` parameter.
 
 ## Reserved Parameters
 
+Some parameters are reserved for internal use, and cannot be used in your endpoint.  These parameters are:
+
+| Parameter | Description |
+| --------- | ----------- |
+| `_stringify_numbers` | Corresponds to the stringify numbers SQL query option, for languages that have no support for 256 integers.  [Read more here.](/sql/options/stringify/) | 
+| `_timeout` | Allows you to specify a query timeout.  [Read more here.](/sql/options/timeout/)|
+| `_cancel_id` | Allows you to pass a query cancellation ID.  [Read more here.](/sql/options/cancel/)|
 
 
-
-
-{{ transpose_fenced_rest('https://api.transpose.io/endpoint/my-custom-endpoint', {'chain': 'ethereum', 'contract_address': '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB'}) }}
-
-
-- Examples (use regular REST endpoints as example)
-- Explain why you want to parameterise REST
-- How to add parameters in playground
-- Default parameter flows
-- How to call endpoint with parameters
+{{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
