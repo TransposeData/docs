@@ -35,6 +35,7 @@ The `dex_swaps` table provides indexed views of all DEX swaps transacted for a s
 | sender_address | The address that performed the swap. | `text` |
 | origin_address | The address that submitted the transaction that contained the swap. | `text` |
 | __confirmed | Flag indicating whether the transfer has been confirmed. | `boolean` |
+
 ## Indexes
 The following indexes are available for this table:
 ```

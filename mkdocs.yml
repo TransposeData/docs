@@ -17,7 +17,6 @@ nav:
   - SQL API:
     - 'sql/overview.md'
     - Getting Started: 'sql/getting-started.md'
-    - 'sql/authentication.md'
     - 'sql/parameters.md'
     - 'sql/playground.md'
     - 'sql/pagination.md'
