@@ -20,12 +20,6 @@ nav:
     - 'sql/parameters.md'
     - 'sql/playground.md'
     - 'sql/pagination.md'
-    - AI Query Assistant:
-      - Overview: 'sql/assistant/overview.md'
-      - 'sql/assistant/generate-queries.md'
-      - 'sql/assistant/optimize-queries.md'
-      - 'sql/assistant/debug-queries.md'
-      - 'sql/assistant/tips-and-tricks.md'
     - 'sql/multichain.md'
     - 'sql/response.md'
     - Options:
@@ -276,7 +270,12 @@ nav:
     - Version Control: 'custom-endpoints/version-control.md'
     - Share Endpoints: 'custom-endpoints/atlas.md'
     - Response Behaviour: 'custom-endpoints/response.md'
-
+  - Query Assistant:
+      - Overview: 'assistant/overview.md'
+      - 'assistant/generate-queries.md'
+      - 'assistant/optimize-queries.md'
+      - 'assistant/debug-queries.md'
+      - 'assistant/tips-and-tricks.md'
   - SDK: 'sdk/overview.md'
   - 'billing.md'
 extra:

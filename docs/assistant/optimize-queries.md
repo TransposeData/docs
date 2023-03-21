@@ -32,6 +32,6 @@ The Query Assistant outputs:
 SELECT MAX(usd_price) FROM ethereum.nft_sales
 ```
 
-{{ transpose_colored_link(link_type='assistant', url='/sql/assistant/tips-and-tricks', text='Tips and Tricks', description='Learn some strategies to get the most out of the Query Assistant', custom_color='cyan', custom_icon='material-rabbit')}}
+{{ transpose_colored_link(link_type='assistant', url='/assistant/tips-and-tricks', text='Tips and Tricks', description='Learn some strategies to get the most out of the Query Assistant', custom_color='cyan', custom_icon='material-rabbit')}}
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
