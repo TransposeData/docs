@@ -6,9 +6,8 @@ This endpoint returns all [Transactions](../models/transaction_model.md) that oc
 | Parameter | Description | Type |
 | --------- | ----------- | ---- |
 | chain_id | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` |
-| created_after | The earlier account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
-| created_before | The later account creation date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
-| account_type | The type of account to filter results by (one of all, wallet, or contract). | `string` |
+| occurred_after | The earlier transaction date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
+| occurred_before | The later transaction date, inclusive (in seconds since the Unix epoch or ISO-8601 format). | `date-time` |
 | order | The order in which to retrieve the results (either asc or desc). | `string` |
 | limit | The maximum number of results to retrieve (default `100`). | `string` |
 
