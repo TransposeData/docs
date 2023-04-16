@@ -44,6 +44,7 @@ nav:
         - 'sql/tables/ethereum/asset_layer/token_owners.md'
         - 'sql/tables/ethereum/asset_layer/token_transfers.md'
       - Protocol:
+        - 'sql/tables/ethereum/protocol_layer/protocols.md'
         - 'sql/tables/ethereum/protocol_layer/nft_sales.md'
         - 'sql/tables/ethereum/protocol_layer/bridge_events.md'
         - 'sql/tables/ethereum/protocol_layer/dex_liquidity.md'
@@ -73,6 +74,7 @@ nav:
         - 'sql/tables/polygon/asset_layer/token_owners.md'
         - 'sql/tables/polygon/asset_layer/token_transfers.md'
       - Protocol:
+        - 'sql/tables/polygon/protocol_layer/protocols.md'
         - 'sql/tables/polygon/protocol_layer/nft_sales.md'
         - 'sql/tables/polygon/protocol_layer/dex_liquidity.md'
         - 'sql/tables/polygon/protocol_layer/dex_pools.md'
@@ -96,6 +98,7 @@ nav:
         - 'sql/tables/arbitrum/asset_layer/token_owners.md'
         - 'sql/tables/arbitrum/asset_layer/token_transfers.md'
       - Protocol:
+        - 'sql/tables/arbitrum/protocol_layer/protocols.md'
         - 'sql/tables/arbitrum/protocol_layer/nft_sales.md'
         - 'sql/tables/arbitrum/protocol_layer/token_prices.md'
         - 'sql/tables/arbitrum/protocol_layer/dex_pools.md'
@@ -118,6 +121,7 @@ nav:
         - 'sql/tables/canto/asset_layer/token_owners.md'
         - 'sql/tables/canto/asset_layer/token_transfers.md'
       - Protocol:
+        - 'sql/tables/canto/protocol_layer/protocols.md'
         - 'sql/tables/canto/protocol_layer/nft_sales.md'
         - 'sql/tables/canto/protocol_layer/token_prices.md'
         - 'sql/tables/canto/protocol_layer/dex_pools.md'
@@ -160,6 +164,7 @@ nav:
         - 'sql/tables/scroll/asset_layer/token_owners.md'
         - 'sql/tables/scroll/asset_layer/token_transfers.md'
       - Protocol:
+        - 'sql/tables/scroll/protocol_layer/protocols.md'
         - 'sql/tables/scroll/protocol_layer/dex_pools.md'
         - 'sql/tables/scroll/protocol_layer/dex_swaps.md'
   - REST API:
