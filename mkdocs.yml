@@ -19,7 +19,7 @@ nav:
     - Getting Started: 'sql/getting-started.md'
     - Guides:
         - 'guides/key_concepts.md'
-        - 'guides/advanced_concepts.md'
+        - 'guides/advanced_examples.md'
     - 'sql/parameters.md'
     - 'sql/playground.md'
     - 'sql/pagination.md'
