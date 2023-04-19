@@ -1,4 +1,4 @@
-# Get OHLC Prices
+# Get OHLC Price History
 
 This endpoint returns all [OHLC Prices](../models/ohlc.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`.
 
