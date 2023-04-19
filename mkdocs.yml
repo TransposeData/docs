@@ -270,6 +270,16 @@ nav:
         - 'rest/ens-api/routes/ens_records_by_token_id.md'
         - 'rest/ens-api/routes/ens_transfers_by_name.md'
         - 'rest/ens-api/routes/ens_transfers_by_token_id.md'
+    - 'Token Prices API':
+        - Overview: 'rest/token-prices-api/overview.md'
+        - Models:
+          - 'rest/token-prices-api/models/ohlc.md'
+          - 'rest/token-prices-api/models/price.md'
+          - 'rest/token-prices-api/models/prices.md'
+        - Routes:
+          - 'rest/token-prices-api/routes/ohlc.md'
+          - 'rest/token-prices-api/routes/price.md'
+          - 'rest/token-prices-api/routes/prices.md'
   - Custom Endpoints:
     - Overview: 'custom-endpoints/overview.md'
     - Create Custom Endpoints: 'custom-endpoints/create.md'

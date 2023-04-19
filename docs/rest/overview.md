@@ -11,6 +11,8 @@ The Transpose REST API suite grants you the industry’s most comprehensive view
 
 {{ transpose_colored_link(link_type='ens') }}
 
+{{ transpose_colored_link(link_type='token-prices') }}
+
 ## Join the Transpose Community
 Join our Discord to ask technical questions, share what you're building, chat with others in the community, suggest new features, request higher rate limits, and much more.
 

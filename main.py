@@ -59,7 +59,7 @@ req.end();
 
 class TransposeDocsInteractive:
     def _admonish(self, body: str, title="Give it a go!", type="example") -> str:
-        if type == 'warning':
+        if type == "warning":
             return f'!!! {type} "{title}"\n' + self._indent(body)
         return body
 
@@ -92,14 +92,14 @@ Remember not to share your API key!  Your API key is a secret, and should not be
 
 
 class TransposeDocsSQL(TransposeDocsInteractive):
-    def __init__(self, default_sql, options: dict=None, p: dict=None):
+    def __init__(self, default_sql, options: dict = None, p: dict = None):
         super().__init__()
         self.endpoint = "https://api.transpose.io/sql"
         self.sql = default_sql
         self.unique_identifier = secrets.token_hex(8)
         self.options = options
         self.parameters = p
-    
+
     def _preprocess_sql_for_string(self, sql):
         """
         Preprocesses the SQL query to make it more readable in the docs.
@@ -134,7 +134,12 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         )
 
     def _get_python(self):
-        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(self.endpoint, self._preprocess_sql_for_string(self.sql), self._get_python_options(), self._get_python_params())
+        code_snippet = PYTHON_REQUEST_TEMPLATE_SQL.format(
+            self.endpoint,
+            self._preprocess_sql_for_string(self.sql),
+            self._get_python_options(),
+            self._get_python_params(),
+        )
         return self._embed_into_switcher(
             "Python", self._generate_code_fence("py", code_snippet)
         )
@@ -142,15 +147,31 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_python_options(self):
         if self.options is None:
             return ""
-        return '\n\t\t\'options\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': {value}" for key, value in self.options.items()]) + "\n\t\t}"
-    
+        return (
+            "\n\t\t'options': {\n\t\t\t"
+            + ",\n\t\t\t".join(
+                [f"'{key}': {value}" for key, value in self.options.items()]
+            )
+            + "\n\t\t}"
+        )
+
     def _get_python_params(self):
         if self.parameters is None:
             return ""
-        return '\n\t\t\'parameters\': {\n\t\t\t' + ",\n\t\t\t".join([f"'{key}': '{value}'" for key, value in self.parameters.items()]) + "\n\t\t}"
+        return (
+            "\n\t\t'parameters': {\n\t\t\t"
+            + ",\n\t\t\t".join(
+                [f"'{key}': '{value}'" for key, value in self.parameters.items()]
+            )
+            + "\n\t\t}"
+        )
 
     def _get_js(self):
-        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(self.sql).replace('\n', ' '), self._get_js_options(), self._get_js_params())
+        code_snippet = JS_REQUEST_TEMPLATE_SQL.format(
+            self._preprocess_sql_for_string(self.sql).replace("\n", " "),
+            self._get_js_options(),
+            self._get_js_params(),
+        )
         return self._embed_into_switcher(
             "Node", self._generate_code_fence("js", code_snippet)
         )
@@ -158,16 +179,36 @@ class TransposeDocsSQL(TransposeDocsInteractive):
     def _get_js_options(self):
         if self.options is None:
             return ""
-        return ',\n\toptions: {\n\t\t' + ",\n\t\t".join([f"{key}: {str(value).lower()}" for key, value in self.options.items()]) + "\n\t}"
+        return (
+            ",\n\toptions: {\n\t\t"
+            + ",\n\t\t".join(
+                [f"{key}: {str(value).lower()}" for key, value in self.options.items()]
+            )
+            + "\n\t}"
+        )
 
     def _get_js_params(self):
         if self.parameters is None:
             return ""
-        return ',\n\tparameters: {\n\t\t' + ",\n\t\t".join([f"{key}: '{str(value).lower()}'" for key, value in self.parameters.items()]) + "\n\t}"
+        return (
+            ",\n\tparameters: {\n\t\t"
+            + ",\n\t\t".join(
+                [
+                    f"{key}: '{str(value).lower()}'"
+                    for key, value in self.parameters.items()
+                ]
+            )
+            + "\n\t}"
+        )
 
     def _get_curl(self):
-        sql = self.sql.replace("\'{{", "\'\\\'\'{{").replace("}}\'", "}}\'\\\'\'")
-        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(self._preprocess_sql_for_string(sql), self._get_curl_options(), self._get_curl_params(), self.endpoint).replace('\*', '*')
+        sql = self.sql.replace("'{{", "'\\''{{").replace("}}'", "}}'\\''")
+        code_snippet = CURL_REQUEST_TEMPLATE_SQL.format(
+            self._preprocess_sql_for_string(sql),
+            self._get_curl_options(),
+            self._get_curl_params(),
+            self.endpoint,
+        ).replace("\*", "*")
         return self._embed_into_switcher(
             "cURL", self._generate_code_fence("bash", code_snippet)
         )
@@ -178,12 +219,22 @@ class TransposeDocsSQL(TransposeDocsInteractive):
         for key, value in self.options.items():
             if isinstance(value, bool):
                 self.options[key] = str(value).lower()
-        return  ", \"options\": {" + ", ".join([f"\"{key}\": {value}" for key, value in self.options.items()]) + "}"
-    
+        return (
+            ', "options": {'
+            + ", ".join([f'"{key}": {value}' for key, value in self.options.items()])
+            + "}"
+        )
+
     def _get_curl_params(self):
         if self.parameters is None:
             return ""
-        return  ", \"parameters\": {" + ", ".join([f"\"{key}\": \"{value}\"" for key, value in self.parameters.items()]) + "}"
+        return (
+            ', "parameters": {'
+            + ", ".join(
+                [f'"{key}": "{value}"' for key, value in self.parameters.items()]
+            )
+            + "}"
+        )
 
     def __call__(self):
         return self._admonish(
@@ -236,28 +287,47 @@ CURL_REQUEST_TEMPLATE_REST = """curl -X GET \\
 class TransposeDocsRest(TransposeDocsInteractive):
     def __init__(self, endpoint, params):
         self.endpoint = endpoint
-        self.params = params 
+        self.params = params
 
     def _get_python(self):
-        code_snippet = PYTHON_REQUEST_TEMPLATE_REST.format(self.endpoint, self._get_params_python())
+        code_snippet = PYTHON_REQUEST_TEMPLATE_REST.format(
+            self.endpoint, self._get_params_python()
+        )
         return self._embed_into_switcher(
             "Python", self._generate_code_fence("py", code_snippet)
         )
 
     def _get_params_python(self):
-        return '{\n' + ''.join([f'\t"{key}": "{value}",\n' for key, value in self.params.items()]) + '}'
+        return (
+            "{\n"
+            + "".join(
+                [f'\t"{key}": "{value}",\n' for key, value in self.params.items()]
+            )
+            + "}"
+        )
 
     def _get_js(self):
-        code_snippet = JS_REQUEST_TEMPLATE_REST.format(self._get_params_js(), self.endpoint.split('/')[2], '/' + '/'.join(self.endpoint.split('/')[3:]))
+        code_snippet = JS_REQUEST_TEMPLATE_REST.format(
+            self._get_params_js(),
+            self.endpoint.split("/")[2],
+            "/" + "/".join(self.endpoint.split("/")[3:]),
+        )
         return self._embed_into_switcher(
             "Node", self._generate_code_fence("js", code_snippet)
         )
 
     def _get_params_js(self):
-        return '{\n' + ''.join([f'\t{key}: "{value}",\n' for key, value in self.params.items()]) + '}'
+        return (
+            "{\n"
+            + "".join([f'\t{key}: "{value}",\n' for key, value in self.params.items()])
+            + "}"
+        )
 
     def _get_curl(self):
-        code_snippet = CURL_REQUEST_TEMPLATE_REST.format(self.endpoint, '&'.join([f'{key}={value}' for key, value in self.params.items()]))
+        code_snippet = CURL_REQUEST_TEMPLATE_REST.format(
+            self.endpoint,
+            "&".join([f"{key}={value}" for key, value in self.params.items()]),
+        )
         return self._embed_into_switcher(
             "cURL", self._generate_code_fence("bash", code_snippet)
         )
@@ -271,127 +341,142 @@ class TransposeDocsRest(TransposeDocsInteractive):
             ]
         )
 
-
     def __call__(self):
         return self._admonish("\n".join([self._get_api_multilang()]))
 
+
 class TransposeDocsColoredLink:
-    def __init__(self, link_type, url, text, description, custom_color=None, custom_icon=None):
+    def __init__(
+        self, link_type, url, text, description, custom_color=None, custom_icon=None
+    ):
         self.link_type = link_type
         self.url = self.get_url_from_link_type() if url is None else url
         self.text = self.get_text_from_link_type() if text is None else text
-        self.description = self.get_description_from_link_type() if description is None else description
+        self.description = (
+            self.get_description_from_link_type()
+            if description is None
+            else description
+        )
 
-        self.icon = self.get_icon_from_link_type() if custom_icon is None else custom_icon
-        self.color = self.get_color_from_link_type() if custom_color is None else custom_color
+        self.icon = (
+            self.get_icon_from_link_type() if custom_icon is None else custom_icon
+        )
+        self.color = (
+            self.get_color_from_link_type() if custom_color is None else custom_color
+        )
 
     def get_url_from_link_type(self):
         url_map = {
-            'discord': 'https://discord.gg/transpose',
-            'rest': '/rest/overview',
-            'sql': '/sql/overview',
-            'quickstart': '/quickstart',
-            'block': '/rest/block-api/overview',
-            'nft': '/rest/nft-api/overview',
-            'token': '/rest/token-api/overview',
-            'ens': '/rest/ens-api/overview',
-            'playground': 'https://app.transpose.io/playground',
-            'atlas': 'https://app.transpose.io/atlas',
-            'python_sdk': 'https://github.com/TransposeData/transpose-python-sdk',
-            'decoding_sdk': 'https://github.com/TransposeData/transpose-decoding-sdk',
-            'defi_sdk': 'https://github.com/TransposeData/transpose-defi-sdk',
-            'data': 'data'
+            "discord": "https://discord.gg/transpose",
+            "rest": "/rest/overview",
+            "sql": "/sql/overview",
+            "quickstart": "/quickstart",
+            "block": "/rest/block-api/overview",
+            "nft": "/rest/nft-api/overview",
+            "token": "/rest/token-api/overview",
+            "ens": "/rest/ens-api/overview",
+            "token-prices": "/rest/token-prices-api/overview",
+            "playground": "https://app.transpose.io/playground",
+            "atlas": "https://app.transpose.io/atlas",
+            "python_sdk": "https://github.com/TransposeData/transpose-python-sdk",
+            "decoding_sdk": "https://github.com/TransposeData/transpose-decoding-sdk",
+            "defi_sdk": "https://github.com/TransposeData/transpose-defi-sdk",
+            "data": "data",
         }
         return url_map[self.link_type]
 
     def get_description_from_link_type(self):
         desc_map = {
-            'discord': 'Discord is the primary home of the Transpose developer community. Join us to ask questions, share your work, and get help.',
-            'rest': 'Explore highly optimized queries for key blockchain primitives.',
-            'sql': 'Start writing instantaneous and hyper-flexible queries against real-time blockchain data.',
-            'quickstart': 'Get started with both our REST and SQL APIs in less than 5 minutes.',
-            'block': 'Retrieve accounts, blocks, transactions, and logs in bulk.',
-            'nft': 'Query any collection, NFT, owner, mint, transfer, burn, or sale.',
-            'token': 'Lookup any token, transfer, balance, DEX swap, liquidity event, and more.',
-            'ens': 'Search for and resolve any ENS record using name, account, expiration, and more.',
-            'playground': 'Write and execute SQL queries in our browser-based development tool.',
-            'atlas': 'Explore and contribute to queries created by the Transpose community.',
-            'python_sdk': 'A Python SDK for calling the Transpose REST API.',
-            'decoding_sdk': 'A Python SDK for easily decoding contract activity on EVM blockchains.',
-            'defi_sdk': 'A Python SDK for performing multi-chain DeFi analysis using the Transpose SQL API.'
+            "discord": "Discord is the primary home of the Transpose developer community. Join us to ask questions, share your work, and get help.",
+            "rest": "Explore highly optimized queries for key blockchain primitives.",
+            "sql": "Start writing instantaneous and hyper-flexible queries against real-time blockchain data.",
+            "quickstart": "Get started with both our REST and SQL APIs in less than 5 minutes.",
+            "block": "Retrieve accounts, blocks, transactions, and logs in bulk.",
+            "nft": "Query any collection, NFT, owner, mint, transfer, burn, or sale.",
+            "token": "Lookup any token, transfer, balance, DEX swap, liquidity event, and more.",
+            "ens": "Search for and resolve any ENS record using name, account, expiration, and more.",
+            "token-prices": "Retrieve real-time & historical price data with low latency at all levels of granularity for all assets since genesis.",
+            "playground": "Write and execute SQL queries in our browser-based development tool.",
+            "atlas": "Explore and contribute to queries created by the Transpose community.",
+            "python_sdk": "A Python SDK for calling the Transpose REST API.",
+            "decoding_sdk": "A Python SDK for easily decoding contract activity on EVM blockchains.",
+            "defi_sdk": "A Python SDK for performing multi-chain DeFi analysis using the Transpose SQL API.",
         }
         return desc_map[self.link_type]
 
     def get_text_from_link_type(self):
         text_map = {
-            'discord': 'Join our Discord',
-            'rest': 'REST API Documentation',
-            'sql': 'SQL API Documentation',
-            'quickstart': 'Quickstart Guide',
-            'block': 'Block API',
-            'nft': 'NFT API',
-            'token': 'Token API',
-            'ens': 'ENS API',
-            'playground': 'The Playground',
-            'atlas': 'The Atlas',
-            'python_sdk': 'Python SDK',
-            'decoding_sdk': 'Decoding SDK',
-            'defi_sdk': 'DeFi SDK',
-            'data': 'Our Data'
+            "discord": "Join our Discord",
+            "rest": "REST API Documentation",
+            "sql": "SQL API Documentation",
+            "quickstart": "Quickstart Guide",
+            "block": "Block API",
+            "nft": "NFT API",
+            "token": "Token API",
+            "ens": "ENS API",
+            "token-prices": "Token Prices API",
+            "playground": "The Playground",
+            "atlas": "The Atlas",
+            "python_sdk": "Python SDK",
+            "decoding_sdk": "Decoding SDK",
+            "defi_sdk": "DeFi SDK",
+            "data": "Our Data",
         }
         return text_map[self.link_type]
 
     def get_color_from_link_type(self):
         color_map = {
-            "discord": 'purple',
-            "block": 'red',
-            "nft": 'blue',
-            "token": 'green',
-            "ens": 'yellow',
-            "rest": 'blue',
-            "sql": 'green',
-            "quickstart": 'yellow',
-            "playground": 'red',
-            "atlas": 'blue',
-            "python_sdk": 'red',
-            "decoding_sdk": 'blue',
-            "defi_sdk": 'green',
-            "data": 'orange'
+            "discord": "purple",
+            "block": "red",
+            "nft": "blue",
+            "token": "green",
+            "ens": "yellow",
+            "token-prices": "cyan",
+            "rest": "blue",
+            "sql": "green",
+            "quickstart": "yellow",
+            "playground": "red",
+            "atlas": "blue",
+            "python_sdk": "red",
+            "decoding_sdk": "blue",
+            "defi_sdk": "green",
+            "data": "orange",
         }
         if self.link_type in color_map:
             return color_map[self.link_type]
         else:
-            return 'orange'
+            return "orange"
 
     def get_color_gradient(self) -> str:
         gradient_map_hex = {
-                'purple': 'linear-gradient(to bottom right, #0000ff, #A020F0)',
-                'orange': 'linear-gradient(to bottom right, #FF4500, #FFA500)',
-                'blue': 'linear-gradient(to bottom right, #0000ff, #00BFFF)',
-                'green': 'linear-gradient(to bottom right, #008000, #00FF00)',
-                'yellow': 'linear-gradient(to bottom right, #FFD700, #EEEE00)',
-                'red': 'linear-gradient(to bottom right, red, orange)',
-                'cyan': 'linear-gradient(to bottom right, purple, magenta)',
+            "purple": "linear-gradient(to bottom right, #0000ff, #A020F0)",
+            "orange": "linear-gradient(to bottom right, #FF4500, #FFA500)",
+            "blue": "linear-gradient(to bottom right, #0000ff, #00BFFF)",
+            "green": "linear-gradient(to bottom right, #008000, #00FF00)",
+            "yellow": "linear-gradient(to bottom right, #FFD700, #EEEE00)",
+            "red": "linear-gradient(to bottom right, red, orange)",
+            "cyan": "linear-gradient(to bottom right, purple, magenta)",
         }
 
         return gradient_map_hex[self.color]
 
     def get_icon_from_link_type(self) -> str:
         icon_map = {
-            "ens": 'material-triangle-outline',
-            "block": 'material-square-outline',
-            "token": 'material-hexagon-outline',
-            "nft": 'material-star-outline',
+            "ens": "material-triangle-outline",
+            "block": "material-square-outline",
+            "token": "material-hexagon-outline",
+            "nft": "material-star-outline",
+            "token-prices": "material-circle-outline",
             "discord": "simple-discord",
-            "quickstart": 'material-rocket-launch',
-            "sql": 'material-database',
-            "rest": 'material-cloud-braces',
-            "atlas": 'material-map-outline',
-            "playground": 'material-laptop',
-            "python_sdk": 'material-application-parentheses-outline',
-            "decoding_sdk": 'material-magnify',
-            "defi_sdk": 'octicons-graph-16',
-            "data": 'material-magnify'
+            "quickstart": "material-rocket-launch",
+            "sql": "material-database",
+            "rest": "material-cloud-braces",
+            "atlas": "material-map-outline",
+            "playground": "material-laptop",
+            "python_sdk": "material-application-parentheses-outline",
+            "decoding_sdk": "material-magnify",
+            "defi_sdk": "octicons-graph-16",
+            "data": "material-magnify",
         }
 
         return icon_map[self.link_type]
@@ -415,41 +500,47 @@ class TransposeDocsColoredLink:
 <p class="description">{}</p>
 </div>
 </a>
-""".format(self.url, self.get_color_gradient(), self.icon, self.text, self.description)
+""".format(
+            self.url, self.get_color_gradient(), self.icon, self.text, self.description
+        )
+
 
 class SQLTables:
     def _get_tables(self):
         tables_output = {}
-        headers = {'X-API-KEY': 'BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG'}
-        output = requests.get('https://api.transpose.io/get-schema', headers=headers)
-        for chain, layers in output.json()['schema'].items():
+        headers = {"X-API-KEY": "BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG"}
+        output = requests.get("https://api.transpose.io/get-schema", headers=headers)
+        for chain, layers in output.json()["schema"].items():
             tables_output[chain] = {}
             for layer, tables in layers.items():
                 tables_output[chain][layer] = []
                 for table in tables:
                     for name, columns in table.items():
-                        formatted_table_name = f'{chain}.{layer}.{name}'.lower()
-                        tables_output[chain][layer] = tables_output[chain][layer] + [formatted_table_name]
+                        formatted_table_name = f"{chain}.{layer}.{name}".lower()
+                        tables_output[chain][layer] = tables_output[chain][layer] + [
+                            formatted_table_name
+                        ]
         return tables_output
 
     def __call__(self):
-        output = ''
+        output = ""
         for chain, layers in self._get_tables().items():
-            layer_tables = ''
+            layer_tables = ""
             for layer, tables in layers.items():
-                chain_li = f'<li>{chain.capitalize()} Tables</li>'
-                layer_li = layer.replace('_', ' ')
-                layer_li = f'<li>{layer_li.title()}</li>'
-                tables_li = ''
+                chain_li = f"<li>{chain.capitalize()} Tables</li>"
+                layer_li = layer.replace("_", " ")
+                layer_li = f"<li>{layer_li.title()}</li>"
+                tables_li = ""
                 for table in sorted(tables):
-                    chain = table.split('.')[0]
-                    layer = table.split('.')[1].replace(' ', '-')
-                    title_table = table.split('.')[2]
-                    url_table = table.split('.')[2].replace('-', '_')
+                    chain = table.split(".")[0]
+                    layer = table.split(".")[1].replace(" ", "-")
+                    title_table = table.split(".")[2]
+                    url_table = table.split(".")[2].replace("-", "_")
                     tables_li += f'<ul><li><a href="../sql/tables/{chain}/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
                 layer_tables += f'<div class="layer-tables"><ul><b>{layer_li}</b>{tables_li}</ul></div>'
             output += f'<div class="chain-layers-tables"><div class="chain-li"><b>{chain_li}</b></div>{layer_tables}</div>'
         return f'<div class="chains-layers-tables">{output}</div>'
+
 
 class TransposeDocsCodeInteractive(TransposeDocsInteractive):
     def __init__(self, code, language):
@@ -459,6 +550,7 @@ class TransposeDocsCodeInteractive(TransposeDocsInteractive):
     def __call__(self):
         return self._generate_code_fence(self.language, self.code)
 
+
 def define_env(env):
     @env.macro
     def get_transpose_api_key():
@@ -466,7 +558,9 @@ def define_env(env):
         return output
 
     @env.macro
-    def transpose_fenced_sql(default_sql: str, options: dict=None, p: dict=None) -> str:
+    def transpose_fenced_sql(
+        default_sql: str, options: dict = None, p: dict = None
+    ) -> str:
         output = TransposeDocsSQL(default_sql, options, p)()
         return output
 
@@ -476,15 +570,24 @@ def define_env(env):
         return output
 
     @env.macro
-    def transpose_colored_link(link_type, url=None, text=None, description=None, custom_color=None, custom_icon=None) -> str:
-        output = TransposeDocsColoredLink(link_type, url, text, description, custom_color, custom_icon)()
+    def transpose_colored_link(
+        link_type,
+        url=None,
+        text=None,
+        description=None,
+        custom_color=None,
+        custom_icon=None,
+    ) -> str:
+        output = TransposeDocsColoredLink(
+            link_type, url, text, description, custom_color, custom_icon
+        )()
         return output
 
     @env.macro
     def transpose_fenced_code_interactive(code: str, language: str) -> str:
         output = TransposeDocsCodeInteractive(code, language)()
         return output
-    
+
     @env.macro
     def transpose_sql_tables() -> str:
         output = SQLTables()()
