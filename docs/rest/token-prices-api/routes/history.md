@@ -1,6 +1,6 @@
 # Get Token Prices
 
-This endpoint returns all [Prices](../models/ohlc.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`.
+This endpoint returns all [Historical Prices](../models/history.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
@@ -13,6 +13,6 @@ This endpoint returns all [Prices](../models/ohlc.md) that occurred within the g
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
 | limit | The maximum number of results to retrieve (default `100`). | `string` |
 
-{{ transpose_fenced_rest('https://api.transpose.io/pricing/prices', {'chain_id': 'ethereum'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/prices/history', {'chain_id': 'ethereum'}) }}
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}

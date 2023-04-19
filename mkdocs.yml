@@ -275,11 +275,11 @@ nav:
         - Models:
           - 'rest/token-prices-api/models/ohlc.md'
           - 'rest/token-prices-api/models/price.md'
-          - 'rest/token-prices-api/models/prices.md'
+          - 'rest/token-prices-api/models/history.md'
         - Routes:
           - 'rest/token-prices-api/routes/ohlc.md'
           - 'rest/token-prices-api/routes/price.md'
-          - 'rest/token-prices-api/routes/prices.md'
+          - 'rest/token-prices-api/routes/history.md'
   - Custom Endpoints:
     - Overview: 'custom-endpoints/overview.md'
     - Create Custom Endpoints: 'custom-endpoints/create.md'

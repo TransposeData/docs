@@ -13,6 +13,6 @@ This endpoint returns all [OHLC Prices](../models/ohlc.md) that occurred within 
 | order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
 | limit | The maximum number of results to retrieve (default `100`). | `string` |
 
-{{ transpose_fenced_rest('https://api.transpose.io/pricing/prices', {'chain_id': 'ethereum'}) }}
+{{ transpose_fenced_rest('https://api.transpose.io/prices/ohlc', {'chain_id': 'ethereum'}) }}
 
 {{ transpose_colored_link(link_type='discord', text='Got questions?  Join our Discord') }}
