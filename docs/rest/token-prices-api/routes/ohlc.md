@@ -5,7 +5,7 @@ This endpoint returns all [OHLC Prices](../models/ohlc.md) that occurred within 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
 |---------------|--------------------------------------------------------------------------------------|----------|
-| chain_id      | A keyword (i.e. "ethereum") specifying the blockchain to query. | `string` | 
+| chain_id      | A keyword (i.e. "ethereum") specifying the blockchain to query. Defaults to `ethereum`.| `string` | 
 | token_address | The contract address of the token to filter results by (supports ENS names). Defaults to `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`.   | `string` | 
 | from_timestamp | The earlier date, inclusive (in seconds since the Unix epoch or ISO-8601 format). Defaults to 24 hours ago.   | `date-time` | 
 | to_timestamp | The later date, inclusive (in seconds since the Unix epoch or ISO-8601 format). Defaults to current time.   | `date-time` | 
