@@ -5,13 +5,13 @@ This endpoint returns all [OHLC Prices](../models/ohlc.md) that occurred within 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
 |---------------|--------------------------------------------------------------------------------------|----------|
-| chain_id      | A keyword (i.e. "ethereum") or CAIP-2 identifier specifying the blockchain to query. | `string` | 
-| token_address | The contract address of the token to filter results by (supports ENS names).   | `string` | 
-| from_timestamp | The earlier date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
-| to_timestamp | The later date, inclusive (in seconds since the Unix epoch or ISO-8601 format).   | `date-time` | 
-| timeframe | The timeframe to fetch OHLC prices for (example: `1m`, `5m`, `15m`, `30m`, `1h` , `1d`, etc.).   | `string` |
-| order | The order in which to retrieve the results (either `asc` or `desc`).   | `string` | 
-| limit | The maximum number of results to retrieve (default `100`). | `string` |
+| chain_id      | A keyword (i.e. "ethereum") specifying the blockchain to query. | `string` | 
+| token_address | The contract address of the token to filter results by (supports ENS names). Defaults to `0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2`.   | `string` | 
+| from_timestamp | The earlier date, inclusive (in seconds since the Unix epoch or ISO-8601 format). Defaults to 24 hours ago.   | `date-time` | 
+| to_timestamp | The later date, inclusive (in seconds since the Unix epoch or ISO-8601 format). Defaults to current time.   | `date-time` | 
+| timeframe | The timeframe to fetch OHLC prices for (example: `1m`, `5m`, `15m`, `30m`, `1h` , `1d`, etc.). Defaults to `1h`.   | `string` |
+| order | The order in which to retrieve the results (either `asc` or `desc`). Defaults to `asc`.  | `string` | 
+| limit | The maximum number of results to retrieve. Defaults to `100`. | `string` |
 
 {{ transpose_fenced_rest('https://api.transpose.io/prices/ohlc', {'chain_id': 'ethereum'}) }}
 
