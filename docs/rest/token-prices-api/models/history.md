@@ -1,5 +1,5 @@
-# History Model
-The **History Model** contains the full set of information for a token price for a given time range. The **History Model** follows the following structure:
+# Historical Price Model
+The **Historical Price Model** contains the full set of information for a token price for a given time range. The **Historical Price Model** follows the following structure:
 
 | Name                    | Description                                                                                               | Type           |
 | ------------------------| --------------------------------------------------------------------------------------------------------- | -------------- |
