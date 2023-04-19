@@ -3,7 +3,7 @@ The **History Model** contains the full set of information for a token price for
 
 | Name                    | Description                                                                                               | Type           |
 | ------------------------| --------------------------------------------------------------------------------------------------------- | -------------- |
-| price                | The price of the asset for the time interval.	                                                          | `integer`       |
+| price                | The price of the asset for the time interval.	                                                          | `decimal`       |
 | timestamp                   | The timestamp where the price was fetched.	                                                          | `date-time`       |
 | token_address                | The address of the token.	                                                      | `string`      |
 

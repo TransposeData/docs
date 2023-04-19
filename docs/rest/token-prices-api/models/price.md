@@ -4,7 +4,7 @@ The **Price Model** contains the full set of information for a token price at a 
 | Name                    | Description                                                                                               | Type           |
 | ------------------------| --------------------------------------------------------------------------------------------------------- | -------------- |
 | block_number                | The block number of the given timestamp.                                                         | `integer`       |
-| price                | The price of the asset for the time interval.	                                                          | `integer`       |
+| price                | The price of the asset for the time interval.	                                                          | `decimal`       |
 | timestamp                   | The timestamp where the price was fetched.	                                                          | `date-time`       |
 | token_address                | The address of the token.	                                                      | `string`      |
 | token_symbol                | The symbol of the token.	                                                                          | `string`      |
