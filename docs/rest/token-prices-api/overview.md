@@ -1,4 +1,4 @@
-# Welcome to the Token Pricing API
+# Welcome to the Token Prices API
 
 Experience the power of real-time and highly reliable cryptocurrency data with our **Token Prices API**.
 
