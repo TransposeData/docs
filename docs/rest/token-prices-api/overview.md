@@ -1,6 +1,6 @@
 # Welcome to the Token Prices API
 
-Experience the power of real-time and highly reliable cryptocurrency data with our **Token Prices API**.
+Experience the power of real-time and highly reliable cryptocurrency data with our **Token Prices API**. The Token Prices API provides endpoints for complete real-time & historical price data with low latency at all levels of granularity.
 
 ## Endpoints
 The **Token Prices API** supports the following functionality:
