@@ -9,7 +9,7 @@ The **Token Prices API** supports the following functionality:
 
 2. **Historical Token Prices**: With Transpose's Price History endpoint, gain access to a comprehensive token price series.  Download data in customizable formats for any token address within a specified time range (minute-by-minute to month-by-month, and more).
 
-3. **Open-High-Low-Close/Candlesticks**: Analyze market behavior and identify trends with Transpose's OHLC endpoint. Get OHLC data for any token address and time interval to make informed decisions based on the data.
+3. **Open-High-Low-Close (OHLC/Candlesticks)**: Analyze market behavior and identify trends with Transpose's OHLC endpoint. Get OHLC data for any token address and time interval to make informed decisions based on the data.
 
 4. **LP Token Pricing**: Transpose has introduced a groundbreaking addition with its LP token pricing! No more complex functions required to get the USD value of LP Tokens. Our LP token tracking covers popular platforms like Balancer, Curve Finance, Uniswap, Convex Finance, Yearn, Synthetix, Aave, and more to come! 
 
