@@ -1,5 +1,5 @@
 # OHLC Model
-The **OHLC Model** (open, high, low, close) contains the full set of information for reconstructing pricing candlestick data.  This is the perfect API for creating your own historical pricing charts for tokens. The **OHLC Model** follows the following structure:
+The **OHLC Model** (open, high, low, close) contains the full set of information for reconstructing pricing candlestick data.  This is the perfect API for creating your own historical pricing charts for any arbitrary token. The **OHLC Model** follows the following structure:
 
 | Name                    | Description                                                                                               | Type           |
 | ------------------------| --------------------------------------------------------------------------------------------------------- | -------------- |
