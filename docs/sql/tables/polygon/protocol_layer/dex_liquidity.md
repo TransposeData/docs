@@ -18,7 +18,7 @@ The `dex_liquidity` table provides indexed views of all DEX liquidity for a spec
 | exchange_name | The name of the exchange that the event occurred on. | `text` |
 | contract_version | The version of the exchange contract interacted with (e.g. `v1` or `v2`). | `text` |
 | contract_address | The contract address of the DEX pool. | `text` |
-| token_addresses | A list of token addresses that the pool contains. | `text[]` |
+| token_address | The address of the token.	 | `string`      |
 | pool_balance | The balance of the DEX pool. | `integer` |
 | category | The category of the event, one of (`deposit`, `withdraw`, or `swap`). | `text` |
 | lp_address | The address of the liquidity provider (null for swap events). | `text` |
@@ -33,7 +33,7 @@ The following indexes are available for this table:
 ```
 (timestamp, log_index)
 (transaction_hash, log_index)
-(token_addresses, timestamp, log_index)
+(token_address, timestamp, log_index)
 (token_address, contract_address, timestamp, log_index)
 (contract_address, timestamp, log_index)
 (contract_address, token_address, timestamp, log_index)
