@@ -24,6 +24,7 @@ nav:
     - 'sql/playground.md'
     - 'sql/pagination.md'
     - 'sql/multichain.md'
+    - 'sql/limits.md'
     - 'sql/response.md'
     - Options:
         - 'sql/options/stringify.md'
@@ -199,6 +200,7 @@ nav:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
     - Pagination: 'rest/pagination.md'
+    - Limits: 'rest/limits.md'
     - Response: 'rest/response.md'
     - 'Block API':
       - Overview: 'rest/block-api/overview.md'
