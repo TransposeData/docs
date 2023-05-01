@@ -2,20 +2,6 @@
 
 The Transpose SQL API has two types of response types: one for successes and one for errors. A **success response** will be returned on any request that completes successfully (even if no results are returned) along with a HTTP `200` status code. An **error response** will be returned on any request that fails, whether due to the client (i.e. you) or the server (i.e. us), along with a HTTP `4xx` or `5xx` status code. **If you are out of credits, you will receive a `403` status code.**
 
-
-## Limits
-
-The following table shows the response limits for each tier:
-
-| Tier      | Max Response Size (Megabytes)      | Response Timeout (Seconds)                                                                 |
-| --------- | --------- | --------------------------------------------------------------------------- |
-| **Free**  | 10  | 25      |
-| **Developer**   | 10 | 360 |
-| **Startup** | 10    | 360                   |
-| **Enterprise** | 10*    | 600*                   |
-
-\* *Want more? [Let's chat.](mailto:team@transpose.io)*
-
 ## Success Response
 
 The success response will always obey the following top-level JSON structure:
