@@ -54,16 +54,18 @@ nav:
         - 'sql/tables/ethereum/protocol_layer/dex_liquidity.md'
         - 'sql/tables/ethereum/protocol_layer/dex_pools.md'
         - 'sql/tables/ethereum/protocol_layer/dex_swaps.md'
-        - 'sql/tables/ethereum/protocol_layer/token_prices.md'
-        - 'sql/tables/ethereum/protocol_layer/token_prices_ohlc_1d.md'
-        - 'sql/tables/ethereum/protocol_layer/token_prices_ohlc_1h.md'
-        - 'sql/tables/ethereum/protocol_layer/token_prices_ohlc_1m.md'
+
         - 'sql/tables/ethereum/protocol_layer/contract_labels.md'
         - 'sql/tables/ethereum/protocol_layer/ens_names.md'
         - Tornado Cash:
           - 'sql/tables/ethereum/protocol_layer/tornado_cash_withdrawals.md'
           - 'sql/tables/ethereum/protocol_layer/tornado_cash_deposits.md'
           - 'sql/tables/ethereum/protocol_layer/tornado_cash_pools.md'
+      - Pricing:
+        - 'sql/tables/ethereum/prices/token_prices.md'
+        - 'sql/tables/ethereum/prices/token_prices_ohlc_1d.md'
+        - 'sql/tables/ethereum/prices/token_prices_ohlc_1h.md'
+        - 'sql/tables/ethereum/prices/token_prices_ohlc_1m.md'
     - Polygon Tables:
       - Settlement:
         - 'sql/tables/polygon/settlement_layer/accounts.md'
