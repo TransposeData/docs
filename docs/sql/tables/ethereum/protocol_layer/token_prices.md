@@ -1,6 +1,6 @@
 # Token Prices
 
-The `token_prices` table provides indexed views for cleaned token prices in USD at every point in time when a token was seen in a DEX swap. For tokens that are swapped multiple times in a single block, a per-block VWAP is taken to determine the fair price.
+The `token_prices` table provides historical and live token prices in USD for every block in which a token was traded in a DEX swap. For tokens that are swapped multiple times in a single block, a per-block VWAP is taken to determine the fair price.
 
 ## Columns
 | Name                | Description                                                                 | Type        |
