@@ -1,4 +1,4 @@
-# Parameterized queries
+# Parameterized Queries
 
 The SQL API supports paramaterized SQL queries. This allows you to define parameters in the SQL directly to iterate over ranges and results. Parameters are wrapped in double brackets within the SQL and passed in the `parameters` mapping in the json request body. **Your parameter name must match the key**. For example:
 
