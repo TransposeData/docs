@@ -60,7 +60,7 @@ nav:
           - 'sql/tables/ethereum/protocol_layer/tornado_cash_withdrawals.md'
           - 'sql/tables/ethereum/protocol_layer/tornado_cash_deposits.md'
           - 'sql/tables/ethereum/protocol_layer/tornado_cash_pools.md'
-      - Pricing:
+      - Prices:
         - 'sql/tables/ethereum/prices/token_prices.md'
         - 'sql/tables/ethereum/prices/token_prices_ohlc_1d.md'
         - 'sql/tables/ethereum/prices/token_prices_ohlc_1h.md'

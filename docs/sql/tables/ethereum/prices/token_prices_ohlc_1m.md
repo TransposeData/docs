@@ -1,4 +1,4 @@
-# Token Prices OHLC 1 Minute
+# 1-Minute OHLC Token Prices
 
 The `token_prices_ohlc_1m` table provides historical and live OHLC (open, high, low, close) prices in USD for all tokens on Ethereum per minute, including average price and total DEX volume.
 
