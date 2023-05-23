@@ -1,8 +1,8 @@
 # Advanced Examples
 
-## Goal: Calculate the latest TVL of all curve pools.
+## Goal: Calculate the latest TVL of all Curve pools.
 
-First, we just want to get all curve pools from the `dex_pools` table.
+First, we just want to get all Curve pools from the `dex_pools` table.
 
 ```sql
 SELECT
