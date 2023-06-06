@@ -22,7 +22,6 @@ The `collections` table provides indexed views of all NFT collections for a spec
 ## Indexes
 The following indexes are available for this table:
 ```
-(verified) WHERE verified = true
 (last_refreshed ASC NULLS FIRST)
 (created_timestamp, contract_address)
 (standard, created_timestamp, contract_address)
