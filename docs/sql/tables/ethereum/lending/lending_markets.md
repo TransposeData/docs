@@ -15,7 +15,7 @@ The `lending_markets` table provides indexed views for all lending markets avail
 | created_timestamp | The timestamp the market address was created at. | `timestamp` |
 | comptroller_address | The address of the protocol's comptroller (similar to a factory/config address). | `text` |
 | borrow_token_address | The address of the token to borrow from the market, may be the same as the deposit token for some protocols (e.g. Aave). | `text` |
-| created_block_number | The block number the market address was created at. | `numeric` |
+| created_block_number | The block number the market address was created at. | `integer` |
 | price_oracle_address | The price oracle for the market's `token_address`. | `text` |
 | deposit_token_address | The address of the token to deposit into the market. | `text` |
 | liquidation_threshold | The liquidation threshold for the market (null if not a static value, e.g. crvUSD LLAMMA). | `numeric` |
