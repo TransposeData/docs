@@ -67,6 +67,10 @@ nav:
           - 'sql/tables/ethereum/prices/token_prices_ohlc_1d.md'
           - 'sql/tables/ethereum/prices/token_prices_ohlc_1h.md'
           - 'sql/tables/ethereum/prices/token_prices_ohlc_1m.md'
+        - Lending:
+          - 'sql/tables/ethereum/lending/lending_events.md'
+          - 'sql/tables/ethereum/lending/lending_markets.md'
+          - 'sql/tables/ethereum/lending/lending_market_updates.md'
       - Polygon Tables:
         - Settlement:
           - 'sql/tables/polygon/settlement_layer/accounts.md'
