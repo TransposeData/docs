@@ -57,8 +57,8 @@ nav:
           - 'sql/tables/ethereum/protocol_layer/dex_pools.md'
           - 'sql/tables/ethereum/protocol_layer/dex_swaps.md'
           - 'sql/tables/ethereum/protocol_layer/lending_events.md'
-          - 'sql/tables/ethereum/protocol_layer/lending_markets.md'
           - 'sql/tables/ethereum/protocol_layer/lending_market_updates.md'
+          - 'sql/tables/ethereum/protocol_layer/lending_markets.md'
           - 'sql/tables/ethereum/protocol_layer/contract_labels.md'
           - 'sql/tables/ethereum/protocol_layer/ens_names.md'
           - Tornado Cash:
