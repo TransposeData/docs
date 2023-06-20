@@ -56,6 +56,9 @@ nav:
           - 'sql/tables/ethereum/protocol_layer/dex_liquidity.md'
           - 'sql/tables/ethereum/protocol_layer/dex_pools.md'
           - 'sql/tables/ethereum/protocol_layer/dex_swaps.md'
+          - 'sql/tables/ethereum/protocol_layer/lending_events.md'
+          - 'sql/tables/ethereum/protocol_layer/lending_markets.md'
+          - 'sql/tables/ethereum/protocol_layer/lending_market_updates.md'
           - 'sql/tables/ethereum/protocol_layer/contract_labels.md'
           - 'sql/tables/ethereum/protocol_layer/ens_names.md'
           - Tornado Cash:
@@ -67,10 +70,6 @@ nav:
           - 'sql/tables/ethereum/prices/token_prices_ohlc_1d.md'
           - 'sql/tables/ethereum/prices/token_prices_ohlc_1h.md'
           - 'sql/tables/ethereum/prices/token_prices_ohlc_1m.md'
-        - Lending:
-          - 'sql/tables/ethereum/protocol_layer/lending_events.md'
-          - 'sql/tables/ethereum/protocol_layer/lending_markets.md'
-          - 'sql/tables/ethereum/protocol_layer/lending_market_updates.md'
       - Polygon Tables:
         - Settlement:
           - 'sql/tables/polygon/settlement_layer/accounts.md'
