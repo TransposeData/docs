@@ -2,6 +2,13 @@
 
 The `lending_market_updates` table provides indexed views to fetch historical updates make to mutable data for lending markets. The table tracks changes to a market's Max `ltv`, `liquidation_threshold`, whether the market is `active`, and protocol specific changes tracked in `metadata`.
 
+## Supported Lending Protocols
+| Ethereum | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| aave | abracadabra | compound | cream | curve |
+| euler | ironbank | makerdao | strike | blur |
+| bend | liquity |  |  |  |
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

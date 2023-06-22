@@ -2,6 +2,13 @@
 
 The `lending_events` table provides indexed views for lending events based on 5 categories: deposit, borrow, repay, withdraw, and liquidation.
 
+## Supported Lending Protocols
+| Ethereum | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| aave | abracadabra | compound | cream | curve |
+| euler | ironbank | makerdao | strike | blur |
+| bend | liquity |  |  |  |
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

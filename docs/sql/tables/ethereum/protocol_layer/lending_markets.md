@@ -2,6 +2,13 @@
 
 The `lending_markets` table provides indexed views for all lending markets available.
 
+## Supported Lending Protocols
+| Ethereum | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| aave | abracadabra | compound | cream | curve |
+| euler | ironbank | makerdao | strike | blur |
+| bend | liquity |  |  |  |
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
