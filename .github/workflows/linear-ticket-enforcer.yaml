@@ -1,0 +1,14 @@
+name: Enforce Linear Tickets
+
+on:
+  pull_request:
+    types: [edited, opened, reopened]
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enforce PR Title Starts With Jira Issue Key
+        uses: asafHalely/enforce-pr-title-style-action@v1.1
+        with:
+          project_key: TRA
