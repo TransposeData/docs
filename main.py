@@ -508,7 +508,7 @@ class TransposeDocsColoredLink:
 class SQLTables:
     def _get_tables(self):
         tables_output = {}
-        headers = {"X-API-KEY": "BtRVYj7dgnYUcr1gSSfWhmrTShIb8RBG"}
+        headers = {"X-API-KEY": "fCJDbHbvAax00ZnlSsmRW6UYCGKZIC86"}
         output = requests.get("https://api.transpose.io/get-schema", headers=headers)
         for chain, layers in output.json()["schema"].items():
             tables_output[chain] = {}
