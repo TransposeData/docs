@@ -18,6 +18,7 @@ nav:
   - SQL API:
     - 'sql/overview.md'
     - Getting Started: 'sql/getting-started.md'
+    - Tier Limits: 'sql/limits.md'
     - 'sql/parameters.md'
     - 'sql/playground.md'
     - 'sql/pagination.md'
@@ -26,7 +27,6 @@ nav:
         - 'guides/key_concepts.md'
         - 'guides/advanced_examples.md'
     - Options:
-        - 'sql/limits.md'
         - 'sql/response.md'
         - 'sql/options/stringify.md'
         - 'sql/options/timeout.md'
@@ -213,7 +213,7 @@ nav:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
     - Pagination: 'rest/pagination.md'
-    - Limits: 'rest/limits.md'
+    - Tier Limits: 'rest/limits.md'
     - Response: 'rest/response.md'
     - APIs:
       - 'Block':
