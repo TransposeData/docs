@@ -1,5 +1,19 @@
-# Query Timeouts
+# Adjusting Timeouts
 
+The following table shows the response limits for each tier:
+
+| Tier      | Max Response Size (Megabytes)      | Response Timeout (Seconds)                                                                 |
+| --------- | --------- | --------------------------------------------------------------------------- |
+| **Free**  | 10  | 25      |
+| **Developer**   | 10 | 360 |
+| **Startup** | 10    | 360                   |
+| **Enterprise** | 10*    | 600*                   |
+
+*If the above timeouts are reached, the SQL API will return the data retrieved up to that point.*
+
+\* *Want more? [Let's chat.](mailto:team@transpose.io)*
+
+## Adjusting the default query timeout limit (for Developer, Startup, and Enterprise tiers)
 To avoid accidentally sending queries that result in large credit charges, the default timeout for SQL requests is 25 seconds. Paid plans allow for longer query timeouts, depending on the tier. 
 
 You can set a maximum timeout for your queries by passing an optional `options` parameter to the request body. Inside this parameter, specify `timeout` with a positive integer. Your query timeout will be set to the lesser of this specified timeout (if you pass it, otherwise the default is 25 seconds), and the maximum timeout allowed for your account tier.

@@ -1,4 +1,4 @@
-# Limits
+# Tier Limits
 
 The following table shows the response limits for each tier:
 
