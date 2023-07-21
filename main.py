@@ -527,7 +527,8 @@ class SQLTables:
         for chain, layers in self._get_tables().items():
             layer_tables = ""
             for layer, tables in layers.items():
-                chain_li = f"<li>{chain.capitalize()} Tables</li>"
+                chain_formatted = chain.replace("_", " ").title()
+                chain_li = f"<li>{chain_formatted} Tables</li>"
                 layer_li = layer.replace("_", " ")
                 layer_li = f"<li>{layer_li.title()}</li>"
                 tables_li = ""
@@ -536,7 +537,8 @@ class SQLTables:
                     layer = table.split(".")[1].replace(" ", "-")
                     title_table = table.split(".")[2]
                     url_table = table.split(".")[2].replace("-", "_")
-                    tables_li += f'<ul><li><a href="../sql/tables/{chain}/{layer}/{url_table}">{chain}.{title_table}</a></li></ul>'
+                    chain_table = chain.replace("_", "")
+                    tables_li += f'<ul><li><a href="../sql/tables/{chain}/{layer}/{url_table}">{chain_table}.{title_table}</a></li></ul>'
                 layer_tables += f'<div class="layer-tables"><ul><b>{layer_li}</b>{tables_li}</ul></div>'
             output += f'<div class="chain-layers-tables"><div class="chain-li"><b>{chain_li}</b></div>{layer_tables}</div>'
         return f'<div class="chains-layers-tables">{output}</div>'
