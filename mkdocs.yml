@@ -225,6 +225,12 @@ nav:
           - 'sql/tables/base/asset_layer/native_token_transfers.md'
           - 'sql/tables/base/asset_layer/tokens.md'
           - 'sql/tables/base/asset_layer/token_owners.md'
+        - Protocol:
+          - 'sql/tables/base/protocol_layer/nft_sales.md'
+          - 'sql/tables/base/protocol_layer/bridge_events.md'
+          - 'sql/tables/base/protocol_layer/dex_liquidity.md'
+          - 'sql/tables/base/protocol_layer/dex_pools.md'
+          - 'sql/tables/base/protocol_layer/dex_swaps.md'
       - Base Goerli Tables:
         - Settlement:
           - 'sql/tables/base_goerli/settlement_layer/accounts.md'
