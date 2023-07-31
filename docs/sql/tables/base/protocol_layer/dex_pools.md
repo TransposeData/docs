@@ -3,11 +3,9 @@
 The `dex_pools` table provides indexed views of all DEX pools created for a specified chain.
 
 ## Supported DEXs
-| Ethereum | | | | |
-| --- | --- | --- | --- | --- |
-| 1inch | balancer | bancor | curve | dodoswap | electricswap |
-| fraxswap | kyber | saddle | shibaswap | sushiswap |
-| synapse | uniswap |  | |
+| Base | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| leetswap v2 | rocketswap v2 | damaswap v2 | uniswap v2 forks | solidly forks |
 
 
 ## Columns

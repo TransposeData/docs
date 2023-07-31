@@ -3,19 +3,9 @@
 The `dex_swaps` table provides indexed views of all DEX swaps transacted for a specified chain.
 
 ## Supported DEXs
-| Ethereum | | | | |
-| --- | --- | --- | --- | --- |
-| 0x | 1inch | afro-dex | airswap | atomic-blue |
-| az-exchange | balancer | bancor | bean-dex | bebop |
-| bitcratic | bitox-io | cityswap | coin-change-ex | cowswap |
-| cryptlo | curve | ddex | decentrex | defi-swap |
-| dex-blue | dodoswap | e-dex | elasticswap | enclaves |
-| etherdelta | etherdelta-fork | ether-next | ethmall | ex-toke |
-| fraxswap | kyber | market-place | miniswap | n-dex-market |
-| oasis | polaris-dex | saddle-finance | sakeswap | sashimiswap |
-| seed-dex | shibaswap | singular-x | smoothyswap | sushiswap |
-| synapse | tokenstore | tokenstore-fork | tradex-one | unicly |
-| uniswap | unitrade | zeedex | | |
+| Base | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| leetswap v2 | rocketswap v2 | damaswap v2 | uniswap v2 forks | solidly forks |
 
 ## Columns
 | Name                | Description                                                                 | Type        |
