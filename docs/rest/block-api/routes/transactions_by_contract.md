@@ -1,6 +1,6 @@
 # Get Transactions by Contract
 
-This endpoint returns all [Transactions](../models/transaction_model.md) that occurred for a given contract (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [Transactions](../models/transaction_model.md) that occurred for a given contract (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 ## Parameters
 | Parameter | Description | Type |

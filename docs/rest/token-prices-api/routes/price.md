@@ -1,6 +1,6 @@
 # Get Token Price
 
-This endpoint returns a [Price](../models/price.md) for a list of tokens at a given timestamp. Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`.
+This endpoint returns a [Price](../models/price.md) for a list of tokens at a given timestamp. Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`, `base`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

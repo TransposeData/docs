@@ -1,6 +1,6 @@
 # Get NFTs by Owner
 
-This endpoint returns all [NFTs](../models/nft_model.md) that are owned by a given account address, with the included owner balances (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [NFTs](../models/nft_model.md) that are owned by a given account address, with the included owner balances (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

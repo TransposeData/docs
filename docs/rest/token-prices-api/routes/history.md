@@ -1,6 +1,6 @@
 # Get Token Price History
 
-This endpoint returns all [Historical Prices](../models/history.md) that occurred within the given date range (supports pagination). The price at each timestamp reflects the last traded price on chain. Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`.
+This endpoint returns all [Historical Prices](../models/history.md) that occurred within the given date range (supports pagination). The price at each timestamp reflects the last traded price on chain. Supported chains: `ethereum`, `polygon`, `arbitrum`, `canto`, `base`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

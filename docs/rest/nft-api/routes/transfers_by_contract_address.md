@@ -1,6 +1,6 @@
 # Get Transfers by Contract Address
 
-This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that occurred within the given date range for a given collection, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [NFT Transfers](../models/nft_transfer_model.md) that occurred within the given date range for a given collection, identified by a contract address (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

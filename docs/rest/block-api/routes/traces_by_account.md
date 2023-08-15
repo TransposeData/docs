@@ -1,6 +1,6 @@
 # Get Traces by Account
 
-This endpoint returns all [Traces](../models/trace_model.md) that occurred for a given account (supports pagination). Supported chains: `ethereum`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [Traces](../models/trace_model.md) that occurred for a given account (supports pagination). Supported chains: `ethereum`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 ## Parameters
 | Parameter | Description | Type |

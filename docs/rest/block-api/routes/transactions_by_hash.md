@@ -1,5 +1,5 @@
 # Get Transactions by Hash
-This endpoint returns all [Transactions](../models/transaction_model.md) for a given list of transaction hashes. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [Transactions](../models/transaction_model.md) for a given list of transaction hashes. Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 ## Parameters
 | Parameter | Description | Type |

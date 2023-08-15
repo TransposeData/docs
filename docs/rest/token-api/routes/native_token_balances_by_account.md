@@ -1,6 +1,6 @@
 # Get Native Token Balances by Account
 
-This endpoint returns all [Native Token Balances](../models/native_token_balance_model.md) balances for a given list of accounts (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`.
+This endpoint returns all [Native Token Balances](../models/native_token_balance_model.md) balances for a given list of accounts (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
