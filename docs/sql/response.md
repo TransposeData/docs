@@ -9,7 +9,7 @@ The success response will always obey the following top-level JSON structure:
 | Name      | Type      | Description                                                                 |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | status  | `string`  | The status of the response. Will be `success` for a success response.      |
-| stats   | `object` | The stats of the executed query (specifically the `count`, `size` in megabytes, and `time` in milliseconds). |
+| stats   | `object` | The stats of the executed query (specifically the `count`, `size` in bytes, and `time` in milliseconds). |
 | results | `list`    | A list of objects containing the results of the request.                   |
 
 
