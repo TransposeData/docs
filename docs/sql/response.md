@@ -9,7 +9,7 @@ The success response will always obey the following top-level JSON structure:
 | Name      | Type      | Description                                                                 |
 | --------- | --------- | --------------------------------------------------------------------------- |
 | status  | `string`  | The status of the response. Will be `success` for a success response.      |
-| stats   | `object` | The stats of the executed query (specifically the `count`, `size` in bytes, and `time` in milliseconds). |
+| stats   | `object` | The stats of the executed query specifically the `count`, `size` in bytes, `time` in milliseconds, and `truncated` boolean. The `truncated` boolean will be `true` if a response timeout or response size limit was reached (and the returned data was therefore truncated) and `false` if all data was returned within the response limits. You can find more information on the response limits [here](https://docs.transpose.io/sql/limits/).|
 | results | `list`    | A list of objects containing the results of the request.                   |
 
 
@@ -20,7 +20,8 @@ Here is an example of an actual success response following this structure:
     "stats": {
         "count": 1,
         "size": 196,
-        "time": 0
+        "time": 0,
+        "truncated": false
     },
     "results": [
         {
