@@ -1,6 +1,6 @@
 # Get NFT Sales by Account
 
-This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that involve a specific account (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `arbitrum`.
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that involve a specific account (supports pagination). Supported chains: `ethereum`, `polygon`, `optimism`, `goerli`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

@@ -1,6 +1,6 @@
 # Get NFT Sales
 
-This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `arbitrum`.
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) that occurred within the given date range (supports pagination). Supported chains: `ethereum`, `polygon`, `optimism`, `goerli`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

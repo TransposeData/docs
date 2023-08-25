@@ -1,6 +1,6 @@
 # Get NFT Sales by Token ID
 
-This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT, identified by a contract address and token ID pair (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `arbitrum`.
+This endpoint returns all [NFT Sales](../models/nft_sale_model.md) for an NFT, identified by a contract address and token ID pair (supports pagination). Supported chains: `ethereum`, `polygon`, `optimism`, `goerli`, `arbitrum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

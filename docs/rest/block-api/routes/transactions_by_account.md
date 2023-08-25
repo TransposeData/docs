@@ -1,5 +1,5 @@
 # Get Transactions by Account
-This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given date range and involved a given account (supports pagination). Supported chains: `ethereum`, `polygon`, `goerli`, `scroll`, `arbitrum`, `base`.
+This endpoint returns all [Transactions](../models/transaction_model.md) that occurred within a given date range and involved a given account (supports pagination). Supported chains: `ethereum`, `polygon`, `optimism`, `goerli`, `scroll`, `arbitrum`, `base`.
 
 
 

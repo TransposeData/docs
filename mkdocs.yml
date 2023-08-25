@@ -249,6 +249,27 @@ nav:
           - 'sql/tables/base_goerli/asset_layer/native_token_transfers.md'
           - 'sql/tables/base_goerli/asset_layer/tokens.md'
           - 'sql/tables/base_goerli/asset_layer/token_owners.md'
+      - Optimism Tables:
+        - Settlement:
+          - 'sql/tables/optimism/settlement_layer/accounts.md'
+          - 'sql/tables/optimism/settlement_layer/blocks.md'
+          - 'sql/tables/optimism/settlement_layer/logs.md'
+          - 'sql/tables/optimism/settlement_layer/transactions.md'
+        - Asset:
+          - 'sql/tables/optimism/asset_layer/nfts.md'
+          - 'sql/tables/optimism/asset_layer/collections.md'
+          - 'sql/tables/optimism/asset_layer/nft_owners.md'
+          - 'sql/tables/optimism/asset_layer/nft_transfers.md'
+          - 'sql/tables/optimism/asset_layer/native_token_owners.md'
+          - 'sql/tables/optimism/asset_layer/native_token_transfers.md'
+          - 'sql/tables/optimism/asset_layer/tokens.md'
+          - 'sql/tables/optimism/asset_layer/token_owners.md'
+        - Protocol:
+          - 'sql/tables/optimism/protocol_layer/nft_sales.md'
+          - 'sql/tables/optimism/protocol_layer/bridge_events.md'
+          - 'sql/tables/optimism/protocol_layer/dex_liquidity.md'
+          - 'sql/tables/optimism/protocol_layer/dex_pools.md'
+          - 'sql/tables/optimism/protocol_layer/dex_swaps.md'
   - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
