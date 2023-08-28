@@ -2,12 +2,6 @@
 
 The `bridge_events` table provides indexed views of all bridge transactions from or to a specified chain, and includes the other chain involved.
 
-## Supported Bridges
-| Base | | | | |
-| --------- | --------- | --------- | --------- | --------- |
-| axelar v1 | base v1 |  |  |  |
-
-
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

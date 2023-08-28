@@ -2,11 +2,6 @@
 
 The `dex_liquidity` table provides indexed views of all DEX liquidity for a specified chain.
 
-## Supported DEXs
-| Base | | | | |
-| --------- | --------- | --------- | --------- | --------- |
-| leetswap v2 | rocketswap v2 | damaswap v2 | uniswap v2 forks | solidly forkst  |
-
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

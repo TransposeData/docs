@@ -2,11 +2,6 @@
 
 The `dex_swaps` table provides indexed views of all DEX swaps transacted for a specified chain.
 
-## Supported DEXs
-| Base | | | | |
-| --------- | --------- | --------- | --------- | --------- |
-| leetswap v2 | rocketswap v2 | damaswap v2 | uniswap v2 forks | solidly forks |
-
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
