@@ -2,6 +2,12 @@
 
 The `dex_pools` table provides indexed views of all DEX pools created for a specified chain.
 
+## Supported DEXs
+| Optimism | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| balancer | clipper | curve | dodoswap | synapse  |
+| uniswap | velodrome |  |  |   |
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

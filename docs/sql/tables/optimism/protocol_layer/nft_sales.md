@@ -2,6 +2,11 @@
 
 The `nft_sales` table provides indexed views of all NFT sales transacted on a specific chain, with support for USD price conversions, multi-token NFT sales, semi-fungible NFT sales, aggregator annotations, and much more.
 
+## Supported Exchanges
+| Optimism | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| opensea |  |  |  |  |
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

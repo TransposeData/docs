@@ -2,6 +2,12 @@
 
 The `dex_swaps` table provides indexed views of all DEX swaps transacted for a specified chain.
 
+## Supported DEXs
+| Optimism | | | | |
+| --------- | --------- | --------- | --------- | --------- |
+| balancer | clipper | curve | dodoswap | synapse  |
+| uniswap | velodrome |  |  |   |
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
