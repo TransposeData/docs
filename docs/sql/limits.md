@@ -2,13 +2,13 @@
 
 The following table shows the response limits for each tier:
 
-| Tier      | Max Response Size (Megabytes)      | Response Timeout (Seconds)                                                                 |
-| --------- | --------- | --------------------------------------------------------------------------- |
-| **Free**  | 1  | 25      |
-| **Developer**   | 3 | 360 |
-| **Startup** | 5    | 360                   |
-| **Enterprise** | 10*    | 600*                   |
-| **Dedicated** | 50*    | 600*                   |
+| Tier | Max Response Size (Megabytes) | Response Timeout (Seconds) | Rate Limit (Requests/second) |
+| --------- | --------- | ------------------------------------------ | --------------------------------- |
+| **Free** | 1 | 25 | 1 |
+| **Developer** | 3 | 360 | 15 |
+| **Startup** | 5 | 360 | 30 |
+| **Enterprise** | 10* | 600* | 50 |
+| **Dedicated** | 50* | 600* | Unlimited |
 
 *If the above timeouts are reached, the SQL API will return the data retrieved up to that point.*
 
