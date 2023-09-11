@@ -94,7 +94,10 @@ nav:
           - 'sql/tables/polygon/protocol_layer/dex_pools.md'
           - 'sql/tables/polygon/protocol_layer/dex_swaps.md'
         - Prices:
-          - 'sql/tables/polygon/protocol_layer/token_prices.md'
+          - 'sql/tables/polygon/prices/token_prices.md'
+          - 'sql/tables/polygon/prices/token_prices_ohlc_1d.md'
+          - 'sql/tables/polygon/prices/token_prices_ohlc_1h.md'
+          - 'sql/tables/polygon/prices/token_prices_ohlc_1m.md'
       - Arbitrum Tables:
         - Settlement:
           - 'sql/tables/arbitrum/settlement_layer/accounts.md'
@@ -120,7 +123,10 @@ nav:
           - 'sql/tables/arbitrum/protocol_layer/dex_pools.md'
           - 'sql/tables/arbitrum/protocol_layer/dex_swaps.md'
         - Prices:
-          - 'sql/tables/arbitrum/protocol_layer/token_prices.md'
+          - 'sql/tables/arbitrum/prices/token_prices.md'
+          - 'sql/tables/arbitrum/prices/token_prices_ohlc_1d.md'
+          - 'sql/tables/arbitrum/prices/token_prices_ohlc_1h.md'
+          - 'sql/tables/arbitrum/prices/token_prices_ohlc_1m.md'
       - Nova Tables:
         - Settlement:
           - 'sql/tables/nova/settlement_layer/accounts.md'
@@ -145,7 +151,10 @@ nav:
           - 'sql/tables/nova/protocol_layer/dex_pools.md'
           - 'sql/tables/nova/protocol_layer/dex_swaps.md'
         - Prices:
-          - 'sql/tables/nova/protocol_layer/token_prices.md'
+          - 'sql/tables/nova/prices/token_prices.md'
+          - 'sql/tables/nova/prices/token_prices_ohlc_1d.md'
+          - 'sql/tables/nova/prices/token_prices_ohlc_1h.md'
+          - 'sql/tables/nova/prices/token_prices_ohlc_1m.md'
       - Canto Tables:
         - Settlement:
           - 'sql/tables/canto/settlement_layer/accounts.md'
@@ -163,14 +172,6 @@ nav:
           - 'sql/tables/canto/asset_layer/tokens.md'
           - 'sql/tables/canto/asset_layer/token_owners.md'
           - 'sql/tables/canto/asset_layer/token_transfers.md'
-        - Protocol:
-          - 'sql/tables/canto/protocol_layer/protocols.md'
-          - 'sql/tables/canto/protocol_layer/nft_sales.md'
-          - 'sql/tables/canto/protocol_layer/dex_pools.md'
-          - 'sql/tables/canto/protocol_layer/dex_swaps.md'
-          - 'sql/tables/canto/protocol_layer/bridge_events.md'
-        - Prices:
-          - 'sql/tables/canto/protocol_layer/token_prices.md'
       - Goerli Tables:
         - Settlement:
           - 'sql/tables/goerli/settlement_layer/accounts.md'
@@ -233,6 +234,11 @@ nav:
           - 'sql/tables/base/protocol_layer/dex_liquidity.md'
           - 'sql/tables/base/protocol_layer/dex_pools.md'
           - 'sql/tables/base/protocol_layer/dex_swaps.md'
+        - Prices:
+          - 'sql/tables/base/prices/token_prices.md'
+          - 'sql/tables/base/prices/token_prices_ohlc_1d.md'
+          - 'sql/tables/base/prices/token_prices_ohlc_1h.md'
+          - 'sql/tables/base/prices/token_prices_ohlc_1m.md'
       - Base Goerli Tables:
         - Settlement:
           - 'sql/tables/base_goerli/settlement_layer/accounts.md'
@@ -270,6 +276,11 @@ nav:
           - 'sql/tables/optimism/protocol_layer/dex_liquidity.md'
           - 'sql/tables/optimism/protocol_layer/dex_pools.md'
           - 'sql/tables/optimism/protocol_layer/dex_swaps.md'
+        - Prices:
+          - 'sql/tables/optimism/prices/token_prices.md'
+          - 'sql/tables/optimism/prices/token_prices_ohlc_1d.md'
+          - 'sql/tables/optimism/prices/token_prices_ohlc_1h.md'
+          - 'sql/tables/optimism/prices/token_prices_ohlc_1m.md'
   - REST API:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'

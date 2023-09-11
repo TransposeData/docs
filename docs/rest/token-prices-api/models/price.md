@@ -1,5 +1,5 @@
 # Price Model
-The **Price Model** contains the full set of information for a token price at a particular timestamp. The **Price Model** follows the following structure. Supported chains: `ethereum`, `polygon`, `optimism`, `nova`, `arbitrum`, `scroll`, `base`, `canto`.
+The **Price Model** contains the full set of information for a token price at a particular timestamp. The **Price Model** follows the following structure. Supported chains: `ethereum`, `polygon`, `optimism`, `nova`, `arbitrum`, `base`.
 
 | Name                    | Description                                                                                               | Type           |
 | ------------------------| --------------------------------------------------------------------------------------------------------- | -------------- |

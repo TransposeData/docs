@@ -1,5 +1,5 @@
 # Historical Price Model
-The **Historical Price Model** contains the full set of information for a token price for a given time range. The **Historical Price Model** follows the following structure. Supported chains: `ethereum`, `polygon`, `optimism`, `nova`, `arbitrum`, `scroll`, `base`, `canto`.
+The **Historical Price Model** contains the full set of information for a token price for a given time range. The **Historical Price Model** follows the following structure. Supported chains: `ethereum`, `polygon`, `optimism`, `nova`, `arbitrum`, `base`.
 
 
 | Name                    | Description                                                                                               | Type           |
