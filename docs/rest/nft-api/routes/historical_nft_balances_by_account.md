@@ -1,6 +1,6 @@
 # Get Historical NFT Balances by Account
 
-This endpoint returns all [NFT Balances](../models/nft_balance_model.md) for an account at a given timestamp. Supported chains: `ethereum`.
+This endpoint returns the [NFT Balances](../models/nft_balance_model.md) for an account at a given timestamp. Supported chains: `ethereum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
