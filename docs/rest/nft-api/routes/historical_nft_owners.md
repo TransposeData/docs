@@ -1,6 +1,6 @@
 # Get Historical NFT Owners
 
-This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a given collection, identified by contract address and ordered by descending balance (supports pagination). Supported chains: `ethereum`.
+This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a given collection, identified by contract address and ordered by owner address (supports pagination). Supported chains: `ethereum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

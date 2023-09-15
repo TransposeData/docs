@@ -1,6 +1,6 @@
 # Get Historical Token Owners
 
-This endpoint returns all [Accounts](../models/token_owner_model.md) that own a given token at a given timestamp, identified by a contract address (supports pagination). Supported chains: `ethereum`.
+This endpoint returns all [Accounts](../models/token_owner_model.md) that own a given token at a given timestamp, identified by a contract address and ordered by owner address (supports pagination). Supported chains: `ethereum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 

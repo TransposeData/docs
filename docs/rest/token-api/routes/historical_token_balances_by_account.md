@@ -1,6 +1,6 @@
 # Get Historical Token Balances by Account
 
-This endpoint returns the [Token Balances](../models/token_balance_model.md) for an account at a given timestamp. Supported chains: `ethereum`.
+This endpoint returns the [Token Balances](../models/token_balance_model.md) for an account at a given timestamp, ordered by contract address (supports pagination). Supported chains: `ethereum`.
 
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
