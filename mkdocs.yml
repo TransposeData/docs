@@ -365,7 +365,7 @@ nav:
           - 'rest/nft-api/routes/nfts_by_name.md'
           - 'rest/nft-api/routes/nfts_by_owner.md'
           - 'rest/nft-api/routes/historical_nft_balances_by_account.md'
-          - 'rest/nft-api/routes/historical_nft_owners'
+          - 'rest/nft-api/routes/historical_nft_owners.md'
           - 'rest/nft-api/routes/owners_by_contract_address.md'
           - 'rest/nft-api/routes/owners_by_token_id.md'
           - 'rest/nft-api/routes/transfers.md'
