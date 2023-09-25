@@ -19,7 +19,7 @@ SELECT usd_price FROM ethereum.nft_sales ORDER BY usd_price desc nulls last limi
 However, this query runs too slowly.  You can ask the Query Assistant to optimize it for you.  In the Query Assistant input box, write:
 
 ```
-The following query is trying to get the most expensive nft sale in history.
+The following query is trying to get the most expensive NFT sale in history.
 
 SELECT usd_price FROM ethereum.nft_sales ORDER BY usd_price desc nulls last limit 1
 

@@ -146,7 +146,7 @@ ORDER BY timestamp DESC;
 
 When using aggregate functions, such as `COUNT`, `SUM`, `AVG`, `MAX`, or `MIN`, group the data by indexed columns to speed up the query execution.
 
-Example: Find the total amount spent by each buyer for a specific nft address in the last day.
+Example: Find the total amount spent by each buyer for a specific NFT address in the last day.
 
 ```sql
 SELECT buyer_address, SUM(usd_price) AS total_spent
