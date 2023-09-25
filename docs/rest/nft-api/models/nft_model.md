@@ -4,7 +4,7 @@ The **NFT Model** represents a single NFT with included ownership data (i.e. the
 | Name             | Description                                                      | Type        |
 | ---------------- | ---------------------------------------------------------------- | ----------- |
 | contract_address | Contract address of the collection.                             | `string`    |
-| token_id         | The token ID of the nft.                                        | `integer`   |
+| token_id         | The token ID of the NFT.                                        | `integer`   |
 | name             | The collection's name.                                          | `string`    |
 | description      | The collection's description                                     | `string`    |
 | minted_timestamp | The NFT's mint timestamp (in ISO-8601 format).                  | `date-time` |
