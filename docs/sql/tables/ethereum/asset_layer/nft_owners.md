@@ -2,6 +2,8 @@
 
 The `nft_owners` table provides indexed views of all owners and owner balances for NFTs. Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains).
 
+Looking for historical NFT data? Check out our [historical_nft_owners](historical_nft_owners.md) table to query balance and ownership data at a particular timestamp.
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
