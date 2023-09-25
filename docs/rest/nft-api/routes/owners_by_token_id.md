@@ -2,6 +2,8 @@
 
 This endpoint returns all [Accounts](../models/nft_owner_model.md) that own a given NFT, identified by a collection contract address and token ID pair (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `optimism`, `goerli`, `scroll`, `arbitrum`, `base`.
 
+Looking for historical NFT data? Check out our [historical_nft_balances_by_account](historical_nft_balances_by_account.md) and [historical_nft_owners](historical_nft_owners.md) endpoints to query balance and ownership data at a particular timestamp.
+
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
 |---------------|--------------------------------------------------------------------------------------|----------|

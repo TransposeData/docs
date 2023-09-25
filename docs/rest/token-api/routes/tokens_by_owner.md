@@ -2,6 +2,8 @@
 
 This endpoint returns all [Tokens](../models/token_model.md) that are owned by a given account address, with the included owner balances (supports pagination). Ownership and balances are only updated once the underlying transaction causing the change in ownership/balance is confirmed by the network (roughly ~10 minutes on all chains). Supported chains: `ethereum`, `polygon`, `optimism`, `goerli`, `scroll`, `arbitrum`, `base`.
 
+Looking for historical token data? Check out our [historical_token_owners](historical_token_owners.md),  [historical_token_balances_by_account](historical_token_balances_by_account.md), and [historical_native_token_balance_by_account](historical_native_token_balance_by_account.md) endpoints to query balance and ownership data at a particular timestamp.
+
 ## Parameters
 | Parameter     | Description                                                                          | Type     | 
 |---------------|--------------------------------------------------------------------------------------|----------|
