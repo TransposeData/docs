@@ -2,6 +2,8 @@
 
 The `historical_nft_owners` table is a time-series of NFT balances for a given owner_address every time it sends or receives a NFT.
 
+**Looking for live NFT owner data?**  This table works, but we also have a simpler table just with live NFT ownership data called [nft_owners](nft_owners.md).
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

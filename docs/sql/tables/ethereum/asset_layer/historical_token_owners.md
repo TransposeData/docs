@@ -2,6 +2,8 @@
 
 The `historical_token_owners` table is a time-series of ERC20 token balances for a given owner_address every time it sends or receives a token.
 
+**Looking for live token owner data?**  This table works, but we also have a simpler table just with live token ownership data called [token_owners](token_owners.md).
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |

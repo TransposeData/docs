@@ -2,6 +2,8 @@
 
 The `historical_native_token_owners` table is a time-series of native token balances for a given owner_address every time it sends or receives a token. This token inclues miner addresses, transaction senders, failed transactions, and accounts that withdraw their stake from the Beacon Chain.
 
+**Looking for live native token owner data?**  This table works, but we also have a simpler table just with live native token ownership data called [native_token_owners](native_token_owners.md).
+
 ## Columns
 | Name                | Description                                                                 | Type        |
 | --------- | --------- | --------------------------------------------------------------------------- |
