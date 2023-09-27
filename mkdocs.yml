@@ -284,7 +284,7 @@ nav:
           - 'sql/tables/optimism/prices/token_prices_ohlc_1d.md'
           - 'sql/tables/optimism/prices/token_prices_ohlc_1h.md'
           - 'sql/tables/optimism/prices/token_prices_ohlc_1m.md'
-  - REST API:
+  - Core Endpoints:
     - Overview: 'rest/overview.md'
     - Authentication: 'rest/authentication.md'
     - Pagination: 'rest/pagination.md'

@@ -1,6 +1,6 @@
 # Parameters
 
-Custom endpoints are a powerful way to create a REST API that is tailored to your specific needs. Parameterizing your endpoints is a great way to make endpoints even more extensible, and allows for a variety of use cases - such as pagination, filtering, sorting, passing arguments, and more.
+Custom endpoints are a powerful way to create a Core Endpoints that is tailored to your specific needs. Parameterizing your endpoints is a great way to make endpoints even more extensible, and allows for a variety of use cases - such as pagination, filtering, sorting, passing arguments, and more.
 
 You can parameterise your endpoint to accept any number of parameters, and use those parameters to deliver exactly the data you need.
 

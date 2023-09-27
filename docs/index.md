@@ -11,7 +11,7 @@ Transpose is the world’s most complete, powerful, and performant Web3 data sui
 
 {{ transpose_colored_link(link_type='data', description='View all of the data we offer on a single page.') }}
 
-{{ transpose_colored_link(link_type='rest', description='If you are looking for hyper-optimized, parameterized access to key blockchain primitives (such as NFT sales, token balances, wallet histories etc.) in bulk, our REST API is built with you in mind.') }}
+{{ transpose_colored_link(link_type='rest', description='If you are looking for hyper-optimized, parameterized access to key blockchain primitives (such as NFT sales, token balances, wallet histories etc.) in bulk, our Core Endpoints are built with you in mind.') }}
 
 {{ transpose_colored_link(link_type='sql', description='If your use case requires more flexibility, our SQL API provides you with the ability to write sophisticated custom queries against our full suite of indexed and decoded data that return in just milliseconds.') }}
 

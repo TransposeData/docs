@@ -398,7 +398,7 @@ class TransposeDocsColoredLink:
             "token-prices": "Retrieve real-time & historical price data with low latency at all levels of granularity for all assets since genesis.",
             "playground": "Write and execute SQL queries in our browser-based development tool.",
             "atlas": "Explore and contribute to queries created by the Transpose community.",
-            "python_sdk": "A Python SDK for calling the Transpose REST API.",
+            "python_sdk": "A Python SDK for calling the Transpose Core Endpoints.",
             "decoding_sdk": "A Python SDK for easily decoding contract activity on EVM blockchains.",
             "defi_sdk": "A Python SDK for performing multi-chain DeFi analysis using the Transpose SQL API.",
         }
@@ -407,7 +407,7 @@ class TransposeDocsColoredLink:
     def get_text_from_link_type(self):
         text_map = {
             "discord": "Join our Discord",
-            "rest": "REST API Documentation",
+            "rest": "Core Endpoints Documentation",
             "sql": "SQL API Documentation",
             "quickstart": "Quickstart Guide",
             "block": "Block API",

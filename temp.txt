@@ -1,7 +1,7 @@
 nav:
   - Introduction: 'introduction.md'
   - 'Quick Start': 'quickstart.md'
-  - 'REST API':
+  - 'Core Endpoints':
     - Authentication: 'REST/authentication.md'
     - Pagination: 'REST/pagination.md'
     - Response: 'REST/response.md'
