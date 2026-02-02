@@ -1,0 +1,58 @@
+{
+  "modelId": "claude-haiku-4-5-20251001",
+  "modelSelectionSettings": {
+    "enabled": true,
+    "thresholds": {
+      "light": {
+        "maxLinesChanged": 100,
+        "maxFilesChanged": 5
+      },
+      "medium": {
+        "maxLinesChanged": 500,
+        "maxFilesChanged": 20
+      }
+    },
+    "modelMapping": {
+      "light": "claude-haiku-4-5-20251001",
+      "medium": "claude-sonnet-4-5-20250929",
+      "heavy": "claude-opus-4-5-20251101"
+    }
+  },
+  "securitySettings": {
+    "enableAutomaticFixes": false,
+    "criticalVulnerabilityThreshold": "high",
+    "allowedFileTypes": [
+      ".js",
+      ".ts",
+      ".py",
+      ".java",
+      ".go",
+      ".rs",
+      ".php",
+      ".rb"
+    ],
+    "excludedDirectories": [
+      "node_modules",
+      "vendor",
+      ".git",
+      "dist",
+      "build"
+    ],
+    "includePaths": [],
+    "excludePaths": [],
+    "perLanguage": {}
+  },
+  "internalApiSettings": {
+    "endpoint": "",
+    "enableAdvancedScanning": false,
+    "complianceMode": "standard"
+  },
+  "notificationSettings": {
+    "slackEnabled": false,
+    "emailEnabled": false,
+    "alertThresholds": {
+      "critical": 1,
+      "high": 3
+    }
+  }
+}
